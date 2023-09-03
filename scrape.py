@@ -16,7 +16,7 @@ if response.status_code == 200:
     with open("maryland_football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_file:
         writer = csv.writer(csv_file)
         
-        # Write the CSV header
+        # Write the CSV headers
         writer.writerow(["Name", "Position", "Class"])
 
         # Find all player details in the HTML
@@ -24,9 +24,12 @@ if response.status_code == 200:
 
         for player in player_details:
             # Extract player information
-            name = player.find("span").text.strip()
+            name = player.find("div", class_="s-person-details__personal-single-line").find("span").text.strip()
             position = player.find("span", class_="s-person-details__bio-stats-item").text.strip()
             class_year = player.find_all("span", class_="s-person-details__bio-stats-item")[1].text.strip()
 
             # Write the player's information to the CSV file
             writer.writerow([name, position, class_year])
+    
+else:
+    print("Failed to retrieve the web page. Status code:", response.status_code)
