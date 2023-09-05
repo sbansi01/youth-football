@@ -31,8 +31,8 @@ if response.status_code == 200:
             # Find player location details in the HTML:
             location_info = player.find_next("div", class_="s-person-card__content__person-contact-info")
             hometown = location_info.find_all("span", class_="s-person-card__content__person__location-item")[0].text.strip()
-            high_school = location_info.find_all("span", class_="s-person-card__content__person__location-item")[1].text.strip()        
-            
+            high_school = location_info.find_all("span", class_="s-person-card__content__person__location-item")[1].text.strip()
+
             # Write the player's information to the CSV file
             writer.writerow([name, position, class_year, hometown, high_school])
     
