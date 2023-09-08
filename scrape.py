@@ -91,10 +91,14 @@ with open("football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_
             # Parse the HTML content
             soup = BeautifulSoup(response.content, "html.parser")
 
-            # Extract the school name from the URL
-            school_name = url.split('/')[-4]
-
-            # Find player details in the HTML
+            # Extract the school name from the <title> tag within the <head> section
+            title_tag = soup.find("title")
+            if title_tag:
+                school_name = title_tag.text.strip()  # Extract the entire text of the title tag
+            else:
+                school_name = "Unknown"  # If title tag is not found, use "Unknown"
+   
+            # First pass: Maryland template
             player_details = soup.find_all("div", class_="s-person-details")
 
             if player_details:
@@ -109,7 +113,28 @@ with open("football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_
                     hometown = location_info.find_all("span", class_="s-person-card__content__person__location-item")[0].text.strip()
                     high_school = location_info.find_all("span", class_="s-person-card__content__person__location-item")[1].text.strip()
 
-                    # Write the player's information to the CSV file along with the school name
+                    # Write the players' information to the CSV file:
+                    writer.writerow([school_name, name, position, class_year, hometown, high_school])
+            
+            # Second pass: Alabama template:
+            elif soup.find_all(class_='sidearm-roster-player-container'):
+                player_containers = soup.find_all(class_="sidearm-roster-player-container")
+            
+                for player_container in player_containers:
+                    position = player_container.find(class_="sidearm-roster-player-position").text.strip()
+                    name = player_container.find(class_="sidearm-roster-player-name").text.strip()
+
+                    # Remove extra information from position (height and weight)
+                    position = position.split('\n')[0].strip()
+
+                    # Remove extra information from name (jersey number)
+                    name = name.split('\n')[-1].strip()
+
+                    class_year = player_container.find(class_="sidearm-roster-player-academic-year").text.strip()
+                    hometown = player_container.find(class_="sidearm-roster-player-hometown").text.strip()
+                    high_school = player_container.find(class_="sidearm-roster-player-highschool").text.strip()
+                
+                    # Write the players' information to the CSV file:
                     writer.writerow([school_name, name, position, class_year, hometown, high_school])
             
             else:
