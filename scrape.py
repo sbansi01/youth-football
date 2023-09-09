@@ -136,7 +136,22 @@ with open("football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_
                 
                     # Write the players' information to the CSV file:
                     writer.writerow([school_name, name, position, class_year, hometown, high_school])
-            
+                
+            # Third pass: Miami template - DOESN'T SEEM TO BE WORKING, NEED TO FIX
+            elif soup.find_all('tr', class_='letzchat_translate'):
+                player_rows = soup.find_all('tr', class_='letzchat_translate')
+
+                for player_row in player_rows:
+                    columns = player_row.find_all('td')
+                    name = columns[1].text.strip()
+                    position = columns[2].text.strip()
+                    class_year = columns[5].text.strip()
+                    hometown = columns[6].text.strip()
+                    high_school = columns[7].text.strip()
+
+                    # Write the players' information to the CSV file:
+                    writer.writerow([school_name, name, position, class_year, hometown, high_school])
+
             else:
                 print(f"No player details found on the page ({url})")
 
