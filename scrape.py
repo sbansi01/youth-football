@@ -6,12 +6,12 @@ import csv
 urls = [
     "https://fightingillini.com/sports/football/roster",
     "https://iuhoosiers.com/sports/football/roster",
-    "https://hawkeyesports.com/sports/football/roster/",
+    #"https://hawkeyesports.com/sports/football/roster/",
     "https://umterps.com/sports/football/roster",
     "https://mgoblue.com/sports/football/roster",
     "https://msuspartans.com/sports/football/roster",
     "https://gophersports.com/sports/football/roster",
-    "https://huskers.com/sports/football/roster",
+    #"https://huskers.com/sports/football/roster",
     "https://nusports.com/sports/football/roster",
     "https://ohiostatebuckeyes.com/sports/football/roster",
     "https://gopsusports.com/sports/football/roster",
@@ -19,20 +19,20 @@ urls = [
     "https://scarletknights.com/sports/football/roster",
     "https://uwbadgers.com/sports/football/roster",
     "https://bceagles.com/sports/football/roster",
-    "https://clemsontigers.com/sports/football/roster/",
+    #"https://clemsontigers.com/sports/football/roster/", - missing high school
     "https://goduke.com/sports/football/roster",
     "https://seminoles.com/sports/football/roster/2023-24",
     "https://ramblinwreck.com/sports/m-footbl/roster/",
     "https://gocards.com/sports/football/roster",
-    "https://miamihurricanes.com/sports/football/roster/",
+    #"https://miamihurricanes.com/sports/football/roster/",
     "https://gopack.com/sports/football/roster",
     "https://goheels.com/sports/football/roster",
     "https://pittsburghpanthers.com/sports/football/roster",
     "https://cuse.com/sports/football/roster",
-    "https://virginiasports.com/sports/football/roster/",
-    "https://hokiesports.com/sports/football/roster",
+    #"https://virginiasports.com/sports/football/roster/",
+    #"https://hokiesports.com/sports/football/roster",
     "https://godeacs.com/sports/football/roster",
-    "https://baylorbears.com/sports/football/roster",
+    #"https://baylorbears.com/sports/football/roster",
     "https://byucougars.com/sports/football/roster/",
     "https://gobearcats.com/sports/football/roster",
     "https://uhcougars.com/sports/football/roster",
@@ -136,21 +136,6 @@ with open("football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_
                 
                     # Write the players' information to the CSV file:
                     writer.writerow([school_name, name, position, class_year, hometown, high_school])
-                
-            # Third pass: Miami template - DOESN'T SEEM TO BE WORKING, NEED TO FIX
-            elif soup.find_all('tr', class_='letzchat_translate'):
-                player_rows = soup.find_all('tr', class_='letzchat_translate')
-
-                for player_row in player_rows:
-                    columns = player_row.find_all('td')
-                    name = columns[1].text.strip()
-                    position = columns[2].text.strip()
-                    class_year = columns[5].text.strip()
-                    hometown = columns[6].text.strip()
-                    high_school = columns[7].text.strip()
-
-                    # Write the players' information to the CSV file:
-                    writer.writerow([school_name, name, position, class_year, hometown, high_school])
 
             else:
                 print(f"No player details found on the page ({url})")
@@ -160,3 +145,17 @@ with open("football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_
             print(f"Failed to retrieve the web page ({url}). Status code:", response.status_code)
         except Exception as err:
             print(f"An error occurred while processing {url}: {err}")
+
+# Read the additional CSV file
+additional_csv_file = "other_football_rosters.csv"
+
+# Append additional data to football_roster.csv
+with open(additional_csv_file, mode="r", newline="", encoding="utf-8") as additional_csv:
+    reader = csv.reader(additional_csv)
+    next(reader)  # Skip the header
+
+    with open("football_roster.csv", mode="a", newline="", encoding="utf-8") as csv_file:
+        writer = csv.writer(csv_file)
+
+        for row in reader:
+            writer.writerow(row)
