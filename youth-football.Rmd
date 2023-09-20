@@ -29,6 +29,19 @@ age_13_17 <- read_sheet("https://docs.google.com/spreadsheets/d/1AvA8phsRgDh9AXj
 
 ```
 
+
+```{r}
+
+#Load football roster scraper
+football_rosters <- read.csv("football_roster.csv") %>%
+  clean_names()
+
+#Checking how many schools we have
+school_check <- football_rosters %>%
+  distinct(school)
+
+```
+
 ```{r}
 
 # Load Census API key
