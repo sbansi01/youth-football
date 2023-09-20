@@ -25,7 +25,7 @@ urls = [
     #"https://ramblinwreck.com/sports/m-footbl/roster/",
     "https://gocards.com/sports/football/roster",
     #"https://miamihurricanes.com/sports/football/roster/",
-    "https://gopack.com/sports/football/roster",
+    #"https://gopack.com/sports/football/roster",
     "https://goheels.com/sports/football/roster",
     "https://pittsburghpanthers.com/sports/football/roster",
     "https://cuse.com/sports/football/roster",
