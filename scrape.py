@@ -21,8 +21,8 @@ urls = [
     "https://bceagles.com/sports/football/roster",
     #"https://clemsontigers.com/sports/football/roster/", - missing high school
     "https://goduke.com/sports/football/roster",
-    "https://seminoles.com/sports/football/roster/2023-24",
-    "https://ramblinwreck.com/sports/m-footbl/roster/",
+    #"https://seminoles.com/sports/football/roster/2023-24",
+    #"https://ramblinwreck.com/sports/m-footbl/roster/",
     "https://gocards.com/sports/football/roster",
     #"https://miamihurricanes.com/sports/football/roster/",
     "https://gopack.com/sports/football/roster",
@@ -64,14 +64,14 @@ urls = [
     "https://floridagators.com/sports/football/roster",
     "https://georgiadogs.com/sports/football/roster",
     #"https://ukathletics.com/sports/football/roster/",
-    "https://lsusports.net/sports/fb/roster/",
+    #"https://lsusports.net/sports/fb/roster/",
     "https://hailstate.com/sports/football/roster",
     "https://mutigers.com/sports/football/roster",
     "https://olemisssports.com/sports/football/roster",
-    "https://gamecocksonline.com/sports/football/roster/",
-    "https://utsports.com/sports/football/roster",
+    #"https://gamecocksonline.com/sports/football/roster/",
+    #"https://utsports.com/sports/football/roster",
     "https://12thman.com/sports/football/roster",
-    "https://vucommodores.com/sports/football/roster/"
+    #"https://vucommodores.com/sports/football/roster/"
 ]
 
 # Create a single CSV file to store all the data
