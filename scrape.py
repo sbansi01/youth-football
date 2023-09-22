@@ -21,11 +21,11 @@ urls = [
     "https://bceagles.com/sports/football/roster",
     #"https://clemsontigers.com/sports/football/roster/", - missing high school
     "https://goduke.com/sports/football/roster",
-    "https://seminoles.com/sports/football/roster/2023-24",
-    "https://ramblinwreck.com/sports/m-footbl/roster/",
+    #"https://seminoles.com/sports/football/roster/2023-24",
+    #"https://ramblinwreck.com/sports/m-footbl/roster/",
     "https://gocards.com/sports/football/roster",
     #"https://miamihurricanes.com/sports/football/roster/",
-    "https://gopack.com/sports/football/roster",
+    #"https://gopack.com/sports/football/roster",
     "https://goheels.com/sports/football/roster",
     "https://pittsburghpanthers.com/sports/football/roster",
     "https://cuse.com/sports/football/roster",
@@ -55,7 +55,7 @@ urls = [
     "https://gostanford.com/sports/football/roster",
     "https://uclabruins.com/sports/football/roster",
     "https://usctrojans.com/sports/football/roster",
-    "https://utahutes.com/sports/football/roster",
+    #"https://utahutes.com/sports/football/roster",
     "https://gohuskies.com/sports/football/roster",
     "https://wsucougars.com/sports/football/roster",
     "https://rolltide.com/sports/football/roster",
@@ -64,14 +64,14 @@ urls = [
     "https://floridagators.com/sports/football/roster",
     "https://georgiadogs.com/sports/football/roster",
     #"https://ukathletics.com/sports/football/roster/",
-    "https://lsusports.net/sports/fb/roster/",
+    #"https://lsusports.net/sports/fb/roster/",
     "https://hailstate.com/sports/football/roster",
     "https://mutigers.com/sports/football/roster",
     "https://olemisssports.com/sports/football/roster",
-    "https://gamecocksonline.com/sports/football/roster/",
-    "https://utsports.com/sports/football/roster",
+    #"https://gamecocksonline.com/sports/football/roster/",
+    #"https://utsports.com/sports/football/roster",
     "https://12thman.com/sports/football/roster",
-    "https://vucommodores.com/sports/football/roster/"
+    #"https://vucommodores.com/sports/football/roster/"
 ]
 
 # Create a single CSV file to store all the data
@@ -94,9 +94,11 @@ with open("football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_
             # Extract the school name from the <title> tag within the <head> section
             title_tag = soup.find("title")
             if title_tag:
-                school_name = title_tag.text.strip()  # Extract the entire text of the title tag
+                school_name = title_tag.text.strip()
+                if school_name == "Vite App":
+                    school_name = "Indiana"
             else:
-                school_name = "Unknown"  # If title tag is not found, use "Unknown"
+                school_name = "Unknown" 
    
             # First pass: Maryland template
             player_details = soup.find_all("div", class_="s-person-details")
