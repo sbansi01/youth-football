@@ -19,7 +19,7 @@ urls = [
     "https://scarletknights.com/sports/football/roster",
     "https://uwbadgers.com/sports/football/roster",
     "https://bceagles.com/sports/football/roster",
-    #"https://clemsontigers.com/sports/football/roster/"
+    "https://clemsontigers.com/sports/football/roster/",
     "https://goduke.com/sports/football/roster",
     #"https://seminoles.com/sports/football/roster/2023-24",
     #"https://ramblinwreck.com/sports/m-footbl/roster/",
@@ -138,6 +138,167 @@ with open("football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_
                 
                     # Write the players' information to the CSV file:
                     writer.writerow([school_name, name, position, class_year, hometown, high_school])
+
+            # Third pass: The Clemson exception:
+            elif "clemsontigers.com" in url:
+                player_urls = ["https://clemsontigers.com/sports/football/roster/season/2023/antonio-williams/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/barrett-carter/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/andrew-mukuba/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/will-shipley/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/nate-wiggins/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/cade-klubnik/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/noble-johnson/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/xavier-thomas/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/sherrod-covil-jr/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/josh-sapp/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/sheridan-jones/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/tyler-brown-wr/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/phil-mafah/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/justin-mascoll/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/tre-williams/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/adam-randall/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jake-briningstool/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/r-j-mickens/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/troy-stellato/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jeadyn-lukus/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/sage-ennis/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/peter-woods/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/paul-tyson/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/tj-parker/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/tyler-davis/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/brannon-spector/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/trent-pearman/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/shelton-lewis/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/ronan-hanafin/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jahiem-lawson/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/myles-oliver/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/colby-shaw/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/christopher-vizzina/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/wade-woodaz/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/hunter-helms/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/kylon-griffin/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/demonte-capehart/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/keith-adams-jr/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/domonique-thomas/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/avieon-terrell/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jarvis-green/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/kobe-mccloud/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/cole-turner/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/dee-crayton/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/peyton-streko/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/toriano-pride-jr/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/tyler-venables/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/hamp-greene/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jalyn-phillips/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/blackmon-huckabee-jr/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jay-haynes/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/misun-kelley/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/branden-strozier/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/davian-sullivan/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/kylen-webb/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/rob-billings/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/tristen-rigby/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jamal-anderson/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/wise-segars-jr/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/griffin-batt/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/ruke-orhorhoro/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/armon-mason/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/kevin-mcneal/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/austin-randall/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/joseph-flesch/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/quinn-castner/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/khalil-barnes/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jacob-hendricks/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/peter-nearn/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/robert-gunn-iii/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/aidan-swanson/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/bubba-mcatee/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/brodey-conn/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jonathan-weitz/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/caleb-nix/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/david-ojiegbe/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/riggs-faulkenberry/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/will-blackston/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/banks-pope/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/cade-denhoff/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/philip-florenzo/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/vic-burley/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jaden-kinard/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/hogan-morton/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/boston-miller/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/walt-smith/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/collin-sadler/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/fletcher-cothran/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jaden-murray/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/peyton-pitts/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/ryan-linthicum/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/ian-reed/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jeremiah-trotter-jr/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/payton-page/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/harris-sewell/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/will-putnam/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/reed-morrissey/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jackson-hall/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/chandler-mcmaster/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/holden-caspersen/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/evan-mccutchen/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/dietrick-pennington/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/bryce-smith/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/walker-parks/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/chapman-pendergrass/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/nathan-brooks/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/will-boggs/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/sam-judy/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/mason-johnstone/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/tristan-leigh/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/zack-owens/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/bryn-tucker/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/marcus-tate/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/trent-howard/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/john-williams/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/mitchell-mayes/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/blake-miller/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jake-norris/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/beaux-collins/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/olsen-patt-henry/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jackson-crosby/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/hampton-earle/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/markus-dixon/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/charlie-johnson/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/tristan-martinez/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/michael-mankaka/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/clay-swinney/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/zach-jackson/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jack-smith/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/stephiylan-green/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/zaire-patterson/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/levi-matthews/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/caden-story/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/jaheim-scott/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/patrick-swygert/",
+                               "https://clemsontigers.com/sports/football/roster/season/2023/a-j-hoffler/"
+                ]
+                for player_url in player_urls:
+                    try:
+                        response = requests.get(player_url)
+                        response.raise_for_status()
+
+                        soup = BeautifulSoup(response.content, "html.parser")
+
+                        player_name_with_number = soup.find("div", class_="profile__title").find("h1").string.strip()
+                        player_name = player_name_with_number.split('\xa0')[1]
+                        position = soup.find("div", class_="info__name", string="Position:").find_next("div", class_="info__value").string.strip()
+                        class_year = soup.find("div", class_="info__name", string="Class:").find_next("div", class_="info__value").string.strip()
+                        hometown = soup.find("div", class_="info__name", string="Hometown:").find_next("div", class_="info__value").string.strip()
+                        high_school = soup.find("div", class_="info__name", string="High School:").find_next("div", class_="info__value").string.strip()
+
+                        writer.writerow(["Clemson", player_name, position, class_year, hometown, high_school])
+                    
+                    except requests.exceptions.HTTPError as errh:
+                        print(f"HTTP Error: {errh}")
+                        print(f"Failed to retrieve the web page ({url}). Status code:", response.status_code)
+                    except Exception as err:
+                        print(f"An error occurred while processing {url}: {err}")
 
         except requests.exceptions.HTTPError as errh:
             print(f"HTTP Error: {errh}")
