@@ -19,7 +19,7 @@ urls = [
     "https://scarletknights.com/sports/football/roster",
     "https://uwbadgers.com/sports/football/roster",
     "https://bceagles.com/sports/football/roster",
-    #"https://clemsontigers.com/sports/football/roster/", - missing high school
+    #"https://clemsontigers.com/sports/football/roster/"
     "https://goduke.com/sports/football/roster",
     #"https://seminoles.com/sports/football/roster/2023-24",
     #"https://ramblinwreck.com/sports/m-footbl/roster/",
