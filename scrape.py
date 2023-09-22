@@ -55,7 +55,7 @@ urls = [
     "https://gostanford.com/sports/football/roster",
     "https://uclabruins.com/sports/football/roster",
     "https://usctrojans.com/sports/football/roster",
-    "https://utahutes.com/sports/football/roster",
+    #"https://utahutes.com/sports/football/roster",
     "https://gohuskies.com/sports/football/roster",
     "https://wsucougars.com/sports/football/roster",
     "https://rolltide.com/sports/football/roster",
@@ -94,9 +94,11 @@ with open("football_roster.csv", mode="w", newline="", encoding="utf-8") as csv_
             # Extract the school name from the <title> tag within the <head> section
             title_tag = soup.find("title")
             if title_tag:
-                school_name = title_tag.text.strip()  # Extract the entire text of the title tag
+                school_name = title_tag.text.strip()
+                if school_name == "Vite App":
+                    school_name = "Indiana"
             else:
-                school_name = "Unknown"  # If title tag is not found, use "Unknown"
+                school_name = "Unknown" 
    
             # First pass: Maryland template
             player_details = soup.find_all("div", class_="s-person-details")
