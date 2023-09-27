@@ -1770,12 +1770,36 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xpYnJhcmllc1xubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGdvb2dsZXNoZWV0czQpXG5saWJyYXJ5KGphbml0b3IpXG4jbGlicmFyeSh0aWR5Y2Vuc3VzKVxuI2xpYnJhcnkobHVicmlkYXRlKVxuI2luc3RhbGwucGFja2FnZXMoXCJnb29nbGVzaGVldHM0XCIpXG4jaW5zdGFsbC5wYWNrYWdlcyhcImlwdW1zclwiKVxuI2xpYnJhcnkoaXB1bXNyKVxuXG4jQXV0aGVudGljYXRpbmcgd2l0aCBHb29nbGUgYWNjb3VudFxuI2dzNF9hdXRoKClcblxuYGBgIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xpYnJhcmllc1xubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
 <pre class="r"><code>#libraries
-library(tidyverse)
-library(googlesheets4)
-library(janitor)
-#library(tidycensus)
+library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4yIOKUgOKUgOKclCBnZ3Bsb3QyIDMuMy42ICAgICAg4pyUIHB1cnJyICAgMS4wLjIgXG7inJQgdGliYmxlICAzLjEuOCAgICAgIOKclCBkcGx5ciAgIDEuMC4xMFxu4pyUIHRpZHlyICAgMS4yLjEgICAgICDinJQgc3RyaW5nciAxLjQuMSBcbuKclCByZWFkciAgIDIuMS40ICAgICAg4pyUIGZvcmNhdHMgMC41LjIg4pSA4pSAIENvbmZsaWN0cyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlX2NvbmZsaWN0cygpIOKUgOKUgFxu4pyWIGRwbHlyOjpmaWx0ZXIoKSBtYXNrcyBzdGF0czo6ZmlsdGVyKClcbuKcliBkcGx5cjo6bGFnKCkgICAgbWFza3Mgc3RhdHM6OmxhZygpXG4ifQ== -->
+<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+── Attaching packages ──────────────────────────────────── tidyverse 1.3.2 ──✔ ggplot2 3.3.6      ✔ purrr   1.0.2 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.4.1 
+✔ readr   2.1.4      ✔ forcats 0.5.2 ── Conflicts ─────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnb29nbGVzaGVldHM0KVxubGlicmFyeShqYW5pdG9yKVxuYGBgIn0= -->
+<pre class="r"><code>library(googlesheets4)
+library(janitor)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYamFuaXRvcuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBjaGlzcS50ZXN0LCBmaXNoZXIudGVzdFxuIn0= -->
+<pre><code>
+Attaching package: ‘janitor’
+
+The following objects are masked from ‘package:stats’:
+
+    chisq.test, fisher.test</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xpYnJhcnkodGlkeWNlbnN1cylcbiNsaWJyYXJ5KGx1YnJpZGF0ZSlcbiNpbnN0YWxsLnBhY2thZ2VzKFwiZ29vZ2xlc2hlZXRzNFwiKVxuI2luc3RhbGwucGFja2FnZXMoXCJpcHVtc3JcIilcbiNsaWJyYXJ5KGlwdW1zcilcblxuI0F1dGhlbnRpY2F0aW5nIHdpdGggR29vZ2xlIGFjY291bnRcbiNnczRfYXV0aCgpXG5cbmBgYCJ9 -->
+<pre class="r"><code>#library(tidycensus)
 #library(lubridate)
 #install.packages(&quot;googlesheets4&quot;)
 #install.packages(&quot;ipumsr&quot;)
@@ -1789,43 +1813,105 @@ library(janitor)
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jTG9hZCBBc3BlbiBJbnN0aXR1dGUgcGFydGljaXBhdGlvbiByYXRlIGRhdGFcblxuYWdlXzZfMTIgPC0gcmVhZF9zaGVldChcImh0dHBzOi8vZG9jcy5nb29nbGUuY29tL3NwcmVhZHNoZWV0cy9kLzFBdkE4cGhzUmdEaDlBWGowc01lSDF6WlF0akpQOUpELThBMkFIOVlyQnpZL2VkaXQjZ2lkPTBcIiwgc2hlZXQgPSBcIkFnZXMgNi0xMlwiKVxuXG5hZ2VfMTNfMTcgPC0gcmVhZF9zaGVldChcImh0dHBzOi8vZG9jcy5nb29nbGUuY29tL3NwcmVhZHNoZWV0cy9kLzFBdkE4cGhzUmdEaDlBWGowc01lSDF6WlF0akpQOUpELThBMkFIOVlyQnpZL2VkaXQjZ2lkPTBcIiwgc2hlZXQgPSBcIkFnZXMgMTMtMTdcIikgXG5cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jTG9hZCBBc3BlbiBJbnN0aXR1dGUgcGFydGljaXBhdGlvbiByYXRlIGRhdGFcblxuYWdlXzZfMTIgPC0gcmVhZF9zaGVldChcImh0dHBzOi8vZG9jcy5nb29nbGUuY29tL3NwcmVhZHNoZWV0cy9kLzFBdkE4cGhzUmdEaDlBWGowc01lSDF6WlF0akpQOUpELThBMkFIOVlyQnpZL2VkaXQjZ2lkPTBcIiwgc2hlZXQgPSBcIkFnZXMgNi0xMlwiKVxuYGBgIn0= -->
 <pre class="r"><code>
 #Load Aspen Institute participation rate data
 
-age_6_12 &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1AvA8phsRgDh9AXj0sMeH1zZQtjJP9JD-8A2AH9YrBzY/edit#gid=0&quot;, sheet = &quot;Ages 6-12&quot;)
-
-age_13_17 &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1AvA8phsRgDh9AXj0sMeH1zZQtjJP9JD-8A2AH9YrBzY/edit#gid=0&quot;, sheet = &quot;Ages 13-17&quot;) 
-</code></pre>
+age_6_12 &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1AvA8phsRgDh9AXj0sMeH1zZQtjJP9JD-8A2AH9YrBzY/edit#gid=0&quot;, sheet = &quot;Ages 6-12&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxheWVyX2NoZWNrIDwtIGZvb3RiYWxsX3Jvc3RlcnMgJT4lXG4gIGdyb3VwX2J5KG5hbWUsIHNjaG9vbCkgJT4lXG4gIHN1bW1hcmlzZSh0b3RhbCA9IG4oKSkgJT4lXG4gIGFycmFuZ2UoZGVzYyh0b3RhbCkpXG5cbmBgYCJ9 -->
-<pre class="r"><code>player_check &lt;- football_rosters %&gt;%
-  group_by(name, school) %&gt;%
-  summarise(total = n()) %&gt;%
-  arrange(desc(total))
-</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGdvb2dsZXNoZWV0czQgcGFja2FnZSBpcyByZXF1ZXN0aW5nIGFjY2VzcyB0byB5b3VyIEdvb2dsZSBhY2NvdW50LlxuRW50ZXIgJzEnIHRvIHN0YXJ0IGEgbmV3IGF1dGggcHJvY2VzcyBvciBzZWxlY3QgYSBwcmUtYXV0aG9yaXplZCBhY2NvdW50LlxuMTogU2VuZCBtZSB0byB0aGUgYnJvd3NlciBmb3IgYSBuZXcgYXV0aCBwcm9jZXNzLlxuMjogc2JhbnNpbEB1bWQuZWR1XG4ifQ== -->
+<pre><code>The googlesheets4 package is requesting access to your Google account.
+Enter &#39;1&#39; to start a new auth process or select a pre-authorized account.
+1: Send me to the browser for a new auth process.
+2: sbansil@umd.edu</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuMlxuYGBgIn0= -->
+<pre class="r"><code>2</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ25hbWUnLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
-<pre><code>`summarise()` has grouped output by &#39;name&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiQXV0by1yZWZyZXNoaW5nIHN0YWxlIE9BdXRoIHRva2VuLlxu4pyUIFJlYWRpbmcgZnJvbSBBc3BlbiBJbnN0aXR1dGUgcGFydGljaXBhdGlvbiByYXRlIGRhdGEuXG7inJQgUmFuZ2UgJydBZ2VzIDYtMTInJy5cbiJ9 -->
+<pre><code>Auto-refreshing stale OAuth token.
+✔ Reading from Aspen Institute participation rate data.
+✔ Range &#39;&#39;Ages 6-12&#39;&#39;.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWdlXzEzXzE3IDwtIHJlYWRfc2hlZXQoXCJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9zcHJlYWRzaGVldHMvZC8xQXZBOHBoc1JnRGg5QVhqMHNNZUgxelpRdGpKUDlKRC04QTJBSDlZckJ6WS9lZGl0I2dpZD0wXCIsIHNoZWV0ID0gXCJBZ2VzIDEzLTE3XCIpIFxuYGBgIn0= -->
+<pre class="r"><code>age_13_17 &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1AvA8phsRgDh9AXj0sMeH1zZQtjJP9JD-8A2AH9YrBzY/edit#gid=0&quot;, sheet = &quot;Ages 13-17&quot;) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoi4pyUIFJlYWRpbmcgZnJvbSBBc3BlbiBJbnN0aXR1dGUgcGFydGljaXBhdGlvbiByYXRlIGRhdGEuXG7inJQgUmFuZ2UgJydBZ2VzIDEzLTE3JycuXG4ifQ== -->
+<pre><code>✔ Reading from Aspen Institute participation rate data.
+✔ Range &#39;&#39;Ages 13-17&#39;&#39;.</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIExvYWQgQ2Vuc3VzIEFQSSBrZXlcblxuU3lzLnNldGVudihDRU5TVVNfQVBJX0tFWSA9IFwiNWNiMmI5YzYyOGExZDEzMjljNWJmNGQzNmZlNDQzNWM2NTAxZWZjOFwiLCBvdmVyd3JpdGUgPSBUUlVFKVxuXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jTG9hZCBmb290YmFsbCByb3N0ZXIgc2NyYXBlci4gQWxzbyBkaWQgc29tZSBjbGVhbmluZyBmb3Igc3BlY2lhbCBjYXNlcyBoZXJlLiBGb3IgdGhlIHBsYXllcnMgd2hvIHdlcmUgbWlzc2luZyBob21ldG93biBpbmZvcm1hdGlvbiwgdGhpcyB3YXMgb2J0YWluZWQgYnkgbG9va2luZyBhdCByb3N0ZXJzIGZyb20gcHJldmlvdXMgeWVhcnMuXG5mb290YmFsbF9yb3N0ZXJzIDwtIHJlYWRfY3N2KFwiZm9vdGJhbGxfcm9zdGVyLmNzdlwiKSAlPiVcbiAgY2xlYW5fbmFtZXMoKSAlPiVcbiAgbXV0YXRlKGhvbWV0b3duID0gY2FzZV93aGVuKFxuICAgIGhvbWV0b3duID09IFwiUG9tcGFubywgQmVhY2gsIEZsYS5cIiB+IFwiUG9tcGFubyBCZWFjaCwgRmxhLlwiLFxuICAgIGhvbWV0b3duID09IFwiTGl2ZW1vcmUgQ2FsaWYuXCIgfiBcIkxpdmVtb3JlLCBDYWxpZi5cIixcbiAgICBob21ldG93biA9PSBcIldhc2hpbmd0b24gRC5DLlwiIH4gXCJXYXNoaW5ndG9uLCBELkMuXCIsXG4gICAgaG9tZXRvd24gPT0gXCJUYW1wYS4gRmxhLlwiIH4gXCJUYW1wYSwgRmxhLlwiLFxuICAgIGhvbWV0b3duID09IFwiVXBwZXIgTWFybGJvcm8uIE1kLlwiIH4gXCJVcHBlciBNYXJsYm9ybywgTWQuXCIsXG4gICAgaG9tZXRvd24gPT0gXCJOb3Jmb2xrLFZhLlwiIH4gXCJOb3Jmb2xrLCBWYS5cIixcbiAgICBob21ldG93biA9PSBcIkJyb254IE4uWS5cIiB+IFwiQnJvbngsIE4uWS5cIixcbiAgICBob21ldG93biA9PSBcIkNvY29hIEZsYS5cIiB+IFwiQ29jb2EsIEZsYS5cIixcbiAgICBob21ldG93biA9PSBcIkplZmZlcnNvblwiIH4gXCJKZWZmZXJzb24gVG93bnNoaXAsIE5KXCIsXG4gICAgaG9tZXRvd24gPT0gXCJNZWxib3VybmVcIiB+IFwiTWVsYm91cm5lLCBGTFwiLFxuICAgIGhvbWV0b3duID09IFwiQ2hpY2Fnb1wiIH4gXCJDaGljYWdvLCBJTFwiLFxuICAgIGhvbWV0b3duID09IFwiQ2luY2lubmF0aVwiIH4gXCJDaW5jaW5uYXRpLCBPSFwiLFxuICAgIGhvbWV0b3duID09IFwiQ2xldmVsYW5kXCIgfiBcIkNsZXZlbGFuZCwgT0hcIixcbiAgICBob21ldG93biA9PSBcIlN0LiBMb3Vpc1wiIH4gXCJTdC4gTG91aXMsIE1PXCIsXG4gICAgaG9tZXRvd24gPT0gXCJJbmdsZXdvb2RcIiB+IFwiSW5nbGV3b29kLCBDQVwiLFxuICAgIFRSVUUgfiBob21ldG93bikpICU+JVxuICBtdXRhdGUoaG9tZXRvd24gPSBjYXNlX3doZW4oXG4gICAgbmFtZSA9PSBcIkZleWlzYXlvIE9sdWxleWVcIiB+IFwiTGFuY2FzdGVyLCBQQVwiLFxuICAgIG5hbWUgPT0gXCJLeWxlIFZhY2NhcmVsbGFcIiB+IFwiRmFpcmZpZWxkLCBDVFwiLFxuICAgIFRSVUUgfiBob21ldG93bikpXG5gYGAifQ== -->
 <pre class="r"><code>
-# Load Census API key
+#Load football roster scraper. Also did some cleaning for special cases here. For the players who were missing hometown information, this was obtained by looking at rosters from previous years.
+football_rosters &lt;- read_csv(&quot;football_roster.csv&quot;) %&gt;%
+  clean_names() %&gt;%
+  mutate(hometown = case_when(
+    hometown == &quot;Pompano, Beach, Fla.&quot; ~ &quot;Pompano Beach, Fla.&quot;,
+    hometown == &quot;Livemore Calif.&quot; ~ &quot;Livemore, Calif.&quot;,
+    hometown == &quot;Washington D.C.&quot; ~ &quot;Washington, D.C.&quot;,
+    hometown == &quot;Tampa. Fla.&quot; ~ &quot;Tampa, Fla.&quot;,
+    hometown == &quot;Upper Marlboro. Md.&quot; ~ &quot;Upper Marlboro, Md.&quot;,
+    hometown == &quot;Norfolk,Va.&quot; ~ &quot;Norfolk, Va.&quot;,
+    hometown == &quot;Bronx N.Y.&quot; ~ &quot;Bronx, N.Y.&quot;,
+    hometown == &quot;Cocoa Fla.&quot; ~ &quot;Cocoa, Fla.&quot;,
+    hometown == &quot;Jefferson&quot; ~ &quot;Jefferson Township, NJ&quot;,
+    hometown == &quot;Melbourne&quot; ~ &quot;Melbourne, FL&quot;,
+    hometown == &quot;Chicago&quot; ~ &quot;Chicago, IL&quot;,
+    hometown == &quot;Cincinnati&quot; ~ &quot;Cincinnati, OH&quot;,
+    hometown == &quot;Cleveland&quot; ~ &quot;Cleveland, OH&quot;,
+    hometown == &quot;St. Louis&quot; ~ &quot;St. Louis, MO&quot;,
+    hometown == &quot;Inglewood&quot; ~ &quot;Inglewood, CA&quot;,
+    TRUE ~ hometown)) %&gt;%
+  mutate(hometown = case_when(
+    name == &quot;Feyisayo Oluleye&quot; ~ &quot;Lancaster, PA&quot;,
+    name == &quot;Kyle Vaccarella&quot; ~ &quot;Fairfield, CT&quot;,
+    TRUE ~ hometown))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogT25lIG9yIG1vcmUgcGFyc2luZyBpc3N1ZXMsIGNhbGwgYHByb2JsZW1zKClgIG9uIHlvdXIgZGF0YSBmcmFtZSBmb3JcbmRldGFpbHMsIGUuZy46XG4gIGRhdCA8LSB2cm9vbSguLi4pXG4gIHByb2JsZW1zKGRhdClSb3dzOiA4MTk1IENvbHVtbnM6IDbilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgKDYpOiBTY2hvb2wsIE5hbWUsIFBvc2l0aW9uLCBDbGFzcywgSG9tZXRvd24sIEhpZ2ggU2Nob29sXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for
+details, e.g.:
+  dat &lt;- vroom(...)
+  problems(dat)Rows: 8195 Columns: 6── Column specification ────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+chr (6): School, Name, Position, Class, Hometown, High School
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0NoZWNraW5nIHRvIHNlZSB0aGF0IHdlIGhhdmUgNjggc2Nob29scyBhbmQgdGhlIHBsYXllciBjb3VudHMgZm9yIGVhY2ggc2Nob29sXG5zY2hvb2xfY2hlY2sgPC0gZm9vdGJhbGxfcm9zdGVycyAlPiVcbiAgZ3JvdXBfYnkoc2Nob29sKSAlPiVcbiAgc3VtbWFyaXNlKHRvdGFsX3BsYXllcnMgPSBuKCkpICU+JVxuICBhcnJhbmdlKHRvdGFsX3BsYXllcnMpXG5cbiNDaGVja2luZyB0byBtYWtlIHN1cmUgdGhlcmUgYXJlIG5vIGR1cGxpY2F0ZSBwbGF5ZXJzXG5wbGF5ZXJfY2hlY2sgPC0gZm9vdGJhbGxfcm9zdGVycyAlPiVcbiAgZ3JvdXBfYnkobmFtZSwgc2Nob29sKSAlPiVcbiAgc3VtbWFyaXNlKHRvdGFsID0gbigpKSAlPiVcbiAgYXJyYW5nZShkZXNjKHRvdGFsKSlcbmBgYCJ9 -->
+<pre class="r"><code>#Checking to see that we have 68 schools and the player counts for each school
+school_check &lt;- football_rosters %&gt;%
+  group_by(school) %&gt;%
+  summarise(total_players = n()) %&gt;%
+  arrange(total_players)
 
-Sys.setenv(CENSUS_API_KEY = &quot;5cb2b9c628a1d1329c5bf4d36fe4435c6501efc8&quot;, overwrite = TRUE)
+#Checking to make sure there are no duplicate players
+player_check &lt;- football_rosters %&gt;%
+  group_by(name, school) %&gt;%
+  summarise(total = n()) %&gt;%
+  arrange(desc(total))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ25hbWUnLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
+<pre><code>`summarise()` has grouped output by &#39;name&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI0NsZWFuaW5nIHN0YXRlc1xuZm9vdGJhbGxfcm9zdGVycyA8LSBmb290YmFsbF9yb3N0ZXJzICU+JVxuICBtdXRhdGUoaG9tZXRvd25fY2xlYW5pbmcgPSBob21ldG93bikgJT4lXG4gIHNlcGFyYXRlKGhvbWV0b3duX2NsZWFuaW5nLCBpbnRvID0gYyhcImhvbWV0b3duX2NpdHlcIiwgXCJob21ldG93bl9zdGF0ZVwiLCBcImhvbWV0b3duX2NvdW50cnlcIiksIHNlcCA9IFwiLCBcIilcblxuYGBgIn0= -->
+<pre class="r"><code>#Cleaning states
+football_rosters &lt;- football_rosters %&gt;%
+  mutate(hometown_cleaning = hometown) %&gt;%
+  separate(hometown_cleaning, into = c(&quot;hometown_city&quot;, &quot;hometown_state&quot;, &quot;hometown_country&quot;), sep = &quot;, &quot;)
 </code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogRXhwZWN0ZWQgMyBwaWVjZXMuIE1pc3NpbmcgcGllY2VzIGZpbGxlZCB3aXRoIGBOQWAgaW4gODE2OCByb3dzIFsxLCAyLCAzLCA0LCA1LCA2LCA3LCA4LCA5LCAxMCwgMTEsIDEyLCAxMywgMTQsIDE1LCAxNiwgMTcsIDE4LCAxOSwgMjAsIC4uLl0uXG4ifQ== -->
+<pre><code>Warning: Expected 3 pieces. Missing pieces filled with `NA` in 8168 rows [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...].</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiWW91dGggRm9vdGJhbGwgRGF0YSBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CiNsaWJyYXJpZXMKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoZ29vZ2xlc2hlZXRzNCkKbGlicmFyeShqYW5pdG9yKQojbGlicmFyeSh0aWR5Y2Vuc3VzKQojbGlicmFyeShsdWJyaWRhdGUpCiNpbnN0YWxsLnBhY2thZ2VzKCJnb29nbGVzaGVldHM0IikKI2luc3RhbGwucGFja2FnZXMoImlwdW1zciIpCiNsaWJyYXJ5KGlwdW1zcikKCiNBdXRoZW50aWNhdGluZyB3aXRoIEdvb2dsZSBhY2NvdW50CiNnczRfYXV0aCgpCgpgYGAKCmBgYHtyfQoKI0xvYWQgQXNwZW4gSW5zdGl0dXRlIHBhcnRpY2lwYXRpb24gcmF0ZSBkYXRhCgphZ2VfNl8xMiA8LSByZWFkX3NoZWV0KCJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9zcHJlYWRzaGVldHMvZC8xQXZBOHBoc1JnRGg5QVhqMHNNZUgxelpRdGpKUDlKRC04QTJBSDlZckJ6WS9lZGl0I2dpZD0wIiwgc2hlZXQgPSAiQWdlcyA2LTEyIikKCmFnZV8xM18xNyA8LSByZWFkX3NoZWV0KCJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9zcHJlYWRzaGVldHMvZC8xQXZBOHBoc1JnRGg5QVhqMHNNZUgxelpRdGpKUDlKRC04QTJBSDlZckJ6WS9lZGl0I2dpZD0wIiwgc2hlZXQgPSAiQWdlcyAxMy0xNyIpIAoKYGBgCgoKYGBge3J9CgojTG9hZCBmb290YmFsbCByb3N0ZXIgc2NyYXBlcgpmb290YmFsbF9yb3N0ZXJzIDwtIHJlYWQuY3N2KCJmb290YmFsbF9yb3N0ZXIuY3N2IikgJT4lCiAgY2xlYW5fbmFtZXMoKQoKI0NoZWNraW5nIHRvIHNlZSB0aGF0IHdlIGhhdmUgNjggc2Nob29scyBhbmQgdGhlIHBsYXllciBjb3VudHMgZm9yIGVhY2ggc2Nob29sCnNjaG9vbF9jaGVjayA8LSBmb290YmFsbF9yb3N0ZXJzICU+JQogIGdyb3VwX2J5KHNjaG9vbCkgJT4lCiAgc3VtbWFyaXNlKHRvdGFsX3BsYXllcnMgPSBuKCkpICU+JQogIGFycmFuZ2UodG90YWxfcGxheWVycykKCiNDaGVja2luZyB0byBtYWtlIHN1cmUgdGhlcmUgYXJlIG5vIGR1cGxpY2F0ZSBwbGF5ZXJzCnBsYXllcl9jaGVjayA8LSBmb290YmFsbF9yb3N0ZXJzICU+JQogIGdyb3VwX2J5KG5hbWUsIHNjaG9vbCkgJT4lCiAgc3VtbWFyaXNlKHRvdGFsID0gbigpKSAlPiUKICBhcnJhbmdlKGRlc2ModG90YWwpKQoKYGBgCgpgYGB7cn0KCiMgTG9hZCBDZW5zdXMgQVBJIGtleQoKU3lzLnNldGVudihDRU5TVVNfQVBJX0tFWSA9ICI1Y2IyYjljNjI4YTFkMTMyOWM1YmY0ZDM2ZmU0NDM1YzY1MDFlZmM4Iiwgb3ZlcndyaXRlID0gVFJVRSkKCmBgYAo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiWW91dGggRm9vdGJhbGwgRGF0YSBBbmFseXNpcyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKYGBge3J9CiNsaWJyYXJpZXMKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoZ29vZ2xlc2hlZXRzNCkKbGlicmFyeShqYW5pdG9yKQojbGlicmFyeSh0aWR5Y2Vuc3VzKQojbGlicmFyeShsdWJyaWRhdGUpCiNpbnN0YWxsLnBhY2thZ2VzKCJnb29nbGVzaGVldHM0IikKI2luc3RhbGwucGFja2FnZXMoImlwdW1zciIpCiNsaWJyYXJ5KGlwdW1zcikKCiNBdXRoZW50aWNhdGluZyB3aXRoIEdvb2dsZSBhY2NvdW50CiNnczRfYXV0aCgpCgojIExvYWQgQ2Vuc3VzIEFQSSBrZXkKU3lzLnNldGVudihDRU5TVVNfQVBJX0tFWSA9ICI1Y2IyYjljNjI4YTFkMTMyOWM1YmY0ZDM2ZmU0NDM1YzY1MDFlZmM4Iiwgb3ZlcndyaXRlID0gVFJVRSkKCmBgYAoKYGBge3J9CgojTG9hZCBBc3BlbiBJbnN0aXR1dGUgcGFydGljaXBhdGlvbiByYXRlIGRhdGEKCmFnZV82XzEyIDwtIHJlYWRfc2hlZXQoImh0dHBzOi8vZG9jcy5nb29nbGUuY29tL3NwcmVhZHNoZWV0cy9kLzFBdkE4cGhzUmdEaDlBWGowc01lSDF6WlF0akpQOUpELThBMkFIOVlyQnpZL2VkaXQjZ2lkPTAiLCBzaGVldCA9ICJBZ2VzIDYtMTIiKQoKYWdlXzEzXzE3IDwtIHJlYWRfc2hlZXQoImh0dHBzOi8vZG9jcy5nb29nbGUuY29tL3NwcmVhZHNoZWV0cy9kLzFBdkE4cGhzUmdEaDlBWGowc01lSDF6WlF0akpQOUpELThBMkFIOVlyQnpZL2VkaXQjZ2lkPTAiLCBzaGVldCA9ICJBZ2VzIDEzLTE3IikgCgpgYGAKCmBgYHtyfQoKI0xvYWQgZm9vdGJhbGwgcm9zdGVyIHNjcmFwZXIuIEFsc28gZGlkIHNvbWUgY2xlYW5pbmcgZm9yIHNwZWNpYWwgY2FzZXMgaGVyZS4gRm9yIHRoZSBwbGF5ZXJzIHdobyB3ZXJlIG1pc3NpbmcgaG9tZXRvd24gaW5mb3JtYXRpb24sIHRoaXMgd2FzIG9idGFpbmVkIGJ5IGxvb2tpbmcgYXQgcm9zdGVycyBmcm9tIHByZXZpb3VzIHllYXJzLgpmb290YmFsbF9yb3N0ZXJzIDwtIHJlYWRfY3N2KCJmb290YmFsbF9yb3N0ZXIuY3N2IikgJT4lCiAgY2xlYW5fbmFtZXMoKSAlPiUKICBtdXRhdGUoaG9tZXRvd24gPSBjYXNlX3doZW4oCiAgICBob21ldG93biA9PSAiUG9tcGFubywgQmVhY2gsIEZsYS4iIH4gIlBvbXBhbm8gQmVhY2gsIEZsYS4iLAogICAgaG9tZXRvd24gPT0gIkxpdmVtb3JlIENhbGlmLiIgfiAiTGl2ZW1vcmUsIENhbGlmLiIsCiAgICBob21ldG93biA9PSAiV2FzaGluZ3RvbiBELkMuIiB+ICJXYXNoaW5ndG9uLCBELkMuIiwKICAgIGhvbWV0b3duID09ICJUYW1wYS4gRmxhLiIgfiAiVGFtcGEsIEZsYS4iLAogICAgaG9tZXRvd24gPT0gIlVwcGVyIE1hcmxib3JvLiBNZC4iIH4gIlVwcGVyIE1hcmxib3JvLCBNZC4iLAogICAgaG9tZXRvd24gPT0gIk5vcmZvbGssVmEuIiB+ICJOb3Jmb2xrLCBWYS4iLAogICAgaG9tZXRvd24gPT0gIkJyb254IE4uWS4iIH4gIkJyb254LCBOLlkuIiwKICAgIGhvbWV0b3duID09ICJDb2NvYSBGbGEuIiB+ICJDb2NvYSwgRmxhLiIsCiAgICBob21ldG93biA9PSAiSmVmZmVyc29uIiB+ICJKZWZmZXJzb24gVG93bnNoaXAsIE5KIiwKICAgIGhvbWV0b3duID09ICJNZWxib3VybmUiIH4gIk1lbGJvdXJuZSwgRkwiLAogICAgaG9tZXRvd24gPT0gIkNoaWNhZ28iIH4gIkNoaWNhZ28sIElMIiwKICAgIGhvbWV0b3duID09ICJDaW5jaW5uYXRpIiB+ICJDaW5jaW5uYXRpLCBPSCIsCiAgICBob21ldG93biA9PSAiQ2xldmVsYW5kIiB+ICJDbGV2ZWxhbmQsIE9IIiwKICAgIGhvbWV0b3duID09ICJTdC4gTG91aXMiIH4gIlN0LiBMb3VpcywgTU8iLAogICAgaG9tZXRvd24gPT0gIkluZ2xld29vZCIgfiAiSW5nbGV3b29kLCBDQSIsCiAgICBUUlVFIH4gaG9tZXRvd24pKSAlPiUKICBtdXRhdGUoaG9tZXRvd24gPSBjYXNlX3doZW4oCiAgICBuYW1lID09ICJGZXlpc2F5byBPbHVsZXllIiB+ICJMYW5jYXN0ZXIsIFBBIiwKICAgIG5hbWUgPT0gIkt5bGUgVmFjY2FyZWxsYSIgfiAiRmFpcmZpZWxkLCBDVCIsCiAgICBUUlVFIH4gaG9tZXRvd24pKQoKI0NoZWNraW5nIHRvIHNlZSB0aGF0IHdlIGhhdmUgNjggc2Nob29scyBhbmQgdGhlIHBsYXllciBjb3VudHMgZm9yIGVhY2ggc2Nob29sCnNjaG9vbF9jaGVjayA8LSBmb290YmFsbF9yb3N0ZXJzICU+JQogIGdyb3VwX2J5KHNjaG9vbCkgJT4lCiAgc3VtbWFyaXNlKHRvdGFsX3BsYXllcnMgPSBuKCkpICU+JQogIGFycmFuZ2UodG90YWxfcGxheWVycykKCiNDaGVja2luZyB0byBtYWtlIHN1cmUgdGhlcmUgYXJlIG5vIGR1cGxpY2F0ZSBwbGF5ZXJzCnBsYXllcl9jaGVjayA8LSBmb290YmFsbF9yb3N0ZXJzICU+JQogIGdyb3VwX2J5KG5hbWUsIHNjaG9vbCkgJT4lCiAgc3VtbWFyaXNlKHRvdGFsID0gbigpKSAlPiUKICBhcnJhbmdlKGRlc2ModG90YWwpKQoKYGBgCmBgYHtyfQoKI0NsZWFuaW5nIHN0YXRlcwpmb290YmFsbF9yb3N0ZXJzIDwtIGZvb3RiYWxsX3Jvc3RlcnMgJT4lCiAgbXV0YXRlKGhvbWV0b3duX2NsZWFuaW5nID0gaG9tZXRvd24pICU+JQogIHNlcGFyYXRlKGhvbWV0b3duX2NsZWFuaW5nLCBpbnRvID0gYygiaG9tZXRvd25fY2l0eSIsICJob21ldG93bl9zdGF0ZSIsICJob21ldG93bl9jb3VudHJ5IiksIHNlcCA9ICIsICIpCgojV2hhdCBraW5kIG9mIHZhbHVlcyBhcmUgd2UgZ2V0dGluZyBpbiBob21ldG93bl9zdGF0ZT8Kc3RhdGVfY2hlY2sgPC0gZm9vdGJhbGxfcm9zdGVycyAlPiUKICBncm91cF9ieShob21ldG93bl9zdGF0ZSkgJT4lCiAgc3VtbWFyaXNlKHRvdGFsID0gbigpKSAlPiUKICBhcnJhbmdlKGhvbWV0b3duX3N0YXRlKQoKI01hbnkgb2YgdGhvc2UgYXJlbid0IFUuUy4gc3RhdGVzLiBMZXQncyBtYWtlIGEgbmV3IGRhdGFmcmFtZSB0aGF0IG9ubHkgaGFzIHBsYXllcnMgZnJvbSB0aGUgNTAgc3RhdGVzOgpleGNsdWRlZF9zdGF0ZXMgPC0gYygiIFdlc3Rlcm4gQXVzdHJhbGlhIiwgIkFsYmVydGEiLCAiQW1lcmljYW4gU2Ftb2EiLCAiQXVzdHJhbGlhIiwgIkJhaGFtYXMiLCAiQmVsZ2l1bSIsICJDYW5hZGEiLCAiQ2hpbmEiLCAiQ29sb21iaWEiLCAiQ29uZ28iLCAiQ291bnR5IEtlcnJ5IiwgIkRlbm1hcmsiLCAiRFIgb2YgdGhlIENvbmdvIiwgIkVuZ2xhbmQiLCAiRmlubGFuZCIsICJGcmFuY2UiLCAiR2Fib24iLCAiR2VybWFueSIsICJHaGFuYSIsICJJcmVsYW5kIiwgIkphcGFuIiwgIk1hbml0b2JhIiwgIk1leGljbyIsICJOLlMuIiwgIk5ldyBTb3V0aCBXYWxlcyIsICJOZXcgWmVhbGFuZCIsICJOaWdlcmlhIiwgIk5TVyIsICJPbnQuIiwgIk9udGFyaW8iLCAiUUMiLCAiUXVlLiIsICJRdWViZWMiLCAiUXXDqWJlYyIsICJRdWVlbnNsYW5kIiwgIlNhc2thdGNoZXdhbiIsICJTZXJiaWEiLCAiU291dGggQWZyaWNhIiwgIlNvdXRoIEF1c3RyYWxpYSIsICJTd2VkZW4iLCAiU3dpdHplcmxhbmQiLCAiVGhlIE5ldGhlcmxhbmRzIiwgIlRvbmdhIiwgIlVuaXRlZCBLaW5nZG9tIiwgIlZpY3RvcmlhIiwgIlZpY3RvcmlhIEFVIiwgIldlc3Rlcm4gU2Ftb2EiKQoKZm9vdGJhbGxfcm9zdGVyc191c2EgPC0gZm9vdGJhbGxfcm9zdGVycyAlPiUKICBmaWx0ZXIoIShob21ldG93bl9zdGF0ZSAlaW4lIGV4Y2x1ZGVkX3N0YXRlcykgfCBpcy5uYShob21ldG93bl9zdGF0ZSkpICU+JQogIG11dGF0ZShob21ldG93bl9zdGF0ZSA9IGNhc2Vfd2hlbigKICAgIGhvbWV0b3duX3N0YXRlID09ICJNYXVpIiB+ICJISSIsCiAgICBob21ldG93bl9zdGF0ZSA9PSAiTmV3IFlvcmsgQ2l0eSIgfiAiTlkiLAogICAgVFJVRSB+IGhvbWV0b3duX3N0YXRlKSkKCiNBbmQgbm93IGxldCdzIHJlY2hlY2sgdGhvc2UgaG9tZXRvd25fc3RhdGUgdmFsdWVzOgpzdGF0ZV9jaGVja191c2EgPC0gZm9vdGJhbGxfcm9zdGVyc191c2EgJT4lCiAgZ3JvdXBfYnkoaG9tZXRvd25fc3RhdGUpICU+JQogIHN1bW1hcmlzZSh0b3RhbCA9IG4oKSkgJT4lCiAgYXJyYW5nZShob21ldG93bl9zdGF0ZSkKCmBgYAo=</div>
 
 
 

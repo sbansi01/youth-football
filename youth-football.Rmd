@@ -17,6 +17,9 @@ library(janitor)
 #Authenticating with Google account
 #gs4_auth()
 
+# Load Census API key
+Sys.setenv(CENSUS_API_KEY = "5cb2b9c628a1d1329c5bf4d36fe4435c6501efc8", overwrite = TRUE)
+
 ```
 
 ```{r}
@@ -29,12 +32,32 @@ age_13_17 <- read_sheet("https://docs.google.com/spreadsheets/d/1AvA8phsRgDh9AXj
 
 ```
 
-
 ```{r}
 
-#Load football roster scraper
-football_rosters <- read.csv("football_roster.csv") %>%
-  clean_names()
+#Load football roster scraper. Also did some cleaning for special cases here. For the players who were missing hometown information, this was obtained by looking at rosters from previous years.
+football_rosters <- read_csv("football_roster.csv") %>%
+  clean_names() %>%
+  mutate(hometown = case_when(
+    hometown == "Pompano, Beach, Fla." ~ "Pompano Beach, Fla.",
+    hometown == "Livemore Calif." ~ "Livemore, Calif.",
+    hometown == "Washington D.C." ~ "Washington, D.C.",
+    hometown == "Tampa. Fla." ~ "Tampa, Fla.",
+    hometown == "Upper Marlboro. Md." ~ "Upper Marlboro, Md.",
+    hometown == "Norfolk,Va." ~ "Norfolk, Va.",
+    hometown == "Bronx N.Y." ~ "Bronx, N.Y.",
+    hometown == "Cocoa Fla." ~ "Cocoa, Fla.",
+    hometown == "Jefferson" ~ "Jefferson Township, NJ",
+    hometown == "Melbourne" ~ "Melbourne, FL",
+    hometown == "Chicago" ~ "Chicago, IL",
+    hometown == "Cincinnati" ~ "Cincinnati, OH",
+    hometown == "Cleveland" ~ "Cleveland, OH",
+    hometown == "St. Louis" ~ "St. Louis, MO",
+    hometown == "Inglewood" ~ "Inglewood, CA",
+    TRUE ~ hometown)) %>%
+  mutate(hometown = case_when(
+    name == "Feyisayo Oluleye" ~ "Lancaster, PA",
+    name == "Kyle Vaccarella" ~ "Fairfield, CT",
+    TRUE ~ hometown))
 
 #Checking to see that we have 68 schools and the player counts for each school
 school_check <- football_rosters %>%
@@ -49,11 +72,33 @@ player_check <- football_rosters %>%
   arrange(desc(total))
 
 ```
-
 ```{r}
 
-# Load Census API key
+#Cleaning states
+football_rosters <- football_rosters %>%
+  mutate(hometown_cleaning = hometown) %>%
+  separate(hometown_cleaning, into = c("hometown_city", "hometown_state", "hometown_country"), sep = ", ")
 
-Sys.setenv(CENSUS_API_KEY = "5cb2b9c628a1d1329c5bf4d36fe4435c6501efc8", overwrite = TRUE)
+#What kind of values are we getting in hometown_state?
+state_check <- football_rosters %>%
+  group_by(hometown_state) %>%
+  summarise(total = n()) %>%
+  arrange(hometown_state)
+
+#Many of those aren't U.S. states. Let's make a new dataframe that only has players from the 50 states:
+excluded_states <- c(" Western Australia", "Alberta", "American Samoa", "Australia", "Bahamas", "Belgium", "Canada", "China", "Colombia", "Congo", "County Kerry", "Denmark", "DR of the Congo", "England", "Finland", "France", "Gabon", "Germany", "Ghana", "Ireland", "Japan", "Manitoba", "Mexico", "N.S.", "New South Wales", "New Zealand", "Nigeria", "NSW", "Ont.", "Ontario", "QC", "Que.", "Quebec", "Québec", "Queensland", "Saskatchewan", "Serbia", "South Africa", "South Australia", "Sweden", "Switzerland", "The Netherlands", "Tonga", "United Kingdom", "Victoria", "Victoria AU", "Western Samoa")
+
+football_rosters_usa <- football_rosters %>%
+  filter(!(hometown_state %in% excluded_states) | is.na(hometown_state)) %>%
+  mutate(hometown_state = case_when(
+    hometown_state == "Maui" ~ "HI",
+    hometown_state == "New York City" ~ "NY",
+    TRUE ~ hometown_state))
+
+#And now let's recheck those hometown_state values:
+state_check_usa <- football_rosters_usa %>%
+  group_by(hometown_state) %>%
+  summarise(total = n()) %>%
+  arrange(hometown_state)
 
 ```
