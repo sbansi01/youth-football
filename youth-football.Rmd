@@ -59,6 +59,11 @@ football_rosters <- read_csv("football_roster.csv") %>%
     name == "Kyle Vaccarella" ~ "Fairfield, CT",
     TRUE ~ hometown))
 
+#Let's also use this as a time to load a state crosswalk we'll use later
+state_crosswalk <- read_csv("state_crosswalk.csv") %>%
+  mutate(state_name_caps = str_to_upper(state_name)) %>%
+  select(state_abb, state_name_caps)
+
 #Checking to see that we have 68 schools and the player counts for each school
 school_check <- football_rosters %>%
   group_by(school) %>%
@@ -100,5 +105,58 @@ state_check_usa <- football_rosters_usa %>%
   group_by(hometown_state) %>%
   summarise(total = n()) %>%
   arrange(hometown_state)
+
+#Let's standardize these suckers to the state postal abbreviation:
+#First, let's try removing punctuation and making everything upper case:
+football_rosters_usa <- football_rosters_usa %>%
+  mutate(hometown_state_first_try = str_to_upper(gsub("[[:punct:]]", "", hometown_state)))
+
+#Second, let's see if we can use our crosswalk:
+football_rosters_usa <- football_rosters_usa %>%
+  left_join(state_crosswalk, by=c("hometown_state_first_try" = "state_name_caps"))
+
+football_rosters_usa <- football_rosters_usa %>%
+  rename(hometown_state_second_try = state_abb)
+
+#Third, let's combine the results of our first two tries and check to see how much that reduced our unique values
+football_rosters_usa <- football_rosters_usa %>%
+  mutate(hometown_state_third_try = ifelse(is.na(hometown_state_second_try), hometown_state_first_try, hometown_state_second_try))
+
+state_check_usa_update <- football_rosters_usa %>%
+  group_by(hometown_state_third_try) %>%
+  summarise(total = n()) %>%
+  arrange(hometown_state_third_try)
+
+#Cool! Now we're down to much fewer state values. Let's manually take care of the rest. How long could that take, right?
+football_rosters_usa <- football_rosters_usa %>%
+  mutate(hometown_state_clean = case_when(
+    hometown_state_third_try == "ALA" ~ "AL",
+    hometown_state_third_try == "ARIZ" ~ "AZ",
+    hometown_state_third_try == "ARK" ~ "AR",
+    hometown_state_third_try == "CALF" | hometown_state_third_try == "CALIF" ~ "CA",
+    hometown_state_third_try == "COL" | hometown_state_third_try == "COLO" ~ "CO",
+    hometown_state_third_try == "CONN" ~ "CT",
+    hometown_state_third_try == "DEL" ~ "DE",
+    hometown_state_third_try == "FLA" ~ "FL",
+    hometown_state_third_try == "ILL" ~ "IL",
+    hometown_state_third_try == "IND" ~ "IN",
+    hometown_state_third_try == "KAN" ~ "KS",
+    hometown_state_third_try == "MASS" ~ "MA",
+    hometown_state_third_try == "MICH" ~ "MI",
+    hometown_state_third_try == "MINN" ~ "MN",
+    hometown_state_third_try == "MISS" ~ "MS",
+    hometown_state_third_try == "MONT" ~ "MT",
+    hometown_state_third_try == "NEB" ~ "NE",
+    hometown_state_third_try == "NEV" ~ "NV",
+    hometown_state_third_try == "OKLA" ~ "OK",
+    hometown_state_third_try == "ORE" ~ "OR",
+    hometown_state_third_try == "PENN" ~ "PA",
+    hometown_state_third_try == "TENN" ~ "TN",
+    hometown_state_third_try == "W VA" | hometown_state_third_try == "WVA" ~ "WV",
+    hometown_state_third_try == "WASH" ~ "WA",
+    hometown_state_third_try == "WIS" | hometown_state_third_try == "WISC" ~ "WI",
+    hometown_state_third_try == "WYO" ~ "WY",
+    TRUE ~ hometown_state_third_try))
+
 
 ```
