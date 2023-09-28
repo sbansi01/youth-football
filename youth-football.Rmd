@@ -166,5 +166,34 @@ football_rosters_usa_states <- football_rosters_usa %>%
   summarise(total_players=n()) %>%
   arrange(desc(total_players))
 
+#Let's try to add in some population data and try to figure out the number of Power 5 football players per 100,000 residents in a state
+#First, let's get ourselves a dataframe that has state postal abbreviations and their most recent ACS state population:
+state_pops_2021 <- get_acs(geography = "state",
+                           variables = "B01003_001",
+                           year = 2021)
+
+state_pops_2021 <- state_pops_2021 %>%
+  clean_names() %>%
+  mutate(name_caps = str_to_upper(name)) %>%
+  mutate(name_caps = case_when(
+    name_caps == "DISTRICT OF COLUMBIA" ~ "WASHINGTON, DC",
+    TRUE ~ name_caps
+  )) %>%
+  left_join(state_crosswalk, by=c("name_caps" = "state_name_caps"))
+
+state_pops_2021 <- state_pops_2021 %>%
+  select(state_abb, estimate) %>%
+    filter(!is.na(state_abb)) #Removed NA value, which was Puerto Rico
+
+# Now, let's join our population data to our state count of football players data:
+football_rosters_usa_states <- football_rosters_usa_states %>%
+  inner_join(state_pops_2021, by=c("hometown_state_clean" = "state_abb"))
+
+football_rosters_usa_states <- football_rosters_usa_states %>%
+  rename(total_pop = estimate)
+
+football_rosters_usa_states <- football_rosters_usa_states %>%
+  mutate(players_per_hundred_thousand = (total_players*100000)/total_pop) %>%
+  arrange(desc(players_per_hundred_thousand))
 
 ```
