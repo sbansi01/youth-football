@@ -193,7 +193,10 @@ football_rosters_usa_states <- football_rosters_usa_states %>%
   rename(total_pop = estimate)
 
 football_rosters_usa_states <- football_rosters_usa_states %>%
-  mutate(players_per_hundred_thousand = (total_players*100000)/total_pop) %>%
+  mutate(players_per_hundred_thousand = round((total_players*100000)/total_pop,1)) %>%
   arrange(desc(players_per_hundred_thousand))
+
+# CSV
+write_csv(football_rosters_usa_states, file = "state_counts.csv")
 
 ```
