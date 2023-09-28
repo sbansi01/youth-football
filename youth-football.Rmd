@@ -79,7 +79,9 @@ player_check <- football_rosters %>%
 ```
 ```{r}
 
-#Cleaning states
+#CLEANING STATE
+
+#Splitting the hometown column so we can work with the state
 football_rosters <- football_rosters %>%
   mutate(hometown_cleaning = hometown) %>%
   separate(hometown_cleaning, into = c("hometown_city", "hometown_state", "hometown_country"), sep = ", ")
@@ -157,6 +159,12 @@ football_rosters_usa <- football_rosters_usa %>%
     hometown_state_third_try == "WIS" | hometown_state_third_try == "WISC" ~ "WI",
     hometown_state_third_try == "WYO" ~ "WY",
     TRUE ~ hometown_state_third_try))
+
+#Okay, so what's the final state breakdown?
+football_rosters_usa_states <- football_rosters_usa %>%
+  group_by(hometown_state_clean) %>%
+  summarise(total_players=n()) %>%
+  arrange(desc(total_players))
 
 
 ```
