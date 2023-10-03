@@ -8,7 +8,7 @@ output: html_notebook
 library(tidyverse)
 library(googlesheets4)
 library(janitor)
-#library(tidycensus)
+library(tidycensus)
 #library(lubridate)
 #install.packages("googlesheets4")
 #install.packages("ipumsr")
@@ -79,7 +79,7 @@ player_check <- football_rosters %>%
 ```
 ```{r}
 
-#CLEANING STATE
+#CLEANING/STANDARDIZING STATE
 
 #Splitting the hometown column so we can work with the state
 football_rosters <- football_rosters %>%
@@ -166,6 +166,12 @@ football_rosters_usa_states <- football_rosters_usa %>%
   summarise(total_players=n()) %>%
   arrange(desc(total_players))
 
+```
+
+```{r}
+
+#STATES WITH POPULATION DATA
+
 #Let's try to add in some population data and try to figure out the number of Power 5 football players per 100,000 residents in a state
 #First, let's get ourselves a dataframe that has state postal abbreviations and their most recent ACS state population:
 state_pops_2021 <- get_acs(geography = "state",
@@ -200,3 +206,16 @@ football_rosters_usa_states <- football_rosters_usa_states %>%
 write_csv(football_rosters_usa_states, file = "state_counts.csv")
 
 ```
+
+```{r}
+
+# CLEANING/STANDARDIZING HOMETOWN
+
+#Maybe the first step is to create a dataframe of the distinct hometown and state values
+distinct_hometowns <- football_rosters_usa %>%
+  group_by(hometown_city, hometown_state_clean) %>%
+  summarise(total = n()) %>%
+  arrange((hometown_city))
+
+```
+
