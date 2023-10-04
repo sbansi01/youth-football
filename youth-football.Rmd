@@ -217,5 +217,8 @@ distinct_hometowns <- football_rosters_usa %>%
   summarise(total = n()) %>%
   arrange((hometown_city))
 
+# CSV
+write_csv(distinct_hometowns, file = "hometowns_to_clean.csv")
+
 ```
 
