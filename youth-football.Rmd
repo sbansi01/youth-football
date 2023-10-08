@@ -281,7 +281,12 @@ city_pops_se_2021 <- city_pops_se_2021 %>%
 
 #Join
 hometowns_se_complete <- distinct_hometowns_se %>%
-  left_join(city_pops_se_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state"))
+  left_join(city_pops_se_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_hundred_thousand = round((total_players*100000)/population,1)) %>%
+  arrange(desc(players_per_hundred_thousand))
+
+# CSV
+write_csv(hometowns_se_complete, file = "hometowns_se.csv")
 
 hometowns_se_complete %>%
   filter(is.na(population))
