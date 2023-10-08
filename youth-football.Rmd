@@ -53,6 +53,8 @@ football_rosters <- read_csv("football_roster.csv") %>%
     hometown == "Cleveland" ~ "Cleveland, OH",
     hometown == "St. Louis" ~ "St. Louis, MO",
     hometown == "Inglewood" ~ "Inglewood, CA",
+    hometown == "Chatworth, Ga." ~ "Chatsworth, Ga.",
+    hometown == "Kingland, Ga." ~ "Kingsland, Ga.",
     TRUE ~ hometown)) %>%
   mutate(hometown = case_when(
     name == "Feyisayo Oluleye" ~ "Lancaster, PA",
@@ -214,20 +216,27 @@ write_csv(football_rosters_usa_states, file = "state_counts.csv")
 
 # CLEANING/STANDARDIZING HOMETOWN
 
-#Maybe the first step is to create a dataframe of the distinct hometown and state values
-distinct_hometowns <- football_rosters_usa %>%
-  group_by(hometown_city, hometown_state_clean) %>%
-  summarise(total = n()) %>%
-  arrange((hometown_city))
-
 # CSV - going to try cleaning this through Open Refine
 #write_csv(distinct_hometowns, file = "hometowns_to_clean.csv")
 
-#Let's see how much the Open Refine clean changed:
-distinct_hometowns_open_refine <- hometowns_open_refine %>%
+#Join our Open Refine dataframe to our dataframe of Power Five players
+hometowns_open_refine_modified <- hometowns_open_refine %>%
+  select(hometown_city, hometown_city_clean, hometown_state_clean)
+
+football_rosters_usa <- football_rosters_usa %>%
+  left_join(hometowns_open_refine_modified, by = c("hometown_city", "hometown_state_clean"))
+
+distinct_hometowns <- football_rosters_usa %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
-  summarise(total = sum(total)) %>%
-  arrange(hometown_city_clean)
+  summarise(total = n()) #THIS WILL LIKELY NEED MORE WORK/CLEANING/CHECKING
+
+#Let's start working on a few states that will likely be consequential for this project: GA, AL, MS
+football_rosters_se <- football_rosters_usa %>%
+  filter(hometown_state_clean == "GA" | hometown_state == "AL" | hometown_state_clean == "MS")
+
+distinct_hometowns_se <- football_rosters_se %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total = n())
 
 ```
 
