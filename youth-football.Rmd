@@ -214,7 +214,7 @@ write_csv(football_rosters_usa_states, file = "state_counts.csv")
 
 ```{r}
 
-# CLEANING/STANDARDIZING HOMETOWN
+# CLEANING/STANDARDIZING HOMETOWN - NEEDS MORE WORK***
 
 # CSV - going to try cleaning this through Open Refine
 #write_csv(distinct_hometowns, file = "hometowns_to_clean.csv")
@@ -228,7 +228,14 @@ football_rosters_usa <- football_rosters_usa %>%
 
 distinct_hometowns <- football_rosters_usa %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
-  summarise(total = n()) #THIS WILL LIKELY NEED MORE WORK/CLEANING/CHECKING
+  summarise(total = n()) #THIS WILL LIKELY NEED MORE WORK/CLEANING/CHECKING***
+
+```
+
+
+```{r}
+
+# SOUTHEAST
 
 #Let's start working on a few states that will likely be consequential for this project: GA, AL, MS
 football_rosters_se <- football_rosters_usa %>%
@@ -236,7 +243,48 @@ football_rosters_se <- football_rosters_usa %>%
 
 distinct_hometowns_se <- football_rosters_se %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
-  summarise(total = n())
+  summarise(total_players = n())
+
+#Let's see if we can grab the populations of every city in GA, AL, and MS
+city_pops_ga_2021 <- get_acs(geography = "place",
+                           variables = "B01003_001",
+                           year = 2021,
+                           state = "GA")
+
+city_pops_al_2021 <- get_acs(geography = "place",
+                           variables = "B01003_001",
+                           year = 2021,
+                           state = "AL")
+
+city_pops_ms_2021 <- get_acs(geography = "place",
+                           variables = "B01003_001",
+                           year = 2021,
+                           state = "MS")
+
+city_pops_se_2021 <- bind_rows(city_pops_ga_2021, city_pops_al_2021, city_pops_ms_2021) %>%
+  clean_names()
+
+#Now let's see if we can modify this city_pops dataframe to prepare it for a join with our roster data
+city_pops_se_2021 <- city_pops_se_2021 %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(state = case_when(
+    state == 'Georgia' ~ "GA",
+    state == 'Alabama' ~ "AL",
+    state == 'Mississippi' ~ "MS"
+  )) %>%
+  mutate(city = gsub("\\b(town|city|CDP)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(city, state, estimate)
+
+city_pops_se_2021 <- city_pops_se_2021 %>%
+  rename(population = estimate)
+
+#Join
+hometowns_se_complete <- distinct_hometowns_se %>%
+  left_join(city_pops_se_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state"))
+
+hometowns_se_complete %>%
+  filter(is.na(population))
 
 ```
 
