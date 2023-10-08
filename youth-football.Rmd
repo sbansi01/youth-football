@@ -64,6 +64,9 @@ state_crosswalk <- read_csv("state_crosswalk.csv") %>%
   mutate(state_name_caps = str_to_upper(state_name)) %>%
   select(state_abb, state_name_caps)
 
+#One more: let's load some hometowns that we passed through and cleaned with Open Refine
+hometowns_open_refine <- read_csv("hometowns_open_refine.csv")
+
 #Checking to see that we have 68 schools and the player counts for each school
 school_check <- football_rosters %>%
   group_by(school) %>%
@@ -217,8 +220,14 @@ distinct_hometowns <- football_rosters_usa %>%
   summarise(total = n()) %>%
   arrange((hometown_city))
 
-# CSV
-write_csv(distinct_hometowns, file = "hometowns_to_clean.csv")
+# CSV - going to try cleaning this through Open Refine
+#write_csv(distinct_hometowns, file = "hometowns_to_clean.csv")
+
+#Let's see how much the Open Refine clean changed:
+distinct_hometowns_open_refine <- hometowns_open_refine %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total = sum(total)) %>%
+  arrange(hometown_city_clean)
 
 ```
 
