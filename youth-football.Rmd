@@ -56,6 +56,7 @@ football_rosters <- read_csv("football_roster.csv") %>%
     hometown == "Chatworth, Ga." ~ "Chatsworth, Ga.",
     hometown == "Kingland, Ga." ~ "Kingsland, Ga.",
     hometown == "East Cobb, GA" ~ "Marietta, GA",
+    hometown == "Platville, Ala." ~ "Prattville, Ala.",
     TRUE ~ hometown)) %>%
   mutate(hometown = case_when(
     name == "Feyisayo Oluleye" ~ "Lancaster, PA",
@@ -300,7 +301,11 @@ rex_pop_2021 <- data.frame(city = "Rex", state = "GA", population = 17522) #obta
 
 sublinga_pop_2021 <- data.frame(city = "Subligna", state = "GA", population = 1538) #obtained using block group from https://censusreporter.org/profiles/15000US130550101002-bg-2-tract-101-chattooga-ga/
 
-city_pops_se_2021 <- bind_rows(city_pops_se_2021, ellenwood_pop_2021, highland_pop_2021, nesbit_pop_2021, rabun_pop_2021, rex_pop_2021, sublinga_pop_2021)
+friendship_pop_2021 <- data.frame(city = "Friendship", state = "MS", population = 2430) #obtained using population of nearby Collins, MS, where the player went to HS https://censusreporter.org/profiles/16000US2815140-collins-ms/
+
+watson_pop_2021 <- data.frame(city = "Watson", state = "AL", population = 1252) #obtained using population of nearby Brookside, AL, which seems to include Watson https://censusreporter.org/profiles/16000US0109736-brookside-al/
+
+city_pops_se_2021 <- bind_rows(city_pops_se_2021, ellenwood_pop_2021, highland_pop_2021, nesbit_pop_2021, rabun_pop_2021, rex_pop_2021, sublinga_pop_2021, friendship_pop_2021, watson_pop_2021)
 
 #Join
 hometowns_se_complete <- distinct_hometowns_se %>%
