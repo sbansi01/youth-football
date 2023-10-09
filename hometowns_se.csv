@@ -41,6 +41,7 @@ Loganville,GA,10,13810,72.4
 Mount Olive,MS,1,1408,71
 Monticello,MS,1,1411,70.9
 Columbia,MS,4,5998,66.7
+Robins AFB,GA,1,1557,64.2
 Covington,GA,9,14065,64
 Hogansville,GA,2,3224,62
 Itta Bena,MS,1,1614,62
@@ -55,6 +56,7 @@ Dawsonville,GA,2,3594,55.6
 Ocilla,GA,2,3696,54.1
 Swainsboro,GA,4,7430,53.8
 Tyrone,GA,4,7615,52.5
+Ellijay,GA,1,1935,51.7
 Gordon,GA,1,1945,51.4
 Oxford,GA,1,2022,49.5
 Hampton,GA,4,8166,49
@@ -62,9 +64,9 @@ Sumrall,MS,1,2043,48.9
 Kennesaw,GA,16,33036,48.4
 Homerville,GA,1,2123,47.1
 Sardis,MS,1,2150,46.5
+Marietta,GA,28,60962,45.9
 Hartwell,GA,2,4432,45.1
 Acworth,GA,10,22330,44.8
-Marietta,GA,27,60962,44.3
 Mount Vernon,GA,1,2259,44.3
 Flora,MS,1,2265,44.2
 Philadelphia,MS,3,7107,42.2
@@ -84,6 +86,7 @@ Lawrenceville,GA,11,30299,36.3
 Powder Springs,GA,6,16698,35.9
 Donalsonville,GA,1,2808,35.6
 Poplarville,MS,1,2837,35.2
+Bloomingdale,GA,1,2866,34.9
 Fayetteville,GA,6,18633,32.2
 Nicholls,GA,1,3124,32
 Jefferson,GA,4,12727,31.4
@@ -110,6 +113,7 @@ Florence,MS,1,4531,22.1
 Toccoa,GA,2,9048,22.1
 Kingsland,GA,4,18217,22
 Dallas,GA,3,13704,21.9
+Ellenwood,GA,9,41037,21.9
 Madison,MS,6,27459,21.9
 Gainesville,GA,9,41730,21.6
 Waycross,GA,3,13898,21.6
@@ -140,6 +144,7 @@ Atlanta,GA,80,492204,16.3
 Moss Point,MS,2,12282,16.3
 Valdosta,GA,9,55417,16.2
 Brandon,MS,4,24887,16.1
+McRae,GA,1,6212,16.1
 Eatonton,GA,1,6278,15.9
 Thomasville,GA,3,18844,15.9
 Barnesville,GA,1,6335,15.8
@@ -177,6 +182,7 @@ Picayune,MS,1,11777,8.5
 Horn Lake,MS,2,26623,7.5
 Greenwood,MS,1,14521,6.9
 Riverdale,GA,1,15013,6.7
+St. Simons,GA,1,15865,6.3
 Warner Robins,GA,5,79589,6.3
 Canton,GA,2,32342,6.2
 Laurel,MS,1,17375,5.8
@@ -187,6 +193,8 @@ Tucker,GA,2,36764,5.4
 Evans,GA,2,38452,5.2
 Olive Branch,MS,2,39136,5.1
 Forest Park,GA,1,19856,5
+Johns Creek,GA,4,82068,4.9
+Athens,GA,6,126118,4.8
 Mableton,GA,2,41632,4.8
 Albany,GA,3,70748,4.2
 Ridgeland,MS,1,24330,4.1
@@ -195,21 +203,12 @@ Southaven,MS,2,54141,3.7
 Opelika,AL,1,30810,3.2
 Dalton,GA,1,34255,2.9
 Hinesville,GA,1,34733,2.9
+Macon,GA,4,156711,2.6
 Peachtree City,GA,1,37867,2.6
 Huntsville,AL,1,210081,0.5
 Montgomery,AL,1,201022,0.5
-Athens,GA,6,NA,NA
-East Cobb,GA,1,NA,NA
-Elijay,GA,1,NA,NA
-Ellenwood,GA,9,NA,NA
-Faulkville,GA,1,NA,NA
 Friendship,MS,1,NA,NA
-John's Creek,GA,4,NA,NA
-Macon,GA,4,NA,NA
-McRae,GA,1,NA,NA
 Nesbit,MS,1,NA,NA
 Rabun Gap,GA,1,NA,NA
 Rex,GA,1,NA,NA
-Robins,GA,1,NA,NA
-St. Simons Island,GA,1,NA,NA
 Subligna,GA,1,NA,NA
