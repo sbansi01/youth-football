@@ -243,7 +243,7 @@ distinct_hometowns <- football_rosters_usa %>%
 
 #Let's start working on a few states that will likely be consequential for this project: GA, AL, MS
 football_rosters_se <- football_rosters_usa %>%
-  filter(hometown_state_clean == "GA" | hometown_state == "AL" | hometown_state_clean == "MS")
+  filter(hometown_state_clean == "GA" | hometown_state_clean == "AL" | hometown_state_clean == "MS")
 
 distinct_hometowns_se <- football_rosters_se %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
@@ -290,7 +290,17 @@ city_pops_se_2021 <- city_pops_se_2021 %>%
 
 ellenwood_pop_2021 <- data.frame(city = "Ellenwood", state = "GA", population = 41037) #obtained using zip code from https://censusreporter.org/profiles/86000US30294-30294/
 
-city_pops_se_2021 <- bind_rows(city_pops_se_2021, ellenwood_pop_2021)
+highland_pop_2021 <- data.frame(city = "Highland Home", state = "AL", population = 1423) #obtained using zip code from https://censusreporter.org/profiles/86000US36041-36041/
+
+nesbit_pop_2021 <- data.frame(city = "Nesbit", state = "MS", population = 8906) #obtained using zip code from https://censusreporter.org/profiles/86000US38651-38651/
+
+rabun_pop_2021 <- data.frame(city = "Rabun Gap", state = "GA", population = 1948) #obtained using zip code from https://censusreporter.org/profiles/86000US30568-30568/
+
+rex_pop_2021 <- data.frame(city = "Rex", state = "GA", population = 17522) #obtained using zip code from https://censusreporter.org/profiles/86000US30273-30273/
+
+sublinga_pop_2021 <- data.frame(city = "Subligna", state = "GA", population = 1538) #obtained using block group from https://censusreporter.org/profiles/15000US130550101002-bg-2-tract-101-chattooga-ga/
+
+city_pops_se_2021 <- bind_rows(city_pops_se_2021, ellenwood_pop_2021, highland_pop_2021, nesbit_pop_2021, rabun_pop_2021, rex_pop_2021, sublinga_pop_2021)
 
 #Join
 hometowns_se_complete <- distinct_hometowns_se %>%
@@ -299,7 +309,7 @@ hometowns_se_complete <- distinct_hometowns_se %>%
   arrange(desc(players_per_hundred_thousand))
 
 # CSV
-write_csv(hometowns_se_complete, file = "hometowns_se.csv")
+#write_csv(hometowns_se_complete, file = "hometowns_se.csv")
 
 hometowns_se_complete %>%
   filter(is.na(population))
