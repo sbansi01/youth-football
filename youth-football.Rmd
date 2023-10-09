@@ -315,9 +315,5 @@ hometowns_se_complete <- distinct_hometowns_se %>%
 
 # CSV
 #write_csv(hometowns_se_complete, file = "hometowns_se.csv")
-
-hometowns_se_complete %>%
-  filter(is.na(population))
-
 ```
 

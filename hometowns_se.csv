@@ -2,18 +2,21 @@ hometown_city_clean,hometown_state_clean,total_players,population,players_per_hu
 Biggersville,MS,1,117,854.7
 Sharpsburg,GA,3,519,578
 Silver Creek,MS,1,185,540.5
+Loachapoka,AL,1,207,483.1
 French Camp,MS,1,211,473.9
 Sallis,MS,1,215,465.1
 Independence,MS,1,233,429.2
 Tiger,GA,2,561,356.5
 Bogart,GA,4,1606,249.1
 Lexington,MS,3,1301,230.6
+Leroy,AL,2,885,226
 Lake,MS,1,450,222.2
 Leesburg,GA,6,3407,176.1
 Cumming,GA,12,6886,174.3
 Moreland,GA,1,601,166.4
 Tunica,MS,2,1202,166.4
 Coolidge,GA,1,666,150.2
+Maplesville,AL,1,673,148.6
 Williamson,GA,1,692,144.5
 Buford,GA,23,16811,136.8
 Blairsville,GA,1,825,121.2
@@ -34,15 +37,23 @@ Franklin,GA,1,1056,94.7
 Edwards,MS,1,1060,94.3
 Norman Park,GA,1,1109,90.2
 Grayson,GA,4,4478,89.3
+Ohatchee,AL,1,1161,86.1
 Blue Ridge,GA,1,1167,85.7
+Killen,AL,1,1209,82.7
 Louisville,MS,5,6108,81.9
+Watson,AL,1,1252,79.9
 Stone Mountain,GA,5,6622,75.5
 Loganville,GA,10,13810,72.4
 Mount Olive,MS,1,1408,71
 Monticello,MS,1,1411,70.9
+Highland Home,AL,1,1423,70.3
+Pinson,AL,5,7242,69
 Columbia,MS,4,5998,66.7
+Subligna,GA,1,1538,65
 Robins AFB,GA,1,1557,64.2
 Covington,GA,9,14065,64
+Munford,AL,1,1582,63.2
+Gordo,AL,1,1599,62.5
 Hogansville,GA,2,3224,62
 Itta Bena,MS,1,1614,62
 Byhalia,MS,1,1636,61.1
@@ -50,18 +61,24 @@ Pine Mountain,GA,1,1648,60.7
 Dacula,GA,4,6696,59.7
 Ellaville,GA,1,1697,58.9
 Pelahatchie,MS,1,1733,57.7
+Ashland,AL,1,1741,57.4
 Blackshear,GA,2,3495,57.2
+Evergreen,AL,2,3504,57.1
 Fort Valley,GA,5,8829,56.6
 Dawsonville,GA,2,3594,55.6
 Ocilla,GA,2,3696,54.1
 Swainsboro,GA,4,7430,53.8
 Tyrone,GA,4,7615,52.5
+Reform,AL,1,1929,51.8
 Ellijay,GA,1,1935,51.7
 Gordon,GA,1,1945,51.4
+Rabun Gap,GA,1,1948,51.3
+Theodore,AL,3,5949,50.4
 Oxford,GA,1,2022,49.5
 Hampton,GA,4,8166,49
 Sumrall,MS,1,2043,48.9
 Kennesaw,GA,16,33036,48.4
+Trussville,AL,12,25027,47.9
 Homerville,GA,1,2123,47.1
 Sardis,MS,1,2150,46.5
 Marietta,GA,28,60962,45.9
@@ -69,11 +86,14 @@ Hartwell,GA,2,4432,45.1
 Acworth,GA,10,22330,44.8
 Mount Vernon,GA,1,2259,44.3
 Flora,MS,1,2265,44.2
+Lanett,AL,3,6821,44
 Philadelphia,MS,3,7107,42.2
 Chatsworth,GA,2,4764,42
 McDonough,GA,12,28574,42
+Jackson,AL,2,4774,41.9
 Collins,MS,1,2430,41.2
 Crystal Springs,MS,2,4851,41.2
+Friendship,MS,1,2430,41.2
 Demorest,GA,1,2479,40.3
 Norcross,GA,7,17413,40.2
 Louisville,GA,1,2545,39.3
@@ -81,21 +101,32 @@ Snellville,GA,8,20475,39.1
 Camilla,GA,2,5135,38.9
 Cordele,GA,4,10316,38.8
 Charleston,MS,1,2618,38.2
+Hartford,AL,1,2630,38
 Douglasville,GA,13,34410,37.8
+Roanoke,AL,2,5368,37.3
 Lawrenceville,GA,11,30299,36.3
+Centreville,AL,1,2789,35.9
 Powder Springs,GA,6,16698,35.9
 Donalsonville,GA,1,2808,35.6
 Poplarville,MS,1,2837,35.2
 Bloomingdale,GA,1,2866,34.9
+Pike Road,AL,3,9193,32.6
 Fayetteville,GA,6,18633,32.2
 Nicholls,GA,1,3124,32
 Jefferson,GA,4,12727,31.4
+Brent,AL,1,3214,31.1
+Livingston,AL,1,3227,31
 Fairburn,GA,5,16215,30.8
 Cedartown,GA,3,10091,29.7
 Gray,GA,1,3372,29.7
 Ringgold,GA,1,3410,29.3
 Conyers,GA,5,17101,29.2
+Grand Bay,AL,1,3433,29.1
+Centre,AL,1,3497,28.6
+Wetumpka,AL,2,7025,28.5
+Anniston,AL,6,21455,28
 Canton,MS,3,10955,27.4
+Alabaster,AL,9,33133,27.2
 Brunswick,GA,4,14774,27.1
 Cartersville,GA,6,22626,26.5
 Petal,MS,3,11342,26.5
@@ -104,7 +135,10 @@ Fulton,MS,1,4036,24.8
 Milton,GA,10,40487,24.7
 Alpharetta,GA,16,65187,24.5
 Austell,GA,2,8194,24.4
+Phenix City,AL,9,38216,23.6
+Eufaula,AL,3,12753,23.5
 Forsyth,GA,1,4370,22.9
+Andalusia,AL,2,8764,22.8
 Locust Grove,GA,2,8816,22.7
 Carrollton,GA,6,26773,22.4
 Jonesboro,GA,1,4492,22.3
@@ -117,7 +151,9 @@ Ellenwood,GA,9,41037,21.9
 Madison,MS,6,27459,21.9
 Gainesville,GA,9,41730,21.6
 Waycross,GA,3,13898,21.6
+Birmingham,AL,43,202234,21.3
 Bainbridge,GA,3,14210,21.1
+Pleasant Grove,AL,2,9638,20.8
 Moultrie,GA,3,14621,20.5
 Jesup,GA,2,9902,20.2
 Baxley,GA,1,4988,20
@@ -129,8 +165,10 @@ Roswell,GA,18,92688,19.4
 LaGrange,GA,6,31053,19.3
 Hattiesburg,MS,9,47074,19.1
 Duluth,GA,6,31506,19
+Saraland,AL,3,15942,18.8
 Dublin,GA,3,16067,18.7
 Jackson,GA,1,5435,18.4
+Vestavia Hills,AL,7,38504,18.2
 Eastman,GA,1,5630,17.8
 Pontotoc,MS,1,5621,17.8
 Woodstock,GA,6,33857,17.7
@@ -138,10 +176,12 @@ Tifton,GA,3,17112,17.5
 Sandersville,GA,1,5774,17.3
 Griffin,GA,4,23300,17.2
 Brookhaven,MS,2,11855,16.9
+Monroeville,AL,1,5953,16.8
 Decatur,GA,4,24334,16.4
 Ocean Springs,MS,3,18275,16.4
 Atlanta,GA,80,492204,16.3
 Moss Point,MS,2,12282,16.3
+Opelika,AL,5,30810,16.2
 Valdosta,GA,9,55417,16.2
 Brandon,MS,4,24887,16.1
 McRae,GA,1,6212,16.1
@@ -150,9 +190,12 @@ Thomasville,GA,3,18844,15.9
 Barnesville,GA,1,6335,15.8
 D'Iberville,MS,2,12736,15.7
 Oxford,MS,4,25859,15.5
+Bessemer,AL,4,26171,15.3
 Morrow,GA,1,6572,15.2
 College Park,GA,2,14032,14.3
+Enterprise,AL,4,28242,14.2
 Savannah,GA,21,147930,14.2
+Demopolis,AL,1,7134,14
 Kosciusko,MS,1,7128,14
 Lilburn,GA,2,14424,13.9
 Vicksburg,MS,3,21748,13.8
@@ -160,55 +203,84 @@ Monroe,GA,2,14675,13.6
 Rome,GA,5,37509,13.3
 Tupelo,MS,5,37872,13.2
 Grovetown,GA,2,15608,12.8
+Orange Beach,AL,1,7847,12.7
 Columbus,MS,3,23858,12.6
+Gardendale,AL,2,15920,12.6
 Richmond Hill,GA,2,15900,12.6
+Calera,AL,2,16126,12.4
 Statesboro,GA,4,32400,12.3
 Starkville,MS,3,24578,12.2
+Hoover,AL,11,91371,12
 Villa Rica,GA,2,16863,11.9
 Calhoun,GA,2,16920,11.8
 Milledgeville,GA,2,17278,11.6
+Cullman,AL,2,17892,11.2
 Meridian,MS,4,35625,11.2
+Nesbit,MS,1,8906,11.2
+Daphne,AL,3,27088,11.1
 Fitzgerald,GA,1,9028,11.1
+Tuskegee,AL,1,9125,11
+Montgomery,AL,22,201022,10.9
+Selma,AL,2,18429,10.9
 Stockbridge,GA,3,28567,10.5
-Pleasant Grove,AL,1,9638,10.4
+Spanish Fort,AL,1,9720,10.3
 Thomaston,GA,1,9665,10.3
+Florence,AL,4,39709,10.1
+Mobile,AL,19,187445,10.1
+Tuscaloosa,AL,10,99252,10.1
 Cairo,GA,1,10095,9.9
+Fairfield,AL,1,10108,9.9
 Greenville,MS,3,30175,9.9
 Perry,GA,2,20227,9.9
 Newnan,GA,4,41598,9.6
+Auburn,AL,7,74637,9.4
+Russellville,AL,1,10691,9.4
 Yazoo City,MS,1,10887,9.2
+Oxford,AL,2,22210,9
+Gadsden,AL,3,34317,8.7
 Douglas,GA,1,11680,8.6
 Picayune,MS,1,11777,8.5
+Leeds,AL,1,12385,8.1
+Prattville,AL,3,37977,7.9
+Moody,AL,1,13100,7.6
 Horn Lake,MS,2,26623,7.5
+Madison,AL,4,55551,7.2
 Greenwood,MS,1,14521,6.9
+Chelsea,AL,1,14710,6.8
+Fort Payne,AL,1,14730,6.8
+Gulf Shores,AL,1,14712,6.8
 Riverdale,GA,1,15013,6.7
+Muscle Shoals,AL,1,15969,6.3
 St. Simons,GA,1,15865,6.3
 Warner Robins,GA,5,79589,6.3
 Canton,GA,2,32342,6.2
+Hueytown,AL,1,16694,6
 Laurel,MS,1,17375,5.8
 Jackson,MS,9,156803,5.7
+Rex,GA,1,17522,5.7
 Columbus,GA,11,204366,5.4
 Smyrna,GA,3,55460,5.4
 Tucker,GA,2,36764,5.4
 Evans,GA,2,38452,5.2
 Olive Branch,MS,2,39136,5.1
+Foley,AL,1,20170,5
 Forest Park,GA,1,19856,5
 Johns Creek,GA,4,82068,4.9
 Athens,GA,6,126118,4.8
+Helena,AL,1,20680,4.8
 Mableton,GA,2,41632,4.8
+Fairhope,AL,1,21825,4.6
+Huntsville,AL,9,210081,4.3
 Albany,GA,3,70748,4.2
+Pelham,AL,1,24134,4.1
 Ridgeland,MS,1,24330,4.1
 Sugar Hill,GA,1,24599,4.1
+Homewood,AL,1,26206,3.8
 Southaven,MS,2,54141,3.7
-Opelika,AL,1,30810,3.2
+Northport,AL,1,30334,3.3
 Dalton,GA,1,34255,2.9
 Hinesville,GA,1,34733,2.9
+Dothan,AL,2,70318,2.8
 Macon,GA,4,156711,2.6
 Peachtree City,GA,1,37867,2.6
-Huntsville,AL,1,210081,0.5
-Montgomery,AL,1,201022,0.5
-Friendship,MS,1,NA,NA
-Nesbit,MS,1,NA,NA
-Rabun Gap,GA,1,NA,NA
-Rex,GA,1,NA,NA
-Subligna,GA,1,NA,NA
+Decatur,AL,1,57303,1.7
