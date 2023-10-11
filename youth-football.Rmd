@@ -237,7 +237,7 @@ distinct_hometowns <- football_rosters_usa %>%
 
 ```{r}
 
-# SOUTHEAST
+# SOUTHEAST: GEORGIA, ALABAMA, MISSISSIPPI
 
 #Let's start working on a few states that will likely be consequential for this project: GA, AL, MS
 football_rosters_se <- football_rosters_usa %>%
@@ -369,8 +369,73 @@ hometowns_fl_complete <- distinct_hometowns_fl %>%
   mutate(players_per_hundred_thousand = round((total_players*100000)/population,1)) %>%
   arrange(desc(players_per_hundred_thousand))
 
+#Add to SE
+hometowns_se_complete <- bind_rows(hometowns_se_complete, hometowns_fl_complete) %>%
+  arrange(desc(players_per_hundred_thousand))
+
 # CSV
 #write_csv(hometowns_se_complete, file = "hometowns_se.csv")
 
+```
+
+```{r}
+
+# LOUISIANA
+
+#Let's keep going: LA
+football_rosters_la <- football_rosters_usa %>%
+  filter(hometown_state_clean == "LA")
+
+distinct_hometowns_la <- football_rosters_la %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total_players = n())
+
+#Let's see if we can grab the populations of every city in LA
+city_pops_la_2021 <- get_acs(geography = "place",
+                           variables = "B01003_001",
+                           year = 2021,
+                           state = "LA") %>%
+  clean_names()
+
+#Now let's see if we can modify this city_pops dataframe to prepare it for a join with our roster data
+city_pops_la_2021 <- city_pops_la_2021 %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(state = case_when(
+    state == 'Louisiana' ~ "LA")) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(city, state, estimate)
+
+city_pops_la_2021 <- city_pops_la_2021 %>%
+  rename(population = estimate)
+
+geismar_pop_2021 <- data.frame(city = "Geismar", state = "LA", population = 9795) #obtained using zip code https://censusreporter.org/profiles/86000US70734-70734/
+
+st_amant_pop_2021 <- data.frame(city = "St. Amant", state = "LA", population = 10442) #obtained using zip code https://censusreporter.org/profiles/86000US70774-70774/
+
+vacherie_pop_2021 <- tibble(
+  city = "Vacherie",
+  state = "LA",
+  population = sum(city_pops_la_2021$population[city_pops_la_2021$city %in% c("North Vacherie", "South Vacherie")])
+) #population of Vacherie obtained by summing North and South Vacherie, per https://en.wikipedia.org/wiki/Vacherie,_Louisiana
+
+city_pops_la_2021 <- bind_rows(city_pops_la_2021, geismar_pop_2021, st_amant_pop_2021, vacherie_pop_2021)
+
+#Join
+hometowns_la_complete <- distinct_hometowns_la %>%
+  left_join(city_pops_la_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_hundred_thousand = round((total_players*100000)/population,1)) %>%
+  arrange(desc(players_per_hundred_thousand))
+
+#Add to SE
+hometowns_se_complete <- bind_rows(hometowns_se_complete, hometowns_la_complete) %>%
+  arrange(desc(players_per_hundred_thousand))
+
+#Find and fix NA values
+#hometowns_la_complete %>%
+  #filter(is.na(population))
+
+# CSV
+#write_csv(hometowns_se_complete, file = "hometowns_se.csv")
 
 ```

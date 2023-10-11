@@ -8,23 +8,31 @@ French Camp,MS,1,211,473.9
 Sallis,MS,1,215,465.1
 Independence,MS,1,233,429.2
 Raiford,FL,1,271,369
+St. James,LA,2,544,367.6
 Tiger,GA,2,561,356.5
+Columbia,LA,1,377,265.3
 Bogart,GA,4,1606,249.1
 Lexington,MS,3,1301,230.6
 Leroy,AL,2,885,226
+Napoleonville,LA,1,446,224.2
 Lake,MS,1,450,222.2
+Centerville,LA,1,516,193.8
 Leesburg,GA,6,3407,176.1
 Cumming,GA,12,6886,174.3
 Moreland,GA,1,601,166.4
 Tunica,MS,2,1202,166.4
 Coolidge,GA,1,666,150.2
 Maplesville,AL,1,673,148.6
+Chatham,LA,1,691,144.7
 Williamson,GA,1,692,144.5
 Buford,GA,23,16811,136.8
 Hawthorne,FL,2,1495,133.8
 Bradley Junction,FL,1,784,127.6
+Oak Grove,LA,2,1593,125.5
 Blairsville,GA,1,825,121.2
 Danielsville,GA,1,836,119.6
+Loreauville,LA,1,854,117.1
+Cullen,LA,1,877,114
 Ackerman,MS,2,1766,113.3
 Bethlehem,GA,1,891,112.2
 Hoschton,GA,3,2684,111.8
@@ -32,6 +40,7 @@ White,GA,1,904,110.6
 Taylorsville,MS,2,1917,104.3
 Raleigh,MS,1,961,104.1
 Watkinsville,GA,3,2888,103.9
+Watson,LA,1,965,103.6
 Lucedale,MS,3,2910,103.1
 Riceboro,GA,1,977,102.4
 Rochelle,GA,1,1010,99
@@ -43,6 +52,7 @@ Edwards,MS,1,1060,94.3
 Pahokee,FL,5,5504,90.8
 Norman Park,GA,1,1109,90.2
 Grayson,GA,4,4478,89.3
+Boutte,LA,2,2253,88.8
 Ohatchee,AL,1,1161,86.1
 Blue Ridge,GA,1,1167,85.7
 Greenville,FL,1,1206,82.9
@@ -68,18 +78,22 @@ Hogansville,GA,2,3224,62
 Itta Bena,MS,1,1614,62
 Byhalia,MS,1,1636,61.1
 Pine Mountain,GA,1,1648,60.7
+Clinton,LA,1,1665,60.1
 Dacula,GA,4,6696,59.7
 Ellaville,GA,1,1697,58.9
 Pelahatchie,MS,1,1733,57.7
 Ashland,AL,1,1741,57.4
 Blackshear,GA,2,3495,57.2
+Port Sulphur,LA,1,1749,57.2
 Evergreen,AL,2,3504,57.1
 Fort Valley,GA,5,8829,56.6
 Dawsonville,GA,2,3594,55.6
 Port St. Joe,FL,2,3680,54.3
 Ocilla,GA,2,3696,54.1
 Swainsboro,GA,4,7430,53.8
+Kinder,LA,1,1866,53.6
 Tyrone,GA,4,7615,52.5
+Amite City,LA,2,3840,52.1
 Reform,AL,1,1929,51.8
 Ellijay,GA,1,1935,51.7
 Gordon,GA,1,1945,51.4
@@ -98,14 +112,18 @@ Marietta,GA,28,60962,45.9
 Hartwell,GA,2,4432,45.1
 Acworth,GA,10,22330,44.8
 Mount Vernon,GA,1,2259,44.3
+White Castle,LA,1,2258,44.3
 Flora,MS,1,2265,44.2
 Dunnellon,FL,1,2262,44.2
 Lanett,AL,3,6821,44
+Many,LA,1,2337,42.8
 Graceville,FL,1,2344,42.7
 Philadelphia,MS,3,7107,42.2
 Chatsworth,GA,2,4764,42
 McDonough,GA,12,28574,42
 Jackson,AL,2,4774,41.9
+Haynesville,LA,1,2402,41.6
+Belle Rose,LA,1,2413,41.4
 Collins,MS,1,2430,41.2
 Crystal Springs,MS,2,4851,41.2
 Friendship,MS,1,2430,41.2
@@ -116,7 +134,9 @@ Louisville,GA,1,2545,39.3
 Snellville,GA,8,20475,39.1
 Camilla,GA,2,5135,38.9
 Cordele,GA,4,10316,38.8
+Mandeville,LA,5,12985,38.5
 Charleston,MS,1,2618,38.2
+West Monroe,LA,5,13103,38.2
 Hartford,AL,1,2630,38
 Douglasville,GA,13,34410,37.8
 Roanoke,AL,2,5368,37.3
@@ -130,19 +150,25 @@ Poplarville,MS,1,2837,35.2
 Bloomingdale,GA,1,2866,34.9
 Orange Park,FL,3,8682,34.6
 Madison,FL,1,2903,34.4
+Sunset,LA,1,2976,33.6
 Pike Road,AL,3,9193,32.6
 Lake City,FL,4,12325,32.5
 Fayetteville,GA,6,18633,32.2
 Nicholls,GA,1,3124,32
 Gulf Breeze,FL,2,6249,32
+Vivian,LA,1,3153,31.7
+Lutcher,LA,1,3163,31.6
+Walker,LA,2,6322,31.6
 Jefferson,GA,4,12727,31.4
 Brent,AL,1,3214,31.1
 Livingston,AL,1,3227,31
 Fairburn,GA,5,16215,30.8
+Iowa,LA,1,3329,30
 Ponce Inlet,FL,1,3342,29.9
 Cedartown,GA,3,10091,29.7
 Gray,GA,1,3372,29.7
 Fort Lauderdale,FL,54,182247,29.6
+Farmerville,LA,1,3382,29.6
 Live Oak,FL,2,6771,29.5
 Ringgold,GA,1,3410,29.3
 Conyers,GA,5,17101,29.2
@@ -158,6 +184,7 @@ Brunswick,GA,4,14774,27.1
 Clewiston,FL,2,7447,26.9
 Cartersville,GA,6,22626,26.5
 Petal,MS,3,11342,26.5
+Ponchatoula,LA,2,7729,25.9
 Magee,MS,1,3984,25.1
 Quincy,FL,2,8038,24.9
 Fulton,MS,1,4036,24.8
@@ -170,6 +197,7 @@ Eufaula,AL,3,12753,23.5
 Forsyth,GA,1,4370,22.9
 Brooksville,FL,2,8735,22.9
 Andalusia,AL,2,8764,22.8
+Kaplan,LA,1,4384,22.8
 Locust Grove,GA,2,8816,22.7
 Carrollton,GA,6,26773,22.4
 Jonesboro,GA,1,4492,22.3
@@ -178,6 +206,7 @@ Winona,MS,1,4512,22.2
 Apopka,FL,12,54110,22.2
 Florence,MS,1,4531,22.1
 Toccoa,GA,2,9048,22.1
+New Roads,LA,1,4516,22.1
 Kingsland,GA,4,18217,22
 Dallas,GA,3,13704,21.9
 Ellenwood,GA,9,41037,21.9
@@ -188,8 +217,11 @@ St. Augustine,FL,3,13994,21.4
 Birmingham,AL,43,202234,21.3
 Bainbridge,GA,3,14210,21.1
 Pleasant Grove,AL,2,9638,20.8
+Monroe,LA,10,48105,20.8
+Zachary,LA,4,19278,20.7
 Moultrie,GA,3,14621,20.5
 Pensacola,FL,11,53845,20.4
+Jennings,LA,2,9836,20.3
 Jesup,GA,2,9902,20.2
 Winter Park,FL,6,29672,20.2
 Baxley,GA,1,4988,20
@@ -198,6 +230,7 @@ Cochran,GA,1,5035,19.9
 Milton,FL,2,10040,19.9
 West Park,FL,3,15074,19.9
 Clarksdale,MS,3,15124,19.8
+Vacherie,LA,1,5043,19.8
 Lovejoy,GA,2,10208,19.6
 Roswell,GA,18,92688,19.4
 LaGrange,GA,6,31053,19.3
@@ -222,6 +255,8 @@ Fort Pierce,FL,8,46409,17.2
 Brookhaven,MS,2,11855,16.9
 Monroeville,AL,1,5953,16.8
 South Miami,FL,2,11997,16.7
+Gonzales,LA,2,12080,16.6
+Natchitoches,LA,3,18105,16.6
 Decatur,GA,4,24334,16.4
 Ocean Springs,MS,3,18275,16.4
 Atlanta,GA,80,492204,16.3
@@ -244,11 +279,13 @@ Winter Garden,FL,7,45978,15.2
 Palmetto,FL,2,13304,15
 Minneola,FL,2,13709,14.6
 Rockledge,FL,4,27466,14.6
+Donaldsonville,LA,1,6834,14.6
 Neptune Beach,FL,1,6880,14.5
 College Park,GA,2,14032,14.3
 Enterprise,AL,4,28242,14.2
 Savannah,GA,21,147930,14.2
 Tampa,FL,54,380476,14.2
+St. Gabriel,LA,1,7046,14.2
 Demopolis,AL,1,7134,14
 Kosciusko,MS,1,7128,14
 Lilburn,GA,2,14424,13.9
@@ -261,13 +298,16 @@ Tupelo,MS,5,37872,13.2
 Kissimmee,FL,10,77189,13
 Mims,FL,1,7702,13
 Odessa,FL,1,7682,13
+Breaux Bridge,LA,1,7711,13
 Orlando,FL,39,302968,12.9
+St. Rose,LA,1,7764,12.9
 Grovetown,GA,2,15608,12.8
 Orange Beach,AL,1,7847,12.7
 Columbus,MS,3,23858,12.6
 Gardendale,AL,2,15920,12.6
 Richmond Hill,GA,2,15900,12.6
 Mount Dora,FL,2,15830,12.6
+Marrero,LA,4,31928,12.5
 Calera,AL,2,16126,12.4
 Statesboro,GA,4,32400,12.3
 Vero Beach,FL,2,16254,12.3
@@ -275,6 +315,7 @@ Starkville,MS,3,24578,12.2
 Venice,FL,3,24876,12.1
 Hoover,AL,11,91371,12
 Melbourne,FL,10,83500,12
+Houma,LA,4,33461,12
 Villa Rica,GA,2,16863,11.9
 Zephyrhills,FL,2,16845,11.9
 Calhoun,GA,2,16920,11.8
@@ -294,11 +335,16 @@ Selma,AL,2,18429,10.9
 Bradenton,FL,6,54918,10.9
 Ocoee,FL,5,46562,10.7
 Stockbridge,GA,3,28567,10.5
+Carencro,LA,1,9531,10.5
 Ponte Vedra Beach,FL,3,28721,10.4
+New Iberia,LA,3,28844,10.4
 Spanish Fort,AL,1,9720,10.3
 Thomaston,GA,1,9665,10.3
 Lithia,FL,3,29236,10.3
 Plant City,FL,4,39272,10.2
+Baton Rouge,LA,23,225539,10.2
+Geismar,LA,1,9795,10.2
+New Orleans,LA,39,383974,10.2
 Florence,AL,4,39709,10.1
 Mobile,AL,19,187445,10.1
 Tuscaloosa,AL,10,99252,10.1
@@ -306,20 +352,30 @@ Cairo,GA,1,10095,9.9
 Fairfield,AL,1,10108,9.9
 Greenville,MS,3,30175,9.9
 Perry,GA,2,20227,9.9
+DeRidder,LA,1,10060,9.9
 Plantation,FL,9,92212,9.8
 Richmond Heights,FL,1,10256,9.8
 Newnan,GA,4,41598,9.6
 Fort Walton Beach,FL,2,20805,9.6
+Harvey,LA,2,20942,9.6
+St. Amant,LA,1,10442,9.6
 Auburn,AL,7,74637,9.4
 Russellville,AL,1,10691,9.4
 Yazoo City,MS,1,10887,9.2
+Raceland,LA,1,11002,9.1
 Oxford,AL,2,22210,9
+Covington,LA,1,11155,9
+Lafayette,LA,11,122469,9
 Cocoa Beach,FL,1,11316,8.8
+Woodmere,LA,1,11343,8.8
 Gadsden,AL,3,34317,8.7
+Alexandria,LA,4,45736,8.7
 Douglas,GA,1,11680,8.6
 West Palm Beach,FL,10,115877,8.6
 Picayune,MS,1,11777,8.5
 Pace,FL,2,23527,8.5
+Destrehan,LA,1,11827,8.5
+Crowley,LA,1,11916,8.4
 DeLand,FL,3,36528,8.2
 Leeds,AL,1,12385,8.1
 Riviera Beach,FL,3,37301,8
@@ -334,28 +390,34 @@ Gainesville,FL,10,138741,7.2
 Yulee,FL,1,14217,7
 Greenwood,MS,1,14521,6.9
 Key Biscayne,FL,1,14530,6.9
+Laplace,LA,2,29129,6.9
 Chelsea,AL,1,14710,6.8
 Fort Payne,AL,1,14730,6.8
 Gulf Shores,AL,1,14712,6.8
 Riverdale,GA,1,15013,6.7
 Hollywood,FL,10,152597,6.6
 St. Petersburg,FL,17,258245,6.6
+Thibodaux,LA,1,15242,6.6
+Youngsville,LA,1,15167,6.6
 Ocala,FL,4,62351,6.4
 Muscle Shoals,AL,1,15969,6.3
 St. Simons,GA,1,15865,6.3
 Warner Robins,GA,5,79589,6.3
 Pompano Beach,FL,7,111423,6.3
+Opelousas,LA,1,15884,6.3
 Canton,GA,2,32342,6.2
 Titusville,FL,3,48158,6.2
 East Lake,FL,2,32714,6.1
 Opa-locka,FL,1,16310,6.1
 Hueytown,AL,1,16694,6
+Lake Charles,LA,5,83444,6
 Weston,FL,4,68148,5.9
 Laurel,MS,1,17375,5.8
 Jackson,MS,9,156803,5.7
 Rex,GA,1,17522,5.7
 Daytona Beach,FL,4,71041,5.6
 Lauderdale Lakes,FL,2,35898,5.6
+Gretna,LA,1,17836,5.6
 Columbus,GA,11,204366,5.4
 Smyrna,GA,3,55460,5.4
 Tucker,GA,2,36764,5.4
@@ -381,6 +443,7 @@ Lake Worth Beach,FL,2,41608,4.8
 Fairhope,AL,1,21825,4.6
 Delray Beach,FL,3,66434,4.5
 Miami Gardens,FL,5,111706,4.5
+Kenner,LA,3,66411,4.5
 Eustis,FL,1,22532,4.4
 Huntsville,AL,9,210081,4.3
 Albany,GA,3,70748,4.2
@@ -397,8 +460,10 @@ Haines City,FL,1,26510,3.8
 Leesburg,FL,1,26242,3.8
 Southaven,MS,2,54141,3.7
 Miramar,FL,5,134306,3.7
+Shreveport,LA,7,189374,3.7
 Coconut Creek,FL,2,57553,3.5
 Deerfield Beach,FL,3,86062,3.5
+Slidell,LA,1,28537,3.5
 Northport,AL,1,30334,3.3
 Palm Harbor,FL,2,60682,3.3
 Dania Beach,FL,1,31703,3.2
@@ -412,6 +477,7 @@ Merritt Island,FL,1,34013,2.9
 Panama City,FL,1,34521,2.9
 Dothan,AL,2,70318,2.8
 Estero,FL,1,36187,2.8
+Metairie,LA,4,140590,2.8
 Macon,GA,4,156711,2.6
 Peachtree City,GA,1,37867,2.6
 Land O' Lakes,FL,1,38674,2.6
