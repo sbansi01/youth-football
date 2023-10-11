@@ -69,10 +69,7 @@ state_crosswalk <- read_csv("state_crosswalk.csv") %>%
   select(state_abb, state_name_caps)
 
 #One more: let's load some hometowns that we passed through and cleaned with Open Refine
-hometowns_open_refine <- read_csv("hometowns_open_refine.csv") %>%
-  mutate(hometown_city_clean = case_when(
-    hometown_city_clean == "John's Creek" ~ "Johns Creek",
-    TRUE ~ hometown_city_clean))
+hometowns_open_refine <- read_csv("hometowns_open_refine.csv")
 
 #Checking to see that we have 68 schools and the player counts for each school
 school_check <- football_rosters %>%
@@ -118,7 +115,7 @@ state_check_usa <- football_rosters_usa %>%
   summarise(total = n()) %>%
   arrange(hometown_state)
 
-#Let's standardize these suckers to the state postal abbreviation:
+#Let's standardize these to the state postal abbreviation:
 #First, let's try removing punctuation and making everything upper case:
 football_rosters_usa <- football_rosters_usa %>%
   mutate(hometown_state_first_try = str_to_upper(gsub("[[:punct:]]", "", hometown_state)))
@@ -139,7 +136,7 @@ state_check_usa_update <- football_rosters_usa %>%
   summarise(total = n()) %>%
   arrange(hometown_state_third_try)
 
-#Cool! Now we're down to much fewer state values. Let's manually take care of the rest. How long could that take, right?
+#Now we're down to much fewer state values. Let's manually take care of the rest.
 football_rosters_usa <- football_rosters_usa %>%
   mutate(hometown_state_clean = case_when(
     hometown_state_third_try == "ALA" ~ "AL",
@@ -318,4 +315,62 @@ hometowns_se_complete <- distinct_hometowns_se %>%
 
 
 ```
+```{r}
 
+# FLORIDA
+
+#Let's start working on another potentially important state: Florida
+football_rosters_fl <- football_rosters_usa %>%
+  filter(hometown_state_clean == "FL")
+
+distinct_hometowns_fl <- football_rosters_fl %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total_players = n())
+
+#Let's see if we can grab the populations of every city in FL
+city_pops_fl_2021 <- get_acs(geography = "place",
+                           variables = "B01003_001",
+                           year = 2021,
+                           state = "FL") %>%
+  clean_names()
+
+#Now let's see if we can modify this city_pops dataframe to prepare it for a join with our roster data
+city_pops_fl_2021 <- city_pops_fl_2021 %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(state = case_when(
+    state == 'Florida' ~ "FL")) %>%
+  mutate(city = gsub("\\b(town|city|CDP)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(city, state, estimate) %>%
+  mutate(city = case_when(
+    city == 'Estero village' ~ "Estero",
+    city == 'Key Biscayne village' ~ "Key Biscayne",
+    city == 'Pinecrest village' ~ "Pinecrest",
+    city == 'Wellington village' ~ "Wellington",
+    TRUE ~ city))
+
+city_pops_fl_2021 <- city_pops_fl_2021 %>%
+  rename(population = estimate) %>%
+  filter(city != "Plantation" | population != 4565) #Removing the second Plantation, FL that is a CDP
+
+lithia_pop_2021 <- data.frame(city = "Lithia", state = "FL", population = 29236) #obtained using zip code https://censusreporter.org/profiles/86000US33547-33547/
+
+ponte_pop_2021 <- data.frame(city = "Ponte Vedra Beach", state = "FL", population = 28721) #obtained using zip code https://censusreporter.org/profiles/86000US32082-32082/
+
+santa_rosa_pop_2021 <- data.frame(city = "Santa Rosa Beach", state = "FL", population = 18544) #obtained using zip code https://censusreporter.org/profiles/86000US32459-32459/
+
+st_johns_pop_2021 <- data.frame(city = "St. Johns", state = "FL", population = 62354) #obtained using zip code of high school https://censusreporter.org/profiles/86000US32259-32259/
+
+city_pops_fl_2021 <- bind_rows(city_pops_fl_2021, lithia_pop_2021, ponte_pop_2021, santa_rosa_pop_2021, st_johns_pop_2021)
+
+#Join
+hometowns_fl_complete <- distinct_hometowns_fl %>%
+  left_join(city_pops_fl_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_hundred_thousand = round((total_players*100000)/population,1)) %>%
+  arrange(desc(players_per_hundred_thousand))
+
+# CSV
+#write_csv(hometowns_se_complete, file = "hometowns_se.csv")
+
+
+```

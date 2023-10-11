@@ -234,7 +234,7 @@ Boynton Beach,Boynton Beach,FL,3
 Bozeman,Bozeman,MT,1
 Braceville,Braceville,OH,1
 Bradenton,Bradenton,FL,6
-Bradley,Bradley,FL,1
+Bradley,Bradley Junction,FL,1
 Brandon,Brandon,MS,4
 Braswell,Braswell,TX,1
 Breaux Bridge,Breaux Bridge,LA,1
@@ -265,7 +265,7 @@ Brooklyn,Brooklyn,NY,8
 Brooklyn Park,Brooklyn Park,MN,1
 Brooksville,Brooksville,FL,2
 Broomfield,Broomfield,CO,2
-Broward,Broward,FL,1
+Broward,Plantation,FL,1
 Browns Store,Browns Store,VA,1
 Brownsburg,Brownsburg,IN,3
 Brownstown,Brownstown Township,MI,1
@@ -279,7 +279,7 @@ Bryan,Bryan,TX,5
 Bryans Road,Bryans Road,MD,1
 Bryant,Bryant,AR,1
 Bryn Mawr,Bryn Mawr,PA,1
-Buck Lake,Buck Lake,FL,1
+Buck Lake,Mims,FL,1
 Buffalo,Buffalo,NY,5
 Buffalo Grove,Buffalo Grove,IL,1
 Buford,Buford,GA,23
@@ -348,7 +348,7 @@ Carrolton,Carrollton,GA,1
 Carson,Carson,CA,8
 Cartersville,Cartersville,GA,6
 Carthage,Carthage,TX,3
-Carver Ranches,Carver Ranches,FL,2
+Carver Ranches,West Park,FL,2
 Cary,Cary,NC,6
 Casa Grande,Casa Grande,AZ,1
 Cascade,Cascade,WI,1
@@ -462,7 +462,7 @@ Cochran,Cochran,GA,1
 Cocoa,Cocoa,FL,7
 Cocoa Beach,Cocoa Beach,FL,1
 Coconut Creek,Coconut Creek,FL,2
-Coconut Grove,Coconut Grove,FL,3
+Coconut Grove,Miami,FL,3
 Coeur d'Alene,Coeur d'Alene,ID,1
 Coffeyville,Coffeyville,KS,1
 Colby,Colby,KS,1
@@ -683,7 +683,7 @@ Eastvale,Eastvale,CA,2
 Eaton Rapids,Eaton Rapids,MI,1
 Eatonton,Eatonton,GA,1
 Eau Claire,Eau Claire,WI,2
-Eau Gallie,Eau Gallie,FL,1
+Eau Gallie,Melbourne,FL,1
 Eden,Eden,NC,1
 Eden Prairie,Eden Prairie,MN,5
 Edgar,Edgar,WI,1
@@ -1189,8 +1189,8 @@ Jenks,Jenks,OK,5
 Jennings,Jennings,LA,2
 Jersey City,Jersey City,NJ,8
 Jesup,Jesup,GA,2
-John's Creek,John's Creek,GA,1
-Johns Creek,John's Creek,GA,3
+John's Creek,Johns Creek,GA,1
+Johns Creek,Johns Creek,GA,3
 Johnson,Johnson,NE,1
 Johnson County,Paintsville,KY,1
 Johnston,Johnston,SC,1
@@ -1294,14 +1294,14 @@ Lake Forest,Lake Forest,IL,8
 Lake Havasu,Lake Havasu,AZ,1
 Lake Mary,Lake Mary,FL,4
 Lake Mills,Lake Mills,IA,1
-Lake Nona,Lake Nona,FL,2
+Lake Nona,Orlando,FL,2
 Lake Orion,Lake Orion,MI,1
 Lake Oswego,Lake Oswego,OR,5
 Lake Placid,Lake Placid,FL,1
 Lake Stevens,Lake Stevens,WA,3
 Lake Villa,Lake Villa,IL,1
 Lake Wales,Lake Wales,FL,3
-Lake Worth,Lake Worth,FL,2
+Lake Worth,Lake Worth Beach,FL,2
 Lake in the Hills,Lake in the Hills,IL,1
 Lakeland,Lakeland,FL,15
 Lakeville,Lakeville,MN,4
@@ -1791,7 +1791,7 @@ Oakboro,Oakboro,NC,1
 Oakland,Oakland,CA,9
 Oakland,Oakland,NE,1
 Oakley,Oakley,CA,1
-Oakridge,Oakridge,FL,1
+Oakridge,Oak Ridge,FL,1
 Ocala,Ocala,FL,3
 Ocean Springs,Ocean Springs,MS,3
 Ocean Township,Ocean Township,NJ,1
@@ -1820,7 +1820,7 @@ Opa-locka,Opa-locka,FL,1
 Opelika,Opelika,AL,5
 Opelousas,Opelousas,LA,1
 Orange,Orange,CA,4
-Orange,Orange,FL,1
+Orange,Orange City,FL,1
 Orange,Orange,TX,6
 Orange Beach,Orange Beach,AL,1
 Orange City,Orange City,FL,1
@@ -2101,7 +2101,7 @@ Romeo,Romeo,MI,1
 Rose Hill,Rose Hill,KS,2
 Roseburg,Roseburg,OR,1
 Roseland,Roseland,NJ,2
-Rosemary Beach,Rosemary Beach,FL,1
+Rosemary Beach,Santa Rosa Beach,FL,1
 Rosemount,Rosemount,MN,2
 Roseville,Roseville,CA,4
 Roseville,Roseville,MI,2
@@ -2226,7 +2226,7 @@ Shorewood,Shorewood,WI,1
 Short Hills,Short Hills,NJ,1
 Shreveport,Shreveport,LA,7
 Sicklerville,Sicklerville,NJ,6
-Sickles,Sickles,FL,1
+Sickles,Tampa,FL,1
 Sierra Vista,Sierra Vista,AZ,1
 Siloam Springs,Siloam Springs,AR,1
 Silver Creek,Silver Creek,MS,1
@@ -2281,7 +2281,7 @@ Southlake,Southlake,TX,13
 Spanaway,Spanaway,WA,1
 Spanish Fork,Spanish Fork,UT,3
 Spanish Fort,Spanish Fort,AL,1
-Sparr,Sparr,FL,1
+Sparr,Ocala,FL,1
 Spartanburg,Spartanburg,SC,3
 Spearman,Spearman,TX,1
 Spencer,Spencer,NC,1
