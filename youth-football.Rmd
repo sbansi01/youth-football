@@ -167,7 +167,7 @@ football_rosters_usa <- football_rosters_usa %>%
     hometown_state_third_try == "WYO" ~ "WY",
     TRUE ~ hometown_state_third_try))
 
-#Okay, so what's the final state breakdown?
+#What's the final state breakdown?
 football_rosters_usa_states <- football_rosters_usa %>%
   group_by(hometown_state_clean) %>%
   summarise(total_players=n()) %>%
