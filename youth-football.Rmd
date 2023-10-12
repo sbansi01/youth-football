@@ -439,3 +439,66 @@ hometowns_se_complete <- bind_rows(hometowns_se_complete, hometowns_la_complete)
 #write_csv(hometowns_se_complete, file = "hometowns_se.csv")
 
 ```
+
+```{r}
+
+# TEXAS
+
+#Let's keep going: TX
+football_rosters_tx <- football_rosters_usa %>%
+  filter(hometown_state_clean == "TX")
+
+distinct_hometowns_tx <- football_rosters_tx %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total_players = n())
+
+#Let's see if we can grab the populations of every city in TX
+city_pops_tx_2021 <- get_acs(geography = "place",
+                           variables = "B01003_001",
+                           year = 2021,
+                           state = "TX") %>%
+  clean_names()
+
+#Now let's see if we can modify this city_pops dataframe to prepare it for a join with our roster data
+city_pops_tx_2021 <- city_pops_tx_2021 %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(state = case_when(
+    state == 'Texas' ~ "TX")) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(city, state, estimate)
+
+city_pops_tx_2021 <- city_pops_tx_2021 %>%
+  rename(population = estimate) %>%
+  filter(city != "Mesquite" | population != 181) #Removing the second Mesquite, TX that is a CDP
+
+brock_pop_2021 <- data.frame(city = "Brock", state = "TX", population = 5894) #obtained using school district because all players went to the same high school https://censusreporter.org/profiles/97000US4811460-brock-independent-school-district-tx/
+
+cypress_pop_2021 <- data.frame(city = "Cypress", state = "TX", population = 88375) #obtained using zip code https://censusreporter.org/profiles/86000US77429-77429/
+
+klein_pop_2021 <- data.frame(city = "Klein", state = "TX", population = 270168) #obtained using school district because all players went to the same high school https://censusreporter.org/profiles/97000US4825740-klein-independent-school-district-tx/
+
+new_caney_pop_2021 <- data.frame(city = "New Caney", state = "TX", population = 29992) #obtained using zip code https://censusreporter.org/profiles/86000US77357-77357/
+
+wall_pop_2021 <- data.frame(city = "Wall", state = "TX", population = 185) #obtained using zip code https://censusreporter.org/profiles/86000US76957-76957/
+
+city_pops_tx_2021 <- bind_rows(city_pops_tx_2021, brock_pop_2021, cypress_pop_2021, klein_pop_2021, new_caney_pop_2021, wall_pop_2021)
+
+#Join
+hometowns_tx_complete <- distinct_hometowns_tx %>%
+  left_join(city_pops_tx_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_hundred_thousand = round((total_players*100000)/population,1)) %>%
+  arrange(desc(players_per_hundred_thousand))
+
+#Add to SE
+hometowns_se_complete <- bind_rows(hometowns_se_complete, hometowns_tx_complete) %>%
+  arrange(desc(players_per_hundred_thousand))
+
+#Find and fix NA values
+#hometowns_tx_complete %>%
+  #filter(is.na(population))
+
+# CSV
+write_csv(hometowns_se_complete, file = "hometowns_se.csv")
+
+```
