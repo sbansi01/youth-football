@@ -556,4 +556,41 @@ hometowns_ga <- hometowns_ga %>%
 hometowns_ga <- hometowns_ga %>%
   mutate(pct_black = round(black_population/population*100, 1))
 
+# Income
+income_ga_2021 <- get_acs(geography = "place",
+                           variables = "B19013_001",
+                           year = 2021,
+                           state = "GA") %>%
+  clean_names() %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(state = case_when(
+    state == 'Georgia' ~ "GA")) %>%
+  mutate(city = gsub("\\b(town|city|CDP)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(city, state, estimate) %>%
+  mutate(city = case_when(
+    city == 'Athens-Clarke County unified government (balance)' ~ "Athens",
+    city == 'Macon-Bibb County' ~ "Macon",
+    city == 'McRae-Helena' ~ 'McRae',
+    TRUE ~ city))
+
+income_ga_2021 <- income_ga_2021 %>%
+  rename(median_income = estimate)
+
+ellenwood_income_2021 <- data.frame(city = "Ellenwood", state = "GA", median_income = 69876) #obtained using zip code from https://censusreporter.org/profiles/86000US30294-30294/
+
+rabun_income_2021 <- data.frame(city = "Rabun Gap", state = "GA", median_income = 65714) #obtained using zip code from https://censusreporter.org/profiles/86000US30568-30568/
+
+rex_income_2021 <- data.frame(city = "Rex", state = "GA", median_income = 60180) #obtained using zip code from https://censusreporter.org/profiles/86000US30273-30273/
+
+sublinga_income_2021 <- data.frame(city = "Subligna", state = "GA", median_income = 42813) #obtained using block group from https://censusreporter.org/profiles/15000US130550101002-bg-2-tract-101-chattooga-ga/
+
+income_ga_2021 <- bind_rows(income_ga_2021, ellenwood_income_2021, rabun_income_2021, rex_income_2021, sublinga_income_2021)
+
+hometowns_ga <- hometowns_ga %>%
+  left_join(income_ga_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state"))
+
+# CSV
+write_csv(hometowns_ga, file = "hometowns_ga.csv")
+
 ```
