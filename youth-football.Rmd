@@ -591,6 +591,13 @@ hometowns_ga <- hometowns_ga %>%
   left_join(income_ga_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state"))
 
 # CSV
-write_csv(hometowns_ga, file = "hometowns_ga.csv")
+#write_csv(hometowns_ga, file = "hometowns_ga.csv")
+
+# Georgia, but just hometowns that have produced at least 3 players
+hometowns_ga_3plus <- hometowns_ga %>%
+  filter(total_players >= 3)
+
+# CSV
+#write_csv(hometowns_ga_3plus, file = "hometowns_ga_3plus.csv")
 
 ```
