@@ -550,5 +550,10 @@ sublinga_black_pop_2021 <- data.frame(city = "Subligna", state = "GA", black_pop
 
 race_ga_2021 <- bind_rows(race_ga_2021, ellenwood_black_pop_2021, rabun_black_pop_2021, rex_black_pop_2021, sublinga_black_pop_2021)
 
+hometowns_ga <- hometowns_ga %>%
+  left_join(race_ga_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state"))
+
+hometowns_ga <- hometowns_ga %>%
+  mutate(pct_black = round(black_population/population*100, 1))
 
 ```
