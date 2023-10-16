@@ -20,6 +20,10 @@ library(tidycensus)
 # Load Census API key
 Sys.setenv(CENSUS_API_KEY = "5cb2b9c628a1d1329c5bf4d36fe4435c6501efc8", overwrite = TRUE)
 
+# Load ACS crosswalk
+ACS_2021 <- load_variables(2021, "acs5")
+# Helpful reference for understanding crosswalk: https://censusreporter.org/topics/table-codes/
+
 ```
 
 ```{r}
@@ -499,6 +503,52 @@ hometowns_se_complete <- bind_rows(hometowns_se_complete, hometowns_tx_complete)
   #filter(is.na(population))
 
 # CSV
-write_csv(hometowns_se_complete, file = "hometowns_se.csv")
+#write_csv(hometowns_se_complete, file = "hometowns_se.csv")
+
+```
+
+```{r}
+
+# TAKING A BREAK FROM STATE CLEANING AND SEEING WHAT OTHER CENSUS INFO WE CAN GET ABOUT GA HOMETOWNS
+
+football_rosters_ga <- football_rosters_usa %>%
+ filter(hometown_state_clean == "GA")
+
+# We want final dataframe to have: hometown, population, number of players, players per population, Black pop, some measure of SES
+
+hometowns_ga <- hometowns_se_complete %>%
+  filter(hometown_state_clean == "GA")
+
+# Race/Black population
+race_ga_2021 <- get_acs(geography = "place",
+                           variables = "B02009_001",
+                           year = 2021,
+                           state = "GA") %>%
+  clean_names() %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(state = case_when(
+    state == 'Georgia' ~ "GA")) %>%
+  mutate(city = gsub("\\b(town|city|CDP)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(city, state, estimate) %>%
+  mutate(city = case_when(
+    city == 'Athens-Clarke County unified government (balance)' ~ "Athens",
+    city == 'Macon-Bibb County' ~ "Macon",
+    city == 'McRae-Helena' ~ 'McRae',
+    TRUE ~ city))
+
+race_ga_2021 <- race_ga_2021 %>%
+  rename(black_population = estimate)
+
+ellenwood_black_pop_2021 <- data.frame(city = "Ellenwood", state = "GA", black_population = 35446) #obtained using zip code from https://censusreporter.org/profiles/86000US30294-30294/
+
+rabun_black_pop_2021 <- data.frame(city = "Rabun Gap", state = "GA", black_population = 85) #obtained using zip code from https://censusreporter.org/profiles/86000US30568-30568/
+
+rex_black_pop_2021 <- data.frame(city = "Rex", state = "GA", black_population = 10926) #obtained using zip code from https://censusreporter.org/profiles/86000US30273-30273/
+
+sublinga_black_pop_2021 <- data.frame(city = "Subligna", state = "GA", black_population = 0) #obtained using block group from https://censusreporter.org/profiles/15000US130550101002-bg-2-tract-101-chattooga-ga/
+
+race_ga_2021 <- bind_rows(race_ga_2021, ellenwood_black_pop_2021, rabun_black_pop_2021, rex_black_pop_2021, sublinga_black_pop_2021)
+
 
 ```
