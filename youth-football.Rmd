@@ -28,16 +28,6 @@ ACS_2021 <- load_variables(2021, "acs5")
 
 ```{r}
 
-#Load Aspen Institute participation rate data
-
-#age_6_12 <- read_sheet("https://docs.google.com/spreadsheets/d/1AvA8phsRgDh9AXj0sMeH1zZQtjJP9JD-8A2AH9YrBzY/edit#gid=0", sheet = "Ages 6-12")
-
-#age_13_17 <- read_sheet("https://docs.google.com/spreadsheets/d/1AvA8phsRgDh9AXj0sMeH1zZQtjJP9JD-8A2AH9YrBzY/edit#gid=0", sheet = "Ages 13-17") 
-
-```
-
-```{r}
-
 #Load football roster scraper. Also did some cleaning for special cases here. For the players who were missing hometown information, this was obtained by looking at rosters from previous years.
 football_rosters <- read_csv("football_roster.csv") %>%
   clean_names() %>%
@@ -76,16 +66,16 @@ state_crosswalk <- read_csv("state_crosswalk.csv") %>%
 hometowns_open_refine <- read_csv("hometowns_open_refine.csv")
 
 #Checking to see that we have 68 schools and the player counts for each school
-school_check <- football_rosters %>%
-  group_by(school) %>%
-  summarise(total_players = n()) %>%
-  arrange(total_players)
+# school_check <- football_rosters %>%
+#   group_by(school) %>%
+#   summarise(total_players = n()) %>%
+#   arrange(total_players)
 
 #Checking to make sure there are no duplicate players
-player_check <- football_rosters %>%
-  group_by(name, school) %>%
-  summarise(total = n()) %>%
-  arrange(desc(total))
+# player_check <- football_rosters %>%
+#   group_by(name, school) %>%
+#   summarise(total = n()) %>%
+#   arrange(desc(total))
 
 ```
 ```{r}
@@ -511,9 +501,6 @@ hometowns_se_complete <- bind_rows(hometowns_se_complete, hometowns_tx_complete)
 
 # TAKING A BREAK FROM STATE CLEANING AND SEEING WHAT OTHER CENSUS INFO WE CAN GET ABOUT GA HOMETOWNS
 
-football_rosters_ga <- football_rosters_usa %>%
- filter(hometown_state_clean == "GA")
-
 # We want final dataframe to have: hometown, population, number of players, players per population, Black pop, some measure of SES
 
 hometowns_ga <- hometowns_se_complete %>%
@@ -590,14 +577,19 @@ income_ga_2021 <- bind_rows(income_ga_2021, ellenwood_income_2021, rabun_income_
 hometowns_ga <- hometowns_ga %>%
   left_join(income_ga_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state"))
 
-# CSV
 #write_csv(hometowns_ga, file = "hometowns_ga.csv")
 
 # Georgia, but just hometowns that have produced at least 3 players
 hometowns_ga_3plus <- hometowns_ga %>%
   filter(total_players >= 3)
 
-# CSV
 #write_csv(hometowns_ga_3plus, file = "hometowns_ga_3plus.csv")
+
+# Georgia, but just hometowns that have produced at least 3 players, are at least 40 percent Black, and median income <$50,000
+
+hometowns_ga_3plusblackicome <- hometowns_ga %>%
+  filter(total_players >= 3) %>%
+  filter(pct_black >= 40.0) %>%
+  filter(median_income <= 50000)
 
 ```
