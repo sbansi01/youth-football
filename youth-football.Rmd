@@ -9,10 +9,7 @@ library(tidyverse)
 library(googlesheets4)
 library(janitor)
 library(tidycensus)
-#library(lubridate)
 #install.packages("googlesheets4")
-#install.packages("ipumsr")
-#library(ipumsr)
 
 #Authenticating with Google account
 #gs4_auth()
@@ -62,7 +59,7 @@ state_crosswalk <- read_csv("state_crosswalk.csv") %>%
   mutate(state_name_caps = str_to_upper(state_name)) %>%
   select(state_abb, state_name_caps)
 
-#One more: let's load some hometowns that we passed through and cleaned with Open Refine
+#Let's load some hometowns that we passed through and cleaned with Open Refine
 hometowns_open_refine <- read_csv("hometowns_open_refine.csv")
 
 #Checking to see that we have 68 schools and the player counts for each school
@@ -210,7 +207,7 @@ football_rosters_usa_states <- football_rosters_usa_states %>%
 
 ```{r}
 
-# CLEANING/STANDARDIZING HOMETOWN - NEEDS MORE WORK***
+# START TO CLEAN/STANDARDIZE HOMETOWNS
 
 # CSV - going to try cleaning this through Open Refine
 #write_csv(distinct_hometowns, file = "hometowns_to_clean.csv")
@@ -224,10 +221,67 @@ football_rosters_usa <- football_rosters_usa %>%
 
 distinct_hometowns <- football_rosters_usa %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
-  summarise(total = n()) #THIS WILL LIKELY NEED MORE WORK/CLEANING/CHECKING***
+  summarise(total = n())
+
+#From here, the best way to continue working on this will likely be state-by-state
 
 ```
 
+```{r}
+
+# GEORGIA - starting with this one and some others that will likely be most consequential for the project.
+
+# Step 1: Filter for the state's players
+football_rosters_ga <- football_rosters_usa %>%
+  filter(hometown_state_clean == "GA")
+
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_ga <- football_rosters_ga %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total_players = n())
+
+# Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02009 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_ga_2021 <- get_acs(geography = "place",
+                           variables = c("B01003_001", "B02009_001", "B19013_001"),
+                           year = 2021,
+                           state = "GA")
+
+# Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_ga_2021 <- census_data_ga_2021 %>%
+  clean_names() %>%
+  select(-moe) %>%
+  pivot_wider(names_from = variable, values_from = estimate) %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(-name) %>%
+  rename(total_pop = B01003_001, black_pop = B02009_001, median_income = B19013_001) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. The second mutate function is only for instances when the census names something in a weird way that doesn't line up with the hometowns.
+census_data_ga_2021 <- census_data_ga_2021 %>%
+  mutate(state = case_when(
+    state == 'Georgia' ~ "GA")) %>%
+  mutate(city = case_when(
+    city == 'Athens-Clarke County unified government (balance)' ~ "Athens",
+    city == 'Macon-Bibb County' ~ "Macon",
+    city == 'McRae-Helena' ~ 'McRae',
+    TRUE ~ city))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_ga_complete <- distinct_hometowns_ga %>%
+  left_join(census_data_ga_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
+hometowns_ga_complete %>%
+  filter(is.na(geoid))
+
+# Step 8: 
+
+
+```
 
 ```{r}
 
