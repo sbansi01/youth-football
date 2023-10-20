@@ -21,11 +21,10 @@ Sys.setenv(CENSUS_API_KEY = "5cb2b9c628a1d1329c5bf4d36fe4435c6501efc8", overwrit
 ACS_2021 <- load_variables(2021, "acs5")
 
 # Load 2020 Census crosswalk
-Census_2020 <- load_variables(2020, "pl")
+Census_2020 <- load_variables(2020, "pl", cache = TRUE)
 
 # Helpful references for using ACS and Census APIs: #https://censusreporter.org/topics/table-codes/
 #https://walker-data.com/tidycensus/articles/basic-usage.html
-#https://api.census.gov/data/2020/dec/dp/variables.html
 
 ```
 
@@ -246,22 +245,21 @@ distinct_hometowns_ga <- football_rosters_ga %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 
-# Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02009 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+# Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
 census_data_ga_2021 <- get_acs(geography = "place",
-                           variables = c("B01003_001", "B02009_001", "B19013_001"),
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
-                           state = "GA")
+                           state = "GA",
+                           output = "wide")
 
 # Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
 census_data_ga_2021 <- census_data_ga_2021 %>%
   clean_names() %>%
-  select(-moe) %>%
-  pivot_wider(names_from = variable, values_from = estimate) %>%
   separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
   mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
   mutate(city = str_squish(city)) %>%
-  select(-name) %>%
-  rename(total_pop = B01003_001, black_pop = B02009_001, median_income = B19013_001) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1))
 
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. The second mutate function is only for instances when the census names something in a weird way that doesn't line up with the hometowns.
@@ -284,10 +282,78 @@ hometowns_ga_complete <- distinct_hometowns_ga %>%
 hometowns_ga_complete %>%
   filter(is.na(geoid))
 
-# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision.
-ellenwood_pop_2021 <- data.frame(city = "Ellenwood", state = "GA", population = 41037) #obtained using zip code from https://censusreporter.org/profiles/86000US30294-30294/
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 
+# For Ellenwood, GA, the zip code (30294) seems to be a good substitute: https://censusreporter.org/profiles/86000US30294-30294/
+census_data_ellenwood_ga_2021 <- get_acs(geography = "zcta",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "ZCTA5 30294") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "GA") %>%
+  mutate(city = case_when(
+    city == "ZCTA5 30294" ~ "Ellenwood")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
+# For Rabun Gap, GA, the zip code (30568) seems to be a good substitute: https://censusreporter.org/profiles/86000US30568-30568/
+census_data_rabun_ga_2021 <- get_acs(geography = "zcta",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "ZCTA5 30568") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "GA") %>%
+  mutate(city = case_when(
+    city == "ZCTA5 30568" ~ "Rabun Gap")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
+# For Rex, GA, the zip code (30273) seems to be a good substitute: https://censusreporter.org/profiles/86000US30273-30273/
+census_data_rex_ga_2021 <- get_acs(geography = "zcta",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "ZCTA5 30273") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "GA") %>%
+  mutate(city = case_when(
+    city == "ZCTA5 30273" ~ "Rex")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
+# For Subligna, GA, the block group seems to be a good substitute: https://censusreporter.org/profiles/15000US130550101002-bg-2-tract-101-chattooga-ga/
+census_data_subligna_ga_2021 <- get_acs(geography = "block group",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = "GA",
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "Block Group 2, Census Tract 101, Chattooga County, Georgia") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "GA") %>%
+  mutate(city = case_when(
+    city == "Block Group 2, Census Tract 101, Chattooga County, Georgia" ~ "Subligna")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
+# Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+census_data_ga_2021 <- bind_rows(census_data_ga_2021, census_data_ellenwood_ga_2021, census_data_rabun_ga_2021, census_data_rex_ga_2021, census_data_subligna_ga_2021)
+
+hometowns_ga_complete <- distinct_hometowns_ga %>%
+  left_join(census_data_ga_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+hometowns_ga_complete %>%
+  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
+
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_ga_complete, file = "hometowns_ga.csv")
 
 ```
 
