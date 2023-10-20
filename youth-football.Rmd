@@ -19,7 +19,13 @@ Sys.setenv(CENSUS_API_KEY = "5cb2b9c628a1d1329c5bf4d36fe4435c6501efc8", overwrit
 
 # Load ACS crosswalk
 ACS_2021 <- load_variables(2021, "acs5")
-# Helpful reference for understanding crosswalk: https://censusreporter.org/topics/table-codes/
+
+# Load 2020 Census crosswalk
+Census_2020 <- load_variables(2020, "pl")
+
+# Helpful references for using ACS and Census APIs: #https://censusreporter.org/topics/table-codes/
+#https://walker-data.com/tidycensus/articles/basic-usage.html
+#https://api.census.gov/data/2020/dec/dp/variables.html
 
 ```
 
@@ -229,7 +235,7 @@ distinct_hometowns <- football_rosters_usa %>%
 
 ```{r}
 
-# GEORGIA - starting with this one and some others that will likely be most consequential for the project.
+# GEORGIA HOMETOWNS - starting with this one and some others that will likely be most consequential for the project.
 
 # Step 1: Filter for the state's players
 football_rosters_ga <- football_rosters_usa %>%
@@ -278,7 +284,9 @@ hometowns_ga_complete <- distinct_hometowns_ga %>%
 hometowns_ga_complete %>%
   filter(is.na(geoid))
 
-# Step 8: 
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision.
+ellenwood_pop_2021 <- data.frame(city = "Ellenwood", state = "GA", population = 41037) #obtained using zip code from https://censusreporter.org/profiles/86000US30294-30294/
+
 
 
 ```
