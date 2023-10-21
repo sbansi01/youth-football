@@ -451,76 +451,96 @@ hometowns_ga_complete %>%
 
 ```{r}
 
-# SOUTHEAST: GEORGIA, ALABAMA, MISSISSIPPI
+# MISSISSIPPI HOMETOWNS
 
-#Let's start working on a few states that will likely be consequential for this project: GA, AL, MS
-football_rosters_se <- football_rosters_usa %>%
-  filter(hometown_state_clean == "GA" | hometown_state_clean == "AL" | hometown_state_clean == "MS")
+# Step 1: Filter for the state's players
+football_rosters_ms <- football_rosters_usa %>%
+  filter(hometown_state_clean == "MS")
 
-distinct_hometowns_se <- football_rosters_se %>%
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_ms <- football_rosters_ms %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 
-#Let's see if we can grab the populations of every city in GA, AL, and MS
-city_pops_ga_2021 <- get_acs(geography = "place",
-                           variables = "B01003_001",
+# Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_ms_2021 <- get_acs(geography = "place",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
-                           state = "GA")
+                           state = "MS",
+                           output = "wide")
 
-city_pops_al_2021 <- get_acs(geography = "place",
-                           variables = "B01003_001",
-                           year = 2021,
-                           state = "AL")
-
-city_pops_ms_2021 <- get_acs(geography = "place",
-                           variables = "B01003_001",
-                           year = 2021,
-                           state = "MS")
-
-city_pops_se_2021 <- bind_rows(city_pops_ga_2021, city_pops_al_2021, city_pops_ms_2021) %>%
-  clean_names()
-
-#Now let's see if we can modify this city_pops dataframe to prepare it for a join with our roster data
-city_pops_se_2021 <- city_pops_se_2021 %>%
+# Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_ms_2021 <- census_data_ms_2021 %>%
+  clean_names() %>%
   separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
-  mutate(state = case_when(
-    state == 'Georgia' ~ "GA",
-    state == 'Alabama' ~ "AL",
-    state == 'Mississippi' ~ "MS"
-  )) %>%
-  mutate(city = gsub("\\b(town|city|CDP)\\b", "", city)) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
   mutate(city = str_squish(city)) %>%
-  select(city, state, estimate) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
+census_data_ms_2021 <- census_data_ms_2021 %>%
+  mutate(state = case_when(
+    state == 'Mississippi' ~ "MS"))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_ms_complete <- distinct_hometowns_ms %>%
+  left_join(census_data_ms_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
+hometowns_ms_complete %>%
+  filter(is.na(geoid))
+
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
+
+# For Nesbit, MS, the zip code (38651) seems to be a good substitute: https://censusreporter.org/profiles/86000US38651-38651/
+census_data_nesbit_ms_2021 <- get_acs(geography = "zcta",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "ZCTA5 38651") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "MS") %>%
   mutate(city = case_when(
-    city == 'Athens-Clarke County unified government (balance)' ~ "Athens",
-    city == 'Macon-Bibb County' ~ "Macon",
-    city == 'McRae-Helena' ~ 'McRae',
-    TRUE ~ city))
+    city == "ZCTA5 38651" ~ "Nesbit")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
-city_pops_se_2021 <- city_pops_se_2021 %>%
-  rename(population = estimate)
+# For Friendship, MS data obtained using population of nearby Collins, MS, where the player went to HS https://censusreporter.org/profiles/16000US2815140-collins-ms/
+census_data_friendship_ms_2021 <- get_acs(geography = "place",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = "MS",
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "Collins city, Mississippi") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "MS") %>%
+  mutate(city = case_when(
+    city == "Collins city, Mississippi" ~ "Friendship")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
-highland_pop_2021 <- data.frame(city = "Highland Home", state = "AL", population = 1423) #obtained using zip code from https://censusreporter.org/profiles/86000US36041-36041/
+# Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+census_data_ms_2021 <- bind_rows(census_data_ms_2021, census_data_nesbit_ms_2021, census_data_friendship_ms_2021)
+ 
+hometowns_ms_complete <- distinct_hometowns_ms %>%
+  left_join(census_data_ms_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
 
-watson_pop_2021 <- data.frame(city = "Watson", state = "AL", population = 1252) #obtained using population of nearby Brookside, AL, which seems to include Watson https://censusreporter.org/profiles/16000US0109736-brookside-al/
+hometowns_ms_complete %>%
+  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
 
-nesbit_pop_2021 <- data.frame(city = "Nesbit", state = "MS", population = 8906) #obtained using zip code from https://censusreporter.org/profiles/86000US38651-38651/
-
-friendship_pop_2021 <- data.frame(city = "Friendship", state = "MS", population = 2430) #obtained using population of nearby Collins, MS, where the player went to HS https://censusreporter.org/profiles/16000US2815140-collins-ms/
-
-city_pops_se_2021 <- bind_rows(city_pops_se_2021, ellenwood_pop_2021, highland_pop_2021, nesbit_pop_2021, rabun_pop_2021, rex_pop_2021, sublinga_pop_2021, friendship_pop_2021, watson_pop_2021)
-
-#Join
-hometowns_se_complete <- distinct_hometowns_se %>%
-  left_join(city_pops_se_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
-  mutate(players_per_hundred_thousand = round((total_players*100000)/population,1)) %>%
-  arrange(desc(players_per_hundred_thousand))
-
-# CSV
-#write_csv(hometowns_se_complete, file = "hometowns_se.csv")
-
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_ms_complete, file = "hometowns_ms.csv")
 
 ```
+
 ```{r}
 
 # FLORIDA
