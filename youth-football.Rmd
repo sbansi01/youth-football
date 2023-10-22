@@ -838,106 +838,11 @@ hometowns_tx_complete %>%
 
 ```{r}
 
-# TAKING A BREAK FROM STATE CLEANING AND SEEING WHAT OTHER CENSUS INFO WE CAN GET ABOUT GA HOMETOWNS
+# ALL HOMETOWNS
 
-# We want final dataframe to have: hometown, population, number of players, players per population, Black pop, some measure of SES
+#hometowns_complete <- bind_rows(hometown)
 
-hometowns_ga <- hometowns_se_complete %>%
-  filter(hometown_state_clean == "GA")
-
-# Race/Black population
-race_ga_2021 <- get_acs(geography = "place",
-                           variables = "B02009_001",
-                           year = 2021,
-                           state = "GA") %>%
-  clean_names() %>%
-  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
-  mutate(state = case_when(
-    state == 'Georgia' ~ "GA")) %>%
-  mutate(city = gsub("\\b(town|city|CDP)\\b", "", city)) %>%
-  mutate(city = str_squish(city)) %>%
-  select(city, state, estimate) %>%
-  mutate(city = case_when(
-    city == 'Athens-Clarke County unified government (balance)' ~ "Athens",
-    city == 'Macon-Bibb County' ~ "Macon",
-    city == 'McRae-Helena' ~ 'McRae',
-    TRUE ~ city))
-
-race_ga_2021 <- race_ga_2021 %>%
-  rename(black_population = estimate)
-
-ellenwood_black_pop_2021 <- data.frame(city = "Ellenwood", state = "GA", black_population = 35446) #obtained using zip code from https://censusreporter.org/profiles/86000US30294-30294/
-
-rabun_black_pop_2021 <- data.frame(city = "Rabun Gap", state = "GA", black_population = 85) #obtained using zip code from https://censusreporter.org/profiles/86000US30568-30568/
-
-rex_black_pop_2021 <- data.frame(city = "Rex", state = "GA", black_population = 10926) #obtained using zip code from https://censusreporter.org/profiles/86000US30273-30273/
-
-sublinga_black_pop_2021 <- data.frame(city = "Subligna", state = "GA", black_population = 0) #obtained using block group from https://censusreporter.org/profiles/15000US130550101002-bg-2-tract-101-chattooga-ga/
-
-race_ga_2021 <- bind_rows(race_ga_2021, ellenwood_black_pop_2021, rabun_black_pop_2021, rex_black_pop_2021, sublinga_black_pop_2021)
-
-hometowns_ga <- hometowns_ga %>%
-  left_join(race_ga_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state"))
-
-hometowns_ga <- hometowns_ga %>%
-  mutate(pct_black = round(black_population/population*100, 1))
-
-# Income
-income_ga_2021 <- get_acs(geography = "place",
-                           variables = "B19013_001",
-                           year = 2021,
-                           state = "GA") %>%
-  clean_names() %>%
-  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
-  mutate(state = case_when(
-    state == 'Georgia' ~ "GA")) %>%
-  mutate(city = gsub("\\b(town|city|CDP)\\b", "", city)) %>%
-  mutate(city = str_squish(city)) %>%
-  select(city, state, estimate) %>%
-  mutate(city = case_when(
-    city == 'Athens-Clarke County unified government (balance)' ~ "Athens",
-    city == 'Macon-Bibb County' ~ "Macon",
-    city == 'McRae-Helena' ~ 'McRae',
-    TRUE ~ city))
-
-income_ga_2021 <- income_ga_2021 %>%
-  rename(median_income = estimate)
-
-ellenwood_income_2021 <- data.frame(city = "Ellenwood", state = "GA", median_income = 69876) #obtained using zip code from https://censusreporter.org/profiles/86000US30294-30294/
-
-rabun_income_2021 <- data.frame(city = "Rabun Gap", state = "GA", median_income = 65714) #obtained using zip code from https://censusreporter.org/profiles/86000US30568-30568/
-
-rex_income_2021 <- data.frame(city = "Rex", state = "GA", median_income = 60180) #obtained using zip code from https://censusreporter.org/profiles/86000US30273-30273/
-
-sublinga_income_2021 <- data.frame(city = "Subligna", state = "GA", median_income = 42813) #obtained using block group from https://censusreporter.org/profiles/15000US130550101002-bg-2-tract-101-chattooga-ga/
-
-income_ga_2021 <- bind_rows(income_ga_2021, ellenwood_income_2021, rabun_income_2021, rex_income_2021, sublinga_income_2021)
-
-hometowns_ga <- hometowns_ga %>%
-  left_join(income_ga_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state"))
-
-#write_csv(hometowns_ga, file = "hometowns_ga.csv")
-
-# Georgia, but just hometowns that have produced at least 3 players
-hometowns_ga_3plus <- hometowns_ga %>%
-  filter(total_players >= 3)
-
-#write_csv(hometowns_ga_3plus, file = "hometowns_ga_3plus.csv")
-
-# Georgia, but just hometowns that have produced at least 3 players, are at least 40 percent Black, and median income <$50,000 (used this for reference: https://www.census.gov/quickfacts/fact/table/GA/PST045222)
-
-hometowns_ga_3plusblackicome <- hometowns_ga %>%
-  filter(total_players >= 3) %>%
-  filter(pct_black >= 40.0) %>%
-  filter(median_income <= 50000)
-
-#write_csv(hometowns_ga_3plusblackicome, file = "hometowns_ga_3plus_blackincome.csv")
-
-# Georgia, but just hometowns that have produced at least 5 players
-hometowns_ga_5plus <- hometowns_ga %>%
-  filter(total_players >= 5)
-
-#write_csv(hometowns_ga_5plus, file = "hometowns_ga_5plus.csv")
-
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_tx_complete, file = "hometowns_tx.csv")
 
 ```
