@@ -571,6 +571,85 @@ hometowns_ga_complete %>%
 
 ```{r}
 
+# LOUISIANA HOMETOWNS
+
+# Step 1: Filter for the state's players
+football_rosters_la <- football_rosters_usa %>%
+  filter(hometown_state_clean == "LA")
+
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_la <- football_rosters_la %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total_players = n())
+
+# Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_la_2021 <- get_acs(geography = "place",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = "LA",
+                           output = "wide")
+
+# Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_la_2021 <- census_data_la_2021 %>%
+  clean_names() %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
+census_data_la_2021 <- census_data_la_2021 %>%
+  mutate(state = case_when(
+    state == 'Louisiana' ~ "LA"))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_la_complete <- distinct_hometowns_la %>%
+  left_join(census_data_la_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
+hometowns_la_complete %>%
+  filter(is.na(geoid))
+
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
+
+# For Geismar, LA (70734), St. Amant, LA (70774), and Vacherie, LA (70090), the zip codes seems to be good substitutes: https://censusreporter.org/profiles/86000US70734-70734/ https://censusreporter.org/profiles/86000US70774-70774/ https://censusreporter.org/profiles/86000US70090-70090/
+census_data_zips_la_2021 <- get_acs(geography = "zcta",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "ZCTA5 70734" | name == "ZCTA5 70774" | name == "ZCTA5 70090") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "LA") %>%
+  mutate(city = case_when(
+    city == "ZCTA5 70734" ~ "Geismar",
+    city == "ZCTA5 70774" ~ "St. Amant",
+    city == "ZCTA5 70090" ~ "Vacherie")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
+# Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+census_data_la_2021 <- bind_rows(census_data_la_2021, census_data_zips_la_2021)
+ 
+hometowns_la_complete <- distinct_hometowns_la %>%
+  left_join(census_data_la_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+hometowns_la_complete %>%
+  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
+
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_la_complete, file = "hometowns_la.csv")
+
+```
+
+```{r}
+
 # MISSISSIPPI HOMETOWNS
 
 # Step 1: Filter for the state's players
@@ -661,30 +740,28 @@ hometowns_ms_complete %>%
 
 ```
 
-
-
 ```{r}
 
-# LOUISIANA HOMETOWNS
+# TEXAS HOMETOWNS
 
 # Step 1: Filter for the state's players
-football_rosters_la <- football_rosters_usa %>%
-  filter(hometown_state_clean == "LA")
+football_rosters_tx <- football_rosters_usa %>%
+  filter(hometown_state_clean == "TX")
 
 # Step 2: Get a list of all the unique hometowns in the state
-distinct_hometowns_la <- football_rosters_la %>%
+distinct_hometowns_tx <- football_rosters_tx %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
-census_data_la_2021 <- get_acs(geography = "place",
+census_data_tx_2021 <- get_acs(geography = "place",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
-                           state = "LA",
+                           state = "TX",
                            output = "wide")
 
 # Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
-census_data_la_2021 <- census_data_la_2021 %>%
+census_data_tx_2021 <- census_data_tx_2021 %>%
   clean_names() %>%
   separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
   mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
@@ -694,114 +771,68 @@ census_data_la_2021 <- census_data_la_2021 %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1))
 
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
-census_data_la_2021 <- census_data_la_2021 %>%
+census_data_tx_2021 <- census_data_tx_2021 %>%
   mutate(state = case_when(
-    state == 'Louisiana' ~ "LA"))
+    state == 'Texas' ~ "TX")) %>%
+  filter(city != "Mesquite" | total_pop != 181) #Removing the second Mesquite, TX that is a CDP
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
-hometowns_la_complete <- distinct_hometowns_la %>%
-  left_join(census_data_la_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+hometowns_tx_complete <- distinct_hometowns_tx %>%
+  left_join(census_data_tx_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
 # Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
-hometowns_la_complete %>%
+hometowns_tx_complete %>%
   filter(is.na(geoid))
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 
-# For Geismar, LA (70734), St. Amant, LA (70774), and Vacherie, LA (70090), the zip codes seems to be good substitutes: https://censusreporter.org/profiles/86000US70734-70734/ https://censusreporter.org/profiles/86000US70774-70774/ https://censusreporter.org/profiles/86000US70090-70090/
-census_data_zips_la_2021 <- get_acs(geography = "zcta",
+# For Cypress, TX (77429), New Caney, TX (77357), and Wall, TX (76957), the zip codes seems to be good substitutes: https://censusreporter.org/profiles/86000US77429-77429/ https://censusreporter.org/profiles/86000US77357-77357/ https://censusreporter.org/profiles/86000US76957-76957/
+census_data_zips_tx_2021 <- get_acs(geography = "zcta",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "ZCTA5 70734" | name == "ZCTA5 70774" | name == "ZCTA5 70090") %>%
+  filter(name == "ZCTA5 77429" | name == "ZCTA5 77357" | name == "ZCTA5 76957") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "LA") %>%
+  mutate(state = "TX") %>%
   mutate(city = case_when(
-    city == "ZCTA5 70734" ~ "Geismar",
-    city == "ZCTA5 70774" ~ "St. Amant",
-    city == "ZCTA5 70090" ~ "Vacherie")) %>%
+    city == "ZCTA5 77429" ~ "Cypress",
+    city == "ZCTA5 77357" ~ "New Caney",
+    city == "ZCTA5 76957" ~ "Wall")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
+# For Brock, TX, and Klein, TX, used the school districts because all players went to the same high school: https://censusreporter.org/profiles/97000US4811460-brock-independent-school-district-tx/ https://censusreporter.org/profiles/97000US4825740-klein-independent-school-district-tx/ 
+census_data_sd_tx_2021 <- get_acs(geography = "school district (unified)",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = "TX",
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "Brock Independent School District, Texas" | name == "Klein Independent School District, Texas") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "TX") %>%
+  mutate(city = case_when(
+    city == "Brock Independent School District, Texas" ~ "Brock",
+    city == "Klein Independent School District, Texas" ~ "Klein")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_la_2021 <- bind_rows(census_data_la_2021, census_data_zips_la_2021)
+census_data_tx_2021 <- bind_rows(census_data_tx_2021, census_data_zips_tx_2021, census_data_sd_tx_2021)
  
-hometowns_la_complete <- distinct_hometowns_la %>%
-  left_join(census_data_la_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+hometowns_tx_complete <- distinct_hometowns_tx %>%
+  left_join(census_data_tx_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
-hometowns_la_complete %>%
+hometowns_tx_complete %>%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
 
 # Step 10: If needed, uncomment out to create a CSV
-#write_csv(hometowns_la_complete, file = "hometowns_la.csv")
-
-```
-
-```{r}
-
-# TEXAS
-
-#Let's keep going: TX
-football_rosters_tx <- football_rosters_usa %>%
-  filter(hometown_state_clean == "TX")
-
-distinct_hometowns_tx <- football_rosters_tx %>%
-  group_by(hometown_city_clean, hometown_state_clean) %>%
-  summarise(total_players = n())
-
-#Let's see if we can grab the populations of every city in TX
-city_pops_tx_2021 <- get_acs(geography = "place",
-                           variables = "B01003_001",
-                           year = 2021,
-                           state = "TX") %>%
-  clean_names()
-
-#Now let's see if we can modify this city_pops dataframe to prepare it for a join with our roster data
-city_pops_tx_2021 <- city_pops_tx_2021 %>%
-  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
-  mutate(state = case_when(
-    state == 'Texas' ~ "TX")) %>%
-  mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
-  mutate(city = str_squish(city)) %>%
-  select(city, state, estimate)
-
-city_pops_tx_2021 <- city_pops_tx_2021 %>%
-  rename(population = estimate) %>%
-  filter(city != "Mesquite" | population != 181) #Removing the second Mesquite, TX that is a CDP
-
-brock_pop_2021 <- data.frame(city = "Brock", state = "TX", population = 5894) #obtained using school district because all players went to the same high school https://censusreporter.org/profiles/97000US4811460-brock-independent-school-district-tx/
-
-cypress_pop_2021 <- data.frame(city = "Cypress", state = "TX", population = 88375) #obtained using zip code https://censusreporter.org/profiles/86000US77429-77429/
-
-klein_pop_2021 <- data.frame(city = "Klein", state = "TX", population = 270168) #obtained using school district because all players went to the same high school https://censusreporter.org/profiles/97000US4825740-klein-independent-school-district-tx/
-
-new_caney_pop_2021 <- data.frame(city = "New Caney", state = "TX", population = 29992) #obtained using zip code https://censusreporter.org/profiles/86000US77357-77357/
-
-wall_pop_2021 <- data.frame(city = "Wall", state = "TX", population = 185) #obtained using zip code https://censusreporter.org/profiles/86000US76957-76957/
-
-city_pops_tx_2021 <- bind_rows(city_pops_tx_2021, brock_pop_2021, cypress_pop_2021, klein_pop_2021, new_caney_pop_2021, wall_pop_2021)
-
-#Join
-hometowns_tx_complete <- distinct_hometowns_tx %>%
-  left_join(city_pops_tx_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
-  mutate(players_per_hundred_thousand = round((total_players*100000)/population,1)) %>%
-  arrange(desc(players_per_hundred_thousand))
-
-#Add to SE
-hometowns_se_complete <- bind_rows(hometowns_se_complete, hometowns_tx_complete) %>%
-  arrange(desc(players_per_hundred_thousand))
-
-#Find and fix NA values
-#hometowns_tx_complete %>%
-  #filter(is.na(population))
-
-# CSV
-#write_csv(hometowns_se_complete, file = "hometowns_se.csv")
+#write_csv(hometowns_tx_complete, file = "hometowns_tx.csv")
 
 ```
 
