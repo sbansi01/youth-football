@@ -80,6 +80,7 @@ hometowns_open_refine <- read_csv("hometowns_open_refine.csv")
 #   arrange(desc(total))
 
 ```
+
 ```{r}
 
 #CLEANING/STANDARDIZING STATE
@@ -739,6 +740,7 @@ hometowns_ms_complete %>%
 #write_csv(hometowns_ms_complete, file = "hometowns_ms.csv")
 
 ```
+
 ```{r}
 # NEBRASKA HOMETOWNS
 
@@ -784,23 +786,16 @@ hometowns_ne_complete %>%
   filter(is.na(geoid))
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
-
+# Not applicable because no NA values for Nebraska
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_ms_2021 <- bind_rows(census_data_ms_2021, census_data_nesbit_ms_2021, census_data_friendship_ms_2021)
- 
-hometowns_ms_complete <- distinct_hometowns_ms %>%
-  left_join(census_data_ms_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
-  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
-  arrange(desc(players_per_thousand))
-
-hometowns_ms_complete %>%
-  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
+# Not applicable because no NA values for Nebraska
 
 # Step 10: If needed, uncomment out to create a CSV
-#write_csv(hometowns_ms_complete, file = "hometowns_ms.csv")
+#write_csv(hometowns_ne_complete, file = "hometowns_ne.csv")
 
 ```
+
 ```{r}
 
 # TEXAS HOMETOWNS
@@ -901,7 +896,7 @@ hometowns_tx_complete %>%
 
 # ALL HOMETOWNS
 
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_la_complete, hometowns_ms_complete, hometowns_tx_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_la_complete, hometowns_ms_complete, hometowns_ne_complete, hometowns_tx_complete) %>%
   arrange(desc(players_per_thousand))
 
 #write_csv(hometowns_complete, file = "hometowns_complete.csv")
