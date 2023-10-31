@@ -603,7 +603,13 @@ census_data_hi_2021 <- census_data_hi_2021 %>%
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
 census_data_hi_2021 <- census_data_hi_2021 %>%
   mutate(state = case_when(
-    state == 'Hawaii' ~ "HI"))
+    state == 'Hawaii' ~ "HI")) %>%
+  mutate(city = case_when(
+    city == 'Urban Honolulu' ~ "Honolulu",
+    city == 'Kailua (Honolulu County)' ~ "Kailua",
+    city == 'Kapaa' ~ "Kapa'a",
+    city == "Mililani Town" ~ "Mililani",
+    TRUE ~ city))
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_hi_complete <- distinct_hometowns_hi %>%
