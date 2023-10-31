@@ -623,48 +623,14 @@ hometowns_hi_complete %>%
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 
-# For Highland Home, AL, the zip code (36041) seems to be a good substitute: https://censusreporter.org/profiles/86000US36041-36041/
-census_data_highland_al_2021 <- get_acs(geography = "zcta",
-                           variables = c("B01003_001", "B02001_003", "B19013_001"),
-                           year = 2021,
-                           output = "wide") %>%
-  clean_names() %>%
-  filter(name == "ZCTA5 36041") %>%
-  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
-  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "AL") %>%
-  mutate(city = case_when(
-    city == "ZCTA5 36041" ~ "Highland Home")) %>%
-  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
-
-# For Watson, AL, data obtained using population of nearby Brookside, AL, which seems to include Watson https://censusreporter.org/profiles/16000US0109736-brookside-al/
-census_data_watson_al_2021 <- get_acs(geography = "place",
-                           variables = c("B01003_001", "B02001_003", "B19013_001"),
-                           year = 2021,
-                           state = "AL",
-                           output = "wide") %>%
-  clean_names() %>%
-  filter(name == "Brookside town, Alabama") %>%
-  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
-  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "AL") %>%
-  mutate(city = case_when(
-    city == "Brookside town, Alabama" ~ "Watson")) %>%
-  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+# For Hawaii, we fixed all the NA values by adjusting the way the census referred to the town (see Step 5) or by adjusting the player's hometown name in OpenRefine (for example, players whose hometowns were listed as Maui)
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_al_2021 <- bind_rows(census_data_al_2021, census_data_highland_al_2021, census_data_watson_al_2021)
- 
-hometowns_al_complete <- distinct_hometowns_al %>%
-  left_join(census_data_al_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
-  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
-  arrange(desc(players_per_thousand))
 
-hometowns_al_complete %>%
-  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
+# N/A for Hawaii
 
 # Step 10: If needed, uncomment out to create a CSV
-#write_csv(hometowns_al_complete, file = "hometowns_al.csv")
+#write_csv(hometowns_hi_complete, file = "hometowns_hi.csv")
 
 ```
 
@@ -1133,7 +1099,7 @@ hometowns_ut_complete %>%
 
 # ALL HOMETOWNS
 
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_ia_complete, hometowns_la_complete, hometowns_ms_complete, hometowns_ne_complete, hometowns_tx_complete, hometowns_ut_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_la_complete, hometowns_ms_complete, hometowns_ne_complete, hometowns_tx_complete, hometowns_ut_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
