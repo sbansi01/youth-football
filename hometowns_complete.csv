@@ -1,33 +1,43 @@
 hometown_city_clean,hometown_state_clean,hometown_combined,total_players,geoid,total_pop,black_pop,median_income,pct_black,players_per_thousand
 Spring Branch,TX,"Spring Branch, TX",2,4869608,154,0,140333,0,13
 Roca,NE,"Roca, NE",2,3141830,167,0,76875,0,12
+Pawleys Island,SC,"Pawleys Island, SC",1,4555015,87,0,130833,0,11.5
 Biggersville,MS,"Biggersville, MS",1,2806100,117,0,33902,0,8.5
+Clare,IA,"Clare, IA",1,1913485,139,0,71250,0,7.2
 Paige,TX,"Paige, TX",1,4854624,142,0,NA,0,7
 Campbellton,FL,"Campbellton, FL",1,1209900,172,127,38750,73.8,5.8
 Sharpsburg,GA,"Sharpsburg, GA",3,1369980,519,98,67763,18.9,5.8
 Silver Creek,MS,"Silver Creek, MS",1,2867960,185,49,30833,26.5,5.4
 Wall,TX,"Wall, TX",1,76957,185,0,NA,0,5.4
 Loachapoka,AL,"Loachapoka, AL",1,0143744,207,53,39688,25.6,4.8
+Defiance,IA,"Defiance, IA",1,1919585,212,0,46875,0,4.7
 French Camp,MS,"French Camp, MS",1,2826020,211,42,35000,19.9,4.7
 Sallis,MS,"Sallis, MS",1,2864800,215,91,36917,42.3,4.7
 Independence,MS,"Independence, MS",1,2834700,233,0,NA,0,4.3
 Johnson,NE,"Johnson, NE",1,3124670,258,2,54583,0.8,3.9
 Raiford,FL,"Raiford, FL",1,1259400,271,38,NA,14,3.7
+Maunaloa,HI,"Maunaloa, HI",1,1550150,270,0,45625,0,3.7
 St. James,LA,"St. James, LA",2,2267355,544,462,26964,84.9,3.7
 Tiger,GA,"Tiger, GA",2,1376504,561,11,40469,2,3.6
+Crawfordsville,IA,"Crawfordsville, IA",1,1917130,309,0,65000,0,3.2
 Columbia,LA,"Columbia, LA",1,2216830,377,109,58750,28.9,2.7
 Bogart,GA,"Bogart, GA",4,1309068,1606,108,67778,6.7,2.5
+Six Mile,SC,"Six Mile, SC",3,4566760,1185,0,100735,0,2.5
 Leroy,AL,"Leroy, AL",2,0142304,885,288,68854,32.5,2.3
 Lexington,MS,"Lexington, MS",3,2840600,1301,1000,31150,76.9,2.3
+Farnhamville,IA,"Farnhamville, IA",1,1926940,457,56,46136,12.3,2.2
 Napoleonville,LA,"Napoleonville, LA",1,2253370,446,347,24083,77.8,2.2
 Lake,MS,"Lake, MS",1,2838600,450,200,51016,44.4,2.2
+Long Grove,IA,"Long Grove, IA",2,1946425,1012,0,109545,0,2
 Centerville,LA,"Centerville, LA",1,2213925,516,0,NA,0,1.9
 Alba,TX,"Alba, TX",1,4801636,516,31,42885,6,1.9
 Aledo,TX,"Aledo, TX",9,4801744,4692,3,112975,0.1,1.9
 Leesburg,GA,"Leesburg, GA",6,1345768,3407,1468,67551,43.1,1.8
+Scranton,IA,"Scranton, IA",1,1971310,547,0,46635,0,1.8
 Argyle,TX,"Argyle, TX",8,4803768,4336,62,149219,1.4,1.8
 Cumming,GA,"Cumming, GA",12,1320932,6886,483,63438,7,1.7
 Moreland,GA,"Moreland, GA",1,1352668,601,56,80000,9.3,1.7
+Kahuku,HI,"Kahuku, HI",4,1522250,2371,54,83566,2.3,1.7
 Tunica,MS,"Tunica, MS",2,2874760,1202,404,44000,33.6,1.7
 Muenster,TX,"Muenster, TX",2,4849932,1201,0,80972,0,1.7
 Katy,TX,"Katy, TX",34,4838476,21926,2613,115250,11.9,1.6
@@ -36,11 +46,15 @@ Coolidge,GA,"Coolidge, GA",1,1319392,666,278,41000,41.7,1.5
 Buford,GA,"Buford, GA",23,1311784,16811,2310,54321,13.7,1.4
 Williamson,GA,"Williamson, GA",1,1383084,692,39,94792,5.6,1.4
 Chatham,LA,"Chatham, LA",1,2214485,691,255,25227,36.9,1.4
+Inman,SC,"Inman, SC",4,4535755,2896,350,51210,12.1,1.4
+Norris,SC,"Norris, SC",1,4550515,727,23,55250,3.2,1.4
 Hardin,TX,"Hardin, TX",1,4832240,696,0,46607,0,1.4
 Tuscola,TX,"Tuscola, TX",1,4874048,719,0,54375,0,1.4
 Bradley Junction,FL,"Bradley Junction, FL",1,1208125,784,293,38621,37.4,1.3
 Hawthorne,FL,"Hawthorne, FL",2,1229275,1495,945,46667,63.2,1.3
+Van Meter,IA,"Van Meter, IA",2,1980445,1528,11,116181,0.7,1.3
 Oak Grove,LA,"Oak Grove, LA",2,2256820,1593,603,26953,37.9,1.3
+Chapin,SC,"Chapin, SC",2,4513150,1544,178,64236,11.5,1.3
 Haslet,TX,"Haslet, TX",3,4832720,2296,12,156250,0.5,1.3
 Magnolia,TX,"Magnolia, TX",3,4846056,2303,316,63661,13.7,1.3
 Blairsville,GA,"Blairsville, GA",1,1308480,825,101,28542,12.2,1.2
@@ -50,6 +64,9 @@ Montgomery,TX,"Montgomery, TX",2,4849128,1617,44,92583,2.7,1.2
 Bethlehem,GA,"Bethlehem, GA",1,1307612,891,44,60076,4.9,1.1
 Hoschton,GA,"Hoschton, GA",3,1340056,2684,183,80152,6.8,1.1
 White,GA,"White, GA",1,1382468,904,0,60750,0,1.1
+Calmar,IA,"Calmar, IA",1,1910045,952,0,70724,0,1.1
+Dayton,IA,"Dayton, IA",1,1919180,912,0,65625,0,1.1
+Odebolt,IA,"Odebolt, IA",1,1958575,916,0,61196,0,1.1
 Cullen,LA,"Cullen, LA",1,2218790,877,811,17384,92.5,1.1
 Ackerman,MS,"Ackerman, MS",2,2800300,1766,859,33581,48.6,1.1
 Benkelman,NE,"Benkelman, NE",1,3104230,938,0,43182,0,1.1
@@ -58,10 +75,13 @@ Riceboro,GA,"Riceboro, GA",1,1364960,977,879,40911,90,1
 Rochelle,GA,"Rochelle, GA",1,1366024,1010,530,30321,52.5,1
 Suwanee,GA,"Suwanee, GA",20,1374936,20629,3295,99022,16,1
 Watkinsville,GA,"Watkinsville, GA",3,1380788,2888,106,71667,3.7,1
+Britt,IA,"Britt, IA",2,1908605,1922,14,55300,0.7,1
+Underwood,IA,"Underwood, IA",1,1979500,1003,0,85156,0,1
 Watson,LA,"Watson, LA",1,2280010,965,0,98073,0,1
 Lucedale,MS,"Lucedale, MS",3,2842440,2910,908,26813,31.2,1
 Raleigh,MS,"Raleigh, MS",1,2860840,961,375,21837,39,1
 Taylorsville,MS,"Taylorsville, MS",2,2872400,1917,833,38116,43.5,1
+Santee,SC,"Santee, SC",1,4563790,1029,834,24783,81,1
 Bogata,TX,"Bogata, TX",1,4809172,1046,4,27868,0.4,1
 Grandview,TX,"Grandview, TX",2,4830512,1975,6,63906,0.3,1
 Newton,TX,"Newton, TX",2,4851372,2042,428,37115,21,1
@@ -71,16 +91,22 @@ Blue Ridge,GA,"Blue Ridge, GA",1,1308928,1167,26,29922,2.2,0.9
 Franklin,GA,"Franklin, GA",1,1331292,1056,282,21518,26.7,0.9
 Grayson,GA,"Grayson, GA",4,1334596,4478,3172,113652,70.8,0.9
 Norman Park,GA,"Norman Park, GA",1,1355860,1109,375,48214,33.8,0.9
+Laie,HI,"Laie, HI",6,1543250,6436,28,101011,0.4,0.9
 Boutte,LA,"Boutte, LA",2,2209130,2253,1424,73632,63.2,0.9
 Edwards,MS,"Edwards, MS",1,2821580,1060,1007,28688,95,0.9
 Tylertown,MS,"Tylertown, MS",2,2875160,2107,856,22050,40.6,0.9
+Blythewood,SC,"Blythewood, SC",4,4507255,4543,1816,102298,40,0.9
+Craytonville,SC,"Craytonville, SC",1,450070115013,1128,0,67813,0,0.9
 Dripping Springs,TX,"Dripping Springs, TX",4,4821424,4699,35,111429,0.7,0.9
 Newark,TX,"Newark, TX",1,4850772,1100,0,45313,0,0.9
 Killen,AL,"Killen, AL",1,0139784,1209,50,54261,4.1,0.8
 Watson,AL,"Watson, AL",1,0109736,1252,413,62321,33,0.8
 Greenville,FL,"Greenville, FL",1,1227575,1206,1068,39125,88.6,0.8
 Stone Mountain,GA,"Stone Mountain, GA",5,1373816,6622,5724,44716,86.4,0.8
+Dike,IA,"Dike, IA",1,1921405,1195,0,78485,0,0.8
+Rock Rapids,IA,"Rock Rapids, IA",2,1968160,2604,7,66473,0.3,0.8
 Louisville,MS,"Louisville, MS",5,2842280,6108,3953,34654,64.7,0.8
+Central,SC,"Central, SC",4,4513015,5229,650,36596,12.4,0.8
 Big Sandy,TX,"Big Sandy, TX",1,4808224,1314,132,40139,10,0.8
 Granger,TX,"Granger, TX",1,4830548,1229,123,49205,10,0.8
 Lexington,TX,"Lexington, TX",1,4842532,1303,58,55817,4.5,0.8
@@ -94,10 +120,13 @@ Starke,FL,"Starke, FL",4,1268525,5669,1557,43339,27.5,0.7
 Windermere,FL,"Windermere, FL",2,1278050,3046,34,131392,1.1,0.7
 Loganville,GA,"Loganville, GA",10,1347196,13810,4536,72820,32.8,0.7
 Subligna,GA,"Subligna, GA",1,130550101002,1538,0,42813,0,0.7
+Waimanalo,HI,"Waimanalo, HI",4,1578050,5371,0,111250,0,0.7
 Columbia,MS,"Columbia, MS",4,2815340,5998,2694,24007,44.9,0.7
 Monticello,MS,"Monticello, MS",1,2848560,1411,449,25536,31.8,0.7
 Mount Olive,MS,"Mount Olive, MS",1,2849520,1408,1003,53947,71.2,0.7
 Wymore,NE,"Wymore, NE",1,3153835,1408,9,46786,0.6,0.7
+Seabrook,SC,"Seabrook, SC",1,4564690,1400,788,55053,56.3,0.7
+Wagener,SC,"Wagener, SC",1,4574050,1357,891,41313,65.7,0.7
 Brock,TX,"Brock, TX",4,4811460,5894,0,132337,0,0.7
 Franklin,TX,"Franklin, TX",1,4827288,1358,232,48625,17.1,0.7
 Needville,TX,"Needville, TX",2,4850628,3059,168,64270,5.5,0.7
@@ -117,6 +146,7 @@ Fort Valley,GA,"Fort Valley, GA",5,1331096,8829,6457,30574,73.1,0.6
 Hogansville,GA,"Hogansville, GA",2,1339244,3224,1199,48077,37.2,0.6
 Pine Mountain,GA,"Pine Mountain, GA",1,1361124,1648,688,60568,41.7,0.6
 Robins AFB,GA,"Robins AFB, GA",1,1365968,1557,211,76717,13.6,0.6
+Hartley,IA,"Hartley, IA",1,1934725,1553,28,43226,1.8,0.6
 Clinton,LA,"Clinton, LA",1,2215990,1665,651,51696,39.1,0.6
 Port Sulphur,LA,"Port Sulphur, LA",1,2262070,1749,929,29334,53.1,0.6
 Byhalia,MS,"Byhalia, MS",1,2810060,1636,830,31533,50.7,0.6
@@ -124,6 +154,7 @@ Itta Bena,MS,"Itta Bena, MS",1,2835260,1614,1461,25104,90.5,0.6
 Pelahatchie,MS,"Pelahatchie, MS",1,2856200,1733,522,48629,30.1,0.6
 Gretna,NE,"Gretna, NE",3,3120260,5106,19,85476,0.4,0.6
 Oakland,NE,"Oakland, NE",1,3135490,1571,12,62292,0.8,0.6
+Roebuck,SC,"Roebuck, SC",2,4561720,3482,735,54153,21.1,0.6
 Clarendon,TX,"Clarendon, TX",1,4815112,1745,221,44653,12.7,0.6
 Gruver,TX,"Gruver, TX",1,4831412,1634,0,50804,0,0.6
 Reform,AL,"Reform, AL",1,0164104,1929,1290,34647,66.9,0.5
@@ -144,11 +175,20 @@ Oxford,GA,"Oxford, GA",1,1358744,2022,647,46094,32,0.5
 Rabun Gap,GA,"Rabun Gap, GA",1,30568,1948,85,65714,4.4,0.5
 Swainsboro,GA,"Swainsboro, GA",4,1374964,7430,4402,32830,59.2,0.5
 Tyrone,GA,"Tyrone, GA",4,1378044,7615,2248,94189,29.5,0.5
+Kealakekua,HI,"Kealakekua, HI",1,1533950,2128,15,70556,0.7,0.5
+Durant,IA,"Durant, IA",1,1922980,1829,20,72212,1.1,0.5
+Lake Mills,IA,"Lake Mills, IA",1,1942555,2101,8,62800,0.4,0.5
 Amite City,LA,"Amite City, LA",2,2201885,3840,2236,39950,58.2,0.5
 Kinder,LA,"Kinder, LA",1,2239755,1866,384,38542,20.6,0.5
 Sardis,MS,"Sardis, MS",1,2865560,2150,1106,33708,51.4,0.5
 Sumrall,MS,"Sumrall, MS",1,2871560,2043,341,72143,16.7,0.5
 Pierce,NE,"Pierce, NE",1,3139100,1932,2,54301,0.1,0.5
+Camden,SC,"Camden, SC",4,4510855,7666,2525,44573,32.9,0.5
+Duncan,SC,"Duncan, SC",2,4521265,3937,1311,52979,33.3,0.5
+St. Matthews,SC,"St. Matthews, SC",1,4562620,2038,1223,37500,60,0.5
+Timmonsville,SC,"Timmonsville, SC",1,4571980,2158,1881,28885,87.2,0.5
+Varnville,SC,"Varnville, SC",1,4573600,1954,1209,33963,61.9,0.5
+Woodruff,SC,"Woodruff, SC",2,4579090,4178,1139,62500,27.3,0.5
 Carthage,TX,"Carthage, TX",3,4813108,6510,813,44951,12.5,0.5
 East Bernard,TX,"East Bernard, TX",1,4821988,2062,0,70323,0,0.5
 Justin,TX,"Justin, TX",2,4838332,4441,594,97869,13.4,0.5
@@ -183,6 +223,13 @@ Mount Vernon,GA,"Mount Vernon, GA",1,1353508,2259,1122,29265,49.7,0.4
 Norcross,GA,"Norcross, GA",7,1355776,17413,4436,70403,25.5,0.4
 Powder Springs,GA,"Powder Springs, GA",6,1362524,16698,8961,78912,53.7,0.4
 Snellville,GA,"Snellville, GA",8,1371604,20475,8175,83691,39.9,0.4
+Pukalani,HI,"Pukalani, HI",3,1565900,7315,0,103206,0,0.4
+Center Point,IA,"Center Point, IA",1,1912270,2582,5,74306,0.2,0.4
+Hawarden,IA,"Hawarden, IA",1,1935265,2675,3,62500,0.1,0.4
+Humboldt,IA,"Humboldt, IA",2,1937560,4744,3,60211,0.1,0.4
+Knoxville,IA,"Knoxville, IA",3,1942015,7537,32,52125,0.4,0.4
+Missouri Valley,IA,"Missouri Valley, IA",1,1952860,2683,0,52847,0,0.4
+West Branch,IA,"West Branch, IA",1,1983595,2289,26,67460,1.1,0.4
 Belle Rose,LA,"Belle Rose, LA",1,2206260,2413,1596,51424,66.1,0.4
 Haynesville,LA,"Haynesville, LA",1,2233525,2402,1634,24766,68,0.4
 Mandeville,LA,"Mandeville, LA",5,2248225,12985,102,79149,0.8,0.4
@@ -197,6 +244,12 @@ Friendship,MS,"Friendship, MS",1,2815140,2430,1373,28906,56.5,0.4
 Philadelphia,MS,"Philadelphia, MS",3,2856960,7107,3863,37551,54.4,0.4
 Poplarville,MS,"Poplarville, MS",1,2859480,2837,934,34815,32.9,0.4
 Bennington,NE,"Bennington, NE",1,3104405,2257,10,87500,0.4,0.4
+Abbeville,SC,"Abbeville, SC",2,4500100,4902,2195,33942,44.8,0.4
+Clemson,SC,"Clemson, SC",7,4514950,17238,1308,48335,7.6,0.4
+Irmo,SC,"Irmo, SC",5,4535890,11581,2959,81380,25.6,0.4
+Johnston,SC,"Johnston, SC",1,4537150,2248,1527,30694,67.9,0.4
+Loris,SC,"Loris, SC",1,4542730,2473,952,30102,38.5,0.4
+Piedmont,SC,"Piedmont, SC",2,4556365,5581,589,52955,10.6,0.4
 Aubrey,TX,"Aubrey, TX",2,4804600,5229,450,74216,8.6,0.4
 Canadian,TX,"Canadian, TX",1,4812412,2379,56,49271,2.4,0.4
 Hallettsville,TX,"Hallettsville, TX",1,4831868,2709,681,44000,25.1,0.4
@@ -237,6 +290,16 @@ Gray,GA,"Gray, GA",1,1334512,3372,1032,55689,30.6,0.3
 Jefferson,GA,"Jefferson, GA",4,1341988,12727,1957,82692,15.4,0.3
 Nicholls,GA,"Nicholls, GA",1,1355440,3124,2023,25938,64.8,0.3
 Ringgold,GA,"Ringgold, GA",1,1365324,3410,80,53218,2.3,0.3
+Ewa Beach,HI,"Ewa Beach, HI",5,1507450,14614,0,108953,0,0.3
+Adel,IA,"Adel, IA",2,1900505,5867,68,67440,1.2,0.3
+Carroll,IA,"Carroll, IA",3,1911080,10261,50,51443,0.5,0.3
+Eldridge,IA,"Eldridge, IA",2,1924600,6634,33,74949,0.5,0.3
+Robins,IA,"Robins, IA",1,1967800,3344,42,127500,1.3,0.3
+Solon,IA,"Solon, IA",1,1973875,2959,14,101250,0.5,0.3
+Story City,IA,"Story City, IA",1,1975675,3400,17,61948,0.5,0.3
+Tipton,IA,"Tipton, IA",1,1978285,3143,41,72841,1.3,0.3
+Waukon,IA,"Waukon, IA",1,1982740,3815,1,52421,0,0.3
+Williamsburg,IA,"Williamsburg, IA",1,1985845,3322,0,72083,0,0.3
 Farmerville,LA,"Farmerville, LA",1,2225160,3382,1879,26170,55.6,0.3
 Iowa,LA,"Iowa, LA",1,2237445,3329,847,55163,25.4,0.3
 Lutcher,LA,"Lutcher, LA",1,2246720,3163,1729,42390,54.7,0.3
@@ -247,6 +310,16 @@ Walker,LA,"Walker, LA",2,2279240,6322,653,80521,10.3,0.3
 Canton,MS,"Canton, MS",3,2811100,10955,8017,33634,73.2,0.3
 Magee,MS,"Magee, MS",1,2844600,3984,1467,27045,36.8,0.3
 Petal,MS,"Petal, MS",3,2856800,11342,1826,55407,16.1,0.3
+Anderson,SC,"Anderson, SC",9,4501360,28796,9571,37439,33.2,0.3
+Bamberg,SC,"Bamberg, SC",1,4503790,3103,1968,26164,63.4,0.3
+Clover,SC,"Clover, SC",2,4515355,6566,907,55893,13.8,0.3
+Dalzell,SC,"Dalzell, SC",1,4518430,3319,1149,58924,34.6,0.3
+Fort Mill,SC,"Fort Mill, SC",8,4526890,24069,2733,120665,11.4,0.3
+Hampton,SC,"Hampton, SC",1,4531885,2907,1368,48898,47.1,0.3
+Honea Path,SC,"Honea Path, SC",1,4534810,3659,533,40714,14.6,0.3
+Laurens,SC,"Laurens, SC",3,4540615,9251,3745,48574,40.5,0.3
+McCormick,SC,"McCormick, SC",1,4543720,2936,1954,37123,66.6,0.3
+Sumter,SC,"Sumter, SC",11,4570405,42920,20669,43051,48.2,0.3
 Abernathy,TX,"Abernathy, TX",1,4800160,3359,76,69196,2.3,0.3
 Colleyville,TX,"Colleyville, TX",9,4815988,25827,559,180698,2.2,0.3
 DeSoto,TX,"DeSoto, TX",14,4820092,55761,37459,79570,67.2,0.3
@@ -332,6 +405,21 @@ Toccoa,GA,"Toccoa, GA",2,1376756,9048,1553,48039,17.2,0.2
 Valdosta,GA,"Valdosta, GA",9,1378800,55417,31212,35188,56.3,0.2
 Waycross,GA,"Waycross, GA",3,1380956,13898,7963,31151,57.3,0.2
 Woodstock,GA,"Woodstock, GA",6,1384176,33857,3329,92648,9.8,0.2
+Kapa'a,HI,"Kapa'a, HI",2,1528850,11516,114,94457,1,0.2
+Kapolei,HI,"Kapolei, HI",4,1530300,23248,573,116128,2.5,0.2
+Pupukea,HI,"Pupukea, HI",1,1566800,4416,20,87780,0.5,0.2
+Carlisle,IA,"Carlisle, IA",1,1910765,4063,14,90813,0.3,0.2
+Estherville,IA,"Estherville, IA",1,1925860,5904,210,53404,3.6,0.2
+Harlan,IA,"Harlan, IA",1,1934500,4912,121,50294,2.5,0.2
+Huxley,IA,"Huxley, IA",1,1937920,4293,165,111520,3.8,0.2
+Iowa Falls,IA,"Iowa Falls, IA",1,1938640,5154,42,45896,0.8,0.2
+Norwalk,IA,"Norwalk, IA",2,1957675,12592,164,91610,1.3,0.2
+Rock Valley,IA,"Rock Valley, IA",1,1968205,4018,0,59136,0,0.2
+Sergeant Bluff,IA,"Sergeant Bluff, IA",1,1971625,4917,7,108101,0.1,0.2
+Shenandoah,IA,"Shenandoah, IA",1,1972525,4874,41,44898,0.8,0.2
+Tiffin,IA,"Tiffin, IA",1,1978060,4482,65,85826,1.5,0.2
+Waverly,IA,"Waverly, IA",2,1982875,10278,212,70688,2.1,0.2
+Winterset,IA,"Winterset, IA",1,1986520,5309,130,62382,2.4,0.2
 Gonzales,LA,"Gonzales, LA",2,2229850,12080,6021,59108,49.8,0.2
 Jennings,LA,"Jennings, LA",2,2238355,9836,2245,37301,22.8,0.2
 Kaplan,LA,"Kaplan, LA",1,2239055,4384,386,52783,8.8,0.2
@@ -355,6 +443,17 @@ Pontotoc,MS,"Pontotoc, MS",1,2859160,5621,1870,49036,33.3,0.2
 Winona,MS,"Winona, MS",1,2880760,4512,2619,27091,58,0.2
 Aurora,NE,"Aurora, NE",1,3102690,4642,0,65833,0,0.2
 Wahoo,NE,"Wahoo, NE",1,3150965,4754,88,68092,1.9,0.2
+Batesburg-Leesville,SC,"Batesburg-Leesville, SC",1,4504300,5322,2570,46070,48.3,0.2
+Cheraw,SC,"Cheraw, SC",1,4513600,5090,2189,29276,43,0.2
+Chester,SC,"Chester, SC",1,4514095,5283,3314,31210,62.7,0.2
+Columbia,SC,"Columbia, SC",21,4516000,137276,56180,48791,40.9,0.2
+Dillon,SC,"Dillon, SC",1,4519420,6354,3067,42822,48.3,0.2
+Gaffney,SC,"Gaffney, SC",3,4528060,12560,5316,33514,42.3,0.2
+Greenville,SC,"Greenville, SC",11,4530850,69725,16197,60388,23.2,0.2
+Isle of Palms,SC,"Isle of Palms, SC",1,4536115,4318,0,134917,0,0.2
+Marion,SC,"Marion, SC",1,4544575,6472,5008,27024,77.4,0.2
+Mullins,SC,"Mullins, SC",1,4548805,4068,2910,29559,71.5,0.2
+Walhalla,SC,"Walhalla, SC",1,4574095,4076,159,36825,3.9,0.2
 Allen,TX,"Allen, TX",16,4801924,102778,9827,118254,9.6,0.2
 Azle,TX,"Azle, TX",2,4805168,13157,227,79425,1.7,0.2
 Bastrop,TX,"Bastrop, TX",2,4805864,9531,592,68591,6.2,0.2
@@ -496,6 +595,27 @@ Thomaston,GA,"Thomaston, GA",1,1376168,9665,4301,28133,44.5,0.1
 Tucker,GA,"Tucker, GA",2,1377652,36764,12564,75377,34.2,0.1
 Villa Rica,GA,"Villa Rica, GA",2,1379528,16863,7182,76544,42.6,0.1
 Warner Robins,GA,"Warner Robins, GA",5,1380508,79589,32432,58379,40.7,0.1
+Honolulu,HI,"Honolulu, HI",21,1571550,351554,6614,76495,1.9,0.1
+Lihue,HI,"Lihue, HI",1,1545200,8371,163,83872,1.9,0.1
+Mililani,HI,"Mililani, HI",2,1551050,27974,631,108192,2.3,0.1
+Nanakuli,HI,"Nanakuli, HI",1,1553900,12587,113,75025,0.9,0.1
+Wahiawa,HI,"Wahiawa, HI",1,1572650,17357,382,75932,2.2,0.1
+Wailuku,HI,"Wailuku, HI",1,1577450,15670,240,83393,1.5,0.1
+Waipahu,HI,"Waipahu, HI",3,1579700,39927,256,83671,0.6,0.1
+Altoona,IA,"Altoona, IA",2,1901630,19345,622,83514,3.2,0.1
+Ankeny,IA,"Ankeny, IA",5,1902305,66346,953,92959,1.4,0.1
+Bettendorf,IA,"Bettendorf, IA",5,1906355,38631,723,89375,1.9,0.1
+Cedar Rapids,IA,"Cedar Rapids, IA",9,1912000,136512,12074,63170,8.8,0.1
+Council Bluffs,IA,"Council Bluffs, IA",4,1916860,62617,1278,57683,2,0.1
+Dubuque,IA,"Dubuque, IA",3,1922395,59379,2521,58691,4.2,0.1
+Indianola,IA,"Indianola, IA",1,1938280,15544,97,67206,0.6,0.1
+Iowa City,IA,"Iowa City, IA",5,1938595,74240,6203,51925,8.4,0.1
+North Liberty,IA,"North Liberty, IA",1,1957360,19976,1028,96351,5.1,0.1
+Pella,IA,"Pella, IA",1,1962040,10414,138,80270,1.3,0.1
+Pleasant Hill,IA,"Pleasant Hill, IA",1,1963525,10203,556,76371,5.4,0.1
+Sioux Center,IA,"Sioux Center, IA",1,1973290,8090,32,80955,0.4,0.1
+Urbandale,IA,"Urbandale, IA",5,1979950,45037,2240,100589,5,0.1
+West Des Moines,IA,"West Des Moines, IA",9,1983910,67640,2611,76564,3.9,0.1
 Alexandria,LA,"Alexandria, LA",4,2200975,45736,25274,43760,55.3,0.1
 Baton Rouge,LA,"Baton Rouge, LA",23,2205000,225539,120257,46282,53.3,0.1
 Breaux Bridge,LA,"Breaux Bridge, LA",1,2209340,7711,3110,44155,40.3,0.1
@@ -547,6 +667,25 @@ Omaha,NE,"Omaha, NE",37,3137000,488059,58430,65359,12,0.1
 Scottsbluff,NE,"Scottsbluff, NE",1,3144245,14511,132,50788,0.9,0.1
 Seward,NE,"Seward, NE",1,3144420,7651,44,68348,0.6,0.1
 York,NE,"York, NE",1,3154045,8091,76,61230,0.9,0.1
+Clinton,SC,"Clinton, SC",1,4515295,7753,2270,35462,29.3,0.1
+Conway,SC,"Conway, SC",2,4516405,22001,7489,44976,34,0.1
+Florence,SC,"Florence, SC",4,4525810,39816,18901,52425,47.5,0.1
+Fountain Inn,SC,"Fountain Inn, SC",1,4527070,10237,2693,72558,26.3,0.1
+Greenwood,SC,"Greenwood, SC",3,4530895,22363,11143,35378,49.8,0.1
+Greer,SC,"Greer, SC",3,4530985,35151,5801,67536,16.5,0.1
+Hartsville,SC,"Hartsville, SC",1,4532560,7565,3761,40716,49.7,0.1
+Hilton Head Island,SC,"Hilton Head Island, SC",5,4534045,38068,2151,87884,5.7,0.1
+Lexington,SC,"Lexington, SC",2,4541335,23068,2416,73785,10.5,0.1
+Little River,SC,"Little River, SC",1,4542010,9929,316,56733,3.2,0.1
+Lugoff,SC,"Lugoff, SC",1,4543000,9127,1976,54727,21.7,0.1
+Mauldin,SC,"Mauldin, SC",3,4545115,24735,5830,73755,23.6,0.1
+Myrtle Beach,SC,"Myrtle Beach, SC",5,4549075,35116,6152,45701,17.5,0.1
+Newberry,SC,"Newberry, SC",1,4549570,10496,4988,44330,47.5,0.1
+North Augusta,SC,"North Augusta, SC",2,4550695,24013,3518,72202,14.7,0.1
+Rock Hill,SC,"Rock Hill, SC",8,4561405,72883,28173,55706,38.7,0.1
+Spartanburg,SC,"Spartanburg, SC",3,4568290,37990,16888,45228,44.5,0.1
+West Columbia,SC,"West Columbia, SC",1,4575850,17265,3159,48163,18.3,0.1
+York,SC,"York, SC",1,4579630,8423,2990,41645,35.5,0.1
 Addison,TX,"Addison, TX",1,4801240,16405,2682,74012,16.3,0.1
 Arlington,TX,"Arlington, TX",34,4804000,392304,89682,65481,22.9,0.1
 Athens,TX,"Athens, TX",1,4804504,12719,2369,45625,18.6,0.1
@@ -696,6 +835,19 @@ Mableton,GA,"Mableton, GA",2,1348288,41632,17445,69395,41.9,0
 Macon,GA,"Macon, GA",4,1349008,156711,85154,43862,54.3,0
 Peachtree City,GA,"Peachtree City, GA",1,1359724,37867,2604,103374,6.9,0
 Sugar Hill,GA,"Sugar Hill, GA",1,1374180,24599,3048,89583,12.4,0
+Hilo,HI,"Hilo, HI",1,1514650,46559,316,70356,0.7,0
+Kailua,HI,"Kailua, HI",1,1523150,40402,231,133327,0.6,0
+Kaneohe,HI,"Kaneohe, HI",1,1528250,34509,249,118770,0.7,0
+Pearl City,HI,"Pearl City, HI",1,1562600,45941,742,108772,1.6,0
+Ames,IA,"Ames, IA",2,1901855,65522,2017,54339,3.1,0
+Davenport,IA,"Davenport, IA",1,1919000,101725,11135,56315,10.9,0
+Des Moines,IA,"Des Moines, IA",8,1921000,213545,23908,58444,11.2,0
+Fort Dodge,IA,"Fort Dodge, IA",1,1928515,24826,1522,50409,6.1,0
+Marion,IA,"Marion, IA",1,1949485,41023,797,75927,1.9,0
+Pleasant Valley,IA,"Pleasant Valley, IA",1,1916393420,40356,830,90733,2.1,0
+Sioux City,IA,"Sioux City, IA",1,1973335,85081,4114,59435,4.8,0
+Waterloo,IA,"Waterloo, IA",2,1982425,67695,11725,49430,17.3,0
+Waukee,IA,"Waukee, IA",1,1982695,23441,737,101138,3.1,0
 Kenner,LA,"Kenner, LA",3,2239475,66411,13140,58419,19.8,0
 Metairie,LA,"Metairie, LA",4,2250115,140590,14488,65740,10.3,0
 Shreveport,LA,"Shreveport, LA",7,2270000,189374,107042,41782,56.5,0
@@ -707,6 +859,11 @@ Grand Island,NE,"Grand Island, NE",1,3119595,52755,2020,58162,3.8,0
 Kearney,NE,"Kearney, NE",1,3125055,33558,357,62695,1.1,0
 Lincoln,NE,"Lincoln, NE",11,3128000,289136,11975,62566,4.1,0
 Papillion,NE,"Papillion, NE",1,3138295,23875,658,95293,2.8,0
+Charleston,SC,"Charleston, SC",4,4513330,147928,29064,76556,19.6,0
+Mount Pleasant,SC,"Mount Pleasant, SC",2,4548535,88900,2968,106216,3.3,0
+North Charleston,SC,"North Charleston, SC",1,4550875,114542,50112,52264,43.7,0
+Summerville,SC,"Summerville, SC",1,4570270,50318,9936,64507,19.7,0
+Taylors,SC,"Taylors, SC",1,4571395,23348,2743,62989,11.7,0
 Abilene,TX,"Abilene, TX",3,4801000,125474,12791,54493,10.2,0
 Alvin,TX,"Alvin, TX",1,4802272,26982,1413,59806,5.2,0
 Amarillo,TX,"Amarillo, TX",5,4803000,200371,14273,55174,7.1,0

@@ -1770,50 +1770,13 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xpYnJhcmllc1xubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xpYnJhcmllc1xubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KGdvb2dsZXNoZWV0czQpXG5saWJyYXJ5KGphbml0b3IpXG5saWJyYXJ5KHRpZHljZW5zdXMpXG4jaW5zdGFsbC5wYWNrYWdlcyhcImdvb2dsZXNoZWV0czRcIilcblxuI0F1dGhlbnRpY2F0aW5nIHdpdGggR29vZ2xlIGFjY291bnRcbiNnczRfYXV0aCgpXG5cbiMgTG9hZCBDZW5zdXMgQVBJIGtleVxuU3lzLnNldGVudihDRU5TVVNfQVBJX0tFWSA9IFwiNWNiMmI5YzYyOGExZDEzMjljNWJmNGQzNmZlNDQzNWM2NTAxZWZjOFwiLCBvdmVyd3JpdGUgPSBUUlVFKVxuXG4jIExvYWQgQUNTIGNyb3Nzd2Fsa1xuYWNzXzIwMjEgPC0gbG9hZF92YXJpYWJsZXMoMjAyMSwgXCJhY3M1XCIpXG5cbiMgTG9hZCAyMDIwIENlbnN1cyBjcm9zc3dhbGtcbmNlbnN1c18yMDIwIDwtIGxvYWRfdmFyaWFibGVzKDIwMjAsIFwicGxcIiwgY2FjaGUgPSBUUlVFKVxuXG4jIEhlbHBmdWwgcmVmZXJlbmNlcyBmb3IgdXNpbmcgQUNTIGFuZCBDZW5zdXMgQVBJczogI2h0dHBzOi8vY2Vuc3VzcmVwb3J0ZXIub3JnL3RvcGljcy90YWJsZS1jb2Rlcy9cbiNodHRwczovL3dhbGtlci1kYXRhLmNvbS90aWR5Y2Vuc3VzL2FydGljbGVzL2Jhc2ljLXVzYWdlLmh0bWxcblxuYGBgIn0= -->
 <pre class="r"><code>#libraries
-library(tidyverse)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4yIOKUgOKUgOKclCBnZ3Bsb3QyIDMuMy42ICAgICDinJQgcHVycnIgICAxLjAuMlxu4pyUIHRpYmJsZSAgMy4yLjEgICAgIOKclCBkcGx5ciAgIDEuMS4zXG7inJQgdGlkeXIgICAxLjIuMSAgICAg4pyUIHN0cmluZ3IgMS40LjFcbuKclCByZWFkciAgIDIuMS40ICAgICDinJQgZm9yY2F0cyAwLjUuMuKUgOKUgCBDb25mbGljdHMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAIHRpZHl2ZXJzZV9jb25mbGljdHMoKSDilIDilIBcbuKcliBkcGx5cjo6ZmlsdGVyKCkgbWFza3Mgc3RhdHM6OmZpbHRlcigpXG7inJYgZHBseXI6OmxhZygpICAgIG1hc2tzIHN0YXRzOjpsYWcoKVxuIn0= -->
-<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
-  method         from
-  print.tbl_lazy     
-  print.tbl_sql      
-── Attaching packages ──────────────────────────────── tidyverse 1.3.2 ──✔ ggplot2 3.3.6     ✔ purrr   1.0.2
-✔ tibble  3.2.1     ✔ dplyr   1.1.3
-✔ tidyr   1.2.1     ✔ stringr 1.4.1
-✔ readr   2.1.4     ✔ forcats 0.5.2── Conflicts ─────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnb29nbGVzaGVldHM0KVxubGlicmFyeShqYW5pdG9yKVxuYGBgIn0= -->
-<pre class="r"><code>library(googlesheets4)
-library(janitor)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYamFuaXRvcuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBjaGlzcS50ZXN0LCBmaXNoZXIudGVzdFxuIn0= -->
-<pre><code>
-Attaching package: ‘janitor’
-
-The following objects are masked from ‘package:stats’:
-
-    chisq.test, fisher.test</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5Y2Vuc3VzKVxuYGBgIn0= -->
-<pre class="r"><code>library(tidycensus)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGxlZ2FjeSBwYWNrYWdlcyBtYXB0b29scywgcmdkYWwsIGFuZCByZ2VvcywgdW5kZXJwaW5uaW5nIHRoZSBzcCBwYWNrYWdlLFxud2hpY2ggd2FzIGp1c3QgbG9hZGVkLCB3aWxsIHJldGlyZSBpbiBPY3RvYmVyIDIwMjMuXG5QbGVhc2UgcmVmZXIgdG8gUi1zcGF0aWFsIGV2b2x1dGlvbiByZXBvcnRzIGZvciBkZXRhaWxzLCBlc3BlY2lhbGx5XG5odHRwczovL3Itc3BhdGlhbC5vcmcvci8yMDIzLzA1LzE1L2V2b2x1dGlvbjQuaHRtbC5cbkl0IG1heSBiZSBkZXNpcmFibGUgdG8gbWFrZSB0aGUgc2YgcGFja2FnZSBhdmFpbGFibGU7XG5wYWNrYWdlIG1haW50YWluZXJzIHNob3VsZCBjb25zaWRlciBhZGRpbmcgc2YgdG8gU3VnZ2VzdHM6LlxuVGhlIHNwIHBhY2thZ2UgaXMgbm93IHJ1bm5pbmcgdW5kZXIgZXZvbHV0aW9uIHN0YXR1cyAyXG4gICAgIChzdGF0dXMgMiB1c2VzIHRoZSBzZiBwYWNrYWdlIGluIHBsYWNlIG9mIHJnZGFsKVxuV2FybmluZzogbXVsdGlwbGUgbWV0aG9kcyB0YWJsZXMgZm91bmQgZm9yIOKAmGVsaWRl4oCZV2FybmluZzogcmVwbGFjaW5nIHByZXZpb3VzIGltcG9ydCDigJhtYXB0b29sczo6ZWxpZGXigJkgYnkg4oCYc3A6OmVsaWRl4oCZIHdoZW4gbG9hZGluZyDigJh0aWdyaXPigJlcbiJ9 -->
-<pre><code>The legacy packages maptools, rgdal, and rgeos, underpinning the sp package,
-which was just loaded, will retire in October 2023.
-Please refer to R-spatial evolution reports for details, especially
-https://r-spatial.org/r/2023/05/15/evolution4.html.
-It may be desirable to make the sf package available;
-package maintainers should consider adding sf to Suggests:.
-The sp package is now running under evolution status 2
-     (status 2 uses the sf package in place of rgdal)
-Warning: multiple methods tables found for ‘elide’Warning: replacing previous import ‘maptools::elide’ by ‘sp::elide’ when loading ‘tigris’</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2luc3RhbGwucGFja2FnZXMoXCJnb29nbGVzaGVldHM0XCIpXG5cbiNBdXRoZW50aWNhdGluZyB3aXRoIEdvb2dsZSBhY2NvdW50XG4jZ3M0X2F1dGgoKVxuXG4jIExvYWQgQ2Vuc3VzIEFQSSBrZXlcblN5cy5zZXRlbnYoQ0VOU1VTX0FQSV9LRVkgPSBcIjVjYjJiOWM2MjhhMWQxMzI5YzViZjRkMzZmZTQ0MzVjNjUwMWVmYzhcIiwgb3ZlcndyaXRlID0gVFJVRSlcblxuIyBMb2FkIEFDUyBjcm9zc3dhbGtcbmFjc18yMDIxIDwtIGxvYWRfdmFyaWFibGVzKDIwMjEsIFwiYWNzNVwiKVxuXG4jIExvYWQgMjAyMCBDZW5zdXMgY3Jvc3N3YWxrXG5jZW5zdXNfMjAyMCA8LSBsb2FkX3ZhcmlhYmxlcygyMDIwLCBcInBsXCIsIGNhY2hlID0gVFJVRSlcblxuIyBIZWxwZnVsIHJlZmVyZW5jZXMgZm9yIHVzaW5nIEFDUyBhbmQgQ2Vuc3VzIEFQSXM6ICNodHRwczovL2NlbnN1c3JlcG9ydGVyLm9yZy90b3BpY3MvdGFibGUtY29kZXMvXG4jaHR0cHM6Ly93YWxrZXItZGF0YS5jb20vdGlkeWNlbnN1cy9hcnRpY2xlcy9iYXNpYy11c2FnZS5odG1sXG5cbmBgYCJ9 -->
-<pre class="r"><code>#install.packages(&quot;googlesheets4&quot;)
+library(tidyverse)
+library(googlesheets4)
+library(janitor)
+library(tidycensus)
+#install.packages(&quot;googlesheets4&quot;)
 
 #Authenticating with Google account
 #gs4_auth()
@@ -2146,7 +2109,7 @@ hometowns_al_complete &lt;- distinct_hometowns_al %&gt;%
 hometowns_al_complete %&gt;%
   filter(is.na(geoid))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjIsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMiDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFsyXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3VlN3VzdDTUF4TkN4MHFFcWdTK3dCK2dFb1RsMTBuVFJPSG5hWk40eGFGTktNUklhbWFJTVpwKzVaOTRiNEE1clR4QnIydlVocjcyWW45WHZ4MHY1d1BsME5DU0kvMDQ0ajBFakJKOHZMOE1Mc2xnSUFUa1Q1Si9mNE9TUk13dkpQQmlrTmd0SkRyVWpGZFRCZG1Ld0o0OWNxY05icVRHdDg5bmxsd3RJbjVHdTNLZ3ArZTREdmJ4eDcvK1BhOURiNXcvMy84Z24vQ0ZiTTJOSW5nc0dDTzVXODFBK0tYNldsdDlya0czQ0xQVC9nQm5XUDNYa3pLR20xYmNGS0NsTTdzTmVYU0hTaFhndWtRdXY0TldjZWN1SWlObkhGTTBVcXhnNmd0RmxnTEl3dHNLMlNZQ29HVllueHpCb3kyb3BCTVU2bjUzM09tRlhlMHljUXVRZzFhaVpxNjB1d3NEQURnWFhZRFV6bHBOUENML2V3a0hmMml1Z05rTyszMUtHYTgzT25ON0didVJRN1RRWUtTVVpnU3ROTzJadjhVN2twd0JvVmVTNDBVRXNWV1FnVm5ESy9UNko1WHRkUU9YeE5RbXpjS0ljS05RcVFoUjQ0L1hFcStNak1EQUFBPSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjIsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMiDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFsyXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3VlN3VTdETUF4TnU1V3BrelltYlIvQUQ3UVhKTVFWQ2FFZE9DRVF1MFZaR3Rwb1dWSTFtY1pPOEMxOElWK3c0WFF4YkwxVEtZMzk3TVIrTDM2Nlgxd1BGME5DU0kvMDQ0ajBFakJKOHZMOGtOMFNRTUNKU0ora2ZuK0hwQ2tZM3BuQWlrTmdOSmRscFpndXJ1Wm1MUUo0OGNxY05icVRHdDg5bmxod3RJMzVHc2MxQ1g1NmdPOWtIM3Y4NDl2M052akMvZi94TS80SlY4emEwQ1NDdzRJNWxyODFESWlmcDZlTjJlWWFjSXM4UCtFSGRQYmRlekZwMG1wN0JLY1ZTT25NVmxNdTNZNXlKWmdPb2RsdnlEcm14RmxzNUl4aml0YUs3VVJqc1VBcGpDeXdyWkJoYWdTV2l2SFZDVEJhaTBJeVRhWG1mOCtaMXR6Uk5oTzdDRFZvTFJycUtyT3hNQUNBZDlrTlRPMmswY0F2OXJPVGRQU0xtZzV3dWRGZWp5TGoxVWF2c2h1dmNSZ09Fb1NNd3BDZ25SNUw5Zy9ocWdSSFVPaFNhbVNRS0xZVUtqaGplSnhXOXJ4dXBIYjRtSURhdkJVSUVXNFVJaTAzc3Y4QlNXTFhHeklEQUFBPSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Highland Home","2":"AL","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Watson","2":"AL","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
@@ -2206,7 +2169,7 @@ hometowns_al_complete &lt;- distinct_hometowns_al %&gt;%
 hometowns_al_complete %&gt;%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzV3JESUJUSFRSczNFa2dKZEsrUndPak5IbURzQWNZR3ZSTnJYQ00xS21ybyt2TGRqTkYxOGFyZUhNL3ZITTcvZkx5LzduZmx2Z1FBckVHK3lzQWF1aStBbng5dnpRdHd4RGtaeUVFeDJXK1h0SFdmeWFuQi9LS3RFbjl6bjEwSVFNS3hNYUZJaEdXSExXNi9OQjVva2w1b2VXNkY0K2FtdjZ3WGc3VnZlb2JiWGc3VXlyTkFoTmtMSXB4aUVVSlBmeUZqc2FXTFdHV2x4Undwamk5VW15aHdwSkoxc1oyUUlWVUVCNDdKNlIrb0J0b3hMQkFUeEFuRkxFVXM4cG14aTZDQkZOWEk5bkkwV0hTT1g1UHBIcVd5VEFvMzMybzZDa3oybHVrRTFLT1k5dEUxcEIvRnFYbmVUY3YxOGRzRjAzOHhhK1kvb1JZTXRSNm9PRElSUjRBY0h5Z1B6c1pkeGUrOVZab0pHNi9vcUduOWhpSWhra2ZpaHdQWFgyUUtNeUtNQWdBQSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlJTMjdESUJDR2NXSmEyWkxUU09rMTdFMmxxZ2VvZW9DcWxiSkRCTk1ZQlFNQ3JEU1hUNHR0cG1sWWhjMHczNHptbjhmNzYvYXAzSllJb1NYS0Z4bGE0dkJGK1BQanJYNUJnUVFuUXprcVJ2c2RramJoTXpwck5EK3dWZUt2YnJOWEFwaEo2bHdzQXJCc3FhZk5sNlU5VDlJTHE0K05DdHhkOUsvclFYQTlOVDNEVGFkNzd2VlJFU2I4aVRESnFZcWh4NytRODlUenExamx0YWVTR0VsUDNEb1EySE10V21nblptZ0RZQ2NwTy93RFZjOWJRUlVSaWdVaHlETE1reWtUdW9nYXhIQkxmS2NIUjFVYitEbVo3bDRiTDdRSzh5M0dvK0JrYjVsTndNT2d4bjIwTmVzR2RhaWZ4OTFPNGNzQjAzOHhTK1kvc1JTT3BlNjQyZ3NGRTJCSmQxeEdaeFdPTXEyOU1WWW9EMGNNMURYVGdvQXdMWUZNczZIekw3K0pyNytMQWdBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
@@ -2282,7 +2245,7 @@ hometowns_fl_complete &lt;- distinct_hometowns_fl %&gt;%
 hometowns_fl_complete %&gt;%
   filter(is.na(geoid))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjQsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiNCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFs0XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE4MVQwVXJETUJSTnU5YlJ3VVpsZmtCL29BWFJCNTlGOWlCN2tFMWxiK1V1ald0WWxwUW1ZKzVKdjhVdjlBTmtNK2tTY1FYMTFVSjY3ejMza0p0N2NqTzVtVjMwWmoyRVVBY0Z2b2M2b1haUitIQS9TcStRUm5UZ29RQkZ4ajVyMGxBN0pvajFDbXppWkV4VlNjRkdwM2VDSzVJOGtxS0c1Sm9BTG0waW5nSlhrRXlFUE1hanFjcVNXMUZ5MmRyWEg0My84QkRxTjN4eitzUHk3SW90SHUzMTk0c2RHTjdMdTJtNisvYVQvZis4bzRzS01RUHB4SFJncndBRjJWTU5LOUtpUjdYWVpGemowdXJwditxZmx1ZWp2YThqeGMwUUhNQmhLVlpFaVEzUE1WWGJIRE1DM0tiT3ZsSlNnU0pIdWI0U0NsaGVNZGlTV3JvQ0N5Sm80WTVsR2FKeXdKd0JYbjREK2l0U1VPQTU1VmdYY3F3S3E3eGh1bFBZR25sRjZseVZZaTJCRnhyZnRicnJpa3BSWVliUU4wTWV0dlR6NmhZUXI3blJvMGh4dWViTDlQelNpR3luRDFrbFBUdUZ6bzhPTllPOTNTdDBMNGp3QmVXdWhaREJuREFiRFBUdE5McG5WVTI1Y3JlcFVaazFDamtFQythUXBqbTArd1I4U1Q4TjNBTUFBQT09In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjQsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiNCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFs0XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE4MVRRVTdETUJCMDBvUXFsVnFDeWdQeWdlYkNBYzRJOVlCNlFDMmczcUt0WXhxcnJoM0Zya3BQOEJaZXlBTlFpNTNZaUVZQ3JrUnlkbmQyNVBXTzE5T2IrVVZ2M2tNSWRWRGdlNmdUYWhlRkQvZmowUlhTaUE0OEZLREkyR2ROR21ySEJMRmVnVTJjVEtncUtOam83RTV3UlpKSGtsZVFYQlBBaFUzRU0rQUtrcW1ReDNnMFUybHlLd291Vy92NjQ4a2ZIa0w5bW05TzN5elBydGppMFVGL3Y5aUI0YjI4bTZhN2J6L1ovODg3dXFnUU01Qk9UQWYyY2xDUVBsV3dKaTE2VklsdHlqVXVyWjcrcS81cGVUN2ErenBTWEE5QkF3NExzU1pLYkhtR3FkcGxtQkhnTm5YK2xaSUtGRG5LOVpWUXdMS1N3WTVVMGhWWUVrRnpkeXpMRUtVREZnenc2aHZRWDVPY0FzOG94N3FRWTVWWVpUWFRuY0xXeUVwU1phb1FHd2s4MS9pKzFWMVhsSW9LTTRTK0dmS3dwWjlYdFlEVERUZDY1Q05jYlBocWRHazB0c09IckpDZUhVTG5SMDNKNEdDM0N0MERJbnhKdWVzZ1pMQWd6QVlEZlRtMTdHbFpVYTdjWldwVXByVkFEc0dDT2FUdURlMC9BU3JIbzlEYkF3QUEifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Lithia","2":"FL","3":"3","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Ponte Vedra Beach","2":"FL","3":"3","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Santa Rosa Beach","2":"FL","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"St. Johns","2":"FL","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
@@ -2376,7 +2339,7 @@ hometowns_fl_complete &lt;- distinct_hometowns_fl %&gt;%
 hometowns_fl_complete %&gt;%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzVTdESUJUSDZWWTBiZEtseVh5Tk5qRjY0UU1ZSDhCb3NqdkNLSzVrRkFqUXpMMzhsRkp3bHF0eGN6aS9jM0wrNStQOWRmZFU3a29Bd0Jya3F3eXNvZnNDK1BueDFyd0FSNXlUZ1J3VWsvMTJTVnYzbVp3YXpDL2FLdkUzdDltRkFDUWNHeE9LUkZoMjJPTDJTK09CSnVtRmxxZFdPRzZ1K3N0Nk1WajdwbWU0N2VWQXJUd0pSSmc5SThJcEZpSDA4QmN5Rmx1NmlGVldXc3lSNHZoTXRZa0NCeXBaRjlzSkdWSkZzT2VZSFArQmFxQWR3d0l4UVp4UXpGTEVJcDhadXdnYVNGR05iQzlIZzBYbitDV1o3bDRxeTZSdzg2Mm1vOEJrYjVsT1FEMkthUjlkUS9wUkhKdkg1Mm01UG42OVlQb3ZaczM4SjlTQ29kWWRGUWNtNGdpUTR6M2x3ZG00cS9pOXQwb3pZZU1WSFRXdDMxQWtSUEpJL0hEZzhndkw0dGpSakFJQUFBPT0ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlJTMjdESUJDR2NXSmEyWkxUU09rMTdFMFg3UUdxSHFCcXBld1F3VFJHd1lBQUs4M2wwMktiYVJwV1lUUE1ONlA1NS9IK3VuMHF0eVZDYUlueVJZYVdPSHdSL3Z4NHExOVFJTUhKVUk2SzBYNkhwRTM0ak00YXpROXNsZmlyMit5VkFHYVNPaGVMQUN4YjZtbnpaV25Qay9UQzZtT2pBbmNYL2V0NkVGeFBUYzl3MCttZWUzMVVoQWwvSWt4eXFtTG84Uy9rUFBYOEtsWjU3YWtrUnRJVHR3NEU5bHlMRnRxSkdkb0EyRW5LRHY5QTFmTldVRVdFWWtFSXNnenpaTXFFTHFJR01kd1MzK25CVWRVR2ZrNm11OWZHQzYzQ2ZJdnhLRGpaVzJZVDhEQ29jUjl0emJwQkhlcm5jYmRUK0hMQTlGL01rdmxQTElWanFUdXU5a0xCQkZqU0haZlJXWVdqVEd0dmpCWEt3eEVEZGMyMElDQk1TeURUYk9qOEM1MnI4ZHlMQWdBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
@@ -2565,24 +2528,202 @@ hometowns_ga_complete %&gt;%
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzV3JESUJUSFRSczNFa2dKZEsrUlFObk5IbURzQWNZR3ZSTnJYQ00xS21ybyt2TGRqTkYxOGFyZUhNL3ZITTcvZkx5LzdwL0xmUWtBV0lOOGxZRTFkRjhBUHovZW1oZmdpSE15a0lOaXN0OHVhZXMrazFPRCtVVmJKZjdtUHJzUWdJUmpZMEtSQ01zT1c5eCthVHpRSkwzUTh0d0t4ODFOZjFrdkJtdmY5QXkzdlJ5b2xXZUJDTE1YUkRqRklvU2Uva0xHWWtzWHNjcEtpemxTSEYrb05sSGdTQ1hyWWpzaFE2b0lEaHlUMHo5UURiUmpXQ0FtaUJPS1dZcFk1RE5qRjBFREthcVI3ZVZvc09nY3Z5YlRQVXBsbVJSdXZ0VjBGSmpzTGRNSnFFY3g3YU5yU0QrS1U3UGJUY3YxOGRzRjAzOHhhK1kvb1JZTXRSNm9PRElSUjRBY0h5Z1B6c1pkeGUrOVZab0pHNi9vcUduOWhpSWhra2ZpaHdQWFh5Qk9qK1NNQWdBQSJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIEhBV0FJSSBIT01FVE9XTlNcblxuIyBTdGVwIDE6IEZpbHRlciBmb3IgdGhlIHN0YXRlJ3MgcGxheWVyc1xuZm9vdGJhbGxfcm9zdGVyc19oaSA8LSBmb290YmFsbF9yb3N0ZXJzX3VzYSAlPiVcbiAgZmlsdGVyKGhvbWV0b3duX3N0YXRlX2NsZWFuID09IFwiSElcIilcblxuIyBTdGVwIDI6IEdldCBhIGxpc3Qgb2YgYWxsIHRoZSB1bmlxdWUgaG9tZXRvd25zIGluIHRoZSBzdGF0ZVxuZGlzdGluY3RfaG9tZXRvd25zX2hpIDwtIGZvb3RiYWxsX3Jvc3RlcnNfaGkgJT4lXG4gIGdyb3VwX2J5KGhvbWV0b3duX2NpdHlfY2xlYW4sIGhvbWV0b3duX3N0YXRlX2NsZWFuKSAlPiVcbiAgc3VtbWFyaXNlKHRvdGFsX3BsYXllcnMgPSBuKCkpXG5gYGAifQ== -->
+<pre class="r"><code>
+# HAWAII HOMETOWNS
+
+# Step 1: Filter for the state&#39;s players
+football_rosters_hi &lt;- football_rosters_usa %&gt;%
+  filter(hometown_state_clean == &quot;HI&quot;)
+
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_hi &lt;- football_rosters_hi %&gt;%
+  group_by(hometown_city_clean, hometown_state_clean) %&gt;%
+  summarise(total_players = n())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ2hvbWV0b3duX2NpdHlfY2xlYW4nLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
+<pre><code>`summarise()` has grouped output by &#39;hometown_city_clean&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDM6IEdyYWIgdGhlIHJlbGV2YW50IGNlbnN1cyBkYXRhIGZvciB0aGF0IHN0YXRlLiBOb3RlOiBCMDEwMDMgPSB0b3RhbCBwb3B1bGF0aW9uLCBCMDIwMDEgPSB0b3RhbCBCbGFjayBwb3B1bGF0aW9uLCBCMTkwMTMgPSBtZWRpYW4gaG91c2Vob2xkIGluY29tZS4gV2UgZ2V0IHRoZXNlIGNvZGVzIHVzaW5nIHRoZSBBQ1MgY3Jvc3N3YWxrIHdlIGxvYWRlZCBlYXJsaWVyIChBQ1NfMjAwMSkgYW5kIHRoaXMgd2Vic2l0ZTogaHR0cHM6Ly9jZW5zdXNyZXBvcnRlci5vcmcvdG9waWNzL3RhYmxlLWNvZGVzL1xuY2Vuc3VzX2RhdGFfaGlfMjAyMSA8LSBnZXRfYWNzKGdlb2dyYXBoeSA9IFwicGxhY2VcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhcmlhYmxlcyA9IGMoXCJCMDEwMDNfMDAxXCIsIFwiQjAyMDAxXzAwM1wiLCBcIkIxOTAxM18wMDFcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICB5ZWFyID0gMjAyMSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXRlID0gXCJISVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgb3V0cHV0ID0gXCJ3aWRlXCIpXG5gYGAifQ== -->
+<pre class="r"><code># Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_hi_2021 &lt;- get_acs(geography = &quot;place&quot;,
+                           variables = c(&quot;B01003_001&quot;, &quot;B02001_003&quot;, &quot;B19013_001&quot;),
+                           year = 2021,
+                           state = &quot;HI&quot;,
+                           output = &quot;wide&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiR2V0dGluZyBkYXRhIGZyb20gdGhlIDIwMTctMjAyMSA1LXllYXIgQUNTXG5Vc2luZyBGSVBTIGNvZGUgJzE1JyBmb3Igc3RhdGUgJ0hJJ1xuIn0= -->
+<pre><code>Getting data from the 2017-2021 5-year ACS
+Using FIPS code &#39;15&#39; for state &#39;HI&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDQ6IEdlbmVyYWwgY2xlYW5pbmcgb2YgY2Vuc3VzIGRhdGEgdG8gcHJlcGFyZSBmb3Igam9pbiB3aXRoIGhvbWV0b3ducy9yb3N0ZXIgZGF0YS4gVGhpcyBwYXJ0IGlzIHRoZSBzYW1lIGZvciBldmVyeSBzdGF0ZSBhbmQgKGV4Y2VwdCBmb3IgdGhlIGRhdGFmcmFtZSBuYW1lKSBjYW4gbW9yZSBvciBsZXNzIGJlIGNvcGllZCBhbmQgcGFzdGVkLlxuY2Vuc3VzX2RhdGFfaGlfMjAyMSA8LSBjZW5zdXNfZGF0YV9oaV8yMDIxICU+JVxuICBjbGVhbl9uYW1lcygpICU+JVxuICBzZXBhcmF0ZShuYW1lLCBpbnRvID0gYyhcImNpdHlcIiwgXCJzdGF0ZVwiKSwgc2VwID0gXCIsIFwiLCByZW1vdmUgPSBGQUxTRSkgJT4lXG4gIG11dGF0ZShjaXR5ID0gZ3N1YihcIlxcXFxiKHRvd258Y2l0eXxDRFB8dmlsbGFnZSlcXFxcYlwiLCBcIlwiLCBjaXR5KSkgJT4lXG4gIG11dGF0ZShjaXR5ID0gc3RyX3NxdWlzaChjaXR5KSkgJT4lXG4gIHNlbGVjdChnZW9pZCwgY2l0eSwgc3RhdGUsIGIwMTAwM18wMDFlLCBiMDIwMDFfMDAzZSwgYjE5MDEzXzAwMWUpICU+JVxuICByZW5hbWUodG90YWxfcG9wID0gYjAxMDAzXzAwMWUsIGJsYWNrX3BvcCA9IGIwMjAwMV8wMDNlLCBtZWRpYW5faW5jb21lID0gYjE5MDEzXzAwMWUpICU+JVxuICBtdXRhdGUocGN0X2JsYWNrID0gcm91bmQoYmxhY2tfcG9wL3RvdGFsX3BvcCoxMDAsIDEpKVxuXG4jIFN0ZXAgNTogU3RhdGUtc3BlY2lmaWMgY2xlYW5pbmcgb2YgY2Vuc3VzIGRhdGEgdG8gcHJlcGFyZSBmb3Igam9pbiB3aXRoIGhvbWV0b3ducy9yb3N0ZXIgZGF0YS4gVGhpcyBwYXJ0IGlzIGRpZmZlcmVudCBmb3IgZXZlcnkgc3RhdGUuIFRoZSBmaXJzdCBtdXRhdGUgZnVuY3Rpb24gc2hvdWxkIGJlIGluY2x1ZGVkIGZvciBldmVyeSBzdGF0ZSwganVzdCBtb2RpZmllZCBkZXBlbmRpbmcgb24gdGhlIHN0YXRlIG5hbWUuIEFkZGl0aW9uYWwgbXV0YXRlIGZ1bmN0aW9ucyBtYXkgYmUgbmVlZGVkIGZvciBpbnN0YW5jZXMgd2hlbiB0aGUgY2Vuc3VzIG5hbWVzIHNvbWV0aGluZyBpbiBhIHdlaXJkIHdheSB0aGF0IGRvZXNuJ3QgbGluZSB1cCB3aXRoIHRoZSBob21ldG93bnMuXG5jZW5zdXNfZGF0YV9oaV8yMDIxIDwtIGNlbnN1c19kYXRhX2hpXzIwMjEgJT4lXG4gIG11dGF0ZShzdGF0ZSA9IGNhc2Vfd2hlbihcbiAgICBzdGF0ZSA9PSAnSGF3YWlpJyB+IFwiSElcIikpICU+JVxuICBtdXRhdGUoY2l0eSA9IGNhc2Vfd2hlbihcbiAgICBjaXR5ID09ICdVcmJhbiBIb25vbHVsdScgfiBcIkhvbm9sdWx1XCIsXG4gICAgY2l0eSA9PSAnS2FpbHVhIChIb25vbHVsdSBDb3VudHkpJyB+IFwiS2FpbHVhXCIsXG4gICAgY2l0eSA9PSAnS2FwYWEnIH4gXCJLYXBhJ2FcIixcbiAgICBjaXR5ID09IFwiTWlsaWxhbmkgVG93blwiIH4gXCJNaWxpbGFuaVwiLFxuICAgIFRSVUUgfiBjaXR5KSlcblxuIyBTdGVwIDY6IEpvaW4gdGhlIGNlbnN1cyBkYXRhIHRvIHRoZSBsaXN0IG9mIGhvbWV0b3ducy4gQWxzbyBjcmVhdGUgYSBjb2x1bW4gdGhhdCB0ZWxscyB1cyBob3cgbWFueSBwZW9wbGUgYXJlIGVsaXRlIGNvbGxlZ2UgZm9vdGJhbGwgcGxheWVycyBmb3IgZXZlcnkgMSwwMDAgcmVzaWRlbnRzLlxuaG9tZXRvd25zX2hpX2NvbXBsZXRlIDwtIGRpc3RpbmN0X2hvbWV0b3duc19oaSAlPiVcbiAgbGVmdF9qb2luKGNlbnN1c19kYXRhX2hpXzIwMjEsIGJ5ID0gYyhcImhvbWV0b3duX2NpdHlfY2xlYW5cIiA9IFwiY2l0eVwiLCBcImhvbWV0b3duX3N0YXRlX2NsZWFuXCIgPSBcInN0YXRlXCIpKSAlPiVcbiAgbXV0YXRlKHBsYXllcnNfcGVyX3Rob3VzYW5kID0gcm91bmQoKHRvdGFsX3BsYXllcnMqMTAwMCkvdG90YWxfcG9wLDEpKSAlPiVcbiAgYXJyYW5nZShkZXNjKHBsYXllcnNfcGVyX3Rob3VzYW5kKSlcblxuIyBTdGVwIDc6IE5vdGljZSB0aGVyZSBhcmUgYSBmZXcgTkEgdmFsdWVzLiBUaGlzIGhhcHBlbnMgd2hlbiB0aGUgY2Vuc3VzIGRhdGEgZG9lcyBub3Qgam9pbiB3aXRoIHRoZSBob21ldG93bnMgZGF0YSwgcGVyaGFwcyBiZWNhdXNlIHRoZSBob21ldG93biBpcyBtaXNzcGVsbGVkIG9yIGJlY2F1c2UgdGhlcmUgaXMgbm8gY2Vuc3VzIGRhdGEgZm9yIHRoYXQgdG93bi4gRmlyc3QsIGxldCdzIGZpbmQgdGhlIE5BIHZhbHVlcy5cbmhvbWV0b3duc19oaV9jb21wbGV0ZSAlPiVcbiAgZmlsdGVyKGlzLm5hKGdlb2lkKSlcbmBgYCJ9 -->
+<pre class="r"><code># Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_hi_2021 &lt;- census_data_hi_2021 %&gt;%
+  clean_names() %&gt;%
+  separate(name, into = c(&quot;city&quot;, &quot;state&quot;), sep = &quot;, &quot;, remove = FALSE) %&gt;%
+  mutate(city = gsub(&quot;\\b(town|city|CDP|village)\\b&quot;, &quot;&quot;, city)) %&gt;%
+  mutate(city = str_squish(city)) %&gt;%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %&gt;%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %&gt;%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn&#39;t line up with the hometowns.
+census_data_hi_2021 &lt;- census_data_hi_2021 %&gt;%
+  mutate(state = case_when(
+    state == &#39;Hawaii&#39; ~ &quot;HI&quot;)) %&gt;%
+  mutate(city = case_when(
+    city == &#39;Urban Honolulu&#39; ~ &quot;Honolulu&quot;,
+    city == &#39;Kailua (Honolulu County)&#39; ~ &quot;Kailua&quot;,
+    city == &#39;Kapaa&#39; ~ &quot;Kapa&#39;a&quot;,
+    city == &quot;Mililani Town&quot; ~ &quot;Mililani&quot;,
+    TRUE ~ city))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_hi_complete &lt;- distinct_hometowns_hi %&gt;%
+  left_join(census_data_hi_2021, by = c(&quot;hometown_city_clean&quot; = &quot;city&quot;, &quot;hometown_state_clean&quot; = &quot;state&quot;)) %&gt;%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %&gt;%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let&#39;s find the NA values.
+hometowns_hi_complete %&gt;%
+  filter(is.na(geoid))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlJ6VzdESUF6SFNSczJKVks2U3QxckpKZGR0dnUwQjVnMnFUZEVDV3RRQ1NBZzZ2cnkzVWlDMTVWVHVSai9iUG52ai9mWDdWTzVMUkZDUzVRdk1yVEU0WXZ3NThkYi9Zd0NDVTZHY2xTTTlqc2tiY0puZE5ab2ZtQ3J4Ri9kWnE4RU1KUFV1VmdFWU5sU1Q1c3ZTM3VlcEJkV0h4c1Z1THZvWDllRDRIcHFlb2FiVHZmYzY2TWlUUGdUWVpKVEZVT1BmeUhucWVkWHNjcHJUeVV4a3A2NGRTQ3c1MXEwMEU3TTBBYkFUbEoyK0FlcW5yZUNLaUlVQzBLUVpaZ25VeVowRVRXSTRaYjRUZytPcWpid2N6TGR2VFplYUJYbVc0eEh3Y25lTXB1QWgwR04rMmhyMWczcVVMK011NTNDbHdPbS8yS1d6SDlpS1J4TDNYRzFGd29td0pMdXVJek9LaHhsV250anJGQWVqaGlvYTZZRkFXRmFBcGxtUStkZmdueFg0SXNDQUFBPSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFN0ZXAgODogTm93IHdlIGhhdmUgdG8gZmlndXJlIG91dCBob3cgdG8gYWRkcmVzcyBlYWNoIG9mIHRoZSBOQSB2YWx1ZXMuIFRoaXMgaXMgYSBqdWRnbWVudCBjYWxsLCBhbmQgd2Ugc2hvdWxkIGJlIGNhcmVmdWwgYWJvdXQgZG9jdW1lbnRpbmcgaG93IGFuZCB3aHkgd2UgbWFkZSB0aGF0IGRlY2lzaW9uLiBJZiB0aGVyZSBpcyBhbiBOQSB2YWx1ZSBiZWNhdXNlIGEgaG9tZXRvd24gaXMgbWlzc3BlbGxlZCwgdGVsbCBTYXBuYSwgYW5kIHNoZSB3aWxsIG1ha2UgdGhhdCBjb3JyZWN0aW9uIGluIE9wZW4gUmVmaW5lLiBJZiB0aGVyZSBpcyBhbiBOQSB2YWx1ZSBiZWNhdXNlIHRoZSBjZW5zdXMgZG9lcyBub3QgcmVjb2duaXplIHRoZSBob21ldG93biwgd2UgbmVlZCB0byBmaW5kIHNvbWUgc3Vic3RpdHV0ZSBmb3IgdGhhdCBob21ldG93bi5cblxuIyBGb3IgSGF3YWlpLCB3ZSBmaXhlZCBhbGwgdGhlIE5BIHZhbHVlcyBieSBhZGp1c3RpbmcgdGhlIHdheSB0aGUgY2Vuc3VzIHJlZmVycmVkIHRvIHRoZSB0b3duIChzZWUgU3RlcCA1KSBvciBieSBhZGp1c3RpbmcgdGhlIHBsYXllcidzIGhvbWV0b3duIG5hbWUgaW4gT3BlblJlZmluZSAoZm9yIGV4YW1wbGUsIHBsYXllcnMgd2hvc2UgaG9tZXRvd25zIHdlcmUgbGlzdGVkIGFzIE1hdWkpXG5cbiMgU3RlcCA5OiBXZSBub3cgaGF2ZSB0byBhcHBlbmQgdGhlc2Ugc3BlY2lhbCBjYXNlcyB0byBvdXIgc3RhdGUgY2Vuc3VzIGRhdGEsIHJlZG8gdGhlIGpvaW4sIGFuZCBydW4gb25lIG1vcmUgY2hlY2sgZm9yIE5BIHZhbHVlcy5cblxuIyBOL0EgZm9yIEhhd2FpaVxuXG4jIFN0ZXAgMTA6IElmIG5lZWRlZCwgdW5jb21tZW50IG91dCB0byBjcmVhdGUgYSBDU1ZcbiN3cml0ZV9jc3YoaG9tZXRvd25zX2hpX2NvbXBsZXRlLCBmaWxlID0gXCJob21ldG93bnNfaGkuY3N2XCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
+
+# For Hawaii, we fixed all the NA values by adjusting the way the census referred to the town (see Step 5) or by adjusting the player&#39;s hometown name in OpenRefine (for example, players whose hometowns were listed as Maui)
+
+# Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+
+# N/A for Hawaii
+
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_hi_complete, file = &quot;hometowns_hi.csv&quot;)
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlJTMjdESUJDR2NXSmEyWklqUytrMTdFVzY2UUdxSHFCcXBld1F3VFJHd1lBQUs4M2wwMklNVGMwcWJJYjVaalQvUE41Zjk4L2x2Z1FBckVHK3lzQWF1aStBbng5dnpRdHd4RGtaeUVFeDJXK1h0SFdmeWFuQi9LS3RFbjl6bjEwSVFNS3hNYUZJaEdXSExXNi9OQjVva2w1b2VXNkY0K2FtdjZ3WGc3VnZlb2JiWGc3VXlyTkFoTmtMSXB4aUVVSlBmeUZqc2FXTFdHV2x4Undwamk5VW15aHdwSkoxc1oyUUlWVUVCNDdKNlIrb0J0b3hMQkFUeEFuRkxFVXM4cG14aTZDQkZOWEk5bkkwV0hTT1g1UHBIcVd5VEFvMzMybzZDa3oybHVrRTFLT1k5dEUxcEIvRnFkbnRwdVg2K08yQzZiK1lOZk9mVUF1R1dnOVVISm1JSTBDT0Q1UUhaK091NHZmZUtzMkVqVmQwMUxSK1E1RVF5U1B4dzRIckwwME9HZVdNQWdBQSJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIElPV0EgSE9NRVRPV05TXG5cbiMgU3RlcCAxOiBGaWx0ZXIgZm9yIHRoZSBzdGF0ZSdzIHBsYXllcnNcbmZvb3RiYWxsX3Jvc3RlcnNfaWEgPC0gZm9vdGJhbGxfcm9zdGVyc191c2EgJT4lXG4gIGZpbHRlcihob21ldG93bl9zdGF0ZV9jbGVhbiA9PSBcIklBXCIpXG5cbiMgU3RlcCAyOiBHZXQgYSBsaXN0IG9mIGFsbCB0aGUgdW5pcXVlIGhvbWV0b3ducyBpbiB0aGUgc3RhdGVcbmRpc3RpbmN0X2hvbWV0b3duc19pYSA8LSBmb290YmFsbF9yb3N0ZXJzX2lhICU+JVxuICBncm91cF9ieShob21ldG93bl9jaXR5X2NsZWFuLCBob21ldG93bl9zdGF0ZV9jbGVhbikgJT4lXG4gIHN1bW1hcmlzZSh0b3RhbF9wbGF5ZXJzID0gbigpKVxuYGBgIn0= -->
+<pre class="r"><code>
+# IOWA HOMETOWNS
+
+# Step 1: Filter for the state&#39;s players
+football_rosters_ia &lt;- football_rosters_usa %&gt;%
+  filter(hometown_state_clean == &quot;IA&quot;)
+
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_ia &lt;- football_rosters_ia %&gt;%
+  group_by(hometown_city_clean, hometown_state_clean) %&gt;%
+  summarise(total_players = n())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ2hvbWV0b3duX2NpdHlfY2xlYW4nLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
+<pre><code>`summarise()` has grouped output by &#39;hometown_city_clean&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDM6IEdyYWIgdGhlIHJlbGV2YW50IGNlbnN1cyBkYXRhIGZvciB0aGF0IHN0YXRlLiBOb3RlOiBCMDEwMDMgPSB0b3RhbCBwb3B1bGF0aW9uLCBCMDIwMDEgPSB0b3RhbCBCbGFjayBwb3B1bGF0aW9uLCBCMTkwMTMgPSBtZWRpYW4gaG91c2Vob2xkIGluY29tZS4gV2UgZ2V0IHRoZXNlIGNvZGVzIHVzaW5nIHRoZSBBQ1MgY3Jvc3N3YWxrIHdlIGxvYWRlZCBlYXJsaWVyIChBQ1NfMjAwMSkgYW5kIHRoaXMgd2Vic2l0ZTogaHR0cHM6Ly9jZW5zdXNyZXBvcnRlci5vcmcvdG9waWNzL3RhYmxlLWNvZGVzL1xuY2Vuc3VzX2RhdGFfaWFfMjAyMSA8LSBnZXRfYWNzKGdlb2dyYXBoeSA9IFwicGxhY2VcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhcmlhYmxlcyA9IGMoXCJCMDEwMDNfMDAxXCIsIFwiQjAyMDAxXzAwM1wiLCBcIkIxOTAxM18wMDFcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICB5ZWFyID0gMjAyMSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXRlID0gXCJJQVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgb3V0cHV0ID0gXCJ3aWRlXCIpXG5gYGAifQ== -->
+<pre class="r"><code># Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_ia_2021 &lt;- get_acs(geography = &quot;place&quot;,
+                           variables = c(&quot;B01003_001&quot;, &quot;B02001_003&quot;, &quot;B19013_001&quot;),
+                           year = 2021,
+                           state = &quot;IA&quot;,
+                           output = &quot;wide&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiR2V0dGluZyBkYXRhIGZyb20gdGhlIDIwMTctMjAyMSA1LXllYXIgQUNTXG5Vc2luZyBGSVBTIGNvZGUgJzE5JyBmb3Igc3RhdGUgJ0lBJ1xuIn0= -->
+<pre><code>Getting data from the 2017-2021 5-year ACS
+Using FIPS code &#39;19&#39; for state &#39;IA&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDQ6IEdlbmVyYWwgY2xlYW5pbmcgb2YgY2Vuc3VzIGRhdGEgdG8gcHJlcGFyZSBmb3Igam9pbiB3aXRoIGhvbWV0b3ducy9yb3N0ZXIgZGF0YS4gVGhpcyBwYXJ0IGlzIHRoZSBzYW1lIGZvciBldmVyeSBzdGF0ZSBhbmQgKGV4Y2VwdCBmb3IgdGhlIGRhdGFmcmFtZSBuYW1lKSBjYW4gbW9yZSBvciBsZXNzIGJlIGNvcGllZCBhbmQgcGFzdGVkLlxuY2Vuc3VzX2RhdGFfaWFfMjAyMSA8LSBjZW5zdXNfZGF0YV9pYV8yMDIxICU+JVxuICBjbGVhbl9uYW1lcygpICU+JVxuICBzZXBhcmF0ZShuYW1lLCBpbnRvID0gYyhcImNpdHlcIiwgXCJzdGF0ZVwiKSwgc2VwID0gXCIsIFwiLCByZW1vdmUgPSBGQUxTRSkgJT4lXG4gIG11dGF0ZShjaXR5ID0gZ3N1YihcIlxcXFxiKHRvd258Y2l0eXxDRFB8dmlsbGFnZSlcXFxcYlwiLCBcIlwiLCBjaXR5KSkgJT4lXG4gIG11dGF0ZShjaXR5ID0gc3RyX3NxdWlzaChjaXR5KSkgJT4lXG4gIHNlbGVjdChnZW9pZCwgY2l0eSwgc3RhdGUsIGIwMTAwM18wMDFlLCBiMDIwMDFfMDAzZSwgYjE5MDEzXzAwMWUpICU+JVxuICByZW5hbWUodG90YWxfcG9wID0gYjAxMDAzXzAwMWUsIGJsYWNrX3BvcCA9IGIwMjAwMV8wMDNlLCBtZWRpYW5faW5jb21lID0gYjE5MDEzXzAwMWUpICU+JVxuICBtdXRhdGUocGN0X2JsYWNrID0gcm91bmQoYmxhY2tfcG9wL3RvdGFsX3BvcCoxMDAsIDEpKVxuXG4jIFN0ZXAgNTogU3RhdGUtc3BlY2lmaWMgY2xlYW5pbmcgb2YgY2Vuc3VzIGRhdGEgdG8gcHJlcGFyZSBmb3Igam9pbiB3aXRoIGhvbWV0b3ducy9yb3N0ZXIgZGF0YS4gVGhpcyBwYXJ0IGlzIGRpZmZlcmVudCBmb3IgZXZlcnkgc3RhdGUuIFRoZSBmaXJzdCBtdXRhdGUgZnVuY3Rpb24gc2hvdWxkIGJlIGluY2x1ZGVkIGZvciBldmVyeSBzdGF0ZSwganVzdCBtb2RpZmllZCBkZXBlbmRpbmcgb24gdGhlIHN0YXRlIG5hbWUuIEFkZGl0aW9uYWwgbXV0YXRlIGZ1bmN0aW9ucyBtYXkgYmUgbmVlZGVkIGZvciBpbnN0YW5jZXMgd2hlbiB0aGUgY2Vuc3VzIG5hbWVzIHNvbWV0aGluZyBpbiBhIHdlaXJkIHdheSB0aGF0IGRvZXNuJ3QgbGluZSB1cCB3aXRoIHRoZSBob21ldG93bnMuXG5jZW5zdXNfZGF0YV9pYV8yMDIxIDwtIGNlbnN1c19kYXRhX2lhXzIwMjEgJT4lXG4gIG11dGF0ZShzdGF0ZSA9IGNhc2Vfd2hlbihcbiAgICBzdGF0ZSA9PSAnSW93YScgfiBcIklBXCIpKVxuXG4jIFN0ZXAgNjogSm9pbiB0aGUgY2Vuc3VzIGRhdGEgdG8gdGhlIGxpc3Qgb2YgaG9tZXRvd25zLiBBbHNvIGNyZWF0ZSBhIGNvbHVtbiB0aGF0IHRlbGxzIHVzIGhvdyBtYW55IHBlb3BsZSBhcmUgZWxpdGUgY29sbGVnZSBmb290YmFsbCBwbGF5ZXJzIGZvciBldmVyeSAxLDAwMCByZXNpZGVudHMuXG5ob21ldG93bnNfaWFfY29tcGxldGUgPC0gZGlzdGluY3RfaG9tZXRvd25zX2lhICU+JVxuICBsZWZ0X2pvaW4oY2Vuc3VzX2RhdGFfaWFfMjAyMSwgYnkgPSBjKFwiaG9tZXRvd25fY2l0eV9jbGVhblwiID0gXCJjaXR5XCIsIFwiaG9tZXRvd25fc3RhdGVfY2xlYW5cIiA9IFwic3RhdGVcIikpICU+JVxuICBtdXRhdGUocGxheWVyc19wZXJfdGhvdXNhbmQgPSByb3VuZCgodG90YWxfcGxheWVycyoxMDAwKS90b3RhbF9wb3AsMSkpICU+JVxuICBhcnJhbmdlKGRlc2MocGxheWVyc19wZXJfdGhvdXNhbmQpKVxuXG4jIFN0ZXAgNzogTm90aWNlIHRoZXJlIGFyZSBhIGZldyBOQSB2YWx1ZXMuIFRoaXMgaGFwcGVucyB3aGVuIHRoZSBjZW5zdXMgZGF0YSBkb2VzIG5vdCBqb2luIHdpdGggdGhlIGhvbWV0b3ducyBkYXRhLCBwZXJoYXBzIGJlY2F1c2UgdGhlIGhvbWV0b3duIGlzIG1pc3NwZWxsZWQgb3IgYmVjYXVzZSB0aGVyZSBpcyBubyBjZW5zdXMgZGF0YSBmb3IgdGhhdCB0b3duLiBGaXJzdCwgbGV0J3MgZmluZCB0aGUgTkEgdmFsdWVzLlxuaG9tZXRvd25zX2lhX2NvbXBsZXRlICU+JVxuICBmaWx0ZXIoaXMubmEoZ2VvaWQpKVxuYGBgIn0= -->
+<pre class="r"><code># Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_ia_2021 &lt;- census_data_ia_2021 %&gt;%
+  clean_names() %&gt;%
+  separate(name, into = c(&quot;city&quot;, &quot;state&quot;), sep = &quot;, &quot;, remove = FALSE) %&gt;%
+  mutate(city = gsub(&quot;\\b(town|city|CDP|village)\\b&quot;, &quot;&quot;, city)) %&gt;%
+  mutate(city = str_squish(city)) %&gt;%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %&gt;%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %&gt;%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn&#39;t line up with the hometowns.
+census_data_ia_2021 &lt;- census_data_ia_2021 %&gt;%
+  mutate(state = case_when(
+    state == &#39;Iowa&#39; ~ &quot;IA&quot;))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_ia_complete &lt;- distinct_hometowns_ia %&gt;%
+  left_join(census_data_ia_2021, by = c(&quot;hometown_city_clean&quot; = &quot;city&quot;, &quot;hometown_state_clean&quot; = &quot;state&quot;)) %&gt;%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %&gt;%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let&#39;s find the NA values.
+hometowns_ia_complete %&gt;%
+  filter(is.na(geoid))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjEsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMSDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFsxXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE2VlJ6VW9ETVJCT3QxM0xGbG9YNmdQNEFsMFVMMTRGRWJ5SnFQUVdwdG5ZaHFiSnNrbXBQZW16K0lRK1FldGtONUZ1cmk1c1p1YWJqL241NXZsK2ZqT2Fqd2doZlRKSWVxU2Zva3ZTMTVlSDJTMUJCSU1lR1pETTJROGtUZEZ4UVg2U09IK1NIQXdvZS9rR1V2SjlsRTRlNy9BZE4wajc1OTVtUi96UVRsejgrZU02RDcvL0gzZW1UcGtFWTZLUlJpVllLTjVyMlBDSW50VjZWeWpFalo4NStjS25uYk5iTjVEeVJwRVduSzcwaGx1OVU1UUp1NmNNZFZFK2RmR1hNaFlzNytUR1ZsdVF0Skt3NTdVSkRaWmNpektNNVJtNkNzQkNBbHVmQU9NTkx3VW9LaFREUm9GVk1Vc2JacGpDOTZBVnI2bGQ2UzJlclVUOEVHMDMxSlVWV3VGK2lidDRHdW5YcXlNZzN5cW5SemxqcTYxYXo2NnZuTWoreWlTNmZ2Q3p0dWZnNkd1bHZ0WVpWMHVod2dxcGhBV1hQcGpnZFJyZGk2b1d5b1pySW1xS1JxR0FNQzBEMGl4SERyOEdOb09RNlFJQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Pleasant Valley","2":"IA","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFN0ZXAgODogTm93IHdlIGhhdmUgdG8gZmlndXJlIG91dCBob3cgdG8gYWRkcmVzcyBlYWNoIG9mIHRoZSBOQSB2YWx1ZXMuIFRoaXMgaXMgYSBqdWRnbWVudCBjYWxsLCBhbmQgd2Ugc2hvdWxkIGJlIGNhcmVmdWwgYWJvdXQgZG9jdW1lbnRpbmcgaG93IGFuZCB3aHkgd2UgbWFkZSB0aGF0IGRlY2lzaW9uLiBJZiB0aGVyZSBpcyBhbiBOQSB2YWx1ZSBiZWNhdXNlIGEgaG9tZXRvd24gaXMgbWlzc3BlbGxlZCwgdGVsbCBTYXBuYSwgYW5kIHNoZSB3aWxsIG1ha2UgdGhhdCBjb3JyZWN0aW9uIGluIE9wZW4gUmVmaW5lLiBJZiB0aGVyZSBpcyBhbiBOQSB2YWx1ZSBiZWNhdXNlIHRoZSBjZW5zdXMgZG9lcyBub3QgcmVjb2duaXplIHRoZSBob21ldG93biwgd2UgbmVlZCB0byBmaW5kIHNvbWUgc3Vic3RpdHV0ZSBmb3IgdGhhdCBob21ldG93bi5cblxuIyBQbGVhc2FudCBWYWxsZXksIElBIGlzIGEgY291bnR5IHN1YmRpdmlzaW9uOiBodHRwczovL2NlbnN1c3JlcG9ydGVyLm9yZy9wcm9maWxlcy8wNjAwMFVTMTkxNjM5MzQyMC1wbGVhc2FudC12YWxsZXktdG93bnNoaXAtc2NvdHQtY291bnR5LWlhL1xuY2Vuc3VzX2RhdGFfcGxlYXNhbnRfaWFfMjAyMSA8LSBnZXRfYWNzKGdlb2dyYXBoeSA9IFwiY291bnR5IHN1YmRpdmlzaW9uXCIsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICB2YXJpYWJsZXMgPSBjKFwiQjAxMDAzXzAwMVwiLCBcIkIwMjAwMV8wMDNcIiwgXCJCMTkwMTNfMDAxXCIpLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgeWVhciA9IDIwMjEsXG4gICAgICAgICAgICAgICAgICAgICAgICAgICBzdGF0ZSA9IFwiSW93YVwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgY291bnR5ID0gXCJTY290dCBDb3VudHlcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIG91dHB1dCA9IFwid2lkZVwiKSAlPiVcbiAgY2xlYW5fbmFtZXMoKSAlPiVcbiAgZmlsdGVyKG5hbWUgPT0gXCJQbGVhc2FudCBWYWxsZXkgdG93bnNoaXAsIFNjb3R0IENvdW50eSwgSW93YVwiKSAlPiVcbiAgcmVuYW1lKGNpdHkgPSBuYW1lLCB0b3RhbF9wb3AgPSBiMDEwMDNfMDAxZSwgYmxhY2tfcG9wID0gYjAyMDAxXzAwM2UsIG1lZGlhbl9pbmNvbWUgPSBiMTkwMTNfMDAxZSkgJT4lXG4gIG11dGF0ZShwY3RfYmxhY2sgPSByb3VuZChibGFja19wb3AvdG90YWxfcG9wKjEwMCwgMSkpICU+JVxuICBtdXRhdGUoc3RhdGUgPSBcIklBXCIpICU+JVxuICBtdXRhdGUoY2l0eSA9IGNhc2Vfd2hlbihcbiAgICBjaXR5ID09IFwiUGxlYXNhbnQgVmFsbGV5IHRvd25zaGlwLCBTY290dCBDb3VudHksIElvd2FcIiB+IFwiUGxlYXNhbnQgVmFsbGV5XCIpKSAlPiVcbiAgc2VsZWN0KGdlb2lkLCBjaXR5LCBzdGF0ZSwgdG90YWxfcG9wLCBibGFja19wb3AsIG1lZGlhbl9pbmNvbWUsIHBjdF9ibGFjaylcbmBgYCJ9 -->
+<pre class="r"><code>
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
+
+# Pleasant Valley, IA is a county subdivision: https://censusreporter.org/profiles/06000US1916393420-pleasant-valley-township-scott-county-ia/
+census_data_pleasant_ia_2021 &lt;- get_acs(geography = &quot;county subdivision&quot;,
+                           variables = c(&quot;B01003_001&quot;, &quot;B02001_003&quot;, &quot;B19013_001&quot;),
+                           year = 2021,
+                           state = &quot;Iowa&quot;,
+                           county = &quot;Scott County&quot;,
+                           output = &quot;wide&quot;) %&gt;%
+  clean_names() %&gt;%
+  filter(name == &quot;Pleasant Valley township, Scott County, Iowa&quot;) %&gt;%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %&gt;%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %&gt;%
+  mutate(state = &quot;IA&quot;) %&gt;%
+  mutate(city = case_when(
+    city == &quot;Pleasant Valley township, Scott County, Iowa&quot; ~ &quot;Pleasant Valley&quot;)) %&gt;%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiR2V0dGluZyBkYXRhIGZyb20gdGhlIDIwMTctMjAyMSA1LXllYXIgQUNTXG5Vc2luZyBGSVBTIGNvZGUgJzE5JyBmb3Igc3RhdGUgJ0lvd2EnXG5Vc2luZyBGSVBTIGNvZGUgJzE2MycgZm9yICdTY290dCBDb3VudHknXG4ifQ== -->
+<pre><code>Getting data from the 2017-2021 5-year ACS
+Using FIPS code &#39;19&#39; for state &#39;Iowa&#39;
+Using FIPS code &#39;163&#39; for &#39;Scott County&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDk6IFdlIG5vdyBoYXZlIHRvIGFwcGVuZCB0aGVzZSBzcGVjaWFsIGNhc2VzIHRvIG91ciBzdGF0ZSBjZW5zdXMgZGF0YSwgcmVkbyB0aGUgam9pbiwgYW5kIHJ1biBvbmUgbW9yZSBjaGVjayBmb3IgTkEgdmFsdWVzLlxuY2Vuc3VzX2RhdGFfaWFfMjAyMSA8LSBiaW5kX3Jvd3MoY2Vuc3VzX2RhdGFfaWFfMjAyMSwgY2Vuc3VzX2RhdGFfcGxlYXNhbnRfaWFfMjAyMSlcbiBcbmhvbWV0b3duc19pYV9jb21wbGV0ZSA8LSBkaXN0aW5jdF9ob21ldG93bnNfaWEgJT4lXG4gIGxlZnRfam9pbihjZW5zdXNfZGF0YV9pYV8yMDIxLCBieSA9IGMoXCJob21ldG93bl9jaXR5X2NsZWFuXCIgPSBcImNpdHlcIiwgXCJob21ldG93bl9zdGF0ZV9jbGVhblwiID0gXCJzdGF0ZVwiKSkgJT4lXG4gIG11dGF0ZShwbGF5ZXJzX3Blcl90aG91c2FuZCA9IHJvdW5kKCh0b3RhbF9wbGF5ZXJzKjEwMDApL3RvdGFsX3BvcCwxKSkgJT4lXG4gIGFycmFuZ2UoZGVzYyhwbGF5ZXJzX3Blcl90aG91c2FuZCkpXG5cbmhvbWV0b3duc19pYV9jb21wbGV0ZSAlPiVcbiAgZmlsdGVyKGlzLm5hKGdlb2lkKSkgI0lmIHRoaXMgaXMgbm90IHByb2R1Y2luZyBhbiBlbXB0eSBkYXRhZnJhbWUsIGdvIGJhY2sgYW5kIGNvbnRpbnVlIHRvIHdvcmsgb24gTkEgdmFsdWVzXG5gYGAifQ== -->
+<pre class="r"><code># Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+census_data_ia_2021 &lt;- bind_rows(census_data_ia_2021, census_data_pleasant_ia_2021)
+ 
+hometowns_ia_complete &lt;- distinct_hometowns_ia %&gt;%
+  left_join(census_data_ia_2021, by = c(&quot;hometown_city_clean&quot; = &quot;city&quot;, &quot;hometown_state_clean&quot; = &quot;state&quot;)) %&gt;%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %&gt;%
+  arrange(desc(players_per_thousand))
+
+hometowns_ia_complete %&gt;%
+  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzVTdESUJUSDZWWTBiZEtseVh5Tk5ocHZmQURqQXhoTmRrY1l4WldNQWdHYXVaZWZVZ3JPY2pWdUR1ZDNUczcvZkx5LzdwN0xYUWtBV0lOOGxZRTFkRjhBUHovZW1oZmdpSE15a0lOaXN0OHVhZXMrazFPRCtVVmJKZjdtTnJzUWdJUmpZMEtSQ01zT1c5eCthVHpRSkwzUTh0UUt4ODFWZjFrdkJtdmY5QXkzdlJ5b2xTZUJDTE5uUkRqRklvUWUva0xHWWtzWHNjcEtpemxTSEorcE5sSGdRQ1hyWWpzaFE2b0k5aHlUNHo5UURiUmpXQ0FtaUJPS1dZcFk1RE5qRjBFREthcVI3ZVZvc09nY3Z5VFQzVXRsbVJSdXZ0VjBGSmpzTGRNSnFFY3g3YU5yU0QrS1kvUDBPQzNYeDY4WFRQL0ZySm4vaEZvdzFMcWo0c0JFSEFGeXZLYzhPQnQzRmIvM1Zta21iTHlpbzZiMUc0cUVTQjZKSHc1Y2ZnRUNiTkdIakFJQUFBPT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFN0ZXAgMTA6IElmIG5lZWRlZCwgdW5jb21tZW50IG91dCB0byBjcmVhdGUgYSBDU1ZcbiN3cml0ZV9jc3YoaG9tZXRvd25zX2lhX2NvbXBsZXRlLCBmaWxlID0gXCJob21ldG93bnNfaWEuY3N2XCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_ia_complete, file = &quot;hometowns_ia.csv&quot;)
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -2641,7 +2782,7 @@ hometowns_la_complete &lt;- distinct_hometowns_la %&gt;%
 hometowns_la_complete %&gt;%
   filter(is.na(geoid))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjMsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMyDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFszXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE4VlNTMDdETUJCMTBvYVNTQzJWeWdHNFFMTmhBOHRLQ0RhcytLazdhK3FZeHFwalI3YXIwaFdjaFJOeUFWcnMxQzQwNnA1SXpzeThlZlo0bnVmaFpucVpUVE9FVUFkMTR3aDFFdXVpNVBucGRueUZMR0tEQ0hWUjZ1eWJKWTJzNDRMaGJrZmo5KzRvMHhVb0g2YVBKcitZVkNDTUIwNWZnSlJVTWRyYUY5OVBqbm9JOVJ1V0svMjdoaDVMdC9ZN1lnY3UvLzdscnQvN2JOdi96eDlJbVJBT1d2dW1BcGdWWUNCL1ZWRFJGajFWY3BVTGkydXZUZnhoZjdidDcvYTVnVFJzbm1rSGprcFpVU05YQWhObTFwaHdDc0tuenZjcGJjRFFnMXpmU0FNYzF4eldWT2xRWUU0bEs4SzFQRVBXQVpoeElJcy9RTCtpQlFPQm1TQzJVR0RWeE9DR0dXN2hhK0NhS214S3VkUWdDb3R2V3QzMVpHMllGTGEvMkkxaDB0SXZVaTNnYkNtY0hzV1lsRXV4R0Y4N2pmMHdJUzlrNUljcStPbXVaSGZyajByOFVTZFV6SmtJSFNRY1pwVDdZR0FmcDVFOXJ4WGJ6M3htVVowM0FnV0VTQjZRcGplMCtRRzJTeWpwZlFNQUFBPT0ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjMsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMyDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFszXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE4VlNTMDdETUJCMTBvYVNTSzBpbFFOd2dVYXEyTEN0aEdERGlwKzZpNmFPYWF3NmRtUzdLbDNCV1RnaEY2REZUdXhDbys2SjVNek1tMmVQNTNrZWJ1Wlh5VHhCQ1BWUVB3eFFMekl1aXA2ZmJpZlh5Q0FtQ0ZBZnhkYStHZExZT0RaSTJ4Mk5QN2dqVkZVZ1hSZy82dXh5VmdIWERqaC9BVndTU1VsblgzZy9PK2toTkd4WXR2VHZTaDBXNzgxM3dvNXMvdjNMWG4vdzJiWC9ueitTTXNJTWxISk5lVEFwUUVQMktxRWlIWG9zeFNiakJsZE9tL0REL0V6YjM5MXpQU2x0bnFrRng2V29pQllibm1PcXR6bG1CTGhMWFJ4U1NvTW1SN21oRmhwWVhqUFlFcWw4Z1NVUnRQRFhjZ3hSZTJEQkFLLytBTU9LRkJSNFRqazJoVHlyeGpwdm1QNFdya1plRTVuclVxd1Y4TUxndTA1M0ExRnJLcmpwTDdSakdIWDBDMlFIU05mYzZsRk1jTG5tcThsMGFrVjIwNFNja29HYkt1L0hiYzMrM3AwVnViUE9DRjlTN2x1SUdDd0ljOEhJdkU2amUxWkxlaGo2eEtBcWF4VHlDQmJNSTAxemFQY0RwUjIrbzM0REFBQT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Geismar","2":"LA","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"St. Amant","2":"LA","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Vacherie","2":"LA","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[3]},"pages":{}}}
@@ -2683,7 +2824,7 @@ hometowns_la_complete &lt;- distinct_hometowns_la %&gt;%
 hometowns_la_complete %&gt;%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlJ6VzdESUF6SFNSczJKVks2U3QxckpKZGR0dnUwQjVnMnFUZEVDV3RRQ1NBZzZ2cnkzVWlDMTVWVHVSai9iUG52ai9mWDdWTzVMUkZDUzVRdk1yVEU0WXZ3NThkYi9Zd0NDVTZHY2xTTTlqc2tiY0puZE5ab2ZtQ3J4Ri9kWnE4RU1KUFV1VmdFWU5sU1Q1c3ZTM3VlcEJkV0h4c1Z1THZvWDllRDRIcHFlb2FiVHZmYzY2TWlUUGdUWVpKVEZVT1BmeUhucWVkWHNjcHJUeVV4a3A2NGRTQ3c1MXEwMEU3TTBBYkFUbEoyK0FlcW5yZUNLaUlVQzBLUVpaZ25VeVowRVRXSTRaYjRUZytPcWpid2N6TGR2VFplYUJYbVc0eEh3Y25lTXB1QWgwR04rMmhyMWczcVVMK011NTNDbHdPbS8yS1d6SDlpS1J4TDNYRzFGd29td0pMdXVJek9LaHhsV250anJGQWVqaGlvYTZZRkFXRmFBcGxtUStkZmdueFg0SXNDQUFBPSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzV3JESUJUSFRSczNFa2dKZEsrUlFObk5IbURzQWNZR3ZSTnJYQ00xS21ybyt2TGRqTkYxOGFyZUhNL3ZITTcvZkx5LzdwL0xmUWtBV0lOOGxZRTFkRjhBUHovZW1oZmdpSE15a0lOaXN0OHVhZXMrazFPRCtVVmJKZjdtUHJzUWdJUmpZMEtSQ01zT1c5eCthVHpRSkwzUTh0d0t4ODFOZjFrdkJtdmY5QXkzdlJ5b2xXZUJDTE1YUkRqRklvU2Uva0xHWWtzWHNjcEtpemxTSEYrb05sSGdTQ1hyWWpzaFE2b0lEaHlUMHo5UURiUmpXQ0FtaUJPS1dZcFk1RE5qRjBFREthcVI3ZVZvc09nY3Z5YlRQVXBsbVJSdXZ0VjBGSmpzTGRNSnFFY3g3YU5yU0QrS1U3UGJUY3YxOGRzRjAzOHhhK1kvb1JZTXRSNm9PRElSUjRBY0h5Z1B6c1pkeGUrOVZab0pHNi9vcUduOWhpSWhra2ZpaHdQWFh5Qk9qK1NNQWdBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
@@ -2754,7 +2895,7 @@ hometowns_ms_complete &lt;- distinct_hometowns_ms %&gt;%
 hometowns_ms_complete %&gt;%
   filter(is.na(geoid))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjIsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMiDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFsyXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3VlN6VzdDTUF4T0N4MXFKVkFsOWhwVW0zYlpBMHpjdHNOK0pHNVJTRE1hRVpJcUNXS2N0bWZaRSs0SllFNkpKK2g5bFZMYm56L0Y5aGMvUHl6dWlrVkJDQm1RWVpxUVFRWXV5ZDVlNTdON0FnZ0VDUm1TUE5nUElFM0JDVUVKSjQySlltNmwwTFZyWkJ1UnF5ZmhsdEwzZU9uank1bEh5TGpMaFFLblU4WTRQOEozWmljQi8vd0pqWTIrMGY0L2ZqRjh4aFZ6TGphSllGRXp6NnAzeXphaVI4K3QyVlVhY0lkemZzRVB4am4wNzBWUzJRbDdBcWVOMlFodmRwcHk2ZmVVSzhGMFRGMy9wWnhuWGx6a3h0NTRwbWlyMkY1WWh3Vld3c2dhMjRvTWd3K1ZMeFhqNnpOZ3ZCRzFaSnBLemFFUXNscnVhY2ZFTG1JTjJncExmV08yanVrYThQNTBJOU42YVRUTWw0YkZ5WHI2SmJZSGxGc2Q5S2hudk5ucTllejJKb2djdDRORUpaTzRKZWpucDVyRFk3d3J3eDBVZWlVMWpwQXB0aFFxQmhONG5VNzNxclZTZTN4TlFGM1ZLWVFJTndxUmJqaHkrQVdFYmNXck1BTUFBQT09In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjIsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMiDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFsyXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3VlN6VzdDTUF4T0N4MXFKVkFsOWhwVTJuYlpBMHpjdHNOK0pHNVJTRE1hRVpJcUNXS2N0bWZaRSs0SllFNkpKK2g5bFZMYm56L0Y5aGMvUHl6dWlrVkJDQm1RWVpxUVFRWXV5ZDVlNTdON0FnZ0VDUm1TUE5nUElFM0JDVUVKSjQySlltNmwwTFZyWkJ1UnF5ZmhsdEwzZU9uank1bEh5TGpMaFFLblU4WTRQOEozWmljQi8vd0pqWTIrMGY0L2ZqRjh4aFZ6TGphSllGRXp6NnAzeXphaVI4K3QyVlVhY0lkemZzRVB4am4wNzBWUzJRbDdBcWVOMlFodmRwcHk2ZmVVSzhGMFRGMy9wWnhuWGx6a3h0NTRwbWlyMkY1WWh3Vld3c2dhMjRvTWd3K1ZMeFhqNnpOZ3ZCRzFaSnBLemFFUXNscnVhY2ZFTG1JTjJncExmV08yanVrYThQNTBJOU42YVRUTWw0YkZ5WHI2SmJZSGxGc2Q5S2hudk5ucTllem1Ob2djdDRORUpaTzRKZWpucDVyRFk3d3J3eDBVZWlVMWpwQXB0aFFxQmhONG5VNzNxclZTZTN4TlFGM1ZLWVFJTndxUmJqaHkrQVhBS1hsdE1BTUFBQT09In0= -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Friendship","2":"MS","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Nesbit","2":"MS","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
@@ -2814,7 +2955,7 @@ hometowns_ms_complete &lt;- distinct_hometowns_ms %&gt;%
 hometowns_ms_complete %&gt;%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzVTdESUJUSDZWWTBiZEtseVh5Tk5ocHZmQURqQXhoTmRrY1l4WldNQWdHYXVaZWZVZ3JPY2pWdUR1ZDNUczcvZkx5LzdwN0xYUWtBV0lOOGxZRTFkRjhBUHovZW1oZmdpSE15a0lOaXN0OHVhZXMrazFPRCtVVmJKZjdtTnJzUWdJUmpZMEtSQ01zT1c5eCthVHpRSkwzUTh0UUt4ODFWZjFrdkJtdmY5QXkzdlJ5b2xTZUJDTE5uUkRqRklvUWUva0xHWWtzWHNjcEtpemxTSEorcE5sSGdRQ1hyWWpzaFE2b0k5aHlUNHo5UURiUmpXQ0FtaUJPS1dZcFk1RE5qRjBFREthcVI3ZVZvc09nY3Z5VFQzVXRsbVJSdXZ0VjBGSmpzTGRNSnFFY3g3YU5yU0QrS1kvUDBPQzNYeDY4WFRQL0ZySm4vaEZvdzFMcWo0c0JFSEFGeXZLYzhPQnQzRmIvM1Zta21iTHlpbzZiMUc0cUVTQjZKSHc1Y2ZnRUNiTkdIakFJQUFBPT0ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzVTdESUJUSDZWWTBiZEtseVh5Tk5sRnZmQURqQXhoTmRrY1l4WldNQWdHYXVaZWZVZ3JPY2pWdUR1ZDNUczcvZkx5LzdwN0xYUWtBV0lOOGxZRTFkRjhBUHovZW1oZmdpSE15a0lOaXN0OHVhZXMrazFPRCtVVmJKZjdtTnJzUWdJUmpZMEtSQ01zT1c5eCthVHpRSkwzUTh0UUt4ODFWZjFrdkJtdmY5QXkzdlJ5b2xTZUJDTE5uUkRqRklvUWUva0xHWWtzWHNjcEtpemxTSEorcE5sSGdRQ1hyWWpzaFE2b0k5aHlUNHo5UURiUmpXQ0FtaUJPS1dZcFk1RE5qRjBFREthcVI3ZVZvc09nY3Z5VFQzVXRsbVJSdXZ0VjBGSmpzTGRNSnFFY3g3YU5yU0QrS1kvUDROQzNYeDY4WFRQL0ZySm4vaEZvdzFMcWo0c0JFSEFGeXZLYzhPQnQzRmIvM1Zta21iTHlpbzZiMUc0cUVTQjZKSHc1Y2ZnRkdLRzFCakFJQUFBPT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
@@ -2831,8 +2972,9 @@ hometowns_ms_complete %&gt;%
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBORUJSQVNLQSBIT01FVE9XTlNcblxuIyBTdGVwIDE6IEZpbHRlciBmb3IgdGhlIHN0YXRlJ3MgcGxheWVyc1xuZm9vdGJhbGxfcm9zdGVyc19uZSA8LSBmb290YmFsbF9yb3N0ZXJzX3VzYSAlPiVcbiAgZmlsdGVyKGhvbWV0b3duX3N0YXRlX2NsZWFuID09IFwiTkVcIilcblxuIyBTdGVwIDI6IEdldCBhIGxpc3Qgb2YgYWxsIHRoZSB1bmlxdWUgaG9tZXRvd25zIGluIHRoZSBzdGF0ZVxuZGlzdGluY3RfaG9tZXRvd25zX25lIDwtIGZvb3RiYWxsX3Jvc3RlcnNfbmUgJT4lXG4gIGdyb3VwX2J5KGhvbWV0b3duX2NpdHlfY2xlYW4sIGhvbWV0b3duX3N0YXRlX2NsZWFuKSAlPiVcbiAgc3VtbWFyaXNlKHRvdGFsX3BsYXllcnMgPSBuKCkpXG5gYGAifQ== -->
-<pre class="r"><code># NEBRASKA HOMETOWNS
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIE5FQlJBU0tBIEhPTUVUT1dOU1xuXG4jIFN0ZXAgMTogRmlsdGVyIGZvciB0aGUgc3RhdGUncyBwbGF5ZXJzXG5mb290YmFsbF9yb3N0ZXJzX25lIDwtIGZvb3RiYWxsX3Jvc3RlcnNfdXNhICU+JVxuICBmaWx0ZXIoaG9tZXRvd25fc3RhdGVfY2xlYW4gPT0gXCJORVwiKVxuXG4jIFN0ZXAgMjogR2V0IGEgbGlzdCBvZiBhbGwgdGhlIHVuaXF1ZSBob21ldG93bnMgaW4gdGhlIHN0YXRlXG5kaXN0aW5jdF9ob21ldG93bnNfbmUgPC0gZm9vdGJhbGxfcm9zdGVyc19uZSAlPiVcbiAgZ3JvdXBfYnkoaG9tZXRvd25fY2l0eV9jbGVhbiwgaG9tZXRvd25fc3RhdGVfY2xlYW4pICU+JVxuICBzdW1tYXJpc2UodG90YWxfcGxheWVycyA9IG4oKSlcbmBgYCJ9 -->
+<pre class="r"><code>
+# NEBRASKA HOMETOWNS
 
 # Step 1: Filter for the state&#39;s players
 football_rosters_ne &lt;- football_rosters_usa %&gt;%
@@ -2884,7 +3026,7 @@ hometowns_ne_complete &lt;- distinct_hometowns_ne %&gt;%
 hometowns_ne_complete %&gt;%
   filter(is.na(geoid))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzV3JESUJUSFRSczNFa2dKZEsrUlFObk5IbURzQWNZR3ZSTnJYQ00xS21ybyt2TGRqTkYxOGFyZUhNL3ZITTcvZkx5LzdwL0xmUWtBV0lOOGxZRTFkRjhBUHovZW1oZmdpSE15a0lOaXN0OHVhZXMrazFPRCtVVmJKZjdtUHJzUWdJUmpZMEtSQ01zT1c5eCthVHpRSkwzUTh0d0t4ODFOZjFrdkJtdmY5QXkzdlJ5b2xXZUJDTE1YUkRqRklvU2Uva0xHWWtzWHNjcEtpemxTSEYrb05sSGdTQ1hyWWpzaFE2b0lEaHlUMHo5UURiUmpXQ0FtaUJPS1dZcFk1RE5qRjBFREthcVI3ZVZvc09nY3Z5YlRQVXBsbVJSdXZ0VjBGSmpzTGRNSnFFY3g3YU5yU0QrS1U3UGJUY3YxOGRzRjAzOHhhK1kvb1JZTXRSNm9PRElSUjRBY0h5Z1B6c1pkeGUrOVZab0pHNi9vcUduOWhpSWhra2ZpaHdQWFh5Qk9qK1NNQWdBQSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzV3JESUJUSFRSczNFa2dKZEsrUndPak5IbURzQWNZR3ZSTnJYQ00xS21ybyt2TGRqTkYxOGFyZUhNL3ZITTcvZkx5LzduZmx2Z1FBckVHK3lzQWF1aStBbng5dnpRdHd4RGtaeUVFeDJXK1h0SFdmeWFuQi9LS3RFbjl6bjEwSVFNS3hNYUZJaEdXSExXNi9OQjVva2w1b2VXNkY0K2FtdjZ3WGc3VnZlb2JiWGc3VXlyTkFoTmtMSXB4aUVVSlBmeUZqc2FXTFdHV2x4Undwamk5VW15aHdwSkoxc1oyUUlWVUVCNDdKNlIrb0J0b3hMQkFUeEFuRkxFVXM4cG14aTZDQkZOWEk5bkkwV0hTT1g1UHBIcVd5VEFvMzMybzZDa3oybHVrRTFLT1k5dEUxcEIvRnFYbmVUY3YxOGRzRjAzOHhhK1kvb1JZTXRSNm9PRElSUjRBY0h5Z1B6c1pkeGUrOVZab0pHNi9vcUduOWhpSWhra2ZpaHdQWFgyUUtNeUtNQWdBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
@@ -2907,13 +3049,115 @@ hometowns_ne_complete %&gt;%
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzVTdESUJUSDZWWTBiZEtseVh5Tk5qRmU2QU1ZSDhCb3NqdkNLSzVrRkFqUXpMMzhsRkp3bHF0eGN6aS9jM0wrNStQOWRmZFU3a29Bd0Jya3F3eXNvZnNDK1BueDFyd0FSNXlUZ1J3VWsvMTJTVnYzbVp3YXpDL2FLdkUzdDltRkFDUWNHeE9LUkZoMjJPTDJTK09CSnVtRmxxZFdPRzZ1K3N0Nk1WajdwbWU0N2VWQXJUd0pSSmc5SThJcEZpSDA4QmN5Rmx1NmlGVldXc3lSNHZoTXRZa0NCeXBaRjlzSkdWSkZzT2VZSFArQmFxQWR3d0l4UVp4UXpGTEVJcDhadXdnYVNGR05iQzlIZzBYbitDV1o3bDRxeTZSdzg2Mm1vOEJrYjVsT1FEMkthUjlkUS9wUkhKdkg1Mm01UG42OVlQb3ZaczM4SjlTQ29kWWRGUWNtNGdpUTR6M2x3ZG00cS9pOXQwb3pZZU1WSFRXdDMxQWtSUEpJL0hEZzhndXRoRHAwakFJQUFBPT0ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFNPVVRIIENBUk9MSU5BIEhPTUVUT1dOU1xuXG4jIFN0ZXAgMTogRmlsdGVyIGZvciB0aGUgc3RhdGUncyBwbGF5ZXJzXG5mb290YmFsbF9yb3N0ZXJzX3NjIDwtIGZvb3RiYWxsX3Jvc3RlcnNfdXNhICU+JVxuICBmaWx0ZXIoaG9tZXRvd25fc3RhdGVfY2xlYW4gPT0gXCJTQ1wiKVxuXG4jIFN0ZXAgMjogR2V0IGEgbGlzdCBvZiBhbGwgdGhlIHVuaXF1ZSBob21ldG93bnMgaW4gdGhlIHN0YXRlXG5kaXN0aW5jdF9ob21ldG93bnNfc2MgPC0gZm9vdGJhbGxfcm9zdGVyc19zYyAlPiVcbiAgZ3JvdXBfYnkoaG9tZXRvd25fY2l0eV9jbGVhbiwgaG9tZXRvd25fc3RhdGVfY2xlYW4pICU+JVxuICBzdW1tYXJpc2UodG90YWxfcGxheWVycyA9IG4oKSlcbmBgYCJ9 -->
+<pre class="r"><code>
+# SOUTH CAROLINA HOMETOWNS
+
+# Step 1: Filter for the state&#39;s players
+football_rosters_sc &lt;- football_rosters_usa %&gt;%
+  filter(hometown_state_clean == &quot;SC&quot;)
+
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_sc &lt;- football_rosters_sc %&gt;%
+  group_by(hometown_city_clean, hometown_state_clean) %&gt;%
+  summarise(total_players = n())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ2hvbWV0b3duX2NpdHlfY2xlYW4nLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
+<pre><code>`summarise()` has grouped output by &#39;hometown_city_clean&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDM6IEdyYWIgdGhlIHJlbGV2YW50IGNlbnN1cyBkYXRhIGZvciB0aGF0IHN0YXRlLiBOb3RlOiBCMDEwMDMgPSB0b3RhbCBwb3B1bGF0aW9uLCBCMDIwMDEgPSB0b3RhbCBCbGFjayBwb3B1bGF0aW9uLCBCMTkwMTMgPSBtZWRpYW4gaG91c2Vob2xkIGluY29tZS4gV2UgZ2V0IHRoZXNlIGNvZGVzIHVzaW5nIHRoZSBBQ1MgY3Jvc3N3YWxrIHdlIGxvYWRlZCBlYXJsaWVyIChBQ1NfMjAwMSkgYW5kIHRoaXMgd2Vic2l0ZTogaHR0cHM6Ly9jZW5zdXNyZXBvcnRlci5vcmcvdG9waWNzL3RhYmxlLWNvZGVzL1xuY2Vuc3VzX2RhdGFfc2NfMjAyMSA8LSBnZXRfYWNzKGdlb2dyYXBoeSA9IFwicGxhY2VcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhcmlhYmxlcyA9IGMoXCJCMDEwMDNfMDAxXCIsIFwiQjAyMDAxXzAwM1wiLCBcIkIxOTAxM18wMDFcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICB5ZWFyID0gMjAyMSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXRlID0gXCJTQ1wiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgb3V0cHV0ID0gXCJ3aWRlXCIpXG5gYGAifQ== -->
+<pre class="r"><code># Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_sc_2021 &lt;- get_acs(geography = &quot;place&quot;,
+                           variables = c(&quot;B01003_001&quot;, &quot;B02001_003&quot;, &quot;B19013_001&quot;),
+                           year = 2021,
+                           state = &quot;SC&quot;,
+                           output = &quot;wide&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiR2V0dGluZyBkYXRhIGZyb20gdGhlIDIwMTctMjAyMSA1LXllYXIgQUNTXG5Vc2luZyBGSVBTIGNvZGUgJzQ1JyBmb3Igc3RhdGUgJ1NDJ1xuIn0= -->
+<pre><code>Getting data from the 2017-2021 5-year ACS
+Using FIPS code &#39;45&#39; for state &#39;SC&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDQ6IEdlbmVyYWwgY2xlYW5pbmcgb2YgY2Vuc3VzIGRhdGEgdG8gcHJlcGFyZSBmb3Igam9pbiB3aXRoIGhvbWV0b3ducy9yb3N0ZXIgZGF0YS4gVGhpcyBwYXJ0IGlzIHRoZSBzYW1lIGZvciBldmVyeSBzdGF0ZSBhbmQgKGV4Y2VwdCBmb3IgdGhlIGRhdGFmcmFtZSBuYW1lKSBjYW4gbW9yZSBvciBsZXNzIGJlIGNvcGllZCBhbmQgcGFzdGVkLlxuY2Vuc3VzX2RhdGFfc2NfMjAyMSA8LSBjZW5zdXNfZGF0YV9zY18yMDIxICU+JVxuICBjbGVhbl9uYW1lcygpICU+JVxuICBzZXBhcmF0ZShuYW1lLCBpbnRvID0gYyhcImNpdHlcIiwgXCJzdGF0ZVwiKSwgc2VwID0gXCIsIFwiLCByZW1vdmUgPSBGQUxTRSkgJT4lXG4gIG11dGF0ZShjaXR5ID0gZ3N1YihcIlxcXFxiKHRvd258Y2l0eXxDRFB8dmlsbGFnZSlcXFxcYlwiLCBcIlwiLCBjaXR5KSkgJT4lXG4gIG11dGF0ZShjaXR5ID0gc3RyX3NxdWlzaChjaXR5KSkgJT4lXG4gIHNlbGVjdChnZW9pZCwgY2l0eSwgc3RhdGUsIGIwMTAwM18wMDFlLCBiMDIwMDFfMDAzZSwgYjE5MDEzXzAwMWUpICU+JVxuICByZW5hbWUodG90YWxfcG9wID0gYjAxMDAzXzAwMWUsIGJsYWNrX3BvcCA9IGIwMjAwMV8wMDNlLCBtZWRpYW5faW5jb21lID0gYjE5MDEzXzAwMWUpICU+JVxuICBtdXRhdGUocGN0X2JsYWNrID0gcm91bmQoYmxhY2tfcG9wL3RvdGFsX3BvcCoxMDAsIDEpKVxuXG4jIFN0ZXAgNTogU3RhdGUtc3BlY2lmaWMgY2xlYW5pbmcgb2YgY2Vuc3VzIGRhdGEgdG8gcHJlcGFyZSBmb3Igam9pbiB3aXRoIGhvbWV0b3ducy9yb3N0ZXIgZGF0YS4gVGhpcyBwYXJ0IGlzIGRpZmZlcmVudCBmb3IgZXZlcnkgc3RhdGUuIFRoZSBmaXJzdCBtdXRhdGUgZnVuY3Rpb24gc2hvdWxkIGJlIGluY2x1ZGVkIGZvciBldmVyeSBzdGF0ZSwganVzdCBtb2RpZmllZCBkZXBlbmRpbmcgb24gdGhlIHN0YXRlIG5hbWUuIEFkZGl0aW9uYWwgbXV0YXRlIGZ1bmN0aW9ucyBtYXkgYmUgbmVlZGVkIGZvciBpbnN0YW5jZXMgd2hlbiB0aGUgY2Vuc3VzIG5hbWVzIHNvbWV0aGluZyBpbiBhIHdlaXJkIHdheSB0aGF0IGRvZXNuJ3QgbGluZSB1cCB3aXRoIHRoZSBob21ldG93bnMuXG5jZW5zdXNfZGF0YV9zY18yMDIxIDwtIGNlbnN1c19kYXRhX3NjXzIwMjEgJT4lXG4gIG11dGF0ZShzdGF0ZSA9IGNhc2Vfd2hlbihcbiAgICBzdGF0ZSA9PSAnU291dGggQ2Fyb2xpbmEnIH4gXCJTQ1wiKSlcblxuIyBTdGVwIDY6IEpvaW4gdGhlIGNlbnN1cyBkYXRhIHRvIHRoZSBsaXN0IG9mIGhvbWV0b3ducy4gQWxzbyBjcmVhdGUgYSBjb2x1bW4gdGhhdCB0ZWxscyB1cyBob3cgbWFueSBwZW9wbGUgYXJlIGVsaXRlIGNvbGxlZ2UgZm9vdGJhbGwgcGxheWVycyBmb3IgZXZlcnkgMSwwMDAgcmVzaWRlbnRzLlxuaG9tZXRvd25zX3NjX2NvbXBsZXRlIDwtIGRpc3RpbmN0X2hvbWV0b3duc19zYyAlPiVcbiAgbGVmdF9qb2luKGNlbnN1c19kYXRhX3NjXzIwMjEsIGJ5ID0gYyhcImhvbWV0b3duX2NpdHlfY2xlYW5cIiA9IFwiY2l0eVwiLCBcImhvbWV0b3duX3N0YXRlX2NsZWFuXCIgPSBcInN0YXRlXCIpKSAlPiVcbiAgbXV0YXRlKHBsYXllcnNfcGVyX3Rob3VzYW5kID0gcm91bmQoKHRvdGFsX3BsYXllcnMqMTAwMCkvdG90YWxfcG9wLDEpKSAlPiVcbiAgYXJyYW5nZShkZXNjKHBsYXllcnNfcGVyX3Rob3VzYW5kKSlcblxuIyBTdGVwIDc6IE5vdGljZSB0aGVyZSBhcmUgYSBmZXcgTkEgdmFsdWVzLiBUaGlzIGhhcHBlbnMgd2hlbiB0aGUgY2Vuc3VzIGRhdGEgZG9lcyBub3Qgam9pbiB3aXRoIHRoZSBob21ldG93bnMgZGF0YSwgcGVyaGFwcyBiZWNhdXNlIHRoZSBob21ldG93biBpcyBtaXNzcGVsbGVkIG9yIGJlY2F1c2UgdGhlcmUgaXMgbm8gY2Vuc3VzIGRhdGEgZm9yIHRoYXQgdG93bi4gRmlyc3QsIGxldCdzIGZpbmQgdGhlIE5BIHZhbHVlcy5cbmhvbWV0b3duc19zY19jb21wbGV0ZSAlPiVcbiAgZmlsdGVyKGlzLm5hKGdlb2lkKSlcbmBgYCJ9 -->
+<pre class="r"><code># Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_sc_2021 &lt;- census_data_sc_2021 %&gt;%
+  clean_names() %&gt;%
+  separate(name, into = c(&quot;city&quot;, &quot;state&quot;), sep = &quot;, &quot;, remove = FALSE) %&gt;%
+  mutate(city = gsub(&quot;\\b(town|city|CDP|village)\\b&quot;, &quot;&quot;, city)) %&gt;%
+  mutate(city = str_squish(city)) %&gt;%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %&gt;%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %&gt;%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn&#39;t line up with the hometowns.
+census_data_sc_2021 &lt;- census_data_sc_2021 %&gt;%
+  mutate(state = case_when(
+    state == &#39;South Carolina&#39; ~ &quot;SC&quot;))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_sc_complete &lt;- distinct_hometowns_sc %&gt;%
+  left_join(census_data_sc_2021, by = c(&quot;hometown_city_clean&quot; = &quot;city&quot;, &quot;hometown_state_clean&quot; = &quot;state&quot;)) %&gt;%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %&gt;%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let&#39;s find the NA values.
+hometowns_sc_complete %&gt;%
+  filter(is.na(geoid))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjEsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMSDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFsxXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE2VlJTMjdDTUJBMWdSUUZGUlNwdlFhUnFuYlJQVlVQMEkvRXpqS09DeFptSE5tbWxGVjdscDZ3SjRDT0U3c0NieHNwbnBrM1QvTjU4L1F3dngzTlI0U1FQaGxrUGRMUDBTWDU2OHZqOUo0Z2drR1BERWpoN1FlU3J0RHhRWG1TdUp3WnRuY2EzcVZTSXNsbHp6Tjh4eTNTL1dXd3hSRS90Qk1mZi83NHRzUHYvOGRuSStkY01XdVRrVVkxYzZ4Nk0yd2pFbnBoOUs0Q3hHMllPZnZDcDV2enZHNGtsYTBjSFhpMTBodmg5QTRvbDI1UHVSSU1RdXI2TDJVZGMrSXNOM2JhTVVVYnhmYkMyTmhnS2JTczQxaUJvWnNJTEJUajZ4Tmd2QkcxWkVBbGNHd1VXUTEzdEdYR0tVSVAyZ2hEM1VwdkxZTWE4VU95M1ZBM1RtckEvVEovN2p6UnIyY1NvTnlDMTZPZTh0VVcxdE9iT3k5eXVESkpyaC85b3VzNU9JWmFlYWgxSVdBcElhNlFLN1lRS2dRVHZFNnJlOVVZQ1M1ZUUxRmJ0UXBGaEdzVmtYWTVjdmdGRHpaMGsrWUNBQUE9In0= -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Craytonville","2":"SC","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFN0ZXAgODogTm93IHdlIGhhdmUgdG8gZmlndXJlIG91dCBob3cgdG8gYWRkcmVzcyBlYWNoIG9mIHRoZSBOQSB2YWx1ZXMuIFRoaXMgaXMgYSBqdWRnbWVudCBjYWxsLCBhbmQgd2Ugc2hvdWxkIGJlIGNhcmVmdWwgYWJvdXQgZG9jdW1lbnRpbmcgaG93IGFuZCB3aHkgd2UgbWFkZSB0aGF0IGRlY2lzaW9uLiBJZiB0aGVyZSBpcyBhbiBOQSB2YWx1ZSBiZWNhdXNlIGEgaG9tZXRvd24gaXMgbWlzc3BlbGxlZCwgdGVsbCBTYXBuYSwgYW5kIHNoZSB3aWxsIG1ha2UgdGhhdCBjb3JyZWN0aW9uIGluIE9wZW4gUmVmaW5lLiBJZiB0aGVyZSBpcyBhbiBOQSB2YWx1ZSBiZWNhdXNlIHRoZSBjZW5zdXMgZG9lcyBub3QgcmVjb2duaXplIHRoZSBob21ldG93biwgd2UgbmVlZCB0byBmaW5kIHNvbWUgc3Vic3RpdHV0ZSBmb3IgdGhhdCBob21ldG93bi5cblxuIyBGb3IgQ3JheXRvbnZpbGxlLCBTQywgdGhlIGJsb2NrIGdyb3VwIHNlZW1zIHRvIGJlIGEgZ29vZCBzdWJzdGl0dXRlOiBodHRwczovL2NlbnN1c3JlcG9ydGVyLm9yZy9wcm9maWxlcy8xNTAwMFVTNDUwMDcwMTE1MDEzLWJnLTMtdHJhY3QtMTE1MDEtYW5kZXJzb24tc2MvXG5jZW5zdXNfZGF0YV9jcmF5dG9udmlsbGVfc2NfMjAyMSA8LSBnZXRfYWNzKGdlb2dyYXBoeSA9IFwiYmxvY2sgZ3JvdXBcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhcmlhYmxlcyA9IGMoXCJCMDEwMDNfMDAxXCIsIFwiQjAyMDAxXzAwM1wiLCBcIkIxOTAxM18wMDFcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICB5ZWFyID0gMjAyMSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXRlID0gXCJTQ1wiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgb3V0cHV0ID0gXCJ3aWRlXCIpICU+JVxuICBjbGVhbl9uYW1lcygpICU+JVxuICBmaWx0ZXIobmFtZSA9PSBcIkJsb2NrIEdyb3VwIDMsIENlbnN1cyBUcmFjdCAxMTUuMDEsIEFuZGVyc29uIENvdW50eSwgU291dGggQ2Fyb2xpbmFcIikgJT4lXG4gIHJlbmFtZShjaXR5ID0gbmFtZSwgdG90YWxfcG9wID0gYjAxMDAzXzAwMWUsIGJsYWNrX3BvcCA9IGIwMjAwMV8wMDNlLCBtZWRpYW5faW5jb21lID0gYjE5MDEzXzAwMWUpICU+JVxuICBtdXRhdGUocGN0X2JsYWNrID0gcm91bmQoYmxhY2tfcG9wL3RvdGFsX3BvcCoxMDAsIDEpKSAlPiVcbiAgbXV0YXRlKHN0YXRlID0gXCJTQ1wiKSAlPiVcbiAgbXV0YXRlKGNpdHkgPSBjYXNlX3doZW4oXG4gICAgY2l0eSA9PSBcIkJsb2NrIEdyb3VwIDMsIENlbnN1cyBUcmFjdCAxMTUuMDEsIEFuZGVyc29uIENvdW50eSwgU291dGggQ2Fyb2xpbmFcIiB+IFwiQ3JheXRvbnZpbGxlXCIpKSAlPiVcbiAgc2VsZWN0KGdlb2lkLCBjaXR5LCBzdGF0ZSwgdG90YWxfcG9wLCBibGFja19wb3AsIG1lZGlhbl9pbmNvbWUsIHBjdF9ibGFjaylcbmBgYCJ9 -->
+<pre class="r"><code>
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
+
+# For Craytonville, SC, the block group seems to be a good substitute: https://censusreporter.org/profiles/15000US450070115013-bg-3-tract-11501-anderson-sc/
+census_data_craytonville_sc_2021 &lt;- get_acs(geography = &quot;block group&quot;,
+                           variables = c(&quot;B01003_001&quot;, &quot;B02001_003&quot;, &quot;B19013_001&quot;),
+                           year = 2021,
+                           state = &quot;SC&quot;,
+                           output = &quot;wide&quot;) %&gt;%
+  clean_names() %&gt;%
+  filter(name == &quot;Block Group 3, Census Tract 115.01, Anderson County, South Carolina&quot;) %&gt;%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %&gt;%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %&gt;%
+  mutate(state = &quot;SC&quot;) %&gt;%
+  mutate(city = case_when(
+    city == &quot;Block Group 3, Census Tract 115.01, Anderson County, South Carolina&quot; ~ &quot;Craytonville&quot;)) %&gt;%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiR2V0dGluZyBkYXRhIGZyb20gdGhlIDIwMTctMjAyMSA1LXllYXIgQUNTXG5Vc2luZyBGSVBTIGNvZGUgJzQ1JyBmb3Igc3RhdGUgJ1NDJ1xuIn0= -->
+<pre><code>Getting data from the 2017-2021 5-year ACS
+Using FIPS code &#39;45&#39; for state &#39;SC&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDk6IFdlIG5vdyBoYXZlIHRvIGFwcGVuZCB0aGVzZSBzcGVjaWFsIGNhc2VzIHRvIG91ciBzdGF0ZSBjZW5zdXMgZGF0YSwgcmVkbyB0aGUgam9pbiwgYW5kIHJ1biBvbmUgbW9yZSBjaGVjayBmb3IgTkEgdmFsdWVzLlxuY2Vuc3VzX2RhdGFfc2NfMjAyMSA8LSBiaW5kX3Jvd3MoY2Vuc3VzX2RhdGFfc2NfMjAyMSwgY2Vuc3VzX2RhdGFfY3JheXRvbnZpbGxlX3NjXzIwMjEpXG4gXG5ob21ldG93bnNfc2NfY29tcGxldGUgPC0gZGlzdGluY3RfaG9tZXRvd25zX3NjICU+JVxuICBsZWZ0X2pvaW4oY2Vuc3VzX2RhdGFfc2NfMjAyMSwgYnkgPSBjKFwiaG9tZXRvd25fY2l0eV9jbGVhblwiID0gXCJjaXR5XCIsIFwiaG9tZXRvd25fc3RhdGVfY2xlYW5cIiA9IFwic3RhdGVcIikpICU+JVxuICBtdXRhdGUocGxheWVyc19wZXJfdGhvdXNhbmQgPSByb3VuZCgodG90YWxfcGxheWVycyoxMDAwKS90b3RhbF9wb3AsMSkpICU+JVxuICBhcnJhbmdlKGRlc2MocGxheWVyc19wZXJfdGhvdXNhbmQpKVxuXG5ob21ldG93bnNfc2NfY29tcGxldGUgJT4lXG4gIGZpbHRlcihpcy5uYShnZW9pZCkpICNJZiB0aGlzIGlzIG5vdCBwcm9kdWNpbmcgYW4gZW1wdHkgZGF0YWZyYW1lLCBnbyBiYWNrIGFuZCBjb250aW51ZSB0byB3b3JrIG9uIE5BIHZhbHVlc1xuYGBgIn0= -->
+<pre class="r"><code># Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+census_data_sc_2021 &lt;- bind_rows(census_data_sc_2021, census_data_craytonville_sc_2021)
+ 
+hometowns_sc_complete &lt;- distinct_hometowns_sc %&gt;%
+  left_join(census_data_sc_2021, by = c(&quot;hometown_city_clean&quot; = &quot;city&quot;, &quot;hometown_state_clean&quot; = &quot;state&quot;)) %&gt;%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %&gt;%
+  arrange(desc(players_per_thousand))
+
+hometowns_sc_complete %&gt;%
+  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzVTdESUJUSDZWWTBiZEtseVh5Tk5qRjY0UU1ZSDhCb3NqdkNLSzVrRkFqUXpMMzhsRkp3bHF0eGN6aS9jM0wrNStQOWRmZFU3a29Bd0Jya3F3eXNvZnNDK1BueDFyd0FSNXlUZ1J3VWsvMTJTVnYzbVp3YXpDL2FLdkUzdDltRkFDUWNHeE9LUkZoMjJPTDJTK09CSnVtRmxxZFdPRzZ1K3N0Nk1WajdwbWU0N2VWQXJUd0pSSmc5SThJcEZpSDA4QmN5Rmx1NmlGVldXc3lSNHZoTXRZa0NCeXBaRjlzSkdWSkZzT2VZSFArQmFxQWR3d0l4UVp4UXpGTEVJcDhadXdnYVNGR05iQzlIZzBYbitDV1o3bDRxeTZSdzg2Mm1vOEJrYjVsT1FEMkthUjlkUS9wUkhKdkg1Mm01UG42OVlQb3ZaczM4SjlTQ29kWWRGUWNtNGdpUTR6M2x3ZG00cS9pOXQwb3pZZU1WSFRXdDMxQWtSUEpJL0hEZzhndkw0dGpSakFJQUFBPT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFN0ZXAgMTA6IElmIG5lZWRlZCwgdW5jb21tZW50IG91dCB0byBjcmVhdGUgYSBDU1ZcbiN3cml0ZV9jc3YoaG9tZXRvd25zX3NjX2NvbXBsZXRlLCBmaWxlID0gXCJob21ldG93bnNfc2MuY3N2XCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_sc_complete, file = &quot;hometowns_sc.csv&quot;)
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
@@ -2973,7 +3217,7 @@ hometowns_tx_complete &lt;- distinct_hometowns_tx %&gt;%
 hometowns_tx_complete %&gt;%
   filter(is.na(geoid))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjUsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiNSDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFs1XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE5VlRzVTdETUJDOXRBbFZLcldxVk5qNWdVWUNGbWFLV0pBWVVCSGRJdGN4clZYWGpoeFhKUk44QzEvSWp0UnlUdXlxelVKWElqbStlL2R5OXIyN1BOOVBiN3JUTGdDMElXd0YwSTdRaE9obDhqQzZCVVRRQ1NDRTJPN3ZTQnFpWVoyQlpibEFkS2NWWFRxbk15NXp6WXJDeHg0RjQ5STU4UlBiWEk2SlpLVUR3bGNpUkNOYmF6STkyUUxvVlY5aUpsd1hGcTB1WEsrQmk4VTdmRTdZKzViLzhXMEY2SHo5dGY5Ly9sRnpJeW9JTnEwV3pZUGRqQmlTdkdteVlnMTZyTlVta1lnWHJnZXRUM3loakQvTnZKNWs4OFlPSEM3VWlobTFrU25scGt5cFlNU1B5UGsrVkJoaTJGR3NaNVFoSXMwRktabmVEOWljS1o3NWF6bUd5ajB3RTRRdUQ0RGVpbVdjeUpSTGlnZDVWazVOV2pIOUxkd1phYzUwYWhacVhSQ1pJYjV0Vk5kUnVlRktZbjJ0b1J1MlEvMEMzUUFHYTJuMXlFWjBzWmJMMGRXMUZSbnFhUVduWk9BU2VUdXV6d3gzY1B5Zm5ERTU1OUtYRUFreVk4STVmZXhPcFh1U2F5Nk43eWFpUlZJcDVCR3FoRWVxNG1EN0N3a2VIWlVRQkFBQSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjUsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiNSDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFs1XSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE5VlRRVXZETUJSKzNWcEhCeHVENmQwL3NJS0k0Tm1KRjhHRFROeXRaR25jd3JLa3BCbXpKLzB0L2tMdnd1WkxtNHl0RjNlMWtPYTk3MzE5eWZ2ZTYvUDk5TG83N1FKQUc4SldBTzBJVFloZUpnK2pXMEFFblFCQ2lPMytqcVFoR3RZWldKWUxSSGRhMGFWek91TXkxNndvZk94Uk1DNmRFeit4emVXWVNGWTZJSHdsUWpTeXRTYlRreTJBWHZVbFpzSjFZZEhxd3ZVYXVGaTh3K2VFdlcvNUg5OVdnTTdYWC92LzV4ODFONktDWU5OcTBUell6WWdoeVpzbUs5YWd4MXB0RW9sNDRYclErc1FYeXZqVHpPdEpObS9zd09GQ3JaaFJHNWxTYnNxVUNrYjhpSnp2UTRVaGhoM0Zla1laSXRKY2tKTHAvWURObWVLWnY1WmpxTndETTBIbzhnRG9yVmpHaVV5NXBIaVFaK1hVcEJYVDM4S2RrZVpNcDJhaDFnV1JHZUxiUm5VZGxSdXVKTmJYR3JwaE85UXYwQTFnc0paV2oyeEVGMnU1SEYzZFdKR2hubFp3U2dZdWtiZmorc3h3QjhmL3lSbVRjeTU5Q1pFZ015YWMwOGZ1VkxvbnVlYlMrRzRpV2lTVlFoNmhTbmlrS2c2MnY2YjI5bVlRQkFBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Brock","2":"TX","3":"4","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Cypress","2":"TX","3":"21","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Klein","2":"TX","3":"2","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"New Caney","2":"TX","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Wall","2":"TX","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[5]},"pages":{}}}
@@ -3036,7 +3280,7 @@ hometowns_tx_complete &lt;- distinct_hometowns_tx %&gt;%
 hometowns_tx_complete %&gt;%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzVTdESUJUSDZWWTBiZEtseVh5Tk5sRnZmQURqQXhoTmRrY1l4WldNQWdHYXVaZWZVZ3JPY2pWdUR1ZDNUczcvZkx5LzdwN0xYUWtBV0lOOGxZRTFkRjhBUHovZW1oZmdpSE15a0lOaXN0OHVhZXMrazFPRCtVVmJKZjdtTnJzUWdJUmpZMEtSQ01zT1c5eCthVHpRSkwzUTh0UUt4ODFWZjFrdkJtdmY5QXkzdlJ5b2xTZUJDTE5uUkRqRklvUWUva0xHWWtzWHNjcEtpemxTSEorcE5sSGdRQ1hyWWpzaFE2b0k5aHlUNHo5UURiUmpXQ0FtaUJPS1dZcFk1RE5qRjBFREthcVI3ZVZvc09nY3Z5VFQzVXRsbVJSdXZ0VjBGSmpzTGRNSnFFY3g3YU5yU0QrS1kvUDROQzNYeDY4WFRQL0ZySm4vaEZvdzFMcWo0c0JFSEFGeXZLYzhPQnQzRmIvM1Zta21iTHlpbzZiMUc0cUVTQjZKSHc1Y2ZnRkdLRzFCakFJQUFBPT0ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzV3JESUJUSFRSczNFa2dKZEsrUndCaURQY0RZQTR3TmVpZld1RVpxVk5UUTllVzdHYVByNGxXOU9aN2ZPWnovK1hoLzNUMlZ1eElBc0FiNUtnTnI2TDRBZm42OE5TL0FFZWRrSUFmRlpMOWQwdFo5SnFjRzg0dTJTdnpOYlhZaEFBbkh4b1FpRVpZZHRyajkwbmlnU1hxaDVha1ZqcHVyL3JKZUROYSs2Umx1ZXpsUUswOENFV2JQaUhDS1JRZzkvSVdNeFpZdVlwV1ZGbk9rT0Q1VGJhTEFnVXJXeFhaQ2hsUVI3RGtteDMrZ0dtakhzRUJNRUNjVXN4U3h5R2ZHTG9JR1VsUWoyOHZSWU5FNWZrbW11NWZLTWluY2ZLdnBLRERaVzZZVFVJOWkya2ZYa0g0VXgrYnhlVnF1ajE4dm1QNkxXVFAvQ2JWZ3FIVkh4WUdKT0FMa2VFOTVjRGJ1S243dnJkSk0ySGhGUjAzck54UUprVHdTUHh5NC9BTHB3SWF5akFJQUFBPT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
@@ -3053,27 +3297,97 @@ hometowns_tx_complete %&gt;%
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlJTMjdESUJDR2NXSmEyWklqUytrMTdFWGJSUTlROVFCVksyV0hDS1l4Q2dZRVdHa3VueFpqYUdwV1lUUE1ONlA1NS9IK3Vuc3FkeVVBWUEzeVZRYlcwSDBCL1B4NGExNkFJODdKUUE2S3lYNjdwSzM3VEU0TjVoZHRsZmliMit4Q0FCS09qUWxGSWl3N2JISDdwZkZBay9SQ3kxTXJIRGRYL1dXOUdLeDkwelBjOW5LZ1ZwNEVJc3llRWVFVWl4QjYrQXNaaXkxZHhDb3JMZVpJY1h5bTJrU0JBNVdzaSsyRURLa2kySE5NanY5QU5kQ09ZWUdZSUU0b1ppbGlrYytNWFFRTnBLaEd0cGVqd2FKei9KSk1keStWWlZLNCtWYlRVV0N5dDB3bm9CN0Z0SSt1SWYwb2pzM2o4N1JjSDc5ZU1QMFhzMmIrRTJyQlVPdU9pZ01UY1FUSThaN3k0R3pjVmZ6ZVc2V1pzUEdLanByV2J5Z1NJbmtrZmpodytRWEF4S3gxakFJQUFBPT0ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFVUQUggSE9NRVRPV05TXG5cbiMgU3RlcCAxOiBGaWx0ZXIgZm9yIHRoZSBzdGF0ZSdzIHBsYXllcnNcbmZvb3RiYWxsX3Jvc3RlcnNfdXQgPC0gZm9vdGJhbGxfcm9zdGVyc191c2EgJT4lXG4gIGZpbHRlcihob21ldG93bl9zdGF0ZV9jbGVhbiA9PSBcIlVUXCIpXG5cbiMgU3RlcCAyOiBHZXQgYSBsaXN0IG9mIGFsbCB0aGUgdW5pcXVlIGhvbWV0b3ducyBpbiB0aGUgc3RhdGVcbmRpc3RpbmN0X2hvbWV0b3duc191dCA8LSBmb290YmFsbF9yb3N0ZXJzX3V0ICU+JVxuICBncm91cF9ieShob21ldG93bl9jaXR5X2NsZWFuLCBob21ldG93bl9zdGF0ZV9jbGVhbikgJT4lXG4gIHN1bW1hcmlzZSh0b3RhbF9wbGF5ZXJzID0gbigpKVxuYGBgIn0= -->
+<pre class="r"><code>
+# UTAH HOMETOWNS
+
+# Step 1: Filter for the state&#39;s players
+football_rosters_ut &lt;- football_rosters_usa %&gt;%
+  filter(hometown_state_clean == &quot;UT&quot;)
+
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_ut &lt;- football_rosters_ut %&gt;%
+  group_by(hometown_city_clean, hometown_state_clean) %&gt;%
+  summarise(total_players = n())</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYHN1bW1hcmlzZSgpYCBoYXMgZ3JvdXBlZCBvdXRwdXQgYnkgJ2hvbWV0b3duX2NpdHlfY2xlYW4nLiBZb3UgY2FuIG92ZXJyaWRlIHVzaW5nIHRoZSBgLmdyb3Vwc2AgYXJndW1lbnQuXG4ifQ== -->
+<pre><code>`summarise()` has grouped output by &#39;hometown_city_clean&#39;. You can override using the `.groups` argument.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDM6IEdyYWIgdGhlIHJlbGV2YW50IGNlbnN1cyBkYXRhIGZvciB0aGF0IHN0YXRlLiBOb3RlOiBCMDEwMDMgPSB0b3RhbCBwb3B1bGF0aW9uLCBCMDIwMDEgPSB0b3RhbCBCbGFjayBwb3B1bGF0aW9uLCBCMTkwMTMgPSBtZWRpYW4gaG91c2Vob2xkIGluY29tZS4gV2UgZ2V0IHRoZXNlIGNvZGVzIHVzaW5nIHRoZSBBQ1MgY3Jvc3N3YWxrIHdlIGxvYWRlZCBlYXJsaWVyIChBQ1NfMjAwMSkgYW5kIHRoaXMgd2Vic2l0ZTogaHR0cHM6Ly9jZW5zdXNyZXBvcnRlci5vcmcvdG9waWNzL3RhYmxlLWNvZGVzL1xuY2Vuc3VzX2RhdGFfdXRfMjAyMSA8LSBnZXRfYWNzKGdlb2dyYXBoeSA9IFwicGxhY2VcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHZhcmlhYmxlcyA9IGMoXCJCMDEwMDNfMDAxXCIsIFwiQjAyMDAxXzAwM1wiLCBcIkIxOTAxM18wMDFcIiksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICB5ZWFyID0gMjAyMSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0YXRlID0gXCJVVFwiLFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgb3V0cHV0ID0gXCJ3aWRlXCIpXG5gYGAifQ== -->
+<pre class="r"><code># Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_ut_2021 &lt;- get_acs(geography = &quot;place&quot;,
+                           variables = c(&quot;B01003_001&quot;, &quot;B02001_003&quot;, &quot;B19013_001&quot;),
+                           year = 2021,
+                           state = &quot;UT&quot;,
+                           output = &quot;wide&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiR2V0dGluZyBkYXRhIGZyb20gdGhlIDIwMTctMjAyMSA1LXllYXIgQUNTXG5Vc2luZyBGSVBTIGNvZGUgJzQ5JyBmb3Igc3RhdGUgJ1VUJ1xuIn0= -->
+<pre><code>Getting data from the 2017-2021 5-year ACS
+Using FIPS code &#39;49&#39; for state &#39;UT&#39;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBTdGVwIDQ6IEdlbmVyYWwgY2xlYW5pbmcgb2YgY2Vuc3VzIGRhdGEgdG8gcHJlcGFyZSBmb3Igam9pbiB3aXRoIGhvbWV0b3ducy9yb3N0ZXIgZGF0YS4gVGhpcyBwYXJ0IGlzIHRoZSBzYW1lIGZvciBldmVyeSBzdGF0ZSBhbmQgKGV4Y2VwdCBmb3IgdGhlIGRhdGFmcmFtZSBuYW1lKSBjYW4gbW9yZSBvciBsZXNzIGJlIGNvcGllZCBhbmQgcGFzdGVkLlxuY2Vuc3VzX2RhdGFfdXRfMjAyMSA8LSBjZW5zdXNfZGF0YV91dF8yMDIxICU+JVxuICBjbGVhbl9uYW1lcygpICU+JVxuICBzZXBhcmF0ZShuYW1lLCBpbnRvID0gYyhcImNpdHlcIiwgXCJzdGF0ZVwiKSwgc2VwID0gXCIsIFwiLCByZW1vdmUgPSBGQUxTRSkgJT4lXG4gIG11dGF0ZShjaXR5ID0gZ3N1YihcIlxcXFxiKHRvd258Y2l0eXxDRFB8dmlsbGFnZSlcXFxcYlwiLCBcIlwiLCBjaXR5KSkgJT4lXG4gIG11dGF0ZShjaXR5ID0gc3RyX3NxdWlzaChjaXR5KSkgJT4lXG4gIHNlbGVjdChnZW9pZCwgY2l0eSwgc3RhdGUsIGIwMTAwM18wMDFlLCBiMDIwMDFfMDAzZSwgYjE5MDEzXzAwMWUpICU+JVxuICByZW5hbWUodG90YWxfcG9wID0gYjAxMDAzXzAwMWUsIGJsYWNrX3BvcCA9IGIwMjAwMV8wMDNlLCBtZWRpYW5faW5jb21lID0gYjE5MDEzXzAwMWUpICU+JVxuICBtdXRhdGUocGN0X2JsYWNrID0gcm91bmQoYmxhY2tfcG9wL3RvdGFsX3BvcCoxMDAsIDEpKVxuXG4jIFN0ZXAgNTogU3RhdGUtc3BlY2lmaWMgY2xlYW5pbmcgb2YgY2Vuc3VzIGRhdGEgdG8gcHJlcGFyZSBmb3Igam9pbiB3aXRoIGhvbWV0b3ducy9yb3N0ZXIgZGF0YS4gVGhpcyBwYXJ0IGlzIGRpZmZlcmVudCBmb3IgZXZlcnkgc3RhdGUuIFRoZSBmaXJzdCBtdXRhdGUgZnVuY3Rpb24gc2hvdWxkIGJlIGluY2x1ZGVkIGZvciBldmVyeSBzdGF0ZSwganVzdCBtb2RpZmllZCBkZXBlbmRpbmcgb24gdGhlIHN0YXRlIG5hbWUuIEFkZGl0aW9uYWwgbXV0YXRlIGZ1bmN0aW9ucyBtYXkgYmUgbmVlZGVkIGZvciBpbnN0YW5jZXMgd2hlbiB0aGUgY2Vuc3VzIG5hbWVzIHNvbWV0aGluZyBpbiBhIHdlaXJkIHdheSB0aGF0IGRvZXNuJ3QgbGluZSB1cCB3aXRoIHRoZSBob21ldG93bnMuXG5jZW5zdXNfZGF0YV91dF8yMDIxIDwtIGNlbnN1c19kYXRhX3V0XzIwMjEgJT4lXG4gIG11dGF0ZShzdGF0ZSA9IGNhc2Vfd2hlbihcbiAgICBzdGF0ZSA9PSAnVXRhaCcgfiBcIlVUXCIpKSAlPiVcbiAgbXV0YXRlKGNpdHkgPSBjYXNlX3doZW4oXG4gICAgY2l0eSA9PSAnSGViZXInIH4gXCJIZWJlciBDaXR5XCIsXG4gICAgVFJVRSB+IGNpdHkpKVxuXG4jIFN0ZXAgNjogSm9pbiB0aGUgY2Vuc3VzIGRhdGEgdG8gdGhlIGxpc3Qgb2YgaG9tZXRvd25zLiBBbHNvIGNyZWF0ZSBhIGNvbHVtbiB0aGF0IHRlbGxzIHVzIGhvdyBtYW55IHBlb3BsZSBhcmUgZWxpdGUgY29sbGVnZSBmb290YmFsbCBwbGF5ZXJzIGZvciBldmVyeSAxLDAwMCByZXNpZGVudHMuXG5ob21ldG93bnNfdXRfY29tcGxldGUgPC0gZGlzdGluY3RfaG9tZXRvd25zX3V0ICU+JVxuICBsZWZ0X2pvaW4oY2Vuc3VzX2RhdGFfdXRfMjAyMSwgYnkgPSBjKFwiaG9tZXRvd25fY2l0eV9jbGVhblwiID0gXCJjaXR5XCIsIFwiaG9tZXRvd25fc3RhdGVfY2xlYW5cIiA9IFwic3RhdGVcIikpICU+JVxuICBtdXRhdGUocGxheWVyc19wZXJfdGhvdXNhbmQgPSByb3VuZCgodG90YWxfcGxheWVycyoxMDAwKS90b3RhbF9wb3AsMSkpICU+JVxuICBhcnJhbmdlKGRlc2MocGxheWVyc19wZXJfdGhvdXNhbmQpKVxuXG4jIFN0ZXAgNzogTm90aWNlIHRoZXJlIGFyZSBhIGZldyBOQSB2YWx1ZXMuIFRoaXMgaGFwcGVucyB3aGVuIHRoZSBjZW5zdXMgZGF0YSBkb2VzIG5vdCBqb2luIHdpdGggdGhlIGhvbWV0b3ducyBkYXRhLCBwZXJoYXBzIGJlY2F1c2UgdGhlIGhvbWV0b3duIGlzIG1pc3NwZWxsZWQgb3IgYmVjYXVzZSB0aGVyZSBpcyBubyBjZW5zdXMgZGF0YSBmb3IgdGhhdCB0b3duLiBGaXJzdCwgbGV0J3MgZmluZCB0aGUgTkEgdmFsdWVzLlxuaG9tZXRvd25zX3V0X2NvbXBsZXRlICU+JVxuICBmaWx0ZXIoaXMubmEoZ2VvaWQpKVxuYGBgIn0= -->
+<pre class="r"><code># Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_ut_2021 &lt;- census_data_ut_2021 %&gt;%
+  clean_names() %&gt;%
+  separate(name, into = c(&quot;city&quot;, &quot;state&quot;), sep = &quot;, &quot;, remove = FALSE) %&gt;%
+  mutate(city = gsub(&quot;\\b(town|city|CDP|village)\\b&quot;, &quot;&quot;, city)) %&gt;%
+  mutate(city = str_squish(city)) %&gt;%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %&gt;%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %&gt;%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn&#39;t line up with the hometowns.
+census_data_ut_2021 &lt;- census_data_ut_2021 %&gt;%
+  mutate(state = case_when(
+    state == &#39;Utah&#39; ~ &quot;UT&quot;)) %&gt;%
+  mutate(city = case_when(
+    city == &#39;Heber&#39; ~ &quot;Heber City&quot;,
+    TRUE ~ city))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_ut_complete &lt;- distinct_hometowns_ut %&gt;%
+  left_join(census_data_ut_2021, by = c(&quot;hometown_city_clean&quot; = &quot;city&quot;, &quot;hometown_state_clean&quot; = &quot;state&quot;)) %&gt;%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %&gt;%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let&#39;s find the NA values.
+hometowns_ut_complete %&gt;%
+  filter(is.na(geoid))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlIzV3JESUJUSFRSczNFa2dKZEsrUndCaU1QY0RZQTR3TmVpZld1RVpxVk5UUTllVzdHYVByNGxXOU9aN2ZPWnovK1hoLzNUMlZ1eElBc0FiNUtnTnI2TDRBZm42OE5TL0FFZWRrSUFmRlpMOWQwdFo5SnFjRzg0dTJTdnpOYlhZaEFBbkh4b1FpRVpZZHRyajkwbmlnU1hxaDVha1ZqcHVyL3JKZUROYSs2Umx1ZXpsUUswOENFV2JQaUhDS1JRZzkvSVdNeFpZdVlwV1ZGbk9rT0Q1VGJhTEFnVXJXeFhaQ2hsUVI3RGtteDMrZ0dtakhzRUJNRUNjVXN4U3h5R2ZHTG9JR1VsUWoyOHZSWU5FNWZrbW11NWZLTWluY2ZLdnBLRERaVzZZVFVJOWkya2ZYa0g0VXgrYnhlVnF1ajE4dm1QNkxXVFAvQ2JWZ3FIVkh4WUdKT0FMa2VFOTVjRGJ1S243dnJkSk0ySGhGUjAzck54UUprVHdTUHh5NC9BS1BwbVFYakFJQUFBPT0ifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIFN0ZXAgODogTm93IHdlIGhhdmUgdG8gZmlndXJlIG91dCBob3cgdG8gYWRkcmVzcyBlYWNoIG9mIHRoZSBOQSB2YWx1ZXMuIFRoaXMgaXMgYSBqdWRnbWVudCBjYWxsLCBhbmQgd2Ugc2hvdWxkIGJlIGNhcmVmdWwgYWJvdXQgZG9jdW1lbnRpbmcgaG93IGFuZCB3aHkgd2UgbWFkZSB0aGF0IGRlY2lzaW9uLiBJZiB0aGVyZSBpcyBhbiBOQSB2YWx1ZSBiZWNhdXNlIGEgaG9tZXRvd24gaXMgbWlzc3BlbGxlZCwgdGVsbCBTYXBuYSwgYW5kIHNoZSB3aWxsIG1ha2UgdGhhdCBjb3JyZWN0aW9uIGluIE9wZW4gUmVmaW5lLiBJZiB0aGVyZSBpcyBhbiBOQSB2YWx1ZSBiZWNhdXNlIHRoZSBjZW5zdXMgZG9lcyBub3QgcmVjb2duaXplIHRoZSBob21ldG93biwgd2UgbmVlZCB0byBmaW5kIHNvbWUgc3Vic3RpdHV0ZSBmb3IgdGhhdCBob21ldG93bi5cbiMgSW4gdGhpcyBjYXNlLCB0aGVyZSB3YXMgYSBkaXNjcmVwYW5jeSBiZXR3ZWVuIG91ciBob21ldG93biBkYXRhLCB3aGljaCBoYWQgYSBjaXR5IG5hbWVkIEhlYmVyIENpdHksIGFuZCB0aGUgY2Vuc3VzIGRhdGEsIHdoaWNoIHJlZmVycmVkIHRvIHRoYXQgdG93biBhcyBIZWJlci4gV2UgZml4ZWQgaXQgYnkgZ29pbmcgYmFjayB0byBTdGVwICM1IGFuZCBhZGRpbmcgaW4gYSBjYXNlX3doZW4gc3RhdGVtZW50IGZvciBIZWJlci5cblxuIyBTdGVwIDk6IFdlIG5vdyBoYXZlIHRvIGFwcGVuZCB0aGVzZSBzcGVjaWFsIGNhc2VzIHRvIG91ciBzdGF0ZSBjZW5zdXMgZGF0YSwgcmVkbyB0aGUgam9pbiwgYW5kIHJ1biBvbmUgbW9yZSBjaGVjayBmb3IgTkEgdmFsdWVzLlxuIyBOb3QgYXBwbGljYWJsZSBmb3IgVXRhaFxuXG4jIFN0ZXAgMTA6IElmIG5lZWRlZCwgdW5jb21tZW50IG91dCB0byBjcmVhdGUgYSBDU1ZcbiN3cml0ZV9jc3YoaG9tZXRvd25zX3V0X2NvbXBsZXRlLCBmaWxlID0gXCJob21ldG93bnNfdXQuY3N2XCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
+# In this case, there was a discrepancy between our hometown data, which had a city named Heber City, and the census data, which referred to that town as Heber. We fixed it by going back to Step #5 and adding in a case_when statement for Heber.
+
+# Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+# Not applicable for Utah
+
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_ut_complete, file = &quot;hometowns_ut.csv&quot;)
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuaG9tZXRvd25zX2NvbXBsZXRlIDwtIGJpbmRfcm93cyhob21ldG93bnNfYWxfY29tcGxldGUsIGhvbWV0b3duc19mbF9jb21wbGV0ZSwgaG9tZXRvd25zX2dhX2NvbXBsZXRlLCBob21ldG93bnNfaGlfY29tcGxldGUsIGhvbWV0b3duc19pYV9jb21wbGV0ZSwgaG9tZXRvd25zX2xhX2NvbXBsZXRlLCBob21ldG93bnNfbXNfY29tcGxldGUsIGhvbWV0b3duc19uZV9jb21wbGV0ZSwgaG9tZXRvd25zX3R4X2NvbXBsZXRlLCBob21ldG93bnNfdXRfY29tcGxldGUpICU+JVxuICBtdXRhdGUoaG9tZXRvd25fY29tYmluZWQgPSBwYXN0ZShob21ldG93bl9jaXR5X2NsZWFuLCBob21ldG93bl9zdGF0ZV9jbGVhbiwgc2VwID0gXCIsIFwiKSkgJT4lXG4gIGFycmFuZ2UoZGVzYyhwbGF5ZXJzX3Blcl90aG91c2FuZCkpICU+JVxuICBzZWxlY3QoaG9tZXRvd25fY2l0eV9jbGVhbjpob21ldG93bl9zdGF0ZV9jbGVhbiwgaG9tZXRvd25fY29tYmluZWQsIHRvdGFsX3BsYXllcnM6cGxheWVyc19wZXJfdGhvdXNhbmQpXG5cbmBgYCJ9 -->
-<pre class="r"><code>hometowns_complete &lt;- bind_rows(hometowns_al_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_la_complete, hometowns_ms_complete, hometowns_ne_complete, hometowns_tx_complete, hometowns_ut_complete) %&gt;%
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIEFMTCBIT01FVE9XTlNcbmhvbWV0b3duc19jb21wbGV0ZSA8LSBiaW5kX3Jvd3MoaG9tZXRvd25zX2FsX2NvbXBsZXRlLCBob21ldG93bnNfZmxfY29tcGxldGUsIGhvbWV0b3duc19nYV9jb21wbGV0ZSwgaG9tZXRvd25zX2hpX2NvbXBsZXRlLCBob21ldG93bnNfaWFfY29tcGxldGUsIGhvbWV0b3duc19sYV9jb21wbGV0ZSwgaG9tZXRvd25zX21zX2NvbXBsZXRlLCBob21ldG93bnNfbmVfY29tcGxldGUsIGhvbWV0b3duc19zY19jb21wbGV0ZSwgaG9tZXRvd25zX3R4X2NvbXBsZXRlLCBob21ldG93bnNfdXRfY29tcGxldGUpICU+JVxuICBtdXRhdGUoaG9tZXRvd25fY29tYmluZWQgPSBwYXN0ZShob21ldG93bl9jaXR5X2NsZWFuLCBob21ldG93bl9zdGF0ZV9jbGVhbiwgc2VwID0gXCIsIFwiKSkgJT4lXG4gIGFycmFuZ2UoZGVzYyhwbGF5ZXJzX3Blcl90aG91c2FuZCkpICU+JVxuICBzZWxlY3QoaG9tZXRvd25fY2l0eV9jbGVhbjpob21ldG93bl9zdGF0ZV9jbGVhbiwgaG9tZXRvd25fY29tYmluZWQsIHRvdGFsX3BsYXllcnM6cGxheWVyc19wZXJfdGhvdXNhbmQpXG5cbiN3cml0ZV9jc3YoaG9tZXRvd25zX2NvbXBsZXRlLCBmaWxlID0gXCJob21ldG93bnNfY29tcGxldGUuY3N2XCIpXG5cbmBgYCJ9 -->
+<pre class="r"><code>
+# ALL HOMETOWNS
+hometowns_complete &lt;- bind_rows(hometowns_al_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_la_complete, hometowns_ms_complete, hometowns_ne_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete) %&gt;%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = &quot;, &quot;)) %&gt;%
   arrange(desc(players_per_thousand)) %&gt;%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
+
+#write_csv(hometowns_complete, file = &quot;hometowns_complete.csv&quot;)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbGlzdDIoLi4uKSA6IG9iamVjdCAnaG9tZXRvd25zX2FsX2NvbXBsZXRlJyBub3QgZm91bmRcbiJ9 -->
-<pre><code>Error in list2(...) : object &#39;hometowns_al_complete&#39; not found</code></pre>
-<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
