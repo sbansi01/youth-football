@@ -1172,12 +1172,117 @@ hometowns_ut_complete %>%
 #write_csv(hometowns_ut_complete, file = "hometowns_ut.csv")
 
 ```
+```{r}
 
+# SMALLER STATE HOMETOWNS - use for all states with less than 50 Power Five players (WY, AK, RI, ND, NH, MT, NM, SD, DE, ID, DC, WV, CT, NV); *do not use this as a template*
+
+# Vector of all states with fewer than 50 players
+states_under_50 <- football_rosters_usa_states$hometown_state_clean[football_rosters_usa_states$total_players < 50]
+
+# Filter for the states' players
+football_rosters_small_states <- football_rosters_usa %>%
+  filter(hometown_state_clean %in% states_under_50)
+
+# Get a list of all the unique hometowns in the state
+distinct_hometowns_small_states <- football_rosters_small_states %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total_players = n())
+
+# Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_small_states_2021 <- lapply(states_under_50, function(state) {
+  get_acs(geography = "place",
+          variables = c("B01003_001", "B02001_003", "B19013_001"),
+          year = 2021,
+          state = state,
+          output = "wide")
+})
+
+census_data_small_states_2021 <- do.call(rbind, census_data_small_states_2021)
+
+# It turns out that many towns in Connecticut, New Hampshire, and Rhode Island are county subdivisions, so we will grab those, too
+census_data_small_states_subdivisions_2021 <- get_acs(geography = "county subdivision",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = c("CT", "NH", "RI"),
+                           output = "wide")
+
+# General cleaning of census data to prepare for join with hometowns/roster data.
+census_data_small_states_2021 <- census_data_small_states_2021 %>%
+  clean_names() %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village|municipality)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+census_data_small_states_subdivisions_2021 <- census_data_small_states_subdivisions_2021 %>%
+  clean_names() %>%
+  separate(name, into = c("city", "county", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village|municipality)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+census_data_small_states_2021 <- bind_rows(census_data_small_states_2021, census_data_small_states_subdivisions_2021)
+
+# Cleaning of census data to prepare for join with hometowns/roster data.
+state_crosswalk_modified <- state_crosswalk %>%
+  mutate(state_names = str_to_title(state_name_caps)) %>%
+  mutate(state_names = case_when(
+    state_names == 'Washington, Dc' ~ "District of Columbia",
+    TRUE ~ state_names)) %>%
+  select(state_abb, state_names)
+
+census_data_small_states_2021 <- census_data_small_states_2021 %>%
+  left_join(state_crosswalk_modified, by = c("state" = "state_names")) %>%
+  mutate(state = census_data_small_states_2021$state_abb) %>% 
+  mutate(city = case_when(
+    city == 'Boise City' ~ "Boise",
+    TRUE ~ city))
+
+census_data_small_states_2021 <- census_data_small_states_2021 %>%
+  rename(state = state_abb)
+
+# Join the census data to the list of hometowns.
+hometowns_small_states_complete <- distinct_hometowns_small_states %>%
+  left_join(census_data_small_states_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+# Now we have to figure out how to address each of the NA values.
+# For Ona, WV, the zip code (25545) seems to be a good substitute: https://censusreporter.org/profiles/86000US25545-25545/
+census_data_ona_wv_2021 <- get_acs(geography = "zcta",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "ZCTA5 25545") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "WV") %>%
+  mutate(city = case_when(
+    city == "ZCTA5 25545" ~ "Ona")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
+# We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+census_data_small_states_2021 <- bind_rows(census_data_small_states_2021, census_data_ona_wv_2021)
+ 
+hometowns_small_states_complete <- distinct_hometowns_small_states %>%
+  left_join(census_data_small_states_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+# If needed, uncomment out to create a CSV
+#write_csv(hometowns_small_states_complete, file = "hometowns_small_states.csv")
+
+```
 
 ```{r}
 
 # ALL HOMETOWNS
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_la_complete, hometowns_ms_complete, hometowns_ne_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_la_complete, hometowns_ms_complete, hometowns_ne_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_small_states_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
