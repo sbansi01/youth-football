@@ -1067,6 +1067,7 @@ hometowns_nc_complete %>%
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 
 # For Arden, NC (28704), the zip code seems to be good substitutes: https://censusreporter.org/profiles/86000US28704-28704/
+
 census_data_arden_nc_2021 <- get_acs(geography = "zcta",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
