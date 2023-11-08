@@ -1172,12 +1172,13 @@ census_data_oh_2021 <- get_acs(geography = "place",
                            state = "OH",
                            output = "wide")
 
-# It turns out that many towns in Ohio are county subdivisions, so we will grab those, too
+# It turns out that many towns in Ohio are county subdivisions, so we will grab some of those we need, too
 census_data_oh_subdivisions_2021 <- get_acs(geography = "county subdivision",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
                            state = "OH",
-                           output = "wide")
+                           output = "wide") %>%
+  filter(NAME == "Braceville township, Trumbull County, Ohio" | NAME == "Colerain township, Hamilton County, Ohio" | NAME == "Concord township, Lake County, Ohio" | NAME == "Liberty township, Butler County, Ohio" | NAME == "West Chester township, Butler County, Ohio")
 
 # Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
 census_data_oh_2021 <- census_data_oh_2021 %>%
@@ -1198,7 +1199,13 @@ census_data_oh_subdivisions_2021 <- census_data_oh_subdivisions_2021 %>%
   rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1))
 
-census_data_oh_2021 <- bind_rows(census_data_oh_2021, census_data_oh_subdivisions_2021)
+census_data_oh_2021 <- bind_rows(census_data_oh_2021, census_data_oh_subdivisions_2021) %>%
+  filter(!(city == "Colerain" & geoid != "3906116616")) %>% #Keeping only Colerain in Hamilton County
+  filter(!(city == "Concord" & geoid != "3908518196")) %>% #Keeping only Concord in Lake County
+  filter(!(city == "Liberty" & geoid != "3901743050")) %>% #Keeping only Liberty in Butler County
+  mutate(city = case_when(
+    city == 'Liberty' ~ "Liberty Township",
+    TRUE ~ city))
 
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
 census_data_oh_2021 <- census_data_oh_2021 %>%
