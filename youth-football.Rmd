@@ -1138,7 +1138,7 @@ hometowns_ne_complete %>%
 ```
 ```{r}
 
-# NEW JERSEY HOMETOWNS - IN PROGRESS; this one is a mess; not a good one to use as a template
+# NEW JERSEY HOMETOWNS - not a good one to use as a template
 
 # Step 1: Filter for the state's players
 football_rosters_nj <- football_rosters_usa %>%
@@ -1156,12 +1156,13 @@ census_data_nj_2021 <- get_acs(geography = "place",
                            state = "NJ",
                            output = "wide")
 
-# It turns out that many towns in New Jersey are county subdivisions, so we will grab those, too
+# It turns out that many towns in New Jersey are county subdivisions, so we will grab the relevant ones of those, too
 census_data_nj_subdivisions_2021 <- get_acs(geography = "county subdivision",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
                            state = "NJ",
-                           output = "wide")
+                           output = "wide") %>%
+  filter(NAME == "Aberdeen township, Monmouth County, New Jersey" | NAME == "Bridgewater township, Somerset County, New Jersey" | NAME == "Cinnaminson township, Burlington County, New Jersey" | NAME == "Colts Neck township, Monmouth County, New Jersey" | NAME == "Delran township, Burlington County, New Jersey" | NAME == "Egg Harbor township, Atlantic County, New Jersey" | NAME == "Fredon township, Sussex County, New Jersey" | NAME == "Galloway township, Atlantic County, New Jersey" | NAME == "Gloucester township, Camden County, New Jersey" | NAME == "Hainesport township, Burlington County, New Jersey" | NAME == "Hillside township, Union County, New Jersey" | NAME == "Holland township, Hunterdon County, New Jersey" | NAME == "Holmdel township, Monmouth County, New Jersey" | NAME == "Irvington township, Essex County, New Jersey" | NAME == "Jackson township, Ocean County, New Jersey" | NAME == "Jefferson township, Morris County, New Jersey" | NAME == "Medford township, Burlington County, New Jersey" | NAME == "Middletown township, Monmouth County, New Jersey" | NAME == "Montclair township, Essex County, New Jersey" | NAME == "Moorestown township, Burlington County, New Jersey" | NAME == "Mount Laurel township, Burlington County, New Jersey" | NAME == "Ocean township, Monmouth County, New Jersey" | NAME == "Pennsauken township, Camden County, New Jersey" | NAME == "Plainsboro township, Middlesex County, New Jersey" | NAME == "Robbinsville township, Mercer County, New Jersey" | NAME == "South Brunswick township, Middlesex County, New Jersey" | NAME == "Teaneck township, Bergen County, New Jersey" | NAME == "Union township, Union County, New Jersey" | NAME == "Verona township, Essex County, New Jersey" | NAME == "Warren township, Somerset County, New Jersey" | NAME == "Wayne township, Passaic County, New Jersey" | NAME == "West Deptford township, Gloucester County, New Jersey" | NAME == "West Orange township, Essex County, New Jersey" | NAME == "Willingboro township, Burlington County, New Jersey")
 
 # Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
 census_data_nj_2021 <- census_data_nj_2021 %>%
@@ -1183,7 +1184,7 @@ census_data_nj_subdivisions_2021 <- census_data_nj_subdivisions_2021 %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1))
 
 census_data_nj_2021 <- bind_rows(census_data_nj_2021, census_data_nj_subdivisions_2021) %>%
-  distinct(city, total_pop, .keep_all = TRUE) #Added this line to remove instances where the same city was both a place and a county subdivision
+  filter(city != "Union" | geoid != 3474478) #Removing a Union, NJ that is a CDP
 
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
 census_data_nj_2021 <- census_data_nj_2021 %>%
@@ -1193,6 +1194,7 @@ census_data_nj_2021 <- census_data_nj_2021 %>%
     city == 'Egg Harbor' ~ "Egg Harbor Township",
     city == 'Jefferson' ~ "Jefferson Township",
     city == 'Ocean' ~ "Ocean Township",
+    city == "Union" ~ "Union Township",
     TRUE ~ city))
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
@@ -1202,44 +1204,18 @@ hometowns_nj_complete <- distinct_hometowns_nj %>%
   arrange(desc(players_per_thousand))
 
 # Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
-hometowns_la_complete %>%
+hometowns_nj_complete %>%
   filter(is.na(geoid))
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
-
-# For Geismar, LA (70734), St. Amant, LA (70774), and Vacherie, LA (70090), the zip codes seems to be good substitutes: https://censusreporter.org/profiles/86000US70734-70734/ https://censusreporter.org/profiles/86000US70774-70774/ https://censusreporter.org/profiles/86000US70090-70090/
-census_data_zips_la_2021 <- get_acs(geography = "zcta",
-                           variables = c("B01003_001", "B02001_003", "B19013_001"),
-                           year = 2021,
-                           output = "wide") %>%
-  clean_names() %>%
-  filter(name == "ZCTA5 70734" | name == "ZCTA5 70774" | name == "ZCTA5 70090") %>%
-  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
-  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "LA") %>%
-  mutate(city = case_when(
-    city == "ZCTA5 70734" ~ "Geismar",
-    city == "ZCTA5 70774" ~ "St. Amant",
-    city == "ZCTA5 70090" ~ "Vacherie")) %>%
-  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+#Not needed for NJ
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_la_2021 <- bind_rows(census_data_la_2021, census_data_zips_la_2021)
- 
-hometowns_la_complete <- distinct_hometowns_la %>%
-  left_join(census_data_la_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
-  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
-  arrange(desc(players_per_thousand))
-
-hometowns_la_complete %>%
-  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
+#Not needed for NJ
 
 # Step 10: If needed, uncomment out to create a CSV
-#write_csv(hometowns_la_complete, file = "hometowns_la.csv")
+#write_csv(hometowns_nj_complete, file = "hometowns_nj.csv")
 
-nj_annoying <- hometowns_nj_complete %>%
-  group_by(hometown_city_clean) %>%
-  summarise(total = n())
 
 ```
 
@@ -1860,7 +1836,7 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 ```{r}
 
 # ALL HOMETOWNS
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_oh_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
