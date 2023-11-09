@@ -1138,7 +1138,7 @@ hometowns_ne_complete %>%
 ```
 ```{r}
 
-# NEW JERSEY HOMETOWNS - IN PROGRESS
+# NEW JERSEY HOMETOWNS - IN PROGRESS; this one is a mess; not a good one to use as a template
 
 # Step 1: Filter for the state's players
 football_rosters_nj <- football_rosters_usa %>%
@@ -1156,6 +1156,13 @@ census_data_nj_2021 <- get_acs(geography = "place",
                            state = "NJ",
                            output = "wide")
 
+# It turns out that many towns in New Jersey are county subdivisions, so we will grab those, too
+census_data_nj_subdivisions_2021 <- get_acs(geography = "county subdivision",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = "NJ",
+                           output = "wide")
+
 # Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
 census_data_nj_2021 <- census_data_nj_2021 %>%
   clean_names() %>%
@@ -1166,10 +1173,27 @@ census_data_nj_2021 <- census_data_nj_2021 %>%
   rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1))
 
+census_data_nj_subdivisions_2021 <- census_data_nj_subdivisions_2021 %>%
+  clean_names() %>%
+  separate(name, into = c("city", "county", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village|municipality|township|borough)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+census_data_nj_2021 <- bind_rows(census_data_nj_2021, census_data_nj_subdivisions_2021) %>%
+  distinct(city, total_pop, .keep_all = TRUE) #Added this line to remove instances where the same city was both a place and a county subdivision
+
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
 census_data_nj_2021 <- census_data_nj_2021 %>%
   mutate(state = case_when(
-    state == 'New Jersey' ~ "NJ"))
+    state == 'New Jersey' ~ "NJ")) %>%
+  mutate(city = case_when(
+    city == 'Egg Harbor' ~ "Egg Harbor Township",
+    city == 'Jefferson' ~ "Jefferson Township",
+    city == 'Ocean' ~ "Ocean Township",
+    TRUE ~ city))
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_nj_complete <- distinct_hometowns_nj %>%
@@ -1212,6 +1236,10 @@ hometowns_la_complete %>%
 
 # Step 10: If needed, uncomment out to create a CSV
 #write_csv(hometowns_la_complete, file = "hometowns_la.csv")
+
+nj_annoying <- hometowns_nj_complete %>%
+  group_by(hometown_city_clean) %>%
+  summarise(total = n())
 
 ```
 
