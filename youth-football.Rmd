@@ -1752,7 +1752,7 @@ hometowns_va_complete %>%
 
 ```{r}
 
-# SMALLER STATE HOMETOWNS - use for all states with less than 50 Power Five players (WY, AK, RI, ND, NH, MT, NM, SD, DE, ID, DC, WV, CT, NV); *do not use this as a template*
+# SMALLER STATE HOMETOWNS - IN PROGRESS, NEED TO ADDRESS DUPLICATES; use for all states with less than 50 Power Five players (WY, AK, RI, ND, NH, MT, NM, SD, DE, ID, DC, WV, CT, NV); *do not use this as a template*
 
 # Vector of all states with fewer than 50 players
 states_under_50 <- football_rosters_usa_states$hometown_state_clean[football_rosters_usa_states$total_players < 50]
@@ -1860,7 +1860,7 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 ```{r}
 
 # ALL HOMETOWNS
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_oh_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_small_states_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_oh_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
