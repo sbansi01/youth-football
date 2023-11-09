@@ -1728,7 +1728,7 @@ hometowns_va_complete %>%
 
 ```{r}
 
-# SMALLER STATE HOMETOWNS - IN PROGRESS, NEED TO ADDRESS DUPLICATES; use for all states with less than 50 Power Five players (WY, AK, RI, ND, NH, MT, NM, SD, DE, ID, DC, WV, CT, NV); *do not use this as a template*
+# SMALLER STATE HOMETOWNS - used for all states with less than 50 Power Five players (WY, AK, RI, ND, NH, MT, NM, SD, DE, ID, DC, WV, CT, NV); *do not use this as a template*
 
 # Vector of all states with fewer than 50 players
 states_under_50 <- football_rosters_usa_states$hometown_state_clean[football_rosters_usa_states$total_players < 50]
@@ -1753,12 +1753,13 @@ census_data_small_states_2021 <- lapply(states_under_50, function(state) {
 
 census_data_small_states_2021 <- do.call(rbind, census_data_small_states_2021)
 
-# It turns out that many towns in Connecticut, New Hampshire, and Rhode Island are county subdivisions, so we will grab those, too
+# It turns out that many towns in Connecticut, New Hampshire, and Rhode Island are county subdivisions, so we will grab the relevant ones of those, too
 census_data_small_states_subdivisions_2021 <- get_acs(geography = "county subdivision",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
                            state = c("CT", "NH", "RI"),
-                           output = "wide")
+                           output = "wide") %>%
+  filter(NAME == "Darien town, Fairfield County, Connecticut" | NAME == "East Greenwich town, Kent County, Rhode Island" | NAME == "Fairfield town, Fairfield County, Connecticut" | NAME == "Glastonbury town, Hartford County, Connecticut" | NAME == "Grantham town, Sullivan County, New Hampshire" | NAME == "Hollis town, Hillsborough County, New Hampshire" | NAME == "Kent town, Litchfield County, Connecticut" | NAME == "New Fairfield town, Fairfield County, Connecticut" | NAME == "Pomfret town, Windham County, Connecticut" | NAME == "Rocky Hill town, Hartford County, Connecticut" | NAME == "Suffield town, Hartford County, Connecticut" | NAME == "Trumbull town, Fairfield County, Connecticut" | NAME == "Wallingford town, New Haven County, Connecticut" | NAME == "West Warwick town, Kent County, Rhode Island" | NAME == "Westport town, Fairfield County, Connecticut" | NAME == "Wilton town, Fairfield County, Connecticut" | NAME == "Windsor town, Hartford County, Connecticut")
 
 # General cleaning of census data to prepare for join with hometowns/roster data.
 census_data_small_states_2021 <- census_data_small_states_2021 %>%
@@ -1836,7 +1837,7 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 ```{r}
 
 # ALL HOMETOWNS
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_small_states_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
