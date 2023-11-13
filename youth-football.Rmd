@@ -4,7 +4,7 @@ output: html_notebook
 ---
 
 ```{r}
-#libraries
+#libraries 
 library(tidyverse)
 library(googlesheets4)
 library(janitor)
