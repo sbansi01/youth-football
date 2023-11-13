@@ -902,6 +902,7 @@ hometowns_ia_complete %>%
 #write_csv(hometowns_ia_complete, file = "hometowns_ia.csv")
 
 ```
+
 ```{r}
 # KANSAS HOMETOWNS
 
@@ -948,31 +949,30 @@ hometowns_ks_complete %>%
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 
-# Pleasant Valley, IA is a county subdivision: https://censusreporter.org/profiles/06000US1916393420-pleasant-valley-township-scott-county-ia/
-census_data_pleasant_ia_2021 <- get_acs(geography = "county subdivision",
+# Stilwell, KS: using zip code 
+## https://censusreporter.org/profiles/86000US66085-66085/
+
+census_data_zips_ks_2021 <- get_acs(geography = "zcta",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
-                           state = "Iowa",
-                           county = "Scott County",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Pleasant Valley township, Scott County, Iowa") %>%
+  filter(name == "ZCTA5 66085") %>% 
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "IA") %>%
+   mutate(state = "KS") %>%
   mutate(city = case_when(
-    city == "Pleasant Valley township, Scott County, Iowa" ~ "Pleasant Valley")) %>%
+    city == "ZCTA5 66085" ~ "Stilwell")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
-
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_ia_2021 <- bind_rows(census_data_ia_2021, census_data_pleasant_ia_2021)
+census_data_ks_2021 <- bind_rows(census_data_ks_2021, census_data_zips_ks_2021)
  
-hometowns_ia_complete <- distinct_hometowns_ia %>%
-  left_join(census_data_ia_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+hometowns_ks_complete <- distinct_hometowns_ks %>%
+  left_join(census_data_ks_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
-hometowns_ia_complete %>%
+hometowns_ks_complete %>%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
 
 # Step 10: If needed, uncomment out to create a CSV
