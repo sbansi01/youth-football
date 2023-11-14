@@ -2557,7 +2557,7 @@ hometowns_wa_complete %>%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
 
 # Step 10: If needed, uncomment out to create a CSV
-#write_csv(hometowns_ks_complete, file = "hometowns_ks.csv")
+#write_csv(hometowns_wa_complete, file = "hometowns_wa.csv")
 ```
 
 ```{r}
@@ -2618,7 +2618,7 @@ hometowns_wi_complete %>%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
 
 # Step 10: If needed, uncomment out to create a CSV
-#write_csv(hometowns_ks_complete, file = "hometowns_ks.csv")
+#write_csv(hometowns_wi_complete, file = "hometowns_wi.csv")
 
 ```
 
