@@ -1,10 +1,15 @@
 hometown_city_clean,hometown_state_clean,hometown_combined,total_players,geoid,total_pop,black_pop,median_income,pct_black,players_per_thousand
+Upper Marlboro,MD,"Upper Marlboro, MD",12,2479875,621,385,99667,62,19.3
 Spring Branch,TX,"Spring Branch, TX",2,4869608,154,0,140333,0,13
 Roca,NE,"Roca, NE",2,3141830,167,0,76875,0,12
+Shell,WY,"Shell, WY",1,5669700,86,0,NA,0,11.6
 Pawleys Island,SC,"Pawleys Island, SC",1,4555015,87,0,130833,0,11.5
+Palmyra,VA,"Palmyra, VA",1,5160392,96,0,NA,0,10.4
 Biggersville,MS,"Biggersville, MS",1,2806100,117,0,33902,0,8.5
+Clarkston,MI,"Clarkston, MI",6,2682450,743,20,82039,2.7,8.1
 Clare,IA,"Clare, IA",1,1913485,139,0,71250,0,7.2
 Paige,TX,"Paige, TX",1,4854624,142,0,NA,0,7
+Clifton,VA,"Clifton, VA",2,5117376,330,1,192813,0.3,6.1
 Campbellton,FL,"Campbellton, FL",1,1209900,172,127,38750,73.8,5.8
 Sharpsburg,GA,"Sharpsburg, GA",3,1369980,519,98,67763,18.9,5.8
 Silver Creek,MS,"Silver Creek, MS",1,2867960,185,49,30833,26.5,5.4
@@ -14,35 +19,58 @@ Defiance,IA,"Defiance, IA",1,1919585,212,0,46875,0,4.7
 French Camp,MS,"French Camp, MS",1,2826020,211,42,35000,19.9,4.7
 Sallis,MS,"Sallis, MS",1,2864800,215,91,36917,42.3,4.7
 Independence,MS,"Independence, MS",1,2834700,233,0,NA,0,4.3
+Aldie,VA,"Aldie, VA",1,5100772,235,0,115455,0,4.3
 Johnson,NE,"Johnson, NE",1,3124670,258,2,54583,0.8,3.9
 Raiford,FL,"Raiford, FL",1,1259400,271,38,NA,14,3.7
 Maunaloa,HI,"Maunaloa, HI",1,1550150,270,0,45625,0,3.7
 St. James,LA,"St. James, LA",2,2267355,544,462,26964,84.9,3.7
 Tiger,GA,"Tiger, GA",2,1376504,561,11,40469,2,3.6
 Crawfordsville,IA,"Crawfordsville, IA",1,1917130,309,0,65000,0,3.2
+Danbury,NC,"Danbury, NC",1,3716240,311,16,73750,5.1,3.2
+Keswick,VA,"Keswick, VA",1,5142216,339,1,250001,0.3,2.9
 Columbia,LA,"Columbia, LA",1,2216830,377,109,58750,28.9,2.7
+Parkton,NC,"Parkton, NC",1,3750340,376,74,49861,19.7,2.7
+Oacoma,SD,"Oacoma, SD",1,4646180,376,0,66389,0,2.7
+Hartland,MI,"Hartland, MI",2,2637020,771,0,69250,0,2.6
+New Melle,MO,"New Melle, MO",1,2952148,382,0,82188,0,2.6
+Skillman,NJ,"Skillman, NJ",1,3467860,380,21,121471,5.5,2.6
 Bogart,GA,"Bogart, GA",4,1309068,1606,108,67778,6.7,2.5
 Six Mile,SC,"Six Mile, SC",3,4566760,1185,0,100735,0,2.5
+Bailey,NC,"Bailey, NC",1,3703020,420,44,42404,10.5,2.4
 Leroy,AL,"Leroy, AL",2,0142304,885,288,68854,32.5,2.3
 Lexington,MS,"Lexington, MS",3,2840600,1301,1000,31150,76.9,2.3
+Cameron,NC,"Cameron, NC",1,3709800,432,152,65357,35.2,2.3
 Farnhamville,IA,"Farnhamville, IA",1,1926940,457,56,46136,12.3,2.2
 Napoleonville,LA,"Napoleonville, LA",1,2253370,446,347,24083,77.8,2.2
 Lake,MS,"Lake, MS",1,2838600,450,200,51016,44.4,2.2
+Virgie,KY,"Virgie, KY",1,2179860,470,0,26833,0,2.1
 Long Grove,IA,"Long Grove, IA",2,1946425,1012,0,109545,0,2
+Belleville,MI,"Belleville, MI",8,2607020,3978,699,51602,17.6,2
+Upton,KY,"Upton, KY",1,2178672,521,17,52313,3.3,1.9
 Centerville,LA,"Centerville, LA",1,2213925,516,0,NA,0,1.9
 Alba,TX,"Alba, TX",1,4801636,516,31,42885,6,1.9
 Aledo,TX,"Aledo, TX",9,4801744,4692,3,112975,0.1,1.9
 Leesburg,GA,"Leesburg, GA",6,1345768,3407,1468,67551,43.1,1.8
 Scranton,IA,"Scranton, IA",1,1971310,547,0,46635,0,1.8
+Middlesex,NC,"Middlesex, NC",2,3742700,1141,356,36375,31.2,1.8
 Argyle,TX,"Argyle, TX",8,4803768,4336,62,149219,1.4,1.8
 Cumming,GA,"Cumming, GA",12,1320932,6886,483,63438,7,1.7
 Moreland,GA,"Moreland, GA",1,1352668,601,56,80000,9.3,1.7
 Kahuku,HI,"Kahuku, HI",4,1522250,2371,54,83566,2.3,1.7
 Tunica,MS,"Tunica, MS",2,2874760,1202,404,44000,33.6,1.7
+Grover,NC,"Grover, NC",1,3728400,577,34,31528,5.9,1.7
+Pilot Mountain,NC,"Pilot Mountain, NC",3,3751820,1747,94,35000,5.4,1.7
+Millstone,NJ,"Millstone, NJ",1,3446590,593,13,123944,2.2,1.7
 Muenster,TX,"Muenster, TX",2,4849932,1201,0,80972,0,1.7
+Goochland,VA,"Goochland, VA",1,5131808,601,28,66282,4.7,1.7
+North Salem,IN,"North Salem, IN",1,1855080,611,0,53194,0,1.6
+Kings Mills,OH,"Kings Mills, OH",2,3940348,1267,0,116505,0,1.6
 Katy,TX,"Katy, TX",34,4838476,21926,2613,115250,11.9,1.6
+Selby,SD,"Selby, SD",1,4658140,612,0,52396,0,1.6
 Maplesville,AL,"Maplesville, AL",1,0146504,673,116,44500,17.2,1.5
 Coolidge,GA,"Coolidge, GA",1,1319392,666,278,41000,41.7,1.5
+Hindman,KY,"Hindman, KY",1,2137108,648,17,17226,2.6,1.5
+New London,NC,"New London, NC",1,3746820,660,14,63542,2.1,1.5
 Buford,GA,"Buford, GA",23,1311784,16811,2310,54321,13.7,1.4
 Williamson,GA,"Williamson, GA",1,1383084,692,39,94792,5.6,1.4
 Chatham,LA,"Chatham, LA",1,2214485,691,255,25227,36.9,1.4
@@ -50,17 +78,24 @@ Inman,SC,"Inman, SC",4,4535755,2896,350,51210,12.1,1.4
 Norris,SC,"Norris, SC",1,4550515,727,23,55250,3.2,1.4
 Hardin,TX,"Hardin, TX",1,4832240,696,0,46607,0,1.4
 Tuscola,TX,"Tuscola, TX",1,4874048,719,0,54375,0,1.4
+Round Hill,VA,"Round Hill, VA",1,5169168,698,13,95938,1.9,1.4
 Bradley Junction,FL,"Bradley Junction, FL",1,1208125,784,293,38621,37.4,1.3
 Hawthorne,FL,"Hawthorne, FL",2,1229275,1495,945,46667,63.2,1.3
 Van Meter,IA,"Van Meter, IA",2,1980445,1528,11,116181,0.7,1.3
 Oak Grove,LA,"Oak Grove, LA",2,2256820,1593,603,26953,37.9,1.3
+Bel Air,MD,"Bel Air, MD",2,2405525,1540,0,66458,0,1.3
+Newland,NC,"Newland, NC",1,3746740,761,1,36154,0.1,1.3
 Chapin,SC,"Chapin, SC",2,4513150,1544,178,64236,11.5,1.3
 Haslet,TX,"Haslet, TX",3,4832720,2296,12,156250,0.5,1.3
 Magnolia,TX,"Magnolia, TX",3,4846056,2303,316,63661,13.7,1.3
+Haymarket,VA,"Haymarket, VA",2,5135976,1556,239,133750,15.4,1.3
 Blairsville,GA,"Blairsville, GA",1,1308480,825,101,28542,12.2,1.2
 Danielsville,GA,"Danielsville, GA",1,1321632,836,1,56923,0.1,1.2
+Royal Center,IN,"Royal Center, IN",1,1866222,835,4,41509,0.5,1.2
+Science Hill,KY,"Science Hill, KY",1,2168952,800,1,36250,0.1,1.2
 Loreauville,LA,"Loreauville, LA",1,2245670,854,371,28750,43.4,1.2
 Montgomery,TX,"Montgomery, TX",2,4849128,1617,44,92583,2.7,1.2
+Stafford Courthouse,VA,"Stafford Courthouse, VA",6,5174916,4910,1583,86680,32.2,1.2
 Bethlehem,GA,"Bethlehem, GA",1,1307612,891,44,60076,4.9,1.1
 Hoschton,GA,"Hoschton, GA",3,1340056,2684,183,80152,6.8,1.1
 White,GA,"White, GA",1,1382468,904,0,60750,0,1.1
@@ -68,7 +103,12 @@ Calmar,IA,"Calmar, IA",1,1910045,952,0,70724,0,1.1
 Dayton,IA,"Dayton, IA",1,1919180,912,0,65625,0,1.1
 Odebolt,IA,"Odebolt, IA",1,1958575,916,0,61196,0,1.1
 Cullen,LA,"Cullen, LA",1,2218790,877,811,17384,92.5,1.1
+Ridgely,MD,"Ridgely, MD",2,2466000,1868,290,60000,15.5,1.1
+Grayling,MI,"Grayling, MI",2,2634640,1784,33,27039,1.8,1.1
 Ackerman,MS,"Ackerman, MS",2,2800300,1766,859,33581,48.6,1.1
+Denver,NC,"Denver, NC",3,3717000,2827,89,55426,3.1,1.1
+Richfield,NC,"Richfield, NC",1,3756340,871,16,69268,1.8,1.1
+Warrenton,NC,"Warrenton, NC",1,3771100,906,386,32733,42.6,1.1
 Benkelman,NE,"Benkelman, NE",1,3104230,938,0,43182,0,1.1
 Wabasso,FL,"Wabasso, FL",1,1274625,1016,501,44730,49.3,1
 Riceboro,GA,"Riceboro, GA",1,1364960,977,879,40911,90,1
@@ -77,14 +117,20 @@ Suwanee,GA,"Suwanee, GA",20,1374936,20629,3295,99022,16,1
 Watkinsville,GA,"Watkinsville, GA",3,1380788,2888,106,71667,3.7,1
 Britt,IA,"Britt, IA",2,1908605,1922,14,55300,0.7,1
 Underwood,IA,"Underwood, IA",1,1979500,1003,0,85156,0,1
+Jamestown,IN,"Jamestown, IN",1,1837692,959,31,62891,3.2,1
 Watson,LA,"Watson, LA",1,2280010,965,0,98073,0,1
+Elsie,MI,"Elsie, MI",1,2625780,971,42,48304,4.3,1
 Lucedale,MS,"Lucedale, MS",3,2842440,2910,908,26813,31.2,1
 Raleigh,MS,"Raleigh, MS",1,2860840,961,375,21837,39,1
 Taylorsville,MS,"Taylorsville, MS",2,2872400,1917,833,38116,43.5,1
+Galena,OH,"Galena, OH",1,3929148,1022,68,107778,6.7,1
 Santee,SC,"Santee, SC",1,4563790,1029,834,24783,81,1
 Bogata,TX,"Bogata, TX",1,4809172,1046,4,27868,0.4,1
 Grandview,TX,"Grandview, TX",2,4830512,1975,6,63906,0.3,1
 Newton,TX,"Newton, TX",2,4851372,2042,428,37115,21,1
+Amelia Court House,VA,"Amelia Court House, VA",1,5101640,1004,383,45146,38.1,1
+Bassett,VA,"Bassett, VA",1,5104872,1045,252,37534,24.1,1
+Concord,VA,"Concord, VA",1,5118880,1005,172,NA,17.1,1
 Ohatchee,AL,"Ohatchee, AL",1,0156472,1161,43,59844,3.7,0.9
 Pahokee,FL,"Pahokee, FL",5,1253800,5504,3185,30753,57.9,0.9
 Blue Ridge,GA,"Blue Ridge, GA",1,1308928,1167,26,29922,2.2,0.9
@@ -92,20 +138,34 @@ Franklin,GA,"Franklin, GA",1,1331292,1056,282,21518,26.7,0.9
 Grayson,GA,"Grayson, GA",4,1334596,4478,3172,113652,70.8,0.9
 Norman Park,GA,"Norman Park, GA",1,1355860,1109,375,48214,33.8,0.9
 Laie,HI,"Laie, HI",6,1543250,6436,28,101011,0.4,0.9
+Clayton,IN,"Clayton, IN",1,1813366,1055,28,76583,2.7,0.9
 Boutte,LA,"Boutte, LA",2,2209130,2253,1424,73632,63.2,0.9
+Dexter,MI,"Dexter, MI",4,2622160,4531,0,86313,0,0.9
 Edwards,MS,"Edwards, MS",1,2821580,1060,1007,28688,95,0.9
 Tylertown,MS,"Tylertown, MS",2,2875160,2107,856,22050,40.6,0.9
+Columbus,NC,"Columbus, NC",1,3713980,1139,31,46779,2.7,0.9
+Milford,NJ,"Milford, NJ",1,3446260,1141,0,85000,0,0.9
+Monmouth Beach,NJ,"Monmouth Beach, NJ",3,3447130,3197,28,131250,0.9,0.9
+Castalia,OH,"Castalia, OH",1,3912476,1120,7,44120,0.6,0.9
 Blythewood,SC,"Blythewood, SC",4,4507255,4543,1816,102298,40,0.9
 Craytonville,SC,"Craytonville, SC",1,450070115013,1128,0,67813,0,0.9
 Dripping Springs,TX,"Dripping Springs, TX",4,4821424,4699,35,111429,0.7,0.9
 Newark,TX,"Newark, TX",1,4850772,1100,0,45313,0,0.9
+Kellogg,ID,"Kellogg, ID",2,1642580,2255,0,35658,0,0.9
 Killen,AL,"Killen, AL",1,0139784,1209,50,54261,4.1,0.8
 Watson,AL,"Watson, AL",1,0109736,1252,413,62321,33,0.8
 Greenville,FL,"Greenville, FL",1,1227575,1206,1068,39125,88.6,0.8
 Stone Mountain,GA,"Stone Mountain, GA",5,1373816,6622,5724,44716,86.4,0.8
 Dike,IA,"Dike, IA",1,1921405,1195,0,78485,0,0.8
 Rock Rapids,IA,"Rock Rapids, IA",2,1968160,2604,7,66473,0.3,0.8
+Crownsville,MD,"Crownsville, MD",1,2421075,1273,69,96490,5.4,0.8
+District Heights,MD,"District Heights, MD",5,2423025,5927,5623,69099,94.9,0.8
+Owings,MD,"Owings, MD",2,2459375,2393,170,130104,7.1,0.8
+Marcellus,MI,"Marcellus, MI",1,2651460,1254,16,50417,1.3,0.8
 Louisville,MS,"Louisville, MS",5,2842280,6108,3953,34654,64.7,0.8
+Elm City,NC,"Elm City, NC",1,3720980,1300,872,32216,67.1,0.8
+Bedminster,NJ,"Bedminster, NJ",1,3404420,1222,8,123929,0.7,0.8
+Farmingdale,NJ,"Farmingdale, NJ",1,3422950,1285,18,85000,1.4,0.8
 Central,SC,"Central, SC",4,4513015,5229,650,36596,12.4,0.8
 Big Sandy,TX,"Big Sandy, TX",1,4808224,1314,132,40139,10,0.8
 Granger,TX,"Granger, TX",1,4830548,1229,123,49205,10,0.8
@@ -114,6 +174,10 @@ New Waverly,TX,"New Waverly, TX",1,4851396,1214,148,41550,12.2,0.8
 Queen City,TX,"Queen City, TX",1,4860080,1273,284,36944,22.3,0.8
 Tatum,TX,"Tatum, TX",1,4871924,1234,285,46250,23.1,0.8
 Mendon,UT,"Mendon, UT",1,4949160,1317,8,96563,0.6,0.8
+Bluefield,VA,"Bluefield, VA",4,5108152,5079,401,57895,7.9,0.8
+Browns Store,VA,"Browns Store, VA",1,5111190512,1259,390,61488,31,0.8
+Ceredo,WV,"Ceredo, WV",1,5414308,1306,6,42962,0.5,0.8
+Sophia,WV,"Sophia, WV",1,5475172,1242,7,28462,0.6,0.8
 Highland Home,AL,"Highland Home, AL",1,36041,1423,252,40407,17.7,0.7
 Pinson,AL,"Pinson, AL",5,0160648,7242,2986,70393,41.2,0.7
 Starke,FL,"Starke, FL",4,1268525,5669,1557,43339,27.5,0.7
@@ -121,10 +185,16 @@ Windermere,FL,"Windermere, FL",2,1278050,3046,34,131392,1.1,0.7
 Loganville,GA,"Loganville, GA",10,1347196,13810,4536,72820,32.8,0.7
 Subligna,GA,"Subligna, GA",1,130550101002,1538,0,42813,0,0.7
 Waimanalo,HI,"Waimanalo, HI",4,1578050,5371,0,111250,0,0.7
+New Palestine,IN,"New Palestine, IN",2,1853352,2670,0,80298,0,0.7
+Chevy Chase,MD,"Chevy Chase, MD",2,2416620,2913,27,250001,0.9,0.7
+Huntingtown,MD,"Huntingtown, MD",2,2441025,3065,354,192500,11.5,0.7
+Northville,MI,"Northville, MI",4,2658980,6106,0,132568,0,0.7
 Columbia,MS,"Columbia, MS",4,2815340,5998,2694,24007,44.9,0.7
 Monticello,MS,"Monticello, MS",1,2848560,1411,449,25536,31.8,0.7
 Mount Olive,MS,"Mount Olive, MS",1,2849520,1408,1003,53947,71.2,0.7
+Advance,NC,"Advance, NC",1,3700440,1471,66,95845,4.5,0.7
 Wymore,NE,"Wymore, NE",1,3153835,1408,9,46786,0.6,0.7
+Glouster,OH,"Glouster, OH",1,3930674,1442,5,34048,0.3,0.7
 Seabrook,SC,"Seabrook, SC",1,4564690,1400,788,55053,56.3,0.7
 Wagener,SC,"Wagener, SC",1,4574050,1357,891,41313,65.7,0.7
 Brock,TX,"Brock, TX",4,4811460,5894,0,132337,0,0.7
@@ -132,6 +202,9 @@ Franklin,TX,"Franklin, TX",1,4827288,1358,232,48625,17.1,0.7
 Needville,TX,"Needville, TX",2,4850628,3059,168,64270,5.5,0.7
 Richmond,TX,"Richmond, TX",8,4861892,11768,2618,52589,22.2,0.7
 Tenaha,TX,"Tenaha, TX",1,4872188,1372,709,20962,51.7,0.7
+Nokesville,VA,"Nokesville, VA",1,5156464,1431,27,83920,1.9,0.7
+Kenova,WV,"Kenova, WV",2,5443180,3052,8,32379,0.3,0.7
+New Canaan,CT,"New Canaan, CT",5,0950576,7399,22,145244,0.3,0.7
 Ashland,AL,"Ashland, AL",1,0102860,1741,493,25458,28.3,0.6
 Evergreen,AL,"Evergreen, AL",2,0124808,3504,2624,36021,74.9,0.6
 Gordo,AL,"Gordo, AL",1,0130736,1599,680,42449,42.5,0.6
@@ -147,16 +220,25 @@ Hogansville,GA,"Hogansville, GA",2,1339244,3224,1199,48077,37.2,0.6
 Pine Mountain,GA,"Pine Mountain, GA",1,1361124,1648,688,60568,41.7,0.6
 Robins AFB,GA,"Robins AFB, GA",1,1365968,1557,211,76717,13.6,0.6
 Hartley,IA,"Hartley, IA",1,1934725,1553,28,43226,1.8,0.6
+Churubusco,IN,"Churubusco, IN",1,1812610,1768,0,46835,0,0.6
+Leo-Cedarville,IN,"Leo-Cedarville, IN",2,1842861,3626,0,90625,0,0.6
 Clinton,LA,"Clinton, LA",1,2215990,1665,651,51696,39.1,0.6
 Port Sulphur,LA,"Port Sulphur, LA",1,2262070,1749,929,29334,53.1,0.6
+Derwood,MD,"Derwood, MD",1,2422775,1700,241,71471,14.2,0.6
 Byhalia,MS,"Byhalia, MS",1,2810060,1636,830,31533,50.7,0.6
 Itta Bena,MS,"Itta Bena, MS",1,2835260,1614,1461,25104,90.5,0.6
 Pelahatchie,MS,"Pelahatchie, MS",1,2856200,1733,522,48629,30.1,0.6
+Murphy,NC,"Murphy, NC",1,3745660,1659,79,32486,4.8,0.6
 Gretna,NE,"Gretna, NE",3,3120260,5106,19,85476,0.4,0.6
 Oakland,NE,"Oakland, NE",1,3135490,1571,12,62292,0.8,0.6
+Frenchtown,NJ,"Frenchtown, NJ",1,3425350,1673,8,95500,0.5,0.6
+Voorhees,NJ,"Voorhees, NJ",1,3476250,1586,574,58859,36.2,0.6
+Perry,OH,"Perry, OH",1,3961882,1654,12,81222,0.7,0.6
+Pickerington,OH,"Pickerington, OH",14,3962498,22682,4856,104293,21.4,0.6
 Roebuck,SC,"Roebuck, SC",2,4561720,3482,735,54153,21.1,0.6
 Clarendon,TX,"Clarendon, TX",1,4815112,1745,221,44653,12.7,0.6
 Gruver,TX,"Gruver, TX",1,4831412,1634,0,50804,0,0.6
+Prince George,VA,"Prince George, VA",1,5164560,1707,754,71022,44.2,0.6
 Reform,AL,"Reform, AL",1,0164104,1929,1290,34647,66.9,0.5
 Theodore,AL,"Theodore, AL",3,0175768,5949,1131,57524,19,0.5
 Trussville,AL,"Trussville, AL",12,0176944,25027,1652,108070,6.6,0.5
@@ -178,11 +260,25 @@ Tyrone,GA,"Tyrone, GA",4,1378044,7615,2248,94189,29.5,0.5
 Kealakekua,HI,"Kealakekua, HI",1,1533950,2128,15,70556,0.7,0.5
 Durant,IA,"Durant, IA",1,1922980,1829,20,72212,1.1,0.5
 Lake Mills,IA,"Lake Mills, IA",1,1942555,2101,8,62800,0.4,0.5
+New Carlisle,IN,"New Carlisle, IN",1,1852704,2039,0,61613,0,0.5
 Amite City,LA,"Amite City, LA",2,2201885,3840,2236,39950,58.2,0.5
 Kinder,LA,"Kinder, LA",1,2239755,1866,384,38542,20.6,0.5
+Berrien Springs,MI,"Berrien Springs, MI",1,2607860,1931,412,53024,21.3,0.5
+Bloomfield Hills,MI,"Bloomfield Hills, MI",2,2609180,4393,198,188828,4.5,0.5
+Galesburg,MI,"Galesburg, MI",1,2631260,2146,148,37675,6.9,0.5
+Montrose,MI,"Montrose, MI",1,2655280,2126,127,39655,6,0.5
 Sardis,MS,"Sardis, MS",1,2865560,2150,1106,33708,51.4,0.5
 Sumrall,MS,"Sumrall, MS",1,2871560,2043,341,72143,16.7,0.5
+Andrews,NC,"Andrews, NC",1,3701380,1937,96,34063,5,0.5
+Maiden,NC,"Maiden, NC",2,3740660,3657,315,63750,8.6,0.5
 Pierce,NE,"Pierce, NE",1,3139100,1932,2,54301,0.1,0.5
+Beverly,NJ,"Beverly, NJ",1,3405740,2107,621,84234,29.5,0.5
+Englishtown,NJ,"Englishtown, NJ",1,3421570,2145,119,92250,5.5,0.5
+Chagrin Falls,OH,"Chagrin Falls, OH",2,3913358,4156,71,84762,1.7,0.5
+Creston,OH,"Creston, OH",1,3919344,1903,0,58472,0,0.5
+Maineville,OH,"Maineville, OH",1,3946872,1990,3,80768,0.2,0.5
+Morrow,OH,"Morrow, OH",1,3952374,2214,67,58158,3,0.5
+Richwood,OH,"Richwood, OH",1,3966936,2202,11,57962,0.5,0.5
 Camden,SC,"Camden, SC",4,4510855,7666,2525,44573,32.9,0.5
 Duncan,SC,"Duncan, SC",2,4521265,3937,1311,52979,33.3,0.5
 St. Matthews,SC,"St. Matthews, SC",1,4562620,2038,1223,37500,60,0.5
@@ -199,6 +295,9 @@ Shiner,TX,"Shiner, TX",1,4867640,2018,63,75167,3.1,0.5
 Tomball,TX,"Tomball, TX",6,4873316,12333,1423,65981,11.5,0.5
 West Columbia,TX,"West Columbia, TX",2,4877416,3674,873,75239,23.8,0.5
 Milford,UT,"Milford, UT",1,4950040,1928,0,72500,0,0.5
+Appomattox,VA,"Appomattox, VA",1,5102072,2214,825,35083,37.3,0.5
+Louisa,VA,"Louisa, VA",1,5147144,1999,566,42407,28.3,0.5
+Tappahannock,VA,"Tappahannock, VA",1,5177568,1945,925,37695,47.6,0.5
 Centreville,AL,"Centreville, AL",1,0113672,2789,714,35074,25.6,0.4
 Hartford,AL,"Hartford, AL",1,0133424,2630,822,42043,31.3,0.4
 Jackson,AL,"Jackson, AL",2,0138152,4774,2037,49460,42.7,0.4
@@ -230,12 +329,21 @@ Humboldt,IA,"Humboldt, IA",2,1937560,4744,3,60211,0.1,0.4
 Knoxville,IA,"Knoxville, IA",3,1942015,7537,32,52125,0.4,0.4
 Missouri Valley,IA,"Missouri Valley, IA",1,1952860,2683,0,52847,0,0.4
 West Branch,IA,"West Branch, IA",1,1983595,2289,26,67460,1.1,0.4
+Pendleton,IN,"Pendleton, IN",2,1858662,4833,31,76028,0.6,0.4
+Eminence,KY,"Eminence, KY",1,2124904,2691,227,39594,8.4,0.4
+Springfield,KY,"Springfield, KY",1,2172660,2818,530,41750,18.8,0.4
 Belle Rose,LA,"Belle Rose, LA",1,2206260,2413,1596,51424,66.1,0.4
 Haynesville,LA,"Haynesville, LA",1,2233525,2402,1634,24766,68,0.4
 Mandeville,LA,"Mandeville, LA",5,2248225,12985,102,79149,0.8,0.4
 Many,LA,"Many, LA",1,2248470,2337,1056,18148,45.2,0.4
 West Monroe,LA,"West Monroe, LA",5,2280955,13103,5295,38865,40.4,0.4
 White Castle,LA,"White Castle, LA",1,2281375,2258,2028,20288,89.8,0.4
+Lusby,MD,"Lusby, MD",1,2448800,2457,575,86019,23.4,0.4
+Seat Pleasant,MD,"Seat Pleasant, MD",2,2470850,4537,3742,51122,82.5,0.4
+Beverly Hills,MI,"Beverly Hills, MI",4,2608160,10593,806,148101,7.6,0.4
+DeWitt,MI,"DeWitt, MI",2,2622120,4755,50,90382,1.1,0.4
+Franklin,MI,"Franklin, MI",1,2630340,2790,359,155703,12.9,0.4
+Parkville,MO,"Parkville, MO",3,2956288,7153,161,173047,2.3,0.4
 Charleston,MS,"Charleston, MS",1,2812900,2618,1915,31239,73.1,0.4
 Collins,MS,"Collins, MS",1,2815140,2430,1373,28906,56.5,0.4
 Crystal Springs,MS,"Crystal Springs, MS",2,2817060,4851,3299,41964,68,0.4
@@ -243,7 +351,20 @@ Flora,MS,"Flora, MS",1,2824940,2265,1355,31569,59.8,0.4
 Friendship,MS,"Friendship, MS",1,2815140,2430,1373,28906,56.5,0.4
 Philadelphia,MS,"Philadelphia, MS",3,2856960,7107,3863,37551,54.4,0.4
 Poplarville,MS,"Poplarville, MS",1,2859480,2837,934,34815,32.9,0.4
+Fairmont,NC,"Fairmont, NC",1,3722360,2399,1356,30547,56.5,0.4
+Fairview,NC,"Fairview, NC",1,3722440,2737,0,78333,0,0.4
+Nashville,NC,"Nashville, NC",2,3746000,5626,2984,56359,53,0.4
+Oakboro,NC,"Oakboro, NC",1,3748040,2319,292,69125,12.6,0.4
+Sylva,NC,"Sylva, NC",1,3766500,2611,86,38881,3.3,0.4
+Taylorsville,NC,"Taylorsville, NC",1,3766960,2332,351,43545,15.1,0.4
 Bennington,NE,"Bennington, NE",1,3104405,2257,10,87500,0.4,0.4
+Essex Fells,NJ,"Essex Fells, NJ",1,3421840,2270,9,250001,0.4,0.4
+Gillette,NJ,"Gillette, NJ",1,3426220,2648,0,147813,0,0.4
+Pennington,NJ,"Pennington, NJ",1,3457600,2777,45,141250,1.6,0.4
+Braceville,OH,"Braceville, OH",1,3915508056,2641,66,56944,2.5,0.4
+Enon,OH,"Enon, OH",1,3925452,2529,55,69663,2.2,0.4
+Ironton,OH,"Ironton, OH",4,3937464,10647,244,38654,2.3,0.4
+West Lafayette,OH,"West Lafayette, OH",1,3983608,2638,0,35543,0,0.4
 Abbeville,SC,"Abbeville, SC",2,4500100,4902,2195,33942,44.8,0.4
 Clemson,SC,"Clemson, SC",7,4514950,17238,1308,48335,7.6,0.4
 Irmo,SC,"Irmo, SC",5,4535890,11581,2959,81380,25.6,0.4
@@ -261,6 +382,12 @@ Marlin,TX,"Marlin, TX",2,4846740,5512,2572,28061,46.7,0.4
 Rockdale,TX,"Rockdale, TX",2,4862672,5378,736,38636,13.7,0.4
 Southlake,TX,"Southlake, TX",13,4869032,30754,245,239833,0.8,0.4
 Kamas,UT,"Kamas, UT",1,4939810,2579,0,74728,0,0.4
+Crewe,VA,"Crewe, VA",1,5120160,2853,1220,52788,42.8,0.4
+Spotsylvania Courthouse,VA,"Spotsylvania Courthouse, VA",2,5174470,5548,801,66858,14.4,0.4
+Stephens City,VA,"Stephens City, VA",1,5175344,2308,199,80625,8.6,0.4
+Bridgeville,DE,"Bridgeville, DE",1,1008680,2499,687,53276,27.5,0.4
+Delmar,DE,"Delmar, DE",1,1020380,2241,513,49130,22.9,0.4
+Inwood,WV,"Inwood, WV",1,5440204,2794,38,79073,1.4,0.4
 Alabaster,AL,"Alabaster, AL",9,0100820,33133,5795,83181,17.5,0.3
 Anniston,AL,"Anniston, AL",6,0101852,21455,11019,39928,51.4,0.3
 Brent,AL,"Brent, AL",1,0109136,3214,1695,22304,52.7,0.3
@@ -300,6 +427,12 @@ Story City,IA,"Story City, IA",1,1975675,3400,17,61948,0.5,0.3
 Tipton,IA,"Tipton, IA",1,1978285,3143,41,72841,1.3,0.3
 Waukon,IA,"Waukon, IA",1,1982740,3815,1,52421,0,0.3
 Williamsburg,IA,"Williamsburg, IA",1,1985845,3322,0,72083,0,0.3
+Boonville,IN,"Boonville, IN",2,1806616,6662,42,54174,0.6,0.3
+Fort Branch,IN,"Fort Branch, IN",1,1824250,3758,33,63277,0.9,0.3
+Guilford,IN,"Guilford, IN",1,47022,2958,0,115313,0,0.3
+Hodgenville,KY,"Hodgenville, KY",1,2137396,3296,109,53393,3.3,0.3
+Morganfield,KY,"Morganfield, KY",1,2153472,3286,616,45517,18.7,0.3
+Union,KY,"Union, KY",2,2178384,7227,0,128050,0,0.3
 Farmerville,LA,"Farmerville, LA",1,2225160,3382,1879,26170,55.6,0.3
 Iowa,LA,"Iowa, LA",1,2237445,3329,847,55163,25.4,0.3
 Lutcher,LA,"Lutcher, LA",1,2246720,3163,1729,42390,54.7,0.3
@@ -307,9 +440,41 @@ Ponchatoula,LA,"Ponchatoula, LA",2,2261615,7729,2140,36706,27.7,0.3
 Sunset,LA,"Sunset, LA",1,2274060,2976,1405,38422,47.2,0.3
 Vivian,LA,"Vivian, LA",1,2278890,3153,1110,20168,35.2,0.3
 Walker,LA,"Walker, LA",2,2279240,6322,653,80521,10.3,0.3
+Burtonsville,MD,"Burtonsville, MD",3,2411750,10457,3620,136557,34.6,0.3
+Byron Center,MI,"Byron Center, MI",2,2612280,6860,19,94600,0.3,0.3
+Hudsonville,MI,"Hudsonville, MI",2,2639800,7598,110,79167,1.4,0.3
+Lake Orion,MI,"Lake Orion, MI",1,2644940,2920,11,90750,0.4,0.3
+Oxford,MI,"Oxford, MI",1,2662020,3490,141,72934,4,0.3
+Paw Paw,MI,"Paw Paw, MI",1,2662980,3390,41,49464,1.2,0.3
+Romeo,MI,"Romeo, MI",1,2669400,3729,190,53845,5.1,0.3
+Williamston,MI,"Williamston, MI",1,2687420,3845,1,66961,0,0.3
+Hillsboro,MO,"Hillsboro, MO",1,2932248,3425,90,57782,2.6,0.3
 Canton,MS,"Canton, MS",3,2811100,10955,8017,33634,73.2,0.3
 Magee,MS,"Magee, MS",1,2844600,3984,1467,27045,36.8,0.3
 Petal,MS,"Petal, MS",3,2856800,11342,1826,55407,16.1,0.3
+Fairview,NC,"Fairview, NC",1,3722500,3475,9,67604,0.3,0.3
+Hamlet,NC,"Hamlet, NC",2,3729160,6098,2805,32224,46,0.3
+Hampstead,NC,"Hampstead, NC",2,3729180,7037,112,102366,1.6,0.3
+Rutherfordton,NC,"Rutherfordton, NC",1,3758460,3668,179,50901,4.9,0.3
+Shelby,NC,"Shelby, NC",7,3761200,21564,6831,41565,31.7,0.3
+Spencer,NC,"Spencer, NC",1,3763760,3296,1048,56882,31.8,0.3
+Swansboro,NC,"Swansboro, NC",1,3766360,3605,61,78919,1.7,0.3
+Weddington,NC,"Weddington, NC",4,3771680,12851,725,152377,5.6,0.3
+Wilkesboro,NC,"Wilkesboro, NC",1,3774020,3578,277,40602,7.7,0.3
+Bordentown,NJ,"Bordentown, NJ",1,3406670,3975,413,86648,10.4,0.3
+Fredon,NJ,"Fredon, NJ",1,3403725140,3242,5,152667,0.2,0.3
+Haworth,NJ,"Haworth, NJ",1,3430540,3341,108,196932,3.2,0.3
+Ramsey,NJ,"Ramsey, NJ",4,3461680,14801,87,156473,0.6,0.3
+Roseland,NJ,"Roseland, NJ",2,3464590,6240,13,145994,0.2,0.3
+Saddle River,NJ,"Saddle River, NJ",1,3465400,3362,116,250001,3.5,0.3
+Sewell,NJ,"Sewell, NJ",1,3466750,3538,54,117457,1.5,0.3
+Stanhope,NJ,"Stanhope, NJ",1,3470380,3515,114,101754,3.2,0.3
+Canfield,OH,"Canfield, OH",2,3911360,7605,228,94257,3,0.3
+Cleves,OH,"Cleves, OH",1,3916028,3380,0,82716,0,0.3
+Groveport,OH,"Groveport, OH",2,3932606,5942,1632,77763,27.5,0.3
+Jefferson,OH,"Jefferson, OH",1,3938500,3350,31,42104,0.9,0.3
+New Albany,OH,"New Albany, OH",3,3953970,10962,680,206130,6.2,0.3
+North Jackson,OH,"North Jackson, OH",1,44451,2995,20,69962,0.7,0.3
 Anderson,SC,"Anderson, SC",9,4501360,28796,9571,37439,33.2,0.3
 Bamberg,SC,"Bamberg, SC",1,4503790,3103,1968,26164,63.4,0.3
 Clover,SC,"Clover, SC",2,4515355,6566,907,55893,13.8,0.3
@@ -336,6 +501,20 @@ Waller,TX,"Waller, TX",1,4876228,3337,729,36964,21.8,0.3
 Woodville,TX,"Woodville, TX",1,4880212,2870,725,48250,25.3,0.3
 Beaver,UT,"Beaver, UT",1,4904060,3354,11,73456,0.3,0.3
 Highland,UT,"Highland, UT",5,4935190,18913,382,156136,2,0.3
+Ashburn,VA,"Ashburn, VA",13,5103320,44950,3186,139188,7.1,0.3
+Blackstone,VA,"Blackstone, VA",1,5107832,3402,1606,53800,47.2,0.3
+Daleville,VA,"Daleville, VA",1,5121152,2979,55,92143,1.8,0.3
+Glen Allen,VA,"Glen Allen, VA",4,5131200,14783,3745,79401,25.3,0.3
+Gloucester Courthouse,VA,"Gloucester Courthouse, VA",1,5131608,3198,259,54196,8.1,0.3
+Marshall,VA,"Marshall, VA",1,5149656,3114,314,128014,10.1,0.3
+West Point,VA,"West Point, VA",1,5184960,3364,239,80300,7.1,0.3
+Clayton,DE,"Clayton, DE",1,1015440,3845,1359,91346,35.3,0.3
+Gooding,ID,"Gooding, ID",1,1632140,3625,0,45156,0,0.3
+Grantham,NH,"Grantham, NH",1,3301931220,3366,0,147313,0,0.3
+Greenwich,CT,"Greenwich, CT",4,0933690,13978,757,127123,5.4,0.3
+Horace,ND,"Horace, ND",1,3838900,3141,75,138636,2.4,0.3
+Kent,CT,"Kent, CT",1,0900540290,2970,28,89348,0.9,0.3
+North Sioux City,SD,"North Sioux City, SD",1,4645700,2956,21,65287,0.7,0.3
 Andalusia,AL,"Andalusia, AL",2,0101708,8764,2029,40516,23.2,0.2
 Bessemer,AL,"Bessemer, AL",4,0105980,26171,18982,32416,72.5,0.2
 Birmingham,AL,"Birmingham, AL",43,0107000,202234,138999,39403,68.7,0.2
@@ -346,6 +525,7 @@ Phenix City,AL,"Phenix City, AL",9,0159472,38216,17580,43296,46,0.2
 Pleasant Grove,AL,"Pleasant Grove, AL",2,0161008,9638,5915,67000,61.4,0.2
 Saraland,AL,"Saraland, AL",3,0168160,15942,2187,61216,13.7,0.2
 Vestavia Hills,AL,"Vestavia Hills, AL",7,0178552,38504,2422,118539,6.3,0.2
+Litchfield Park,AZ,"Litchfield Park, AZ",1,0441330,6656,91,94844,1.4,0.2
 Apopka,FL,"Apopka, FL",12,1201700,54110,13111,75736,24.2,0.2
 Bartow,FL,"Bartow, FL",3,1203675,18880,4123,53593,21.8,0.2
 Brooksville,FL,"Brooksville, FL",2,1208800,8735,1101,35191,12.6,0.2
@@ -420,6 +600,13 @@ Shenandoah,IA,"Shenandoah, IA",1,1972525,4874,41,44898,0.8,0.2
 Tiffin,IA,"Tiffin, IA",1,1978060,4482,65,85826,1.5,0.2
 Waverly,IA,"Waverly, IA",2,1982875,10278,212,70688,2.1,0.2
 Winterset,IA,"Winterset, IA",1,1986520,5309,130,62382,2.4,0.2
+Floyds Knobs,IN,"Floyds Knobs, IN",2,47119,11412,45,102669,0.4,0.2
+Ligonier,IN,"Ligonier, IN",1,1843686,4358,10,52953,0.2,0.2
+Tipton,IN,"Tipton, IN",1,1875986,5211,47,57176,0.9,0.2
+Danville,KY,"Danville, KY",4,2119882,17164,2047,44026,11.9,0.2
+Hebron,KY,"Hebron, KY",1,2135542,6478,10,94261,0.2,0.2
+Paintsville,KY,"Paintsville, KY",1,2158962,4370,36,26346,0.8,0.2
+Somerset,KY,"Somerset, KY",2,2171688,11696,390,30107,3.3,0.2
 Gonzales,LA,"Gonzales, LA",2,2229850,12080,6021,59108,49.8,0.2
 Jennings,LA,"Jennings, LA",2,2238355,9836,2245,37301,22.8,0.2
 Kaplan,LA,"Kaplan, LA",1,2239055,4384,386,52783,8.8,0.2
@@ -427,6 +614,39 @@ Monroe,LA,"Monroe, LA",10,2251410,48105,28717,33925,59.7,0.2
 Natchitoches,LA,"Natchitoches, LA",3,2253545,18105,10579,28401,58.4,0.2
 New Roads,LA,"New Roads, LA",1,2255105,4516,2572,42887,57,0.2
 Zachary,LA,"Zachary, LA",4,2283405,19278,9652,85949,50.1,0.2
+Accokeek,MD,"Accokeek, MD",2,2400250,12241,7390,140338,60.4,0.2
+Bel Air,MD,"Bel Air, MD",2,2405550,10663,383,64036,3.6,0.2
+Berlin,MD,"Berlin, MD",1,2406800,4950,682,69955,13.8,0.2
+Chesapeake Beach,MD,"Chesapeake Beach, MD",1,2415925,6303,502,120194,8,0.2
+Chevy Chase,MD,"Chevy Chase, MD",2,2416625,9889,898,207971,9.1,0.2
+Darnestown,MD,"Darnestown, MD",1,2421825,6647,199,187238,3,0.2
+Denton,MD,"Denton, MD",1,2422725,4712,1345,52876,28.5,0.2
+Glenarden,MD,"Glenarden, MD",1,2432500,6341,5385,91467,84.9,0.2
+Glenn Dale,MD,"Glenn Dale, MD",3,2433400,15426,8536,123690,55.3,0.2
+Lanham,MD,"Lanham, MD",2,2445550,11460,6329,93083,55.2,0.2
+Largo,MD,"Largo, MD",3,2445825,12003,10426,88799,86.9,0.2
+Leonardtown,MD,"Leonardtown, MD",1,2446475,4445,272,126472,6.1,0.2
+Middletown,MD,"Middletown, MD",1,2452425,4893,38,141793,0.8,0.2
+Springdale,MD,"Springdale, MD",1,2474282,5055,4022,128529,79.6,0.2
+Sykesville,MD,"Sykesville, MD",1,2476550,4260,468,120083,11,0.2
+Walkersville,MD,"Walkersville, MD",1,2481275,6134,417,114340,6.8,0.2
+Chelsea,MI,"Chelsea, MI",1,2615020,5447,41,66985,0.8,0.2
+Davison,MI,"Davison, MI",1,2619880,5103,2,48390,0,0.2
+Eaton Rapids,MI,"Eaton Rapids, MI",1,2624540,5211,48,56047,0.9,0.2
+Farmington,MI,"Farmington, MI",2,2627380,11481,1084,84558,9.4,0.2
+Grand Blanc,MI,"Grand Blanc, MI",2,2633280,8055,1058,65179,13.1,0.2
+Grosse Pointe,MI,"Grosse Pointe, MI",1,2635480,5597,170,125909,3,0.2
+Lathrup Village,MI,"Lathrup Village, MI",1,2646320,4098,2695,97241,65.8,0.2
+Milan,MI,"Milan, MI",1,2653920,6156,246,77045,4,0.2
+Rochester,MI,"Rochester, MI",2,2669020,13048,231,100021,1.8,0.2
+Saline,MI,"Saline, MI",2,2671140,9072,138,81321,1.5,0.2
+Traverse City,MI,"Traverse City, MI",3,2680340,15263,274,64033,1.8,0.2
+Ypsilanti,MI,"Ypsilanti, MI",4,2689140,20448,5207,40256,25.5,0.2
+Boonville,MO,"Boonville, MO",2,2907318,8036,762,46227,9.5,0.2
+Festus,MO,"Festus, MO",2,2924094,12609,301,62850,2.4,0.2
+Platte City,MO,"Platte City, MO",1,2958178,4711,67,58039,1.4,0.2
+Washington,MO,"Washington, MO",3,2977416,14607,10,71159,0.1,0.2
+Weldon Spring,MO,"Weldon Spring, MO",1,2978314,5348,136,131213,2.5,0.2
 Brandon,MS,"Brandon, MS",4,2808300,24887,4897,85911,19.7,0.2
 Brookhaven,MS,"Brookhaven, MS",2,2808820,11855,7050,33851,59.5,0.2
 Clarksdale,MS,"Clarksdale, MS",3,2813820,15124,12283,30711,81.2,0.2
@@ -441,8 +661,48 @@ Ocean Springs,MS,"Ocean Springs, MS",3,2853520,18275,862,63653,4.7,0.2
 Oxford,MS,"Oxford, MS",4,2854840,25859,6624,51096,25.6,0.2
 Pontotoc,MS,"Pontotoc, MS",1,2859160,5621,1870,49036,33.3,0.2
 Winona,MS,"Winona, MS",1,2880760,4512,2619,27091,58,0.2
+Beaufort,NC,"Beaufort, NC",1,3704260,4464,568,39472,12.7,0.2
+Boiling Springs,NC,"Boiling Springs, NC",1,3706800,4511,425,78542,9.4,0.2
+Clayton,NC,"Clayton, NC",5,3712860,25486,5826,63166,22.9,0.2
+Elkin,NC,"Elkin, NC",1,3720620,4051,221,54852,5.5,0.2
+Gibsonville,NC,"Gibsonville, NC",2,3725980,8684,2389,89073,27.5,0.2
+Havelock,NC,"Havelock, NC",4,3730120,17570,3141,53344,17.9,0.2
+Knightdale,NC,"Knightdale, NC",3,3736080,18614,9200,72118,49.4,0.2
+Lincolnton,NC,"Lincolnton, NC",2,3738320,10926,1891,38920,17.3,0.2
+Lumberton,NC,"Lumberton, NC",3,3739700,19186,6779,38514,35.3,0.2
+Mocksville,NC,"Mocksville, NC",1,3743720,5714,724,41905,12.7,0.2
+Newport,NC,"Newport, NC",1,3746860,4356,221,61000,5.1,0.2
+Rockingham,NC,"Rockingham, NC",2,3757260,9200,3016,33351,32.8,0.2
+Shallotte,NC,"Shallotte, NC",1,3760800,4059,658,63938,16.2,0.2
+Wake Forest,NC,"Wake Forest, NC",7,3770540,46387,8244,104006,17.8,0.2
+Washington,NC,"Washington, NC",2,3771220,9754,4008,38843,41.1,0.2
+Waxhaw,NC,"Waxhaw, NC",3,3771460,19645,2023,123370,10.3,0.2
+Whiteville,NC,"Whiteville, NC",1,3773660,4826,2184,32222,45.3,0.2
 Aurora,NE,"Aurora, NE",1,3102690,4642,0,65833,0,0.2
 Wahoo,NE,"Wahoo, NE",1,3150965,4754,88,68092,1.9,0.2
+Belmar,NJ,"Belmar, NJ",1,3404930,5869,380,90461,6.5,0.2
+Franklin Lakes,NJ,"Franklin Lakes, NJ",2,3424990,11034,179,188272,1.6,0.2
+Hainesport,NJ,"Hainesport, NJ",1,3400529010,6026,381,114519,6.3,0.2
+Hillsborough,NJ,"Hillsborough, NJ",4,3431880,22273,986,129883,4.4,0.2
+Ho-Ho-Kus,NJ,"Ho-Ho-Kus, NJ",1,3432310,4248,43,244493,1,0.2
+Holland,NJ,"Holland, NJ",1,3401932460,5177,118,121995,2.3,0.2
+Jamesburg,NJ,"Jamesburg, NJ",1,3434890,5784,154,93000,2.7,0.2
+Mays Landing,NJ,"Mays Landing, NJ",1,3444820,6555,1531,77617,23.4,0.2
+Mendham,NJ,"Mendham, NJ",1,3445330,4976,46,179543,0.9,0.2
+Mullica Hill,NJ,"Mullica Hill, NJ",1,3449440,4139,409,106250,9.9,0.2
+Paulsboro,NJ,"Paulsboro, NJ",1,3457150,6234,2005,45929,32.2,0.2
+Brecksville,OH,"Brecksville, OH",3,3908364,13607,634,115370,4.7,0.2
+Chardon,OH,"Chardon, OH",1,3913554,5212,44,79737,0.8,0.2
+Cincinnati,OH,"Cincinnati, OH",50,3915000,308664,124367,45235,40.3,0.2
+Clayton,OH,"Clayton, OH",3,3915644,13246,3826,79987,28.9,0.2
+Coldwater,OH,"Coldwater, OH",1,3916532,4406,17,72664,0.4,0.2
+Dublin,OH,"Dublin, OH",9,3922694,48613,1112,145828,2.3,0.2
+Granville,OH,"Granville, OH",1,3931402,5675,49,135326,0.9,0.2
+Jackson,OH,"Jackson, OH",1,3937842,6225,125,39928,2,0.2
+Massillon,OH,"Massillon, OH",5,3948244,32199,2553,49426,7.9,0.2
+Milford,OH,"Milford, OH",1,3950176,6549,33,67188,0.5,0.2
+Powell,OH,"Powell, OH",3,3964486,13879,111,168046,0.8,0.2
+St. Clairsville,OH,"St. Clairsville, OH",1,3969526,5121,130,71705,2.5,0.2
 Batesburg-Leesville,SC,"Batesburg-Leesville, SC",1,4504300,5322,2570,46070,48.3,0.2
 Cheraw,SC,"Cheraw, SC",1,4513600,5090,2189,29276,43,0.2
 Chester,SC,"Chester, SC",1,4514095,5283,3314,31210,62.7,0.2
@@ -481,6 +741,22 @@ Midway,UT,"Midway, UT",1,4949820,5881,0,108672,0,0.2
 Nephi,UT,"Nephi, UT",1,4954220,6334,25,74113,0.4,0.2
 Park City,UT,"Park City, UT",2,4958070,8352,78,121701,0.9,0.2
 Woods Cross,UT,"Woods Cross, UT",2,4985370,11372,242,89441,2.1,0.2
+Big Stone Gap,VA,"Big Stone Gap, VA",1,5107480,5280,985,57431,18.7,0.2
+Bridgewater,VA,"Bridgewater, VA",1,5109656,6092,294,66847,4.8,0.2
+Covington,VA,"Covington, VA",1,5119728,5716,694,41242,12.1,0.2
+Fairfax,VA,"Fairfax, VA",4,5126496,23980,1285,118492,5.4,0.2
+Fredericksburg,VA,"Fredericksburg, VA",6,5129744,28027,5795,72293,20.7,0.2
+Richmond,VA,"Richmond, VA",39,5167000,225676,102099,54795,45.2,0.2
+Woodbridge,VA,"Woodbridge, VA",7,5187312,42734,9848,80820,23,0.2
+Harrisburg,SD,"Harrisburg, SD",1,4627260,6645,0,81952,0,0.2
+Keyser,WV,"Keyser, WV",1,5443492,4916,413,41618,8.4,0.2
+Millsboro,DE,"Millsboro, DE",1,1047940,6542,1173,57632,17.9,0.2
+Morgantown,WV,"Morgantown, WV",6,5455756,29316,1468,36991,5,0.2
+Ona,WV,"Ona, WV",1,25545,4572,82,75309,1.8,0.2
+Pomfret,CT,"Pomfret, CT",1,0901561030,4255,80,93467,1.9,0.2
+Princeton,WV,"Princeton, WV",1,5465692,5885,360,39569,6.1,0.2
+Rigby,ID,"Rigby, ID",1,1667780,4920,0,58287,0,0.2
+Westover,WV,"Westover, WV",1,5485996,4085,160,52672,3.9,0.2
 Auburn,AL,"Auburn, AL",7,0103076,74637,13288,54700,17.8,0.1
 Calera,AL,"Calera, AL",2,0111416,16126,4580,70504,28.4,0.1
 Chelsea,AL,"Chelsea, AL",1,0114104,14710,954,93658,6.5,0.1
@@ -510,6 +786,10 @@ Selma,AL,"Selma, AL",2,0169120,18429,15509,29656,84.2,0.1
 Spanish Fort,AL,"Spanish Fort, AL",1,0171976,9720,759,89504,7.8,0.1
 Tuscaloosa,AL,"Tuscaloosa, AL",10,0177256,99252,43703,44880,44,0.1
 Tuskegee,AL,"Tuskegee, AL",1,0177304,9125,8513,32024,93.3,0.1
+Chandler,AZ,"Chandler, AZ",34,0412000,272439,15236,91299,5.6,0.1
+Gilbert,AZ,"Gilbert, AZ",18,0427400,262249,10317,105733,3.9,0.1
+Queen Creek,AZ,"Queen Creek, AZ",5,0458150,57728,2081,111743,3.6,0.1
+Scottsdale,AZ,"Scottsdale, AZ",22,0465000,238685,5280,97409,2.2,0.1
 Belle Glade,FL,"Belle Glade, FL",2,1205200,16983,10227,32963,60.2,0.1
 Bradenton,FL,"Bradenton, FL",6,1207950,54918,8109,50084,14.8,0.1
 Cocoa Beach,FL,"Cocoa Beach, FL",1,1213175,11316,104,73901,0.9,0.1
@@ -616,6 +896,31 @@ Pleasant Hill,IA,"Pleasant Hill, IA",1,1963525,10203,556,76371,5.4,0.1
 Sioux Center,IA,"Sioux Center, IA",1,1973290,8090,32,80955,0.4,0.1
 Urbandale,IA,"Urbandale, IA",5,1979950,45037,2240,100589,5,0.1
 West Des Moines,IA,"West Des Moines, IA",9,1983910,67640,2611,76564,3.9,0.1
+Beech Grove,IN,"Beech Grove, IN",1,1804204,15202,1399,45345,9.2,0.1
+Bloomington,IN,"Bloomington, IN",6,1805860,80064,3500,41995,4.4,0.1
+Brownsburg,IN,"Brownsburg, IN",3,1808416,28420,2655,93147,9.3,0.1
+Carmel,IN,"Carmel, IN",13,1810342,98137,2785,119772,2.8,0.1
+Greensburg,IN,"Greensburg, IN",1,1829718,11573,40,59174,0.3,0.1
+Greenwood,IN,"Greenwood, IN",9,1829898,62914,2815,71159,4.5,0.1
+Lebanon,IN,"Lebanon, IN",1,1842624,17196,192,58412,1.1,0.1
+McCordsville,IN,"McCordsville, IN",1,1845648,8629,1059,95925,12.3,0.1
+Merrillville,IN,"Merrillville, IN",3,1848528,36196,16338,61230,45.1,0.1
+Mishawaka,IN,"Mishawaka, IN",3,1849932,50823,4801,48695,9.4,0.1
+Warsaw,IN,"Warsaw, IN",1,1880306,15905,349,55295,2.2,0.1
+West Lafayette,IN,"West Lafayette, IN",4,1882862,44515,1777,28744,4,0.1
+Westfield,IN,"Westfield, IN",4,1882700,45695,1270,106777,2.8,0.1
+Zionsville,IN,"Zionsville, IN",3,1886372,30258,600,141546,2,0.1
+Bowling Green,KY,"Bowling Green, KY",7,2108902,71422,8937,43633,12.5,0.1
+Burlington,KY,"Burlington, KY",1,2111170,18394,871,90145,4.7,0.1
+Georgetown,KY,"Georgetown, KY",4,2130700,36281,2060,66942,5.7,0.1
+Glasgow,KY,"Glasgow, KY",1,2131114,14922,1007,38669,6.7,0.1
+La Grange,KY,"La Grange, KY",1,2143480,9901,553,74832,5.6,0.1
+Louisville,KY,"Louisville, KY",32,2148006,630260,150234,58357,23.8,0.1
+Madisonville,KY,"Madisonville, KY",1,2149368,19533,2088,46816,10.7,0.1
+Mount Washington,KY,"Mount Washington, KY",1,2154228,17723,56,83216,0.3,0.1
+Pikeville,KY,"Pikeville, KY",1,2160852,7376,160,41094,2.2,0.1
+Radcliff,KY,"Radcliff, KY",3,2163912,22839,6541,48325,28.6,0.1
+Winchester,KY,"Winchester, KY",1,2183676,18993,1411,47034,7.4,0.1
 Alexandria,LA,"Alexandria, LA",4,2200975,45736,25274,43760,55.3,0.1
 Baton Rouge,LA,"Baton Rouge, LA",23,2205000,225539,120257,46282,53.3,0.1
 Breaux Bridge,LA,"Breaux Bridge, LA",1,2209340,7711,3110,44155,40.3,0.1
@@ -644,6 +949,71 @@ Thibodaux,LA,"Thibodaux, LA",1,2275425,15242,4778,46658,31.3,0.1
 Vacherie,LA,"Vacherie, LA",1,70090,7380,3797,51448,51.4,0.1
 Woodmere,LA,"Woodmere, LA",1,2283002,11343,9229,59232,81.4,0.1
 Youngsville,LA,"Youngsville, LA",1,2283335,15167,1866,101455,12.3,0.1
+Annapolis,MD,"Annapolis, MD",3,2401600,40581,9006,92026,22.2,0.1
+Arbutus,MD,"Arbutus, MD",1,2401975,19662,1665,88989,8.5,0.1
+Baltimore,MD,"Baltimore, MD",36,2404000,592211,364879,54124,61.6,0.1
+Beltsville,MD,"Beltsville, MD",1,2406400,18769,4984,88023,26.6,0.1
+Bowie,MD,"Bowie, MD",6,2408775,58113,33637,127029,57.9,0.1
+Bryans Road,MD,"Bryans Road, MD",1,2410925,8502,5906,95241,69.5,0.1
+Clarksburg,MD,"Clarksburg, MD",2,2417350,27354,4315,152917,15.8,0.1
+Clarksville,MD,"Clarksville, MD",2,21029,13507,1195,223448,8.8,0.1
+Crofton,MD,"Crofton, MD",2,2420875,29812,4621,129766,15.5,0.1
+Cumberland,MD,"Cumberland, MD",2,2421325,19028,833,43699,4.4,0.1
+Damascus,MD,"Damascus, MD",2,2421475,16945,1570,137933,9.3,0.1
+Davidsonville,MD,"Davidsonville, MD",1,21035,8404,168,163750,2,0.1
+Easton,MD,"Easton, MD",1,2424475,16912,2373,72771,14,0.1
+Edgewater,MD,"Edgewater, MD",1,2425050,9075,403,100606,4.4,0.1
+Gaithersburg,MD,"Gaithersburg, MD",4,2431175,68827,11813,98089,17.2,0.1
+Germantown,MD,"Germantown, MD",5,2432025,90235,22298,104061,24.7,0.1
+Havre de Grace,MD,"Havre de Grace, MD",2,2437600,14625,2289,86576,15.7,0.1
+Hyattsville,MD,"Hyattsville, MD",2,2441250,20790,5829,84763,28,0.1
+Ijamsville,MD,"Ijamsville, MD",1,21770,7291,546,159091,7.5,0.1
+Laurel,MD,"Laurel, MD",3,2445900,29438,15000,85615,51,0.1
+Mitchellville,MD,"Mitchellville, MD",1,2452975,12160,10087,135301,83,0.1
+Montgomery Village,MD,"Montgomery Village, MD",2,2453325,34489,8496,84362,24.6,0.1
+Olney,MD,"Olney, MD",3,2458900,35815,4862,161065,13.6,0.1
+Oxon Hill,MD,"Oxon Hill, MD",1,2459500,18763,13591,88273,72.4,0.1
+Pasadena,MD,"Pasadena, MD",2,2460475,31583,5046,107088,16,0.1
+Phoenix,MD,"Phoenix, MD",1,21131,7678,23,163370,0.3,0.1
+Potomac,MD,"Potomac, MD",3,2463300,46891,3106,198870,6.6,0.1
+Severna Park,MD,"Severna Park, MD",2,2471200,39108,1026,150871,2.6,0.1
+Temple Hills,MD,"Temple Hills, MD",1,2477100,9037,7399,67115,81.9,0.1
+Timonium,MD,"Timonium, MD",1,2478050,11136,647,117574,5.8,0.1
+Towson,MD,"Towson, MD",3,2478425,59014,9319,93435,15.8,0.1
+Waldorf,MD,"Waldorf, MD",7,2481175,79190,48965,103611,61.8,0.1
+Ada,MI,"Ada, MI",1,2608100240,14343,92,141992,0.6,0.1
+Brownstown Charter Township,MI,"Brownstown Charter Township, MI",2,2616311220,32820,3139,81334,9.6,0.1
+Detroit,MI,"Detroit, MI",45,2622000,645658,503197,34762,77.9,0.1
+East Lansing,MI,"East Lansing, MI",3,2624120,47427,3247,41177,6.8,0.1
+Fenton,MI,"Fenton, MI",1,2627760,11949,187,70745,1.6,0.1
+Grand Haven,MI,"Grand Haven, MI",1,2633340,10935,37,52929,0.3,0.1
+Grosse Pointe Park,MI,"Grosse Pointe Park, MI",1,2635540,11529,823,123859,7.1,0.1
+Holland,MI,"Holland, MI",3,2638640,34067,2127,63853,6.2,0.1
+Holt,MI,"Holt, MI",2,2638780,25755,2037,74169,7.9,0.1
+Inkster,MI,"Inkster, MI",2,2640680,25849,19893,34122,77,0.1
+Marshall,MI,"Marshall, MI",1,2651940,6832,35,63438,0.5,0.1
+Muskegon,MI,"Muskegon, MI",2,2656320,37632,11934,37827,31.7,0.1
+Niles,MI,"Niles, MI",1,2657760,11929,1578,41306,13.2,0.1
+Portage,MI,"Portage, MI",3,2665560,48767,2837,68755,5.8,0.1
+River Rouge,MI,"River Rouge, MI",1,2668760,7257,3587,24023,49.4,0.1
+South Lyon,MI,"South Lyon, MI",1,2675100,11786,68,79345,0.6,0.1
+Southfield,MI,"Southfield, MI",6,2674900,76196,50852,60006,66.7,0.1
+St. Johns,MI,"St. Johns, MI",1,2670940,7700,159,59890,2.1,0.1
+West Bloomfield,MI,"West Bloomfield, MI",7,2612585480,66099,8630,114231,13.1,0.1
+Wixom,MI,"Wixom, MI",1,2688140,16853,1976,72579,11.7,0.1
+Blue Springs,MO,"Blue Springs, MO",4,2906652,58265,4631,78516,7.9,0.1
+Chesterfield,MO,"Chesterfield, MO",3,2913600,49675,1736,124551,3.5,0.1
+Clayton,MO,"Clayton, MO",1,2914572,16905,1317,117593,7.8,0.1
+Eureka,MO,"Eureka, MO",1,2922834,11663,77,112622,0.7,0.1
+Jackson,MO,"Jackson, MO",2,2935648,15272,229,70179,1.5,0.1
+Kearney,MO,"Kearney, MO",1,2938072,10260,46,92462,0.4,0.1
+Lebanon,MO,"Lebanon, MO",1,2941168,14880,171,40885,1.1,0.1
+Lee's Summit,MO,"Lee's Summit, MO",8,2941348,100772,8678,98960,8.6,0.1
+Olivette,MO,"Olivette, MO",1,2954650,8408,1770,92984,21.1,0.1
+Raymore,MO,"Raymore, MO",3,2960752,22722,2348,90362,10.3,0.1
+St. Louis,MO,"St. Louis, MO",41,2965000,302787,135612,48751,44.8,0.1
+Troy,MO,"Troy, MO",1,2973942,12463,273,73406,2.2,0.1
+Webb City,MO,"Webb City, MO",1,2978118,12843,380,55558,3,0.1
 Columbus,MS,"Columbus, MS",3,2815380,23858,14647,34488,61.4,0.1
 Greenville,MS,"Greenville, MS",3,2829180,30175,24854,32066,82.4,0.1
 Greenwood,MS,"Greenwood, MS",1,2829340,14521,10451,28221,72,0.1
@@ -659,6 +1029,35 @@ Starkville,MS,"Starkville, MS",3,2870240,24578,7971,34391,32.4,0.1
 Tupelo,MS,"Tupelo, MS",5,2874840,37872,13948,58887,36.8,0.1
 Vicksburg,MS,"Vicksburg, MS",3,2876720,21748,14969,37995,68.8,0.1
 Yazoo City,MS,"Yazoo City, MS",1,2881520,10887,7895,30092,72.5,0.1
+Apex,NC,"Apex, NC",3,3701520,58066,4420,121313,7.6,0.1
+Asheville,NC,"Asheville, NC",5,3702140,93272,10125,58193,10.9,0.1
+Boone,NC,"Boone, NC",2,3707080,18055,609,24756,3.4,0.1
+Charlotte,NC,"Charlotte, NC",58,3712000,864871,304250,68367,35.2,0.1
+Clinton,NC,"Clinton, NC",1,3713240,8124,3193,34855,39.3,0.1
+Concord,NC,"Concord, NC",7,3714100,102566,22414,78775,21.9,0.1
+Cornelius,NC,"Cornelius, NC",4,3714700,30925,1982,95147,6.4,0.1
+Davidson,NC,"Davidson, NC",2,3716400,14644,1109,141845,7.6,0.1
+Eden,NC,"Eden, NC",1,3720080,15317,4276,41746,27.9,0.1
+Elon,NC,"Elon, NC",1,3721095,11059,769,68031,7,0.1
+Fletcher,NC,"Fletcher, NC",1,3723760,7935,287,64478,3.6,0.1
+Greensboro,NC,"Greensboro, NC",15,3728000,295483,127414,51667,43.1,0.1
+Harrisburg,NC,"Harrisburg, NC",1,3729800,18415,3101,124090,16.8,0.1
+Hillsborough,NC,"Hillsborough, NC",1,3731620,9342,1111,77114,11.9,0.1
+Indian Trail,NC,"Indian Trail, NC",2,3733560,39603,3833,88673,9.7,0.1
+Kernersville,NC,"Kernersville, NC",2,3735600,26376,4410,60718,16.7,0.1
+Kings Mountain,NC,"Kings Mountain, NC",1,3735880,10775,2946,42336,27.3,0.1
+Matthews,NC,"Matthews, NC",3,3741960,29417,3408,96195,11.6,0.1
+Mebane,NC,"Mebane, NC",1,3742240,17192,3854,69947,22.4,0.1
+Mooresville,NC,"Mooresville, NC",4,3744220,48431,4853,75141,10,0.1
+Mount Airy,NC,"Mount Airy, NC",1,3744800,10547,1207,33773,11.4,0.1
+Newton,NC,"Newton, NC",1,3747000,13081,1329,55391,10.2,0.1
+Pinehurst,NC,"Pinehurst, NC",1,3751940,17250,402,92342,2.3,0.1
+Rolesville,NC,"Rolesville, NC",1,3757640,8995,1980,127575,22,0.1
+Roxboro,NC,"Roxboro, NC",1,3758160,8097,3282,33883,40.5,0.1
+Salisbury,NC,"Salisbury, NC",3,3758860,35258,13268,44656,37.6,0.1
+Southern Pines,NC,"Southern Pines, NC",1,3763120,15156,2622,69792,17.3,0.1
+Waynesville,NC,"Waynesville, NC",1,3771500,10087,155,41131,1.5,0.1
+Wendell,NC,"Wendell, NC",1,3771860,9847,2727,67321,27.7,0.1
 Columbus,NE,"Columbus, NE",3,3110110,23954,137,60586,0.6,0.1
 Fremont,NE,"Fremont, NE",2,3117670,27245,257,57551,0.9,0.1
 La Vista,NE,"La Vista, NE",1,3126385,16786,775,70310,4.6,0.1
@@ -667,6 +1066,102 @@ Omaha,NE,"Omaha, NE",37,3137000,488059,58430,65359,12,0.1
 Scottsbluff,NE,"Scottsbluff, NE",1,3144245,14511,132,50788,0.9,0.1
 Seward,NE,"Seward, NE",1,3144420,7651,44,68348,0.6,0.1
 York,NE,"York, NE",1,3154045,8091,76,61230,0.9,0.1
+Aberdeen,NJ,"Aberdeen, NJ",1,3402500070,19184,1665,111964,8.7,0.1
+Absecon,NJ,"Absecon, NJ",1,3400100,9039,907,65194,10,0.1
+Asbury Park,NJ,"Asbury Park, NJ",1,3401960,15305,5744,54676,37.5,0.1
+Basking Ridge,NJ,"Basking Ridge, NJ",1,3403340,8074,22,168125,0.3,0.1
+Burlington,NJ,"Burlington, NJ",1,3408920,9800,3028,73045,30.9,0.1
+Caldwell,NJ,"Caldwell, NJ",1,3409250,8800,461,107596,5.2,0.1
+Camden,NJ,"Camden, NJ",7,3410000,72381,31029,30247,42.9,0.1
+Cinnaminson,NJ,"Cinnaminson, NJ",1,3400512940,16915,686,119245,4.1,0.1
+Closter,NJ,"Closter, NJ",1,3413810,8573,288,166125,3.4,0.1
+Colts Neck,NJ,"Colts Neck, NJ",1,3402514560,9975,32,181632,0.3,0.1
+Delran,NJ,"Delran, NJ",2,3400517440,17708,1401,94428,7.9,0.1
+East Orange,NJ,"East Orange, NJ",6,3419390,68918,56904,54520,82.6,0.1
+Franklin Park,NJ,"Franklin Park, NJ",1,3425020,13686,4338,95405,31.7,0.1
+Freehold,NJ,"Freehold, NJ",1,3425200,12485,1161,62942,9.3,0.1
+Hillside,NJ,"Hillside, NJ",2,3403931980,22319,11148,82850,49.9,0.1
+Holmdel,NJ,"Holmdel, NJ",1,3402532640,17317,182,155845,1.1,0.1
+Kinnelon,NJ,"Kinnelon, NJ",1,3437110,9994,14,163611,0.1,0.1
+Manville,NJ,"Manville, NJ",1,3443620,10861,1269,79766,11.7,0.1
+Medford,NJ,"Medford, NJ",2,3400545120,24265,274,142920,1.1,0.1
+Middlesex,NJ,"Middlesex, NJ",1,3445900,14513,840,90162,5.8,0.1
+Millville,NJ,"Millville, NJ",2,3446680,27946,4810,62111,17.2,0.1
+Monmouth Junction,NJ,"Monmouth Junction, NJ",1,3447190,9728,832,123906,8.6,0.1
+Montclair,NJ,"Montclair, NJ",5,3401347500,40520,9351,149982,23.1,0.1
+Montvale,NJ,"Montvale, NJ",1,3447610,8413,214,163170,2.5,0.1
+Moorestown,NJ,"Moorestown, NJ",2,3400547880,21265,837,149500,3.9,0.1
+New Providence,NJ,"New Providence, NJ",1,3451810,13570,118,155370,0.9,0.1
+North Arlington,NJ,"North Arlington, NJ",1,3452320,16339,420,94012,2.6,0.1
+North Haledon,NJ,"North Haledon, NJ",1,3453040,8893,569,107250,6.4,0.1
+Parsippany,NJ,"Parsippany, NJ",2,3456430,21931,884,96096,4,0.1
+Pennsauken,NJ,"Pennsauken, NJ",3,3400757660,36838,10646,72802,28.9,0.1
+Pleasantville,NJ,"Pleasantville, NJ",2,3459640,20505,8080,44008,39.4,0.1
+Princeton,NJ,"Princeton, NJ",3,3460900,30717,2059,165149,6.7,0.1
+Red Bank,NJ,"Red Bank, NJ",1,3462430,12825,1107,80781,8.6,0.1
+Ridgefield Park,NJ,"Ridgefield Park, NJ",1,3462940,13202,499,86502,3.8,0.1
+Robbinsville,NJ,"Robbinsville, NJ",1,3402163850,15277,716,155680,4.7,0.1
+Rutherford,NJ,"Rutherford, NJ",1,3465280,18781,372,118462,2,0.1
+Short Hills,NJ,"Short Hills, NJ",1,3467320,14500,187,250001,1.3,0.1
+Sicklerville,NJ,"Sicklerville, NJ",6,3467470,46626,16884,89623,36.2,0.1
+Somerset,NJ,"Somerset, NJ",2,3468370,24827,8323,101627,33.5,0.1
+Spotswood,NJ,"Spotswood, NJ",1,3469810,8163,259,92527,3.2,0.1
+Summit,NJ,"Summit, NJ",2,3471430,22598,1582,151505,7,0.1
+Upper Saddle River,NJ,"Upper Saddle River, NJ",1,3475140,8352,134,220068,1.6,0.1
+Verona,NJ,"Verona, NJ",1,3401375815,14479,190,141040,1.3,0.1
+Warren,NJ,"Warren, NJ",2,3403576940,15850,336,178484,2.1,0.1
+Wayne,NJ,"Wayne, NJ",3,3403177840,54880,1365,137168,2.5,0.1
+West Long Branch,NJ,"West Long Branch, NJ",1,3479310,8470,432,107059,5.1,0.1
+West Orange,NJ,"West Orange, NJ",3,3401379800,48480,12991,118326,26.8,0.1
+Westfield,NJ,"Westfield, NJ",2,3479040,30950,969,185319,3.1,0.1
+Williamstown,NJ,"Williamstown, NJ",2,3481380,14947,1512,85302,10.1,0.1
+Willingboro,NJ,"Willingboro, NJ",4,3400581440,31763,22014,83323,69.3,0.1
+Woodbury,NJ,"Woodbury, NJ",1,3482120,10067,2204,64271,21.9,0.1
+Akron,OH,"Akron, OH",12,3901000,191483,57557,42129,30.1,0.1
+Aurora,OH,"Aurora, OH",1,3903086,17108,638,122893,3.7,0.1
+Austintown,OH,"Austintown, OH",3,3903184,30179,1922,49100,6.4,0.1
+Avon,OH,"Avon, OH",2,3903352,24542,1117,113741,4.6,0.1
+Bay Village,OH,"Bay Village, OH",1,3904416,16051,191,111516,1.2,0.1
+Berea,OH,"Berea, OH",1,3905690,18724,1549,60417,8.3,0.1
+Bryan,OH,"Bryan, OH",1,3909792,8668,112,47594,1.3,0.1
+Canal Winchester,OH,"Canal Winchester, OH",1,3911332,9209,675,104411,7.3,0.1
+Concord,OH,"Concord, OH",1,3908518196,19121,44,104746,0.2,0.1
+Dayton,OH,"Dayton, OH",8,3921000,138416,53241,37536,38.5,0.1
+Delaware,OH,"Delaware, OH",3,3921434,41004,2068,78900,5,0.1
+Eastlake,OH,"Eastlake, OH",1,3923618,17743,758,55931,4.3,0.1
+Englewood,OH,"Englewood, OH",1,3925396,13441,2321,61711,17.3,0.1
+Fairfield,OH,"Fairfield, OH",4,3925970,44550,7036,63418,15.8,0.1
+Franklin,OH,"Franklin, OH",1,3928476,11650,41,52750,0.4,0.1
+Fremont,OH,"Fremont, OH",1,3928826,15954,1131,44832,7.1,0.1
+Hamilton,OH,"Hamilton, OH",4,3933012,63127,4959,50034,7.9,0.1
+Hubbard,OH,"Hubbard, OH",1,3936582,7645,280,56220,3.7,0.1
+Lewis Center,OH,"Lewis Center, OH",2,43035,33238,1996,137408,6,0.1
+Lima,OH,"Lima, OH",2,3943554,36352,8930,37668,24.6,0.1
+London,OH,"London, OH",1,3944674,10362,249,58606,2.4,0.1
+Loveland,OH,"Loveland, OH",1,3945108,13125,715,75610,5.4,0.1
+Madeira,OH,"Madeira, OH",1,3946312,9397,71,142917,0.8,0.1
+Mansfield,OH,"Mansfield, OH",3,3947138,47437,9781,37009,20.6,0.1
+Mason,OH,"Mason, OH",5,3948188,34337,1637,110833,4.8,0.1
+Medina,OH,"Medina, OH",3,3948790,26011,783,72688,3,0.1
+Mentor,OH,"Mentor, OH",5,3949056,47369,708,79261,1.5,0.1
+Miamisburg,OH,"Miamisburg, OH",1,3949434,19878,347,72677,1.7,0.1
+North Canton,OH,"North Canton, OH",1,3956294,17884,397,62303,2.2,0.1
+Norwalk,OH,"Norwalk, OH",2,3957302,17048,311,53649,1.8,0.1
+Olmsted Falls,OH,"Olmsted Falls, OH",1,3958422,8684,130,86111,1.5,0.1
+Perrysburg,OH,"Perrysburg, OH",2,3962148,24633,423,92834,1.7,0.1
+Shelby,OH,"Shelby, OH",1,3972102,8294,29,51240,0.3,0.1
+Solon,OH,"Solon, OH",2,3972928,24070,2953,118418,12.3,0.1
+Springfield,OH,"Springfield, OH",3,3974118,58992,10330,42131,17.5,0.1
+Steubenville,OH,"Steubenville, OH",1,3974608,18122,2566,39432,14.2,0.1
+Streetsboro,OH,"Streetsboro, OH",1,3975014,17282,1150,70725,6.7,0.1
+Strongsville,OH,"Strongsville, OH",3,3975098,46187,1044,95000,2.3,0.1
+Tallmadge,OH,"Tallmadge, OH",1,3976106,18409,873,79233,4.7,0.1
+Tipp City,OH,"Tipp City, OH",1,3976876,10202,104,68943,1,0.1
+Washington Court House,OH,"Washington Court House, OH",1,3981718,14440,458,46905,3.2,0.1
+West Chester,OH,"West Chester, OH",4,3901783150,64509,6093,102065,9.4,0.1
+Wilmington,OH,"Wilmington, OH",1,3985792,12523,506,44474,4,0.1
+Wyoming,OH,"Wyoming, OH",1,3986730,8691,1039,133500,12,0.1
+Youngstown,OH,"Youngstown, OH",7,3988000,61274,25994,31020,42.4,0.1
 Clinton,SC,"Clinton, SC",1,4515295,7753,2270,35462,29.3,0.1
 Conway,SC,"Conway, SC",2,4516405,22001,7489,44976,34,0.1
 Florence,SC,"Florence, SC",4,4525810,39816,18901,52425,47.5,0.1
@@ -775,6 +1270,61 @@ Smithfield,UT,"Smithfield, UT",1,4969640,13263,0,79321,0,0.1
 South Jordan,UT,"South Jordan, UT",8,4970850,75617,362,111774,0.5,0.1
 Spanish Fork,UT,"Spanish Fork, UT",3,4971290,41953,190,84903,0.5,0.1
 St. George,UT,"St. George, UT",7,4965330,92875,730,63604,0.8,0.1
+Aylett,VA,"Aylett, VA",1,23009,7641,1036,77728,13.6,0.1
+Blacksburg,VA,"Blacksburg, VA",4,5107784,44385,2238,43804,5,0.1
+Bristol,VA,"Bristol, VA",1,5109816,16996,1016,43879,6,0.1
+Bristow,VA,"Bristow, VA",2,20136,31074,3530,159802,11.4,0.1
+Burke,VA,"Burke, VA",4,5111464,44191,3209,157336,7.3,0.1
+Centreville,VA,"Centreville, VA",6,5114440,73064,5404,126990,7.4,0.1
+Chantilly,VA,"Chantilly, VA",2,5114744,23564,1140,131362,4.8,0.1
+Chester,VA,"Chester, VA",3,5116096,22512,5598,78673,24.9,0.1
+Chesterfield,VA,"Chesterfield, VA",4,23832,39273,9800,93649,25,0.1
+Colonial Heights,VA,"Colonial Heights, VA",1,5118448,18127,3075,65570,17,0.1
+Crozet,VA,"Crozet, VA",1,5120560,7840,133,104330,1.7,0.1
+Culpeper,VA,"Culpeper, VA",2,5120752,19740,3836,79572,19.4,0.1
+Falls Church,VA,"Falls Church, VA",1,5127200,14494,686,155071,4.7,0.1
+Gainesville,VA,"Gainesville, VA",2,5130176,17081,2173,150487,12.7,0.1
+Galax,VA,"Galax, VA",1,5130208,6681,481,39808,7.2,0.1
+Great Falls,VA,"Great Falls, VA",1,5132496,14690,134,250001,0.9,0.1
+Hayes,VA,"Hayes, VA",1,23072,12387,760,72984,6.1,0.1
+Leesburg,VA,"Leesburg, VA",4,5144984,48223,4856,116350,10.1,0.1
+Lynchburg,VA,"Lynchburg, VA",5,5147672,78973,22509,54015,28.5,0.1
+Manassas,VA,"Manassas, VA",3,5148952,42596,5629,101934,13.2,0.1
+Martinsville,VA,"Martinsville, VA",1,5149784,13476,6101,36832,45.3,0.1
+McLean,VA,"McLean, VA",3,5148376,49310,1144,242610,2.3,0.1
+Midlothian,VA,"Midlothian, VA",2,5151560,19016,2504,96981,13.2,0.1
+Purcellville,VA,"Purcellville, VA",1,5165008,8910,972,140536,10.9,0.1
+Radford,VA,"Radford, VA",2,5165392,16205,1482,44360,9.1,0.1
+Salem,VA,"Salem, VA",3,5170000,25335,1817,66472,7.2,0.1
+Sandston,VA,"Sandston, VA",1,5170256,7083,2862,54221,40.4,0.1
+Springfield,VA,"Springfield, VA",3,5174592,31769,3370,109235,10.6,0.1
+Sterling,VA,"Sterling, VA",2,5175376,31202,2150,110915,6.9,0.1
+Vienna,VA,"Vienna, VA",2,5181072,16465,363,200938,2.2,0.1
+Warrenton,VA,"Warrenton, VA",1,5183136,10002,996,78275,10,0.1
+Bear,DE,"Bear, DE",2,1004130,21625,8236,79981,38.1,0.1
+Bluefield,WV,"Bluefield, WV",1,5408524,9699,2353,39677,24.3,0.1
+Carlsbad,NM,"Carlsbad, NM",2,3512150,31525,526,70745,1.7,0.1
+Charleston,WV,"Charleston, WV",4,5414600,49055,6949,54101,14.2,0.1
+Chubbuck,ID,"Chubbuck, ID",1,1614680,15445,21,65619,0.1,0.1
+Darien,CT,"Darien, CT",2,0900118850,21485,178,250001,0.8,0.1
+Eagle,ID,"Eagle, ID",3,1623410,29665,189,99814,0.6,0.1
+East Greenwich,RI,"East Greenwich, RI",1,4400322240,13970,125,133373,0.9,0.1
+Fairmont,WV,"Fairmont, WV",2,5426452,18369,1188,47618,6.5,0.1
+Groton,CT,"Groton, CT",1,0934180,9333,815,58911,8.7,0.1
+Hollis,NH,"Hollis, NH",1,3301137140,8324,128,144514,1.5,0.1
+Hurricane,WV,"Hurricane, WV",1,5439532,6901,0,65373,0,0.1
+Las Vegas,NV,"Las Vegas, NV",32,3240000,634786,72946,61356,11.5,0.1
+Martinsburg,WV,"Martinsburg, WV",2,5452060,18502,2745,45901,14.8,0.1
+Middletown,DE,"Middletown, DE",3,1047030,23001,5993,93750,26.1,0.1
+Milford,DE,"Milford, DE",1,1047420,11249,2695,47849,24,0.1
+Mountain Home,ID,"Mountain Home, ID",1,1654730,15863,477,45652,3,0.1
+New Fairfield,CT,"New Fairfield, CT",1,0900150860,13640,79,129718,0.6,0.1
+Pierre,SD,"Pierre, SD",2,4649600,14126,13,73787,0.1,0.1
+Smyrna,DE,"Smyrna, DE",1,1067310,12619,4451,63794,35.3,0.1
+Suffield,CT,"Suffield, CT",1,0900374540,15863,1501,115965,9.5,0.1
+Westport,CT,"Westport, CT",4,0900183500,27168,263,236892,1,0.1
+Wilton,CT,"Wilton, CT",1,0900186370,18486,194,209635,1,0.1
+Windsor,CT,"Windsor, CT",2,0900387000,29424,10851,96080,36.9,0.1
 Decatur,AL,"Decatur, AL",1,0120104,57303,13253,52539,23.1,0
 Dothan,AL,"Dothan, AL",2,0121184,70318,24272,49203,34.5,0
 Fairhope,AL,"Fairhope, AL",1,0125240,21825,1113,83258,5.1,0
@@ -784,6 +1334,26 @@ Homewood,AL,"Homewood, AL",1,0135800,26206,3306,89433,12.6,0
 Huntsville,AL,"Huntsville, AL",9,0137000,210081,64932,60959,30.9,0
 Northport,AL,"Northport, AL",1,0155200,30334,7745,69921,25.5,0
 Pelham,AL,"Pelham, AL",1,0158848,24134,2963,81606,12.3,0
+Anthem,AZ,"Anthem, AZ",1,0402430,22750,236,107558,1,0
+Avondale,AZ,"Avondale, AZ",1,0404720,88065,8698,69241,9.9,0
+Casa Grande,AZ,"Casa Grande, AZ",1,0410530,53488,2177,59175,4.1,0
+El Mirage,AZ,"El Mirage, AZ",1,0422220,35410,2642,65072,7.5,0
+Flagstaff,AZ,"Flagstaff, AZ",1,0423620,76228,1175,61026,1.5,0
+Florence,AZ,"Florence, AZ",1,0423760,25356,2428,63072,9.6,0
+Glendale,AZ,"Glendale, AZ",5,0427820,245685,17714,60499,7.2,0
+Goodyear,AZ,"Goodyear, AZ",3,0428380,93651,5605,91073,6,0
+Lake Havasu City,AZ,"Lake Havasu City, AZ",1,0439370,56510,239,59817,0.4,0
+Marana,AZ,"Marana, AZ",1,0444270,50834,1610,94983,3.2,0
+Maricopa,AZ,"Maricopa, AZ",1,0444410,57075,7074,82388,12.4,0
+Mesa,AZ,"Mesa, AZ",13,0446000,497752,21981,65725,4.4,0
+Oro Valley,AZ,"Oro Valley, AZ",1,0451600,46515,1071,92548,2.3,0
+Peoria,AZ,"Peoria, AZ",6,0454050,187733,6142,81017,3.3,0
+Phoenix,AZ,"Phoenix, AZ",30,0455000,1591119,115849,64927,7.3,0
+San Tan Valley,AZ,"San Tan Valley, AZ",2,0464210,96127,2702,79836,2.8,0
+Sierra Vista,AZ,"Sierra Vista, AZ",1,0466820,44944,3501,66129,7.8,0
+Surprise,AZ,"Surprise, AZ",1,0471510,141875,7477,76623,5.3,0
+Tempe,AZ,"Tempe, AZ",4,0473000,178862,13299,64080,7.4,0
+Tucson,AZ,"Tucson, AZ",18,0477000,538167,25977,48058,4.8,0
 Boca Raton,FL,"Boca Raton, FL",4,1207300,95347,6403,89776,6.7,0
 Bonita Springs,FL,"Bonita Springs, FL",1,1207525,53017,1084,78347,2,0
 Boynton Beach,FL,"Boynton Beach, FL",3,1207875,79479,26768,60980,33.7,0
@@ -848,17 +1418,173 @@ Pleasant Valley,IA,"Pleasant Valley, IA",1,1916393420,40356,830,90733,2.1,0
 Sioux City,IA,"Sioux City, IA",1,1973335,85081,4114,59435,4.8,0
 Waterloo,IA,"Waterloo, IA",2,1982425,67695,11725,49430,17.3,0
 Waukee,IA,"Waukee, IA",1,1982695,23441,737,101138,3.1,0
+Columbus,IN,"Columbus, IN",1,1814734,50718,1070,72380,2.1,0
+Crown Point,IN,"Crown Point, IN",1,1816138,33518,2523,87500,7.5,0
+East Chicago,IN,"East Chicago, IN",1,1819486,26502,9804,37807,37,0
+Fishers,IN,"Fishers, IN",3,1823278,97154,5587,117503,5.8,0
+Fort Wayne,IN,"Fort Wayne, IN",9,1825000,262676,40054,53978,15.2,0
+Gary,IN,"Gary, IN",1,1827000,69739,54419,34085,78,0
+Indianapolis,IN,"Indianapolis, IN",37,1836003,880104,253348,54321,28.8,0
+Kokomo,IN,"Kokomo, IN",1,1840392,59263,6551,51450,11.1,0
+Lafayette,IN,"Lafayette, IN",1,1840788,70928,6363,47690,9,0
+Michigan City,IN,"Michigan City, IN",1,1848798,31965,8962,47197,28,0
+New Albany,IN,"New Albany, IN",1,1852326,37350,3125,49429,8.4,0
+Noblesville,IN,"Noblesville, IN",3,1854180,68885,3274,89258,4.8,0
+Plainfield,IN,"Plainfield, IN",1,1860246,34311,2684,68541,7.8,0
+Schererville,IN,"Schererville, IN",1,1868220,29381,2469,77530,8.4,0
+South Bend,IN,"South Bend, IN",2,1871000,102786,25884,46002,25.2,0
+Valparaiso,IN,"Valparaiso, IN",1,1878326,33820,1433,56465,4.2,0
+Ashland,KY,"Ashland, KY",1,2102368,21695,346,45414,1.6,0
+Florence,KY,"Florence, KY",1,2127982,31699,2049,64718,6.5,0
+Frankfort,KY,"Frankfort, KY",1,2128900,28479,3929,51731,13.8,0
+Henderson,KY,"Henderson, KY",1,2135866,28201,2846,43413,10.1,0
+Lexington,KY,"Lexington, KY",15,2146027,321354,46891,61526,14.6,0
+Nicholasville,KY,"Nicholasville, KY",1,2156136,31066,1424,56790,4.6,0
+Owensboro,KY,"Owensboro, KY",2,2158620,59839,4151,47411,6.9,0
+Richmond,KY,"Richmond, KY",1,2165226,34662,2111,40221,6.1,0
 Kenner,LA,"Kenner, LA",3,2239475,66411,13140,58419,19.8,0
 Metairie,LA,"Metairie, LA",4,2250115,140590,14488,65740,10.3,0
 Shreveport,LA,"Shreveport, LA",7,2270000,189374,107042,41782,56.5,0
 Slidell,LA,"Slidell, LA",1,2270805,28537,5054,57920,17.7,0
+Columbia,MD,"Columbia, MD",4,2419125,105086,29471,113592,28,0
+Edgewood,MD,"Edgewood, MD",1,2425150,25004,11762,71755,47,0
+Eldersburg,MD,"Eldersburg, MD",1,2425575,30418,1565,130036,5.1,0
+Ellicott City,MD,"Ellicott City, MD",2,2426000,74432,6111,136234,8.2,0
+Fort Washington,MD,"Fort Washington, MD",1,2429525,25840,16174,127587,62.6,0
+Frederick,MD,"Frederick, MD",2,2430325,76376,13189,82563,17.3,0
+Glen Burnie,MD,"Glen Burnie, MD",3,2432650,69739,17264,80458,24.8,0
+Greenbelt,MD,"Greenbelt, MD",1,2434775,24602,11181,75832,45.4,0
+Hagerstown,MD,"Hagerstown, MD",1,2436075,43015,7813,42965,18.2,0
+Pikesville,MD,"Pikesville, MD",1,2461400,33549,5503,90748,16.4,0
+Randallstown,MD,"Randallstown, MD",1,2464950,35641,28520,83063,80,0
+Salisbury,MD,"Salisbury, MD",1,2469925,32583,12863,48310,39.5,0
+Severn,MD,"Severn, MD",1,2471150,53955,16829,115481,31.2,0
+Silver Spring,MD,"Silver Spring, MD",4,2472450,82472,24194,91970,29.3,0
+Auburn Hills,MI,"Auburn Hills, MI",1,2604105,24202,3549,73641,14.7,0
+Battle Creek,MI,"Battle Creek, MI",1,2605920,52434,8402,45288,16,0
+Bay City,MI,"Bay City, MI",1,2606020,32824,888,41959,2.7,0
+Birmingham,MI,"Birmingham, MI",1,2608640,21728,488,137907,2.2,0
+Canton,MI,"Canton, MI",2,2616313120,97591,9708,104535,9.9,0
+Clinton Township,MI,"Clinton Township, MI",1,2609916520,100328,16005,63858,16,0
+Dearborn,MI,"Dearborn, MI",1,2621000,107985,3488,60184,3.2,0
+Farmington Hills,MI,"Farmington Hills, MI",4,2627440,83749,15002,93434,17.9,0
+Grand Rapids,MI,"Grand Rapids, MI",4,2634000,197858,36414,55385,18.4,0
+Kalamazoo,MI,"Kalamazoo, MI",1,2642160,74020,16365,44296,22.1,0
+Kentwood,MI,"Kentwood, MI",1,2642820,53884,10038,60505,18.6,0
+Lansing,MI,"Lansing, MI",3,2646000,113592,27510,46570,24.2,0
+Livonia,MI,"Livonia, MI",2,2649000,95294,4185,86331,4.4,0
+Macomb Township,MI,"Macomb Township, MI",3,2609950480,90818,4302,106224,4.7,0
+Oak Park,MI,"Oak Park, MI",1,2659920,29677,16467,58700,55.5,0
+Pontiac,MI,"Pontiac, MI",1,2665440,61498,29316,36214,47.7,0
+Port Huron,MI,"Port Huron, MI",1,2665820,29009,2215,45623,7.6,0
+Redford,MI,"Redford, MI",1,2616367625,49092,24658,61340,50.2,0
+Roseville,MI,"Roseville, MI",2,2669800,47692,10152,51794,21.3,0
+Sterling Heights,MI,"Sterling Heights, MI",2,2676460,134062,8004,70211,6,0
+Troy,MI,"Troy, MI",1,2680700,86912,3144,107550,3.6,0
+Warren,MI,"Warren, MI",3,2684000,138996,28950,55153,20.8,0
+Washington,MI,"Washington, MI",1,2609984120,28007,640,89466,2.3,0
+Wyoming,MI,"Wyoming, MI",1,2688940,76625,6763,61128,8.8,0
+Columbia,MO,"Columbia, MO",6,2915670,124342,14352,57463,11.5,0
+Independence,MO,"Independence, MO",1,2935000,122230,11725,53996,9.6,0
+Jefferson City,MO,"Jefferson City, MO",1,2937000,43076,8175,56781,19,0
+Kansas City,MO,"Kansas City, MO",21,2938000,502597,133370,60042,26.5,0
+Kirkwood,MO,"Kirkwood, MO",1,2939044,29233,1537,98637,5.3,0
+Liberty,MO,"Liberty, MO",1,2942032,30129,1404,81352,4.7,0
+O'Fallon,MO,"O'Fallon, MO",2,2954074,90802,3594,96157,4,0
+Springfield,MO,"Springfield, MO",2,2970000,168603,6661,39991,4,0
+St. Charles,MO,"St. Charles, MO",2,2964082,70218,4618,75516,6.6,0
+Wentzville,MO,"Wentzville, MO",1,2978442,43213,2677,97841,6.2,0
 Ridgeland,MS,"Ridgeland, MS",1,2862520,24330,9473,64034,38.9,0
 Southaven,MS,"Southaven, MS",2,2869280,54141,17580,67157,32.5,0
+Arden,NC,"Arden, NC",1,28704,21608,1667,71026,7.7,0
+Asheboro,NC,"Asheboro, NC",1,3702080,26729,3823,40571,14.3,0
+Burlington,NC,"Burlington, NC",2,3709060,56563,16008,47158,28.3,0
+Cary,NC,"Cary, NC",6,3710740,171603,13776,113782,8,0
+Chapel Hill,NC,"Chapel Hill, NC",2,3711800,60920,6429,77037,10.6,0
+Durham,NC,"Durham, NC",9,3719000,279106,103719,66623,37.2,0
+Fayetteville,NC,"Fayetteville, NC",4,3722920,208497,88574,48923,42.5,0
+Gastonia,NC,"Gastonia, NC",3,3725580,79483,23552,52990,29.6,0
+Goldsboro,NC,"Goldsboro, NC",1,3726880,33214,18022,39562,54.3,0
+Greenville,NC,"Greenville, NC",1,3728080,87815,34412,44064,39.2,0
+Hickory,NC,"Hickory, NC",2,3731060,42831,5971,53117,13.9,0
+High Point,NC,"High Point, NC",1,3731400,113148,39050,54331,34.5,0
+Huntersville,NC,"Huntersville, NC",2,3733120,60166,7459,102335,12.4,0
+Jacksonville,NC,"Jacksonville, NC",3,3734200,73224,13753,47483,18.8,0
+Kannapolis,NC,"Kannapolis, NC",1,3735200,52173,11791,58084,22.6,0
+Monroe,NC,"Monroe, NC",1,3743920,34464,7676,58180,22.3,0
+New Bern,NC,"New Bern, NC",1,3746340,31058,10282,45829,33.1,0
+Raleigh,NC,"Raleigh, NC",21,3755000,462219,132264,72996,28.6,0
+Rocky Mount,NC,"Rocky Mount, NC",2,3757500,54375,34463,46396,63.4,0
+Sanford,NC,"Sanford, NC",1,3759280,30024,7665,51311,25.5,0
+Statesville,NC,"Statesville, NC",1,3764740,27777,9374,43497,33.7,0
+Wilmington,NC,"Wilmington, NC",2,3774440,115976,19903,54066,17.2,0
+Winston-Salem,NC,"Winston-Salem, NC",11,3775000,247917,82968,50204,33.5,0
 Bellevue,NE,"Bellevue, NE",1,3103950,62888,3923,73534,6.2,0
 Grand Island,NE,"Grand Island, NE",1,3119595,52755,2020,58162,3.8,0
 Kearney,NE,"Kearney, NE",1,3125055,33558,357,62695,1.1,0
 Lincoln,NE,"Lincoln, NE",11,3128000,289136,11975,62566,4.1,0
 Papillion,NE,"Papillion, NE",1,3138295,23875,658,95293,2.8,0
+Bridgewater,NJ,"Bridgewater, NJ",1,3403507720,46072,1044,142707,2.3,0
+Egg Harbor Township,NJ,"Egg Harbor Township, NJ",1,3400120290,47124,3516,86832,7.5,0
+Elizabeth,NJ,"Elizabeth, NJ",1,3421000,135772,25322,54415,18.7,0
+Elmwood Park,NJ,"Elmwood Park, NJ",1,3421300,21239,1491,75091,7,0
+Englewood,NJ,"Englewood, NJ",1,3421480,29129,7573,91164,26,0
+Galloway,NJ,"Galloway, NJ",1,3400125560,37715,3648,79345,9.7,0
+Glassboro,NJ,"Glassboro, NJ",1,3426340,20284,3954,71608,19.5,0
+Gloucester,NJ,"Gloucester, NJ",1,3400726760,65602,11424,88699,17.4,0
+Hoboken,NJ,"Hoboken, NJ",1,3432250,59369,2313,160890,3.9,0
+Irvington,NJ,"Irvington, NJ",3,3401334450,60224,51190,50020,85,0
+Jackson,NJ,"Jackson, NJ",1,3402934680,58101,2285,100759,3.9,0
+Jefferson Township,NJ,"Jefferson Township, NJ",1,3402734980,20638,639,111691,3.1,0
+Jersey City,NJ,"Jersey City, NJ",8,3436000,287146,64543,81390,22.5,0
+Kearny,NJ,"Kearny, NJ",1,3436510,41790,1827,76647,4.4,0
+Lodi,NJ,"Lodi, NJ",1,3441100,25983,2648,70821,10.2,0
+Middletown,NJ,"Middletown, NJ",1,3402545990,67007,1023,126519,1.5,0
+Mount Laurel,NJ,"Mount Laurel, NJ",1,3400549020,44473,5357,103399,12,0
+Newark,NJ,"Newark, NJ",9,3451000,306247,147587,41335,48.2,0
+Ocean Township,NJ,"Ocean Township, NJ",1,3402554270,27697,3219,102721,11.6,0
+Paterson,NJ,"Paterson, NJ",4,3457000,157927,39055,48540,24.7,0
+Plainfield,NJ,"Plainfield, NJ",2,3459190,54183,21007,63750,38.8,0
+Plainsboro,NJ,"Plainsboro, NJ",1,3402359280,23966,1566,112421,6.5,0
+Rahway,NJ,"Rahway, NJ",1,3461530,29582,9491,81368,32.1,0
+South Brunswick,NJ,"South Brunswick, NJ",1,3402368790,46623,3102,130867,6.7,0
+Teaneck,NJ,"Teaneck, NJ",1,3400372360,41335,9204,125368,22.3,0
+Trenton,NJ,"Trenton, NJ",3,3474000,90097,44200,39718,49.1,0
+Union City,NJ,"Union City, NJ",1,3474630,67903,3710,53177,5.5,0
+Union Township,NJ,"Union Township, NJ",2,3403974480,59825,21127,103567,35.3,0
+Vineland,NJ,"Vineland, NJ",1,3476070,61442,8760,60018,14.3,0
+West Deptford,NJ,"West Deptford, NJ",1,3401578800,22292,1839,80028,8.2,0
+Brunswick,OH,"Brunswick, OH",1,3909680,35272,729,74353,2.1,0
+Canton,OH,"Canton, OH",1,3912000,71097,17284,34611,24.3,0
+Centerville,OH,"Centerville, OH",1,3913190,24281,1719,76565,7.1,0
+Cleveland,OH,"Cleveland, OH",8,3916000,374861,177586,33678,47.4,0
+Cleveland Heights,OH,"Cleveland Heights, OH",1,3916014,45267,18520,62823,40.9,0
+Colerain,OH,"Colerain, OH",1,3906116616,59037,14785,66753,25,0
+Columbus,OH,"Columbus, OH",17,3918000,898143,262702,58575,29.2,0
+Cuyahoga Falls,OH,"Cuyahoga Falls, OH",1,3919778,50906,2476,62294,4.9,0
+Elyria,OH,"Elyria, OH",1,3925256,52853,7432,46034,14.1,0
+Euclid,OH,"Euclid, OH",1,3925704,49382,31500,42056,63.8,0
+Findlay,OH,"Findlay, OH",2,3927048,40323,992,50921,2.5,0
+Hilliard,OH,"Hilliard, OH",1,3935476,35530,1550,106269,4.4,0
+Huber Heights,OH,"Huber Heights, OH",1,3936610,42650,6700,69184,15.7,0
+Hudson,OH,"Hudson, OH",1,3936651,23001,172,143143,0.7,0
+Lakewood,OH,"Lakewood, OH",2,3941664,50841,2838,57588,5.6,0
+Lancaster,OH,"Lancaster, OH",1,3941720,40360,670,50994,1.7,0
+Liberty Township,OH,"Liberty Township, OH",1,3901743050,43276,2379,129575,5.5,0
+Lorain,OH,"Lorain, OH",1,3944856,65051,10740,42201,16.5,0
+Marysville,OH,"Marysville, OH",1,3948160,24922,982,86308,3.9,0
+Middletown,OH,"Middletown, OH",1,3949840,50114,5688,47116,11.4,0
+Newark,OH,"Newark, OH",1,3954040,49703,1589,52570,3.2,0
+Reynoldsburg,OH,"Reynoldsburg, OH",1,3966390,39803,11197,63567,28.1,0
+Shaker Heights,OH,"Shaker Heights, OH",1,3971682,29197,10489,92463,35.9,0
+Stow,OH,"Stow, OH",1,3974944,34556,1292,80523,3.7,0
+Toledo,OH,"Toledo, OH",3,3977000,271454,76309,41671,28.1,0
+Upper Arlington,OH,"Upper Arlington, OH",1,3979002,36566,221,132783,0.6,0
+Westerville,OH,"Westerville, OH",1,3983342,38960,2360,96279,6.1,0
+Westlake,OH,"Westlake, OH",1,3983622,34049,914,98285,2.7,0
+Willoughby,OH,"Willoughby, OH",1,3985484,23753,1346,63908,5.7,0
+Xenia,OH,"Xenia, OH",1,3986772,25411,2531,48868,10,0
+Zanesville,OH,"Zanesville, OH",1,3988084,24809,1782,36012,7.2,0
 Charleston,SC,"Charleston, SC",4,4513330,147928,29064,76556,19.6,0
 Mount Pleasant,SC,"Mount Pleasant, SC",2,4548535,88900,2968,106216,3.3,0
 North Charleston,SC,"North Charleston, SC",1,4550875,114542,50112,52264,43.7,0
@@ -934,3 +1660,65 @@ Taylorsville,UT,"Taylorsville, UT",2,4975360,60295,779,73325,1.3,0
 Tooele,UT,"Tooele, UT",1,4976680,35223,374,76618,1.1,0
 West Jordan,UT,"West Jordan, UT",4,4982950,116045,1362,90227,1.2,0
 West Valley City,UT,"West Valley City, UT",2,4983470,139361,3456,75137,2.5,0
+Alexandria,VA,"Alexandria, VA",7,5101000,158185,34158,105450,21.6,0
+Annandale,VA,"Annandale, VA",1,5101912,41869,3597,106620,8.6,0
+Arlington,VA,"Arlington, VA",4,5103000,235764,22112,128145,9.4,0
+Charlottesville,VA,"Charlottesville, VA",1,5114968,46597,8404,63470,18,0
+Chesapeake,VA,"Chesapeake, VA",7,5116000,247172,73279,85563,29.6,0
+Christiansburg,VA,"Christiansburg, VA",1,5116608,23174,1374,63934,5.9,0
+Danville,VA,"Danville, VA",1,5121344,42556,20981,38904,49.3,0
+Hampton,VA,"Hampton, VA",2,5135000,136748,67576,59380,49.4,0
+Herndon,VA,"Herndon, VA",1,5136648,24574,1799,117741,7.3,0
+Hopewell,VA,"Hopewell, VA",1,5138424,23020,10191,44209,44.3,0
+Mechanicsville,VA,"Mechanicsville, VA",1,5150856,37767,3346,84833,8.9,0
+Norfolk,VA,"Norfolk, VA",11,5157000,238556,97121,56244,40.7,0
+Oak Hill,VA,"Oak Hill, VA",1,22030,60915,6076,125139,10,0
+Portsmouth,VA,"Portsmouth, VA",3,5164000,97454,50878,54020,52.2,0
+Reston,VA,"Reston, VA",1,5166672,62453,5693,126571,9.1,0
+Roanoke,VA,"Roanoke, VA",4,5168000,99578,29222,48476,29.3,0
+South Riding,VA,"South Riding, VA",1,5174100,33828,3356,170456,9.9,0
+Suffolk,VA,"Suffolk, VA",3,5176432,93268,38432,81883,41.2,0
+Virginia Beach,VA,"Virginia Beach, VA",16,5182000,457658,86913,81810,19,0
+Albuquerque,NM,"Albuquerque, NM",3,3502000,562336,17918,56366,3.2,0
+Anchorage,AK,"Anchorage, AK",1,0203000,292545,15668,88871,5.4,0
+Billings,MT,"Billings, MT",1,3006550,115689,1291,63608,1.1,0
+Bismarck,ND,"Bismarck, ND",1,3807200,73321,1962,70125,2.7,0
+Boise,ID,"Boise, ID",1,1608830,231537,3874,68373,1.7,0
+Bozeman,MT,"Bozeman, MT",1,3008950,51574,342,67354,0.7,0
+Bridgeport,CT,"Bridgeport, CT",1,0908000,148529,51563,50597,34.7,0
+Caldwell,ID,"Caldwell, ID",1,1612250,58872,210,59795,0.4,0
+Clovis,NM,"Clovis, NM",1,3516420,38505,2229,50109,5.8,0
+Coeur d'Alene,ID,"Coeur d'Alene, ID",1,1616750,53189,190,59699,0.4,0
+Danbury,CT,"Danbury, CT",2,0918430,86197,8457,74600,9.8,0
+East Haven,CT,"East Haven, CT",1,0922980,28054,1731,74238,6.2,0
+Fairfield,CT,"Fairfield, CT",2,0900126620,61737,1278,149641,2.1,0
+Fargo,ND,"Fargo, ND",1,3825700,124979,10030,60243,8,0
+Farmington,NM,"Farmington, NM",1,3525800,46696,483,56045,1,0
+Glastonbury,CT,"Glastonbury, CT",1,0900331240,35061,606,130294,1.7,0
+Great Falls,MT,"Great Falls, MT",1,3032800,60381,680,53126,1.1,0
+Hartford,CT,"Hartford, CT",1,0937000,121562,44259,37477,36.4,0
+Helena,MT,"Helena, MT",1,3035600,32060,218,59712,0.7,0
+Henderson,NV,"Henderson, NV",4,3231900,311250,19265,79611,6.2,0
+Idaho Falls,ID,"Idaho Falls, ID",2,1639700,64399,406,57412,0.6,0
+Las Cruces,NM,"Las Cruces, NM",2,3539380,109934,2998,47722,2.7,0
+Lewiston,ID,"Lewiston, ID",1,1646540,33964,37,60581,0.1,0
+Manchester,CT,"Manchester, CT",1,0944690,36832,7042,66637,19.1,0
+Manchester,NH,"Manchester, NH",1,3345140,114730,6905,66929,6,0
+Meridian,ID,"Meridian, ID",3,1652120,115227,1455,85201,1.3,0
+Missoula,MT,"Missoula, MT",1,3050200,73300,421,54423,0.6,0
+Moscow,ID,"Moscow, ID",1,1654550,25336,409,49251,1.6,0
+New Haven,CT,"New Haven, CT",3,0952000,133874,45322,48973,33.9,0
+New London,CT,"New London, CT",1,0952280,27585,4431,50819,16.1,0
+Newark,DE,"Newark, DE",1,1050670,31393,2810,61646,9,0
+North Las Vegas,NV,"North Las Vegas, NV",2,3251800,259638,57265,64738,22.1,0
+Norwalk,CT,"Norwalk, CT",2,0955990,90821,11466,91434,12.6,0
+Parkersburg,WV,"Parkersburg, WV",1,5462140,29910,676,38960,2.3,0
+Rapid City,SD,"Rapid City, SD",1,4652980,73942,1037,58072,1.4,0
+Reno,NV,"Reno, NV",5,3260600,259913,8743,67557,3.4,0
+Rocky Hill,CT,"Rocky Hill, CT",1,0900365370,20682,790,86410,3.8,0
+Sioux Falls,SD,"Sioux Falls, SD",3,4659020,189258,12792,66761,6.8,0
+Trumbull,CT,"Trumbull, CT",1,0900177200,36830,1331,138801,3.6,0
+Wallingford,CT,"Wallingford, CT",1,0900978740,44428,551,88573,1.2,0
+Washington,DC,"Washington, DC",20,1150000,683154,305109,93547,44.7,0
+West Warwick,RI,"West Warwick, RI",1,4400378440,30823,776,62649,2.5,0
+Wilmington,DE,"Wilmington, DE",2,1077580,70926,40227,49354,56.7,0

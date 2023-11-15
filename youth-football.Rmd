@@ -88,7 +88,7 @@ hometowns_open_refine <- read_csv("hometowns_open_refine.csv")
 #Splitting the hometown column so we can work with the state
 football_rosters <- football_rosters %>%
   mutate(hometown_cleaning = hometown) %>%
-  separate(hometown_cleaning, into = c("hometown_city_clean", "hometown_state", "hometown_country"), sep = ", ")
+  separate(hometown_cleaning, into = c("hometown_city", "hometown_state", "hometown_country"), sep = ", ")
 
 #What kind of values are we getting in hometown_state?
 state_check <- football_rosters %>%
@@ -220,10 +220,10 @@ football_rosters_usa_states <- football_rosters_usa_states %>%
 
 #Join our Open Refine dataframe to our dataframe of Power Five players
 hometowns_open_refine_modified <- hometowns_open_refine %>%
-  select(hometown_city_clean, hometown_city_clean, hometown_state_clean)
+  select(hometown_city, hometown_city_clean, hometown_state_clean)
 
 football_rosters_usa <- football_rosters_usa %>%
-  left_join(hometowns_open_refine_modified, by = c("hometown_city_clean", "hometown_state_clean"))
+  left_join(hometowns_open_refine_modified, by = c("hometown_city", "hometown_state_clean"))
 
 distinct_hometowns <- football_rosters_usa %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
@@ -2114,6 +2114,7 @@ hometowns_or_complete %>%
 #write_csv(hometowns_or_complete, file = "hometowns_hi.csv")
 
 ```
+
 ```{r}
 # TENNESSEE HOMETOWNS
 
@@ -2236,7 +2237,6 @@ census_data_hermitage_tn_2021 <- get_acs(geography = "block group",
 #write_csv(hometowns_or_complete, file = "hometowns_hi.csv")
 
 ```
-
 
 ```{r}
 
@@ -2733,7 +2733,7 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 ```{r}
 
 # ALL HOMETOWNS
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_in_complete, hometowns_ia_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_ms_complete, hometowns_mo_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_small_states_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_in_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_small_states_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
