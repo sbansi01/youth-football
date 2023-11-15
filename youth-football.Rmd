@@ -88,7 +88,7 @@ hometowns_open_refine <- read_csv("hometowns_open_refine.csv")
 #Splitting the hometown column so we can work with the state
 football_rosters <- football_rosters %>%
   mutate(hometown_cleaning = hometown) %>%
-  separate(hometown_cleaning, into = c("hometown_city", "hometown_state", "hometown_country"), sep = ", ")
+  separate(hometown_cleaning, into = c("hometown_city_clean", "hometown_state", "hometown_country"), sep = ", ")
 
 #What kind of values are we getting in hometown_state?
 state_check <- football_rosters %>%
@@ -220,10 +220,10 @@ football_rosters_usa_states <- football_rosters_usa_states %>%
 
 #Join our Open Refine dataframe to our dataframe of Power Five players
 hometowns_open_refine_modified <- hometowns_open_refine %>%
-  select(hometown_city, hometown_city_clean, hometown_state_clean)
+  select(hometown_city_clean, hometown_city_clean, hometown_state_clean)
 
 football_rosters_usa <- football_rosters_usa %>%
-  left_join(hometowns_open_refine_modified, by = c("hometown_city", "hometown_state_clean"))
+  left_join(hometowns_open_refine_modified, by = c("hometown_city_clean", "hometown_state_clean"))
 
 distinct_hometowns <- football_rosters_usa %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
@@ -726,7 +726,7 @@ football_rosters_hi <- football_rosters_usa %>%
 
 # Step 2: Get a list of all the unique hometowns in the state
 distinct_hometowns_hi <- football_rosters_hi %>%
-  group_by(hometown_city, hometown_state_clean) %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
@@ -759,7 +759,7 @@ census_data_hi_2021 <- census_data_hi_2021 %>%
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_hi_complete <- distinct_hometowns_hi %>%
-  left_join(census_data_hi_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_hi_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
@@ -1935,7 +1935,7 @@ football_rosters_ok <- football_rosters_usa %>%
   filter(hometown_state_clean == "OK")
 # Step 2: Get a list of all the unique hometowns in the state
 distinct_hometowns_ok <- football_rosters_ok %>%
-  group_by(hometown_city, hometown_state_clean) %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
 census_data_ok_2021 <- get_acs(geography = "place",
@@ -1958,7 +1958,7 @@ census_data_ok_2021 <- census_data_ok_2021 %>%
     state == 'Oklahoma' ~ "OK"))
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_ok_complete <- distinct_hometowns_ok %>%
-  left_join(census_data_ok_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_ok_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 # Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
@@ -1971,7 +1971,7 @@ hometowns_ok_complete %>%
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
 census_data_ok_2021 <- bind_rows(census_data_ok_2021, census_data_zips_ok_2021)
 hometowns_ok_complete <- distinct_hometowns_ok %>%
-  left_join(census_data_ok_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_ok_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
@@ -1992,7 +1992,7 @@ football_rosters_sc <- football_rosters_usa %>%
 
 # Step 2: Get a list of all the unique hometowns in the state
 distinct_hometowns_sc <- football_rosters_sc %>%
-  group_by(hometown_city, hometown_state_clean) %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
@@ -2019,7 +2019,7 @@ census_data_sc_2021 <- census_data_sc_2021 %>%
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_sc_complete <- distinct_hometowns_sc %>%
-  left_join(census_data_sc_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_sc_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
@@ -2048,7 +2048,7 @@ census_data_craytonville_sc_2021 <- get_acs(geography = "block group",
 census_data_sc_2021 <- bind_rows(census_data_sc_2021, census_data_craytonville_sc_2021)
  
 hometowns_sc_complete <- distinct_hometowns_sc %>%
-  left_join(census_data_sc_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_sc_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
@@ -2069,7 +2069,7 @@ football_rosters_or <- football_rosters_usa %>%
 
 # Step 2: Get a list of all the unique hometowns in the state
 distinct_hometowns_or <- football_rosters_or %>%
-  group_by(hometown_city, hometown_state_clean) %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
@@ -2096,7 +2096,7 @@ census_data_or_2021 <- census_data_or_2021 %>%
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_or_complete <- distinct_hometowns_or %>%
-  left_join(census_data_or_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_or_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
@@ -2123,7 +2123,7 @@ football_rosters_tn <- football_rosters_usa %>%
 
 # Step 2: Get a list of all the unique hometowns in the state
 distinct_hometowns_tn <- football_rosters_tn %>%
-  group_by(hometown_city, hometown_state_clean) %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
@@ -2150,7 +2150,7 @@ census_data_tn_2021 <- census_data_tn_2021 %>%
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_tn_complete <- distinct_hometowns_tn %>%
-  left_join(census_data_tn_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_tn_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
@@ -2496,7 +2496,7 @@ football_rosters_wa <- football_rosters_usa %>%
   filter(hometown_state_clean == "WA")
 # Step 2: Get a list of all the unique hometowns in the state
 distinct_hometowns_wa <- football_rosters_wa %>%
-  group_by(hometown_city, hometown_state_clean) %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
 census_data_wa_2021 <- get_acs(geography = "place",
@@ -2519,7 +2519,7 @@ census_data_wa_2021 <- census_data_wa_2021 %>%
     state == 'Washington' ~ "WA"))
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_wa_complete <- distinct_hometowns_wa %>%
-  left_join(census_data_wa_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_wa_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 # Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
@@ -2549,7 +2549,7 @@ census_data_zips_wa_2021 <- get_acs(geography = "zcta",
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
 census_data_wa_2021 <- bind_rows(census_data_wa_2021, census_data_zips_wa_2021)
 hometowns_wa_complete <- distinct_hometowns_wa %>%
-  left_join(census_data_wa_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_wa_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
@@ -2567,7 +2567,7 @@ football_rosters_wi <- football_rosters_usa %>%
   filter(hometown_state_clean == "WI")
 # Step 2: Get a list of all the unique hometowns in the state
 distinct_hometowns_wi <- football_rosters_wi %>%
-  group_by(hometown_city, hometown_state_clean) %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
 census_data_wi_2021 <- get_acs(geography = "place",
@@ -2590,7 +2590,7 @@ census_data_wi_2021 <- census_data_wi_2021 %>%
     state == 'Wisconsin' ~ "WI"))
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_wi_complete <- distinct_hometowns_wi %>%
-  left_join(census_data_wi_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_wi_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 # Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
@@ -2610,7 +2610,7 @@ census_data_wi_subdivisions_2021 <- get_acs(geography = "county subdivision",
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
 census_data_wi_2021 <- bind_rows(census_data_wi_2021, census_data_subdivisions_wi_2021)
 hometowns_wi_complete <- distinct_hometowns_wi %>%
-  left_join(census_data_wi_2021, by = c("hometown_city" = "city", "hometown_state_clean" = "state")) %>%
+  left_join(census_data_wi_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
