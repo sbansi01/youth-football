@@ -2200,13 +2200,14 @@ census_data_antioch_tn_2021 <- get_acs(geography = "block group",
                            state = "TN",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Block Group 1, Census Tract 156.27, Davidson, Tennessee") %>%
+  filter(name == "Block Group 1, Census Tract 156.27, Davidson County, Tennessee") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "TN") %>%
   mutate(city = case_when(
-    city == "Block Group 1, Census Tract 156.27, Davidson, Tennessee" ~ "Antioch")) %>%
+    city == "Block Group 1, Census Tract 156.27, Davidson County, Tennessee" ~ "Antioch")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
 
 
 # For Corryton, TN this block group seems like a good substitute
@@ -2217,12 +2218,12 @@ census_data_corryton_tn_2021 <- get_acs(geography = "block group",
                            state = "TN",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Block Group 3, Census Tract 65.01, Knox, Tennessee") %>%
+  filter(name == "Block Group 3, Census Tract 65.01, Knox County, Tennessee") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "TN") %>%
   mutate(city = case_when(
-    city == "Block Group 3, Census Tract 65.01, Knox, Tennessee" ~ "Corryton")) %>%
+    city == "Block Group 3, Census Tract 65.01, Knox County, Tennessee" ~ "Corryton")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
 # For Eads, TN this block group seems like a good substitute:
@@ -2234,12 +2235,12 @@ census_data_eads_tn_2021 <- get_acs(geography = "block group",
                            state = "TN",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Block Group 1, Census Tract 210.23, Shelby, Tennessee") %>%
+  filter(name == "Block Group 1, Census Tract 210.23, Shelby County, Tennessee") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "TN") %>%
   mutate(city = case_when(
-    city == "Block Group 1, Census Tract 210.23, Shelby, Tennessee" ~ "Eads")) %>%
+    city == "Block Group 1, Census Tract 210.23, Shelby County, Tennessee" ~ "Eads")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
 
@@ -2251,17 +2252,24 @@ census_data_hermitage_tn_2021 <- get_acs(geography = "block group",
                            state = "TN",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Block Group 1, Census Tract 154.02, Davidson, Tennessee") %>%
+  filter(name == "Block Group 1, Census Tract 154.02, Davidson County, Tennessee") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "TN") %>%
   mutate(city = case_when(
-    city == "Block Group 1, Census Tract 154.02, Davidson, Tennessee" ~ "Hermitage")) %>%
+    city == "Block Group 1, Census Tract 154.02, Davidson County, Tennessee" ~ "Hermitage")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
 
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+
+census_data_tn_2021 <- bind_rows(census_data_tn_2021, census_data_antioch_tn_2021, census_data_corryton_tn_2021, census_data_hermitage_tn_2021, census_data_eads_tn_2021)
+ 
+hometowns_tn_complete <- distinct_hometowns_tn %>%
+  left_join(census_data_tn_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
 
 
 # Step 10: If needed, uncomment out to create a CSV
@@ -2634,7 +2642,7 @@ census_data_wi_subdivisions_2021 <- get_acs(geography = "county subdivision",
                            year = 2021,
                            state = "WI",
                            output = "wide") %>%
-  filter(NAME == "Erin town, Washington County, WI" | NAME == "Gardner town, Door County, WI")
+  filter(NAME == "Erin town, Washington County, Wisconsin" | NAME == "Gardner town, Door County, Wisconsin")
 
 
 
