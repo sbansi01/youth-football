@@ -1265,33 +1265,10 @@ hometowns_ma_complete %>%
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 
-# For Clarksville, MD (21029), Davidsonville, MD (21035), Ijamsville, MD (21770), Phoenix, MD (21131) the zip codes seem to be good substitutes: https://censusreporter.org/profiles/86000US21029-21029/ https://censusreporter.org/profiles/86000US21035-21035/ https://censusreporter.org/profiles/86000US21770-21770/ https://censusreporter.org/profiles/86000US21131-21131/
-census_data_zips_md_2021 <- get_acs(geography = "zcta",
-                           variables = c("B01003_001", "B02001_003", "B19013_001"),
-                           year = 2021,
-                           output = "wide") %>%
-  clean_names() %>%
-  filter(name == "ZCTA5 21029" | name == "ZCTA5 21035" | name == "ZCTA5 21770" | name == "ZCTA5 21131") %>%
-  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
-  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "MD") %>%
-  mutate(city = case_when(
-    city == "ZCTA5 21029" ~ "Clarksville",
-    city == "ZCTA5 21035" ~ "Davidsonville",
-    city == "ZCTA5 21770" ~ "Ijamsville",
-    city == "ZCTA5 21131" ~ "Phoenix")) %>%
-  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_md_2021 <- bind_rows(census_data_md_2021, census_data_zips_md_2021)
- 
-hometowns_md_complete <- distinct_hometowns_md %>%
-  left_join(census_data_md_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
-  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
-  arrange(desc(players_per_thousand))
 
-hometowns_md_complete %>%
-  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
 
 # Step 10: If needed, uncomment out to create a CSV
 #write_csv(hometowns_md_complete, file = "hometowns_md.csv")
@@ -2647,7 +2624,7 @@ census_data_wi_subdivisions_2021 <- get_acs(geography = "county subdivision",
 
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_wi_2021 <- bind_rows(census_data_wi_2021, census_data_subdivisions_wi_2021)
+census_data_wi_2021 <- bind_rows(census_data_wi_2021, census_data_wi_subdivisions_2021)
 hometowns_wi_complete <- distinct_hometowns_wi %>%
   left_join(census_data_wi_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
