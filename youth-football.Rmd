@@ -2218,9 +2218,8 @@ hometowns_sc_complete %>%
 
 ```
 
-
-
 ```{r}
+
 # TENNESSEE HOMETOWNS
 
 # Step 1: Filter for the state's players
@@ -2269,88 +2268,31 @@ hometowns_tn_complete %>%
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 
-# For Antioch, TN, the block grpup seems to be a good substitute: 
-# https://censusreporter.org/profiles/14000US47037015627-census-tract-15627-davidson-tn/
-census_data_antioch_tn_2021 <- get_acs(geography = "block group",
+# For Corryton, TN (37721) and Eads, TN (38028), the zip codes seems to be a good substitute: https://censusreporter.org/profiles/86000US37721-37721/
+census_data_zips_tn_2021 <- get_acs(geography = "zcta",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
-                           state = "TN",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Block Group 1, Census Tract 156.27, Davidson County, Tennessee") %>%
+  filter(name == "ZCTA5 37721" | name == "ZCTA5 38028") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "TN") %>%
   mutate(city = case_when(
-    city == "Block Group 1, Census Tract 156.27, Davidson County, Tennessee" ~ "Antioch")) %>%
+    city == "ZCTA5 37721" ~ "Corryton",
+    city == "ZCTA5 38028" ~ "Eads")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
-
-
-
-# For Corryton, TN this block group seems like a good substitute
-# https://censusreporter.org/profiles/15000US470930065013-bg-3-tract-6501-knox-tn/
-census_data_corryton_tn_2021 <- get_acs(geography = "block group",
-                           variables = c("B01003_001", "B02001_003", "B19013_001"),
-                           year = 2021,
-                           state = "TN",
-                           output = "wide") %>%
-  clean_names() %>%
-  filter(name == "Block Group 3, Census Tract 65.01, Knox County, Tennessee") %>%
-  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
-  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "TN") %>%
-  mutate(city = case_when(
-    city == "Block Group 3, Census Tract 65.01, Knox County, Tennessee" ~ "Corryton")) %>%
-  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
-
-# For Eads, TN this block group seems like a good substitute:
-# https://censusreporter.org/profiles/15000US471570210231-bg-1-tract-21023-shelby-tn/
-
-census_data_eads_tn_2021 <- get_acs(geography = "block group",
-                           variables = c("B01003_001", "B02001_003", "B19013_001"),
-                           year = 2021,
-                           state = "TN",
-                           output = "wide") %>%
-  clean_names() %>%
-  filter(name == "Block Group 1, Census Tract 210.23, Shelby County, Tennessee") %>%
-  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
-  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "TN") %>%
-  mutate(city = case_when(
-    city == "Block Group 1, Census Tract 210.23, Shelby County, Tennessee" ~ "Eads")) %>%
-  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
-
-
-# For Hermitage, Tennesse this block group seems like a good substitute:
-# https://censusreporter.org/profiles/15000US470370154021-bg-1-tract-15402-davidson-tn/
-census_data_hermitage_tn_2021 <- get_acs(geography = "block group",
-                           variables = c("B01003_001", "B02001_003", "B19013_001"),
-                           year = 2021,
-                           state = "TN",
-                           output = "wide") %>%
-  clean_names() %>%
-  filter(name == "Block Group 1, Census Tract 154.02, Davidson County, Tennessee") %>%
-  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
-  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
-  mutate(state = "TN") %>%
-  mutate(city = case_when(
-    city == "Block Group 1, Census Tract 154.02, Davidson County, Tennessee" ~ "Hermitage")) %>%
-  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
-
-
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-
-census_data_tn_2021 <- bind_rows(census_data_tn_2021, census_data_antioch_tn_2021, census_data_corryton_tn_2021, census_data_hermitage_tn_2021, census_data_eads_tn_2021)
+census_data_tn_2021 <- bind_rows(census_data_tn_2021, census_data_zips_tn_2021)
  
 hometowns_tn_complete <- distinct_hometowns_tn %>%
   left_join(census_data_tn_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
-
 # Step 10: If needed, uncomment out to create a CSV
-#write_csv(hometowns_or_complete, file = "hometowns_hi.csv")
+#write_csv(hometowns_tn_complete, file = "hometowns_tn.csv")
 
 ```
 
@@ -2856,7 +2798,7 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 ```{r}
 
 # ALL HOMETOWNS
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_in_complete, hometowns_ks_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_ok_complete, hometowns_sc_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_small_states_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_az_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_in_complete, hometowns_ks_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_ok_complete, hometowns_sc_complete, hometowns_tn_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_small_states_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
