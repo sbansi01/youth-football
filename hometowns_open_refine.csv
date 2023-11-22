@@ -48,7 +48,7 @@ American Fork,American Fork,UT,6
 Ames,Ames,IA,2
 Amite,Amite City,LA,2
 Anaheim,Anaheim,CA,4
-Anaheim Hills,Anaheim Hills,CA,1
+Anaheim Hills,Anaheim,CA,1
 Anchorage,Anchorage,AK,1
 Andale,Andale,KS,1
 Andalusia,Andalusia,AL,2
@@ -118,9 +118,9 @@ Azle,Azle,TX,2
 Bailey,Bailey,NC,1
 Bainbridge,Bainbridge,GA,3
 Bakersfield,Bakersfield,CA,7
-Baldwin Hills,Baldwin Hills,CA,1
+Baldwin Hills,Los Angeles,CA,1
 Baldwin Park,Baldwin Park,CA,2
-Baldwin Village,Baldwin Village,CA,1
+Baldwin Village,Los Angeles,CA,1
 Ballston Lake,Ballston Lake,NY,1
 Baltimore,Baltimore,MD,36
 Bamberg,Bamberg,SC,1
@@ -321,7 +321,7 @@ Canadian,Canadian,TX,1
 Canal Winchester,Canal Winchester,OH,1
 Canby,Canby,OR,1
 Canfield,Canfield,OH,2
-Canoga Park,Canoga Park,CA,1
+Canoga Park,Los Angeles,CA,1
 Canton,Canton,GA,2
 Canton,Canton,MA,1
 Canton,Canton,MI,2
@@ -329,14 +329,14 @@ Canton,Canton,MS,3
 Canton,Canton,OH,1
 Canton,Canton,PA,1
 Canton,Canton,TX,1
-Canyon Country,Canyon Country,CA,1
+Canyon Country,Santa Clarita,CA,1
 Cape Coral,Cape Coral,FL,1
 Capitola,Capitola,CA,1
 Carencro,Carencro,LA,1
 Carlisle,Carlisle,IA,1
 Carlsbad,Carlsbad,CA,6
 Carlsbad,Carlsbad,NM,2
-Carmel,Carmel,CA,2
+Carmel,Carmel-by-the-Sea,CA,2
 Carmel,Carmel,IN,13
 Carnegie,Carnegie,PA,1
 Carpinteria,Carpinteria,CA,1
@@ -393,7 +393,7 @@ Charlotte,Charlotte,NC,58
 Charlottesville,Charlottesville,VA,1
 Chaska,Chaska,MN,1
 Chatham,Chatham,LA,1
-Chatsworth,Chatsworth,CA,3
+Chatsworth,Los Angeles,CA,3
 Chatsworth,Chatsworth,GA,1
 Chattanooga,Chattanooga,TN,4
 Chatworth,Chatworth,GA,1
@@ -667,8 +667,8 @@ East Greenwich,East Greenwich,RI,1
 East Haven,East Haven,CT,1
 East Lake,East Lake,FL,2
 East Lansing,East Lansing,MI,3
-East Menlo Park,East Menlo Park,CA,1
-East Oakland,East Oakland,CA,1
+East Menlo Park,Menlo Park,CA,1
+East Oakland,Oakland,CA,1
 East Orange,East Orange,NJ,6
 East Palo Alto,East Palo Alto,CA,9
 East Saint Louis,East St. Louis,IL,1
@@ -727,7 +727,7 @@ Elysburg,Elysburg,PA,3
 Eminence,Eminence,KY,1
 Emporia,Emporia,KS,1
 Encinitas,Encinitas,CA,1
-Encino,Encino,CA,1
+Encino,Los Angeles,CA,1
 Englewood,Englewood,CO,4
 Englewood,Englewood,NJ,1
 Englewood,Englewood,OH,1
@@ -816,7 +816,7 @@ Foley,Foley,AL,1
 Folsom,Folsom,CA,1
 Fond du Lac,Fond du Lac,WI,1
 Fontana,Fontana,CA,4
-Foothill Ranch,Foothill Ranch,CA,1
+Foothill Ranch,Lake Forest,CA,1
 Forest Park,Forest Park,GA,1
 Forney,Forney,TX,1
 Forsyth,Forsyth,GA,1
@@ -941,7 +941,7 @@ Goulds,Goulds,FL,2
 Graceville,Graceville,FL,1
 Grafton,Grafton,WI,1
 Graham,Graham,WA,2
-Granada Hills,Granada Hills,CA,1
+Granada Hills,Los Angeles,CA,1
 Grand Bay,Grand Bay,AL,1
 Grand Blanc,Grand Blanc,MI,2
 Grand Haven,Grand Haven,MI,1
@@ -1014,7 +1014,7 @@ Hanford,Hanford,CA,1
 Hanover,Hanover,PA,1
 Hanover Township,Hanover Township,PA,1
 Happy Valley,Happy Valley,OR,2
-Harbor City,Harbor City,CA,1
+Harbor City,Los Angeles,CA,1
 Hardin,Hardin,TX,1
 Harker Heights,Harker Heights,TX,3
 Harlan,Harlan,IA,1
@@ -1268,7 +1268,7 @@ La Grange,LaGrange,GA,1
 La Grange,La Grange,IL,1
 La Grange,La Grange,TX,1
 La Grange Park,La Grange Park,IL,1
-La Jolla,La Jolla,CA,2
+La Jolla,San Diego,CA,2
 La Marque,La Marque,TX,1
 La Porte,La Porte,TX,2
 La Puente,La Puente,CA,1
@@ -1391,7 +1391,7 @@ Little River,Little River,SC,1
 Little Rock,Little Rock,AR,11
 Littleton,Littleton,CO,8
 Live Oak,Live Oak,FL,2
-Livemore,Livemore,CA,1
+Livemore,Livermore,CA,1
 Livermore,Livermore,CA,2
 Livingston,Livingston,AL,1
 Livonia,Livonia,MI,2
@@ -1620,7 +1620,7 @@ Montgomery Village,Montgomery Village,MD,2
 Monticello,Monticello,AR,1
 Monticello,Monticello,MS,1
 Montoursville,Montoursville,PA,1
-Montrose,Montrose,CA,1
+Montrose,La Cañada Flintridge,CA,1
 Montrose,Montrose,MI,1
 Montvale,Montvale,NJ,1
 Monument,Monument,CO,1
@@ -1721,7 +1721,7 @@ Newark,Newark,TX,1
 Newberry,Newberry,SC,1
 Newburgh,Newburgh,NY,1
 Newbury,Newbury,MA,1
-Newbury Park,Newbury Park,CA,3
+Newbury Park,Thousand Oaks,CA,3
 Newcastle,Newcastle,WA,1
 Newland,Newland,NC,1
 Newnan,Newnan,GA,4
@@ -1756,7 +1756,7 @@ North Charleston,North Charleston,SC,1
 North Chesterfield,Richmond,VA,1
 North Haledon,North Haledon,NJ,1
 North Highlands,North Highlands,CA,1
-North Hollywood,North Hollywood,CA,1
+North Hollywood,Los Angeles,CA,1
 North Jackson,North Jackson,OH,1
 North Las Vegas,North Las Vegas,NV,2
 North Liberty,North Liberty,IA,1
@@ -1852,8 +1852,8 @@ Oxnard,Oxnard,CA,5
 Oxon Hill,Oxon Hill,MD,1
 Ozark,Ozark,AR,1
 Pace,Pace,FL,2
-Pacific Palisades,Pacific Palisades,CA,1
-Pacoima,Pacoima,CA,1
+Pacific Palisades,Los Angeles,CA,1
+Pacoima,Los Angeles,CA,1
 Pahokee,Pahokee,FL,5
 Paige,Paige,TX,1
 Palatine,Palatine,IL,2
@@ -1868,7 +1868,7 @@ Palmetto,Palmetto,FL,2
 Palmyra,Palmyra,PA,1
 Palmyra,Palmyra,VA,1
 Palo Alto,Palo Alto,CA,1
-Palos Verdes,Palos Verdes,CA,1
+Palos Verdes,Rancho Palos Verdes,CA,1
 Palos Verdes Estates,Palos Verdes Estates,CA,2
 Panama City,Panama City,FL,1
 Papillion,Papillion,NE,1
@@ -1951,7 +1951,7 @@ Plant City,Plant City,FL,4
 Plantation,Plantation,FL,8
 Platte City,Platte City,MO,1
 Platville,Platville,AL,1
-Playa del Rey,Playa del Rey,CA,1
+Playa del Rey,Los Angeles,CA,1
 Pleasant Grove,Pleasant Grove,AL,2
 Pleasant Grove,Pleasant Grove,UT,2
 Pleasant Hill,Pleasant Hill,IA,1
@@ -2157,7 +2157,7 @@ San Juan Capistrano,San Juan Capistrano,CA,4
 San Leandro,San Leandro,CA,2
 San Marcos,San Marcos,CA,4
 San Mateo,San Mateo,CA,4
-San Pedro,San Pedro,CA,2
+San Pedro,Los Angeles,CA,2
 San Ramon,San Ramon,CA,1
 San Tan Valley,San Tan Valley,AZ,2
 Sandersville,Sandersville,GA,1
@@ -2217,7 +2217,7 @@ Shelby,Shelby,OH,1
 Shelbyville,Shelbyville,TN,1
 Shell,Shell,WY,1
 Shenandoah,Shenandoah,IA,1
-Sherman Oaks,Sherman Oaks,CA,1
+Sherman Oaks,Los Angeles,CA,1
 Shillington,Shillington,PA,2
 Shiner,Shiner,TX,1
 Shippensburg,Shippensburg,PA,1
@@ -2274,7 +2274,7 @@ South Miami,South Miami,FL,2
 South Pasadena,South Pasadena,CA,1
 South Riding,South Riding,VA,1
 Southaven,Southaven,MS,2
-Southeast San Diego,Southeast San Diego,CA,1
+Southeast San Diego,San Diego,CA,1
 Southern Pines,Southern Pines,NC,1
 Southfield,Southfield,MI,6
 Southlake,Southlake,TX,13
@@ -2476,14 +2476,14 @@ Urbandale,Urbandale,IA,5
 Vacaville,Vacaville,CA,3
 Vacherie,Vacherie,LA,1
 Valdosta,Valdosta,GA,9
-Valencia,Valencia,CA,1
+Valencia,Santa Clarita,CA,1
 Vallejo,Vallejo,CA,1
 Valley Center,Valley Center,CA,1
 Valley Stream,Valley Stream,NY,1
 Valparaiso,Valparaiso,IN,1
 Valrico,Valrico,FL,1
 Van Meter,Van Meter,IA,2
-Van Nuys,Van Nuys,CA,3
+Van Nuys,Los Angeles,CA,3
 Vancouver,Vancouver,WA,3
 Varnville,Varnville,SC,1
 Venice,Venice,FL,3
@@ -2602,7 +2602,7 @@ Westbury,Westbury,NY,1
 Westerville,Westerville,OH,1
 Westfield,Westfield,IN,4
 Westfield,Westfield,NJ,2
-Westlake,Westlake,CA,1
+Westlake,Westlake Village,CA,1
 Westlake,Westlake,OH,1
 Westlake Village,Westlake Village,CA,7
 Weston,Weston,FL,4
@@ -2653,7 +2653,7 @@ Woodburn,Woodburn,OR,1
 Woodbury,Woodbury,MN,2
 Woodbury,Woodbury,NJ,1
 Woodinville,Woodinville,WA,4
-Woodland Hills,Woodland Hills,CA,1
+Woodland Hills,Los Angeles,CA,1
 Woodmere,Woodmere,LA,1
 Woodruff,Woodruff,SC,2
 Woods Cross,Woods Cross,UT,2
