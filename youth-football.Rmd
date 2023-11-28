@@ -502,6 +502,61 @@ hometowns_ca_complete %>%
 
 ```{r}
 
+# COLORADO HOMETOWNS
+
+# Step 1: Filter for the state's players
+football_rosters_co <- football_rosters_usa %>%
+  filter(hometown_state_clean == "CO")
+
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_co <- football_rosters_co %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total_players = n())
+
+# Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_co_2021 <- get_acs(geography = "place",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = "CO",
+                           output = "wide")
+
+# Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_co_2021 <- census_data_co_2021 %>%
+  clean_names() %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
+census_data_co_2021 <- census_data_co_2021 %>%
+  mutate(state = case_when(
+    state == 'Colorado' ~ "CO"))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_co_complete <- distinct_hometowns_co %>%
+  left_join(census_data_co_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
+hometowns_co_complete %>%
+  filter(is.na(geoid))
+
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
+# None for Colorado
+
+# Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_co_complete, file = "hometowns_co.csv")
+
+```
+
+```{r}
+
 # FLORIDA HOMETOWNS
 
 # Step 1: Filter for the state's players
@@ -1505,14 +1560,18 @@ hometowns_mi_complete %>%
 
 
 ```{r}
+
 # MINNESOTA HOMETOWNS
+
 # Step 1: Filter for the state's players
 football_rosters_mn <- football_rosters_usa %>%
   filter(hometown_state_clean == "MN")
+
 # Step 2: Get a list of all the unique hometowns in the state
 distinct_hometowns_mn <- football_rosters_mn %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
   summarise(total_players = n())
+
 # Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
 census_data_mn_2021 <- get_acs(geography = "place",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
@@ -1528,15 +1587,18 @@ census_data_mn_2021 <- census_data_mn_2021 %>%
   select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
   rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1))
+
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
 census_data_mn_2021 <- census_data_mn_2021 %>%
   mutate(state = case_when(
     state == 'Minnesota' ~ "MN"))
+
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_mn_complete <- distinct_hometowns_mn %>%
   left_join(census_data_mn_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
+
 # Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
 hometowns_mn_complete %>%
   filter(is.na(geoid))
@@ -1544,19 +1606,11 @@ hometowns_mn_complete %>%
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 ## Not needed for Minneosta
 
-
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_mn_2021 <- bind_rows(census_data_mn_2021, census_data_zips_mn_2021)
-hometowns_mn_complete <- distinct_hometowns_mn %>%
-  left_join(census_data_mn_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
-  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
-  arrange(desc(players_per_thousand)) 
-
-hometowns_mn_complete %>%
-  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
 
 # Step 10: If needed, uncomment out to create a CSV
 #write_csv(hometowns_mn_complete, file = "hometowns_mn.csv")
+
 ```
 
 
@@ -2025,6 +2079,7 @@ hometowns_nc_complete %>%
 #write_csv(hometowns_nc_complete, file = "hometowns_nc.csv")
 
 ```
+
 ```{r}
 
 # OHIO HOMETOWNS (not the best one to use as a template)
@@ -2254,6 +2309,110 @@ hometowns_or_complete %>%
 #write_csv(hometowns_or_complete, file = "hometowns_or.csv")
 
 ```
+```{r}
+
+# PENNSYLVANIA HOMETOWNS
+
+# Step 1: Filter for the state's players
+football_rosters_pa <- football_rosters_usa %>%
+  filter(hometown_state_clean == "PA")
+
+# Step 2: Get a list of all the unique hometowns in the state
+distinct_hometowns_pa <- football_rosters_pa %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total_players = n())
+
+# Step 3: Grab the relevant census data for that state. Note: B01003 = total population, B02001 = total Black population, B19013 = median household income. We get these codes using the ACS crosswalk we loaded earlier (ACS_2001) and this website: https://censusreporter.org/topics/table-codes/
+census_data_pa_2021 <- get_acs(geography = "place",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = "PA",
+                           output = "wide")
+
+# It turns out that many towns in Pennsylvania are county subdivisions, so we will grab some of those we need, too
+census_data_pa_subdivisions_2021 <- get_acs(geography = "county subdivision",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           state = "PA",
+                           output = "wide") %>%
+  filter(NAME == "Abington township, Montgomery County, Pennsylvania" | NAME == "Cranberry township, Butler County, Pennsylvania" | NAME == "Hanover township, Luzerne County, Pennsylvania" | NAME == "Murrysville municipality, Westmoreland County, Pennsylvania" | NAME == "Newton township, Lackawanna County, Pennsylvania" | NAME == "Lower Gwynedd township, Montgomery County, Pennsylvania" | NAME == "Northampton township, Bucks County, Pennsylvania" | NAME == "New Garden township, Chester County, Pennsylvania" | NAME == "North Whitehall township, Lehigh County, Pennsylvania" | NAME == "Pine township, Allegheny County, Pennsylvania" | NAME == "Thornbury township, Delaware County, Pennsylvania")
+
+# Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
+census_data_pa_2021 <- census_data_pa_2021 %>%
+  clean_names() %>%
+  separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village|borough)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+census_data_pa_subdivisions_2021 <- census_data_pa_subdivisions_2021 %>%
+  clean_names() %>%
+  separate(name, into = c("city", "county", "state"), sep = ", ", remove = FALSE) %>%
+  mutate(city = gsub("\\b(town|city|CDP|village|municipality|township)\\b", "", city)) %>%
+  mutate(city = str_squish(city)) %>%
+  select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1))
+
+census_data_pa_2021 <- bind_rows(census_data_pa_2021, census_data_pa_subdivisions_2021)
+
+# Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
+census_data_pa_2021 <- census_data_pa_2021 %>%
+  mutate(state = case_when(
+    state == 'Pennsylvania' ~ "PA")) %>%
+  mutate(city = case_when(
+    city == 'Cranberry' ~ "Cranberry Township",
+    geoid == '4207932416' ~ "Hanover Township",
+    city == 'Lower Gwynedd' ~ "Lower Gwynedd Township",
+    geoid == '4201754688' ~ "Northampton Township",
+    city == 'New Garden' ~ "New Garden Township",
+    city == 'North Whitehall' ~ "North Whitehall Township",
+    city == 'Pine' ~ "Pine Township",
+    city == 'Thornbury' ~ "Thornbury Township",
+    TRUE ~ city))
+
+# Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
+hometowns_pa_complete <- distinct_hometowns_pa %>%
+  left_join(census_data_pa_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+# Step 7: Notice there are a few NA values. This happens when the census data does not join with the hometowns data, perhaps because the hometown is misspelled or because there is no census data for that town. First, let's find the NA values.
+hometowns_pa_complete %>%
+  filter(is.na(geoid))
+
+# Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
+
+# For Gladwyne, PA (19035), the zip codes seems to be a good substitute: https://censusreporter.org/profiles/86000US19035-19035/
+census_data_zips_pa_2021 <- get_acs(geography = "zcta",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2021,
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "ZCTA5 19035") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "PA") %>%
+  mutate(city = case_when(
+    city == "ZCTA5 19035" ~ "Gladwyne")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
+# Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+
+census_data_pa_2021 <- bind_rows(census_data_pa_2021, census_data_zips_pa_2021)
+ 
+hometowns_pa_complete <- distinct_hometowns_pa %>%
+  left_join(census_data_pa_2021, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+# Step 10: If needed, uncomment out to create a CSV
+#write_csv(hometowns_pa_complete, file = "hometowns_pa.csv")
+
+```
+
 
 ```{r}
 
@@ -2948,7 +3107,7 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 ```{r}
 
 # ALL HOMETOWNS
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_ar_complete, hometowns_az_complete, hometowns_ca_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_il_complete, hometowns_in_complete, hometowns_ks_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_ok_complete, hometowns_or_complete, hometowns_sc_complete, hometowns_tn_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_wa_complete, hometowns_wi_complete, hometowns_small_states_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_ar_complete, hometowns_az_complete, hometowns_ca_complete, hometowns_co_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_il_complete, hometowns_in_complete, hometowns_ks_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_mn_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_ok_complete, hometowns_or_complete, hometowns_pa_complete, hometowns_sc_complete, hometowns_tn_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_wa_complete, hometowns_wi_complete, hometowns_small_states_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
