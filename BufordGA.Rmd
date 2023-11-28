@@ -1,0 +1,10 @@
+```{r}
+library(tidyverse)
+```
+```{r}
+Buford<-football_rosters_ga %>% 
+  select(school, name, position, class, hometown, high_school) %>% 
+  filter(hometown == "Buford, GA")
+  
+```
+
