@@ -110,7 +110,7 @@ Aurora,Aurora,OH,1
 Austell,Austell,GA,2
 Austin,Austin,TX,56
 Austintown,Austintown,OH,3
-Averne,Averne,NY,1
+Averne,New York,NY,1
 Avon,Avon,OH,2
 Avondale,Avondale,AZ,1
 Aylett,Aylett,VA,1
@@ -121,7 +121,7 @@ Bakersfield,Bakersfield,CA,7
 Baldwin Hills,Los Angeles,CA,1
 Baldwin Park,Baldwin Park,CA,2
 Baldwin Village,Los Angeles,CA,1
-Ballston Lake,Ballston Lake,NY,1
+Ballston Lake,Ballston,NY,1
 Baltimore,Baltimore,MD,36
 Bamberg,Bamberg,SC,1
 Bannockburn,Bannockburn,IL,2
@@ -211,7 +211,7 @@ Bluefield,Bluefield,WV,1
 Bluff City,Bluff City,TN,1
 Blythewood,Blythewood,SC,4
 Boca Raton,Boca Raton,FL,4
-Boemia,Boemia,NY,1
+Boemia,Islip,NY,1
 Bogart,Bogart,GA,4
 Bogata,Bogata,TX,1
 Boiling Springs,Boiling Springs,NC,1
@@ -257,11 +257,11 @@ Broadview,Broadview,IL,1
 Brock,Brock,TX,4
 Brockton,Brockton,MA,3
 Broken Arrow,Broken Arrow,OK,6
-Bronx,Bronx,NY,9
+Bronx,New York,NY,9
 Bronxville,Bronxville,NY,1
 Brookfield,Brookfield,WI,2
 Brookhaven,Brookhaven,MS,2
-Brooklyn,Brooklyn,NY,8
+Brooklyn,New York,NY,8
 Brooklyn Park,Brooklyn Park,MN,1
 Brooksville,Brooksville,FL,2
 Broomfield,Broomfield,CO,2
@@ -509,7 +509,7 @@ Cordele,Cordele,GA,4
 Corinth,Corinth,TX,1
 Cornelius,Cornelius,NC,4
 Corona,Corona,CA,9
-Corona,Corona,NY,1
+Corona,New York,NY,1
 Coronado,Coronado,CA,2
 Corpus Christi,Corpus Christi,TX,4
 Corryton,Corryton,TN,1
@@ -774,7 +774,7 @@ Fairview,Fairview,TN,1
 Fall River,Fall River,MA,1
 Fallbrook,Fallbrook,CA,2
 Falls Church,Falls Church,VA,1
-Far Rockaway,Far Rockaway,NY,1
+Far Rockaway,New York,NY,1
 Fargo,Fargo,ND,1
 Farmers Branch,Farmers Branch,TX,1
 Farmerville,Farmerville,LA,1
@@ -1018,7 +1018,7 @@ Harbor City,Los Angeles,CA,1
 Hardin,Hardin,TX,1
 Harker Heights,Harker Heights,TX,3
 Harlan,Harlan,IA,1
-Harlem,Harlem,NY,7
+Harlem,New York,NY,7
 Harrah,Harrah,OK,1
 Harrisburg,Harrisburg,NC,1
 Harrisburg,Harrisburg,PA,7
@@ -1174,7 +1174,7 @@ Jackson,Jackson,OH,1
 Jackson,Jackson,TN,2
 Jacksonville,Jacksonville,FL,50
 Jacksonville,Jacksonville,NC,2
-Jamaica,Jamaica,NY,1
+Jamaica,New York,NY,1
 Jamesburg,Jamesburg,NJ,1
 Jamestown,Jamestown,IN,1
 Jamesville,Jamesville,NY,1
@@ -1462,7 +1462,7 @@ Manchester,Manchester,CT,1
 Manchester,Manchester,NH,1
 Mandeville,Mandeville,LA,5
 Manhattan,Manhattan,KS,5
-Manhattan,Manhattan,NY,1
+Manhattan,New York,NY,1
 Manhattan Beach,Manhattan Beach,CA,4
 Manor,Manor,TX,4
 Manorville,Manorville,NY,1
@@ -1555,7 +1555,7 @@ Miami,Miami,FL,80
 Miami Gardens,Miami Gardens,FL,5
 Miamisburg,Miamisburg,OH,1
 Michigan City,Michigan City,IN,1
-Middle Village,Middle Village,NY,1
+Middle Village,New York,NY,1
 Middlesex,Middlesex,NC,2
 Middlesex,Middlesex,NJ,1
 Middleton,Middleton,WI,2
@@ -1713,7 +1713,7 @@ New Rochelle,New Rochelle,NY,1
 New Waverly,New Waverly,TX,1
 New Windsor,New Windsor,NY,1
 New York,New York,NY,4
-New York City,New York City,NY,1
+New York City,New York,NY,1
 Newark,Newark,DE,1
 Newark,Newark,NJ,9
 Newark,Newark,OH,1
@@ -2005,12 +2005,12 @@ Pueblo,Pueblo,CO,1
 Pukalani,Pukalani,HI,1
 Punta Gorda,Punta Gorda,FL,1
 Purcellville,Purcellville,VA,1
-Purchase,Purchase,NY,1
+Purchase,Harrison,NY,1
 Puyallup,Puyallup,WA,4
 Quakertown,Quakertown,PA,1
 Queen City,Queen City,TX,1
 Queen Creek,Queen Creek,AZ,5
-Queens,Queens,NY,1
+Queens,New York,NY,1
 Quincy,Quincy,FL,2
 RIchmond,Richmond,VA,1
 Rabun County,Rabun Gap,GA,1
@@ -2330,7 +2330,7 @@ Stanwood,Stanwood,WA,1
 Starke,Starke,FL,4
 Starkville,Starkville,MS,3
 State College,State College,PA,3
-Staten Island,Staten Island,NY,5
+Staten Island,New York,NY,5
 Statesboro,Statesboro,GA,4
 Statesville,Statesville,NC,1
 Stayton,Stayton,OR,1

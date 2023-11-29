@@ -227,7 +227,10 @@ football_rosters_usa <- football_rosters_usa %>%
   mutate(hometown_city_clean = case_when(
     name == 'DJ Uiagalelei' ~ "Riverside",
     name == 'AJ Duffy' ~ "Moreno Valley",
-    TRUE ~ hometown_city_clean)) #These lines of code are for two players from Inland Empire, California, a large region of California that includes dozens of incorporated cities
+    name == 'Izayah  Reeves' ~ "Hempstead",
+    name == 'Jawhar Jordan' ~ "Farmingdale",
+    name == 'Anthony Gangi' ~ "Oyster Bay",
+    TRUE ~ hometown_city_clean)) #These lines of code are for two players from Inland Empire, California, a large region of California that includes dozens of incorporated cities, and three players from Long Island, New York.
 
 distinct_hometowns <- football_rosters_usa %>%
   group_by(hometown_city_clean, hometown_state_clean) %>%
@@ -1796,6 +1799,7 @@ hometowns_ne_complete %>%
 #write_csv(hometowns_ne_complete, file = "hometowns_ne.csv")
 
 ```
+
 ```{r}
 
 # NEW JERSEY HOMETOWNS - not a good one to use as a template
@@ -1898,12 +1902,13 @@ census_data_ny_2021 <- get_acs(geography = "place",
                            year = 2021,
                            state = "NY",
                            output = "wide")
+
 census_data_ny_subdivisions_2021 <- get_acs(geography = "county subdivision",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
                            state = "NY",
                            output = "wide") %>%
-  filter(NAME == "Somers town, Westchester County, New York")
+  filter(NAME == "Ballston town, Saratoga County, New York" | NAME == "Somers town, Westchester County, New York")
 
 # Step 4: General cleaning of census data to prepare for join with hometowns/roster data. This part is the same for every state and (except for the dataframe name) can more or less be copied and pasted.
 census_data_ny_2021 <- census_data_ny_2021 %>%
@@ -1943,25 +1948,19 @@ hometowns_ny_complete %>%
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
 
- # For Ballston Lake (12019)
-
-#https://censusreporter.org/profiles/86000US12019-12019/
+# For Jamesville, the zip code (13078) appears to be a good substitute https://censusreporter.org/profiles/86000US13078-13078/
 census_data_zips_ny_2021 <- get_acs(geography = "zcta",
                            variables = c("B01003_001", "B02001_003", "B19013_001"),
                            year = 2021,
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "ZCTA5 12019" | name == "ZCTA5 13078" | name == "ZCTA5 10577") %>% 
+  filter(name == "ZCTA5 13078") %>% 
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "NY") %>%
   mutate(city = case_when(
-    city == "ZCTA5 12019" ~ "Ballston Lake",
-    city == "ZCTA5 13078" ~ "Jamesville",
-    city == "ZCTA5 10577" ~ "Purchase"))%>%
+    city == "ZCTA5 13078" ~ "Jamesville"))%>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
-
-
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
 
@@ -1975,10 +1974,9 @@ hometowns_ny_complete <- distinct_hometowns_ny %>%
 hometowns_ny_complete %>% 
   filter(is.na(geoid))
 
-# N/A for Hawaii
-
 # Step 10: If needed, uncomment out to create a CSV
-#write_csv(hometowns_hi_complete, file = "hometowns_hi.csv")
+#write_csv(hometowns_ny_complete, file = "hometowns_ny.csv")
+
 ```
 
 
@@ -3086,7 +3084,7 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 ```{r}
 
 # ALL HOMETOWNS
-hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_ar_complete, hometowns_az_complete, hometowns_ca_complete, hometowns_co_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_il_complete, hometowns_in_complete, hometowns_ks_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_ma_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_mn_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_oh_complete, hometowns_ok_complete, hometowns_or_complete, hometowns_pa_complete, hometowns_sc_complete, hometowns_tn_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_wa_complete, hometowns_wi_complete, hometowns_small_states_complete) %>%
+hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_ar_complete, hometowns_az_complete, hometowns_ca_complete, hometowns_co_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_il_complete, hometowns_in_complete, hometowns_ks_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_ma_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_mn_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_ny_complete, hometowns_oh_complete, hometowns_ok_complete, hometowns_or_complete, hometowns_pa_complete, hometowns_sc_complete, hometowns_tn_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_wa_complete, hometowns_wi_complete, hometowns_small_states_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
   select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
