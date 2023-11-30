@@ -3097,13 +3097,13 @@ hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_ar_complete, ho
 
 # OTHER - use for messing around
 
-distribution <- hometowns_complete %>%
-  group_by(total_players) %>%
-  summarise(total = n())
+#distribution <- hometowns_complete %>%
+  #group_by(total_players) %>%
+  #summarise(total = n())
 
-five_plus <- hometowns_complete %>%
-  filter(total_players >= 5) %>%
-  arrange(desc(players_per_thousand))
+#five_plus <- hometowns_complete %>%
+  #filter(total_players >= 5) %>%
+  #arrange(desc(players_per_thousand))
 
 #write_csv(five_plus, file = "five_plus_players.csv")
 
