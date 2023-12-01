@@ -480,7 +480,8 @@ census_data_ca_2021 <- census_data_ca_2021 %>%
   mutate(city = case_when(
     city == 'San Buenaventura (Ventura)'~ "Ventura",
     city == 'Spring Valley (San Diego County)' ~ "Spring Valley",
-    TRUE ~ city))
+    TRUE ~ city)) %>%
+  filter(geoid != "0649651") #removing a Mountain View, California that is a CDP in Contra Costa County and keeping a Mountain View, California in Santa Clara County
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_ca_complete <- distinct_hometowns_ca %>%
@@ -1334,7 +1335,8 @@ census_data_md_2021 <- census_data_md_2021 %>%
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
 census_data_md_2021 <- census_data_md_2021 %>%
   mutate(state = case_when(
-    state == 'Maryland' ~ "MD"))
+    state == 'Maryland' ~ "MD")) %>%
+  filter(geoid != "2405525" & geoid != "2416620") #narrowing down to one option for Bel Air and Chevy Chase
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_md_complete <- distinct_hometowns_md %>%
@@ -1437,7 +1439,8 @@ census_data_ma_2021 <- census_data_ma_2021 %>%
   mutate(city = case_when(
     city == 'Franklin Town' ~ "Franklin",
     city == 'Watertown Town' ~ "Watertown",
-    TRUE ~ city))
+    TRUE ~ city)) %>%
+  filter(geoid != "2575050") #removed a Westborough CDP
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_ma_complete <- distinct_hometowns_ma %>%
@@ -2013,7 +2016,8 @@ census_data_nc_2021 <- census_data_nc_2021 %>%
 # Step 5: State-specific cleaning of census data to prepare for join with hometowns/roster data. This part is different for every state. The first mutate function should be included for every state, just modified depending on the state name. Additional mutate functions may be needed for instances when the census names something in a weird way that doesn't line up with the hometowns.
 census_data_nc_2021 <- census_data_nc_2021 %>%
   mutate(state = case_when(
-    state == 'North Carolina' ~ "NC"))
+    state == 'North Carolina' ~ "NC")) %>%
+  filter(geoid != "3722500") #removed a Fairview, NC that is a town in Union County and keeping a Fairview, NC that is near Ashville
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_nc_complete <- distinct_hometowns_nc %>%
@@ -3087,7 +3091,20 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_ar_complete, hometowns_az_complete, hometowns_ca_complete, hometowns_co_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_il_complete, hometowns_in_complete, hometowns_ks_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_ma_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_mn_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_ny_complete, hometowns_oh_complete, hometowns_ok_complete, hometowns_or_complete, hometowns_pa_complete, hometowns_sc_complete, hometowns_tn_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_wa_complete, hometowns_wi_complete, hometowns_small_states_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
   arrange(desc(players_per_thousand)) %>%
-  select(hometown_city_clean:hometown_state_clean, hometown_combined, total_players:players_per_thousand)
+  select(geoid, hometown_city_clean, hometown_state_clean, hometown_combined, total_players, total_pop, black_pop, pct_black, median_income, players_per_thousand)
+
+#Checking our work
+
+#Making sure each hometown is represented once
+distinct_hometowns_complete <- hometowns_complete %>%
+  group_by(hometown_city_clean, hometown_state_clean) %>%
+  summarise(total=n()) %>%
+  arrange(desc(total))
+
+#Making sure each state is represented
+distinct_states_vector <- unique(hometowns_complete$hometown_state_clean)
+distinct_states_complete <- data.frame(hometown_state_clean = distinct_states_vector) %>%
+  arrange(hometown_state_clean)
 
 #write_csv(hometowns_complete, file = "hometowns_complete.csv")
 
