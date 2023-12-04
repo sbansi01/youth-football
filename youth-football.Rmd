@@ -3131,3 +3131,11 @@ five_plus <- hometowns_complete %>%
 #write_csv(five_plus, file = "five_plus_players.csv")
 
 ```
+
+
+
+
+```{r}
+Gwinnett_County_GA <- distinct_hometowns_ga %>% 
+  filter(hometown_city_clean == "Buford" | hometown_city_clean == "Sugar Hill" |  hometown_city_clean == "Lawrenceville" |  hometown_city_clean == "Duluth" |  hometown_city_clean == "Lilburn" |  hometown_city_clean == "Grayson" |  hometown_city_clean == "Norcross" | hometown_city_clean == "Dacula"|  hometown_city_clean == "Suwanee" | hometown_city_clean == "Sugar Hill")
+```
