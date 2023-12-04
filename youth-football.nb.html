@@ -1770,13 +1770,50 @@ pre code {
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xpYnJhcmllcyBcbmxpYnJhcnkodGlkeXZlcnNlKVxubGlicmFyeShnb29nbGVzaGVldHM0KVxubGlicmFyeShqYW5pdG9yKVxubGlicmFyeSh0aWR5Y2Vuc3VzKVxuI2luc3RhbGwucGFja2FnZXMoXCJnb29nbGVzaGVldHM0XCIpXG5cbiNBdXRoZW50aWNhdGluZyB3aXRoIEdvb2dsZSBhY2NvdW50XG4jZ3M0X2F1dGgoKVxuXG4jIExvYWQgQ2Vuc3VzIEFQSSBrZXlcblN5cy5zZXRlbnYoQ0VOU1VTX0FQSV9LRVkgPSBcIjVjYjJiOWM2MjhhMWQxMzI5YzViZjRkMzZmZTQ0MzVjNjUwMWVmYzhcIiwgb3ZlcndyaXRlID0gVFJVRSlcblxuIyBMb2FkIEFDUyBjcm9zc3dhbGtcbmFjc18yMDIxIDwtIGxvYWRfdmFyaWFibGVzKDIwMjEsIFwiYWNzNVwiKVxuXG4jIExvYWQgMjAyMCBDZW5zdXMgY3Jvc3N3YWxrXG5jZW5zdXNfMjAyMCA8LSBsb2FkX3ZhcmlhYmxlcygyMDIwLCBcInBsXCIsIGNhY2hlID0gVFJVRSlcblxuIyBIZWxwZnVsIHJlZmVyZW5jZXMgZm9yIHVzaW5nIEFDUyBhbmQgQ2Vuc3VzIEFQSXM6ICNodHRwczovL2NlbnN1c3JlcG9ydGVyLm9yZy90b3BpY3MvdGFibGUtY29kZXMvXG4jaHR0cHM6Ly93YWxrZXItZGF0YS5jb20vdGlkeWNlbnN1cy9hcnRpY2xlcy9iYXNpYy11c2FnZS5odG1sXG5cbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2xpYnJhcmllcyBcbmxpYnJhcnkodGlkeXZlcnNlKVxuYGBgIn0= -->
 <pre class="r"><code>#libraries 
-library(tidyverse)
-library(googlesheets4)
-library(janitor)
-library(tidycensus)
-#install.packages(&quot;googlesheets4&quot;)
+library(tidyverse)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiUmVnaXN0ZXJlZCBTMyBtZXRob2RzIG92ZXJ3cml0dGVuIGJ5ICdkYnBseXInOlxuICBtZXRob2QgICAgICAgICBmcm9tXG4gIHByaW50LnRibF9sYXp5ICAgICBcbiAgcHJpbnQudGJsX3NxbCAgICAgIFxu4pSA4pSAIEF0dGFjaGluZyBwYWNrYWdlcyDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIAgdGlkeXZlcnNlIDEuMy4yIOKUgOKUgOKclCBnZ3Bsb3QyIDMuMy42ICAgICDinJQgcHVycnIgICAxLjAuMlxu4pyUIHRpYmJsZSAgMy4yLjEgICAgIOKclCBkcGx5ciAgIDEuMS4zXG7inJQgdGlkeXIgICAxLjIuMSAgICAg4pyUIHN0cmluZ3IgMS40LjFcbuKclCByZWFkciAgIDIuMS40ICAgICDinJQgZm9yY2F0cyAwLjUuMuKUgOKUgCBDb25mbGljdHMg4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAIHRpZHl2ZXJzZV9jb25mbGljdHMoKSDilIDilIBcbuKcliBkcGx5cjo6ZmlsdGVyKCkgbWFza3Mgc3RhdHM6OmZpbHRlcigpXG7inJYgZHBseXI6OmxhZygpICAgIG1hc2tzIHN0YXRzOjpsYWcoKVxuIn0= -->
+<pre><code>Registered S3 methods overwritten by &#39;dbplyr&#39;:
+  method         from
+  print.tbl_lazy     
+  print.tbl_sql      
+── Attaching packages ──────────────────────────────────────────────────── tidyverse 1.3.2 ──✔ ggplot2 3.3.6     ✔ purrr   1.0.2
+✔ tibble  3.2.1     ✔ dplyr   1.1.3
+✔ tidyr   1.2.1     ✔ stringr 1.4.1
+✔ readr   2.1.4     ✔ forcats 0.5.2── Conflicts ─────────────────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnb29nbGVzaGVldHM0KVxubGlicmFyeShqYW5pdG9yKVxuYGBgIn0= -->
+<pre class="r"><code>library(googlesheets4)
+library(janitor)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYamFuaXRvcuKAmVxuXG5UaGUgZm9sbG93aW5nIG9iamVjdHMgYXJlIG1hc2tlZCBmcm9tIOKAmHBhY2thZ2U6c3RhdHPigJk6XG5cbiAgICBjaGlzcS50ZXN0LCBmaXNoZXIudGVzdFxuIn0= -->
+<pre><code>
+Attaching package: ‘janitor’
+
+The following objects are masked from ‘package:stats’:
+
+    chisq.test, fisher.test</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5Y2Vuc3VzKVxuYGBgIn0= -->
+<pre class="r"><code>library(tidycensus)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiVGhlIGxlZ2FjeSBwYWNrYWdlcyBtYXB0b29scywgcmdkYWwsIGFuZCByZ2VvcywgdW5kZXJwaW5uaW5nIHRoZSBzcCBwYWNrYWdlLFxud2hpY2ggd2FzIGp1c3QgbG9hZGVkLCB3aWxsIHJldGlyZSBpbiBPY3RvYmVyIDIwMjMuXG5QbGVhc2UgcmVmZXIgdG8gUi1zcGF0aWFsIGV2b2x1dGlvbiByZXBvcnRzIGZvciBkZXRhaWxzLCBlc3BlY2lhbGx5XG5odHRwczovL3Itc3BhdGlhbC5vcmcvci8yMDIzLzA1LzE1L2V2b2x1dGlvbjQuaHRtbC5cbkl0IG1heSBiZSBkZXNpcmFibGUgdG8gbWFrZSB0aGUgc2YgcGFja2FnZSBhdmFpbGFibGU7XG5wYWNrYWdlIG1haW50YWluZXJzIHNob3VsZCBjb25zaWRlciBhZGRpbmcgc2YgdG8gU3VnZ2VzdHM6LlxuVGhlIHNwIHBhY2thZ2UgaXMgbm93IHJ1bm5pbmcgdW5kZXIgZXZvbHV0aW9uIHN0YXR1cyAyXG4gICAgIChzdGF0dXMgMiB1c2VzIHRoZSBzZiBwYWNrYWdlIGluIHBsYWNlIG9mIHJnZGFsKVxuV2FybmluZzogbXVsdGlwbGUgbWV0aG9kcyB0YWJsZXMgZm91bmQgZm9yIOKAmGVsaWRl4oCZV2FybmluZzogcmVwbGFjaW5nIHByZXZpb3VzIGltcG9ydCDigJhtYXB0b29sczo6ZWxpZGXigJkgYnkg4oCYc3A6OmVsaWRl4oCZIHdoZW4gbG9hZGluZyDigJh0aWdyaXPigJlcbiJ9 -->
+<pre><code>The legacy packages maptools, rgdal, and rgeos, underpinning the sp package,
+which was just loaded, will retire in October 2023.
+Please refer to R-spatial evolution reports for details, especially
+https://r-spatial.org/r/2023/05/15/evolution4.html.
+It may be desirable to make the sf package available;
+package maintainers should consider adding sf to Suggests:.
+The sp package is now running under evolution status 2
+     (status 2 uses the sf package in place of rgdal)
+Warning: multiple methods tables found for ‘elide’Warning: replacing previous import ‘maptools::elide’ by ‘sp::elide’ when loading ‘tigris’</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2luc3RhbGwucGFja2FnZXMoXCJnb29nbGVzaGVldHM0XCIpXG5cbiNBdXRoZW50aWNhdGluZyB3aXRoIEdvb2dsZSBhY2NvdW50XG4jZ3M0X2F1dGgoKVxuXG4jIExvYWQgQ2Vuc3VzIEFQSSBrZXlcblN5cy5zZXRlbnYoQ0VOU1VTX0FQSV9LRVkgPSBcIjVjYjJiOWM2MjhhMWQxMzI5YzViZjRkMzZmZTQ0MzVjNjUwMWVmYzhcIiwgb3ZlcndyaXRlID0gVFJVRSlcblxuIyBMb2FkIEFDUyBjcm9zc3dhbGtcbmFjc18yMDIxIDwtIGxvYWRfdmFyaWFibGVzKDIwMjEsIFwiYWNzNVwiKVxuXG4jIExvYWQgMjAyMCBDZW5zdXMgY3Jvc3N3YWxrXG5jZW5zdXNfMjAyMCA8LSBsb2FkX3ZhcmlhYmxlcygyMDIwLCBcInBsXCIsIGNhY2hlID0gVFJVRSlcblxuIyBIZWxwZnVsIHJlZmVyZW5jZXMgZm9yIHVzaW5nIEFDUyBhbmQgQ2Vuc3VzIEFQSXM6ICNodHRwczovL2NlbnN1c3JlcG9ydGVyLm9yZy90b3BpY3MvdGFibGUtY29kZXMvXG4jaHR0cHM6Ly93YWxrZXItZGF0YS5jb20vdGlkeWNlbnN1cy9hcnRpY2xlcy9iYXNpYy11c2FnZS5odG1sXG5cbmBgYCJ9 -->
+<pre class="r"><code>#install.packages(&quot;googlesheets4&quot;)
 
 #Authenticating with Google account
 #gs4_auth()
@@ -1829,11 +1866,10 @@ football_rosters &lt;- read_csv(&quot;football_roster.csv&quot;) %&gt;%
     name == &quot;Kyle Vaccarella&quot; ~ &quot;Fairfield, CT&quot;,
     TRUE ~ hometown))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogT25lIG9yIG1vcmUgcGFyc2luZyBpc3N1ZXMsIGNhbGwgYHByb2JsZW1zKClgIG9uIHlvdXIgZGF0YSBmcmFtZSBmb3JcbmRldGFpbHMsIGUuZy46XG4gIGRhdCA8LSB2cm9vbSguLi4pXG4gIHByb2JsZW1zKGRhdClSb3dzOiA4MTk1IENvbHVtbnM6IDbilIDilIAgQ29sdW1uIHNwZWNpZmljYXRpb24g4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAXG5EZWxpbWl0ZXI6IFwiLFwiXG5jaHIgKDYpOiBTY2hvb2wsIE5hbWUsIFBvc2l0aW9uLCBDbGFzcywgSG9tZXRvd24sIEhpZ2ggU2Nob29sXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
-<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for
-details, e.g.:
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogT25lIG9yIG1vcmUgcGFyc2luZyBpc3N1ZXMsIGNhbGwgYHByb2JsZW1zKClgIG9uIHlvdXIgZGF0YSBmcmFtZSBmb3IgZGV0YWlscywgZS5nLjpcbiAgZGF0IDwtIHZyb29tKC4uLilcbiAgcHJvYmxlbXMoZGF0KVJvd3M6IDgxOTUgQ29sdW1uczogNuKUgOKUgCBDb2x1bW4gc3BlY2lmaWNhdGlvbiDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbkRlbGltaXRlcjogXCIsXCJcbmNociAoNik6IFNjaG9vbCwgTmFtZSwgUG9zaXRpb24sIENsYXNzLCBIb21ldG93biwgSGlnaCBTY2hvb2xcbuKEuSBVc2UgYHNwZWMoKWAgdG8gcmV0cmlldmUgdGhlIGZ1bGwgY29sdW1uIHNwZWNpZmljYXRpb24gZm9yIHRoaXMgZGF0YS5cbuKEuSBTcGVjaWZ5IHRoZSBjb2x1bW4gdHlwZXMgb3Igc2V0IGBzaG93X2NvbF90eXBlcyA9IEZBTFNFYCB0byBxdWlldCB0aGlzIG1lc3NhZ2UuXG4ifQ== -->
+<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details, e.g.:
   dat &lt;- vroom(...)
-  problems(dat)Rows: 8195 Columns: 6── Column specification ─────────────────────────────────────────────────
+  problems(dat)Rows: 8195 Columns: 6── Column specification ─────────────────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
 chr (6): School, Name, Position, Class, Hometown, High School
 ℹ Use `spec()` to retrieve the full column specification for this data.
@@ -1845,8 +1881,8 @@ state_crosswalk &lt;- read_csv(&quot;state_crosswalk.csv&quot;) %&gt;%
   mutate(state_name_caps = str_to_upper(state_name)) %&gt;%
   select(state_abb, state_name_caps)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNTEgQ29sdW1uczogMuKUgOKUgCBDb2x1bW4gc3BlY2lmaWNhdGlvbiDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbkRlbGltaXRlcjogXCIsXCJcbmNociAoMik6IHN0YXRlX2FiYiwgc3RhdGVfbmFtZVxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
-<pre><code>Rows: 51 Columns: 2── Column specification ─────────────────────────────────────────────────
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogNTEgQ29sdW1uczogMuKUgOKUgCBDb2x1bW4gc3BlY2lmaWNhdGlvbiDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIDilIBcbkRlbGltaXRlcjogXCIsXCJcbmNociAoMik6IHN0YXRlX2FiYiwgc3RhdGVfbmFtZVxu4oS5IFVzZSBgc3BlYygpYCB0byByZXRyaWV2ZSB0aGUgZnVsbCBjb2x1bW4gc3BlY2lmaWNhdGlvbiBmb3IgdGhpcyBkYXRhLlxu4oS5IFNwZWNpZnkgdGhlIGNvbHVtbiB0eXBlcyBvciBzZXQgYHNob3dfY29sX3R5cGVzID0gRkFMU0VgIHRvIHF1aWV0IHRoaXMgbWVzc2FnZS5cbiJ9 -->
+<pre><code>Rows: 51 Columns: 2── Column specification ─────────────────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
 chr (2): state_abb, state_name
 ℹ Use `spec()` to retrieve the full column specification for this data.
@@ -1856,8 +1892,8 @@ chr (2): state_abb, state_name
 <pre class="r"><code>#Let&#39;s load some hometowns that we passed through and cleaned with Open Refine
 hometowns_open_refine &lt;- read_csv(&quot;hometowns_open_refine.csv&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMjY4NiBDb2x1bW5zOiA04pSA4pSAIENvbHVtbiBzcGVjaWZpY2F0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuRGVsaW1pdGVyOiBcIixcIlxuY2hyICgzKTogaG9tZXRvd25fY2l0eSwgaG9tZXRvd25fY2l0eV9jbGVhbiwgaG9tZXRvd25fc3RhdGVfY2xlYW5cbmRibCAoMSk6IHRvdGFsXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
-<pre><code>Rows: 2686 Columns: 4── Column specification ─────────────────────────────────────────────────
+<!-- rnb-output-begin eyJkYXRhIjoiUm93czogMjY4NiBDb2x1bW5zOiA04pSA4pSAIENvbHVtbiBzcGVjaWZpY2F0aW9uIOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgOKUgFxuRGVsaW1pdGVyOiBcIixcIlxuY2hyICgzKTogaG9tZXRvd25fY2l0eSwgaG9tZXRvd25fY2l0eV9jbGVhbiwgaG9tZXRvd25fc3RhdGVfY2xlYW5cbmRibCAoMSk6IHRvdGFsXG7ihLkgVXNlIGBzcGVjKClgIHRvIHJldHJpZXZlIHRoZSBmdWxsIGNvbHVtbiBzcGVjaWZpY2F0aW9uIGZvciB0aGlzIGRhdGEuXG7ihLkgU3BlY2lmeSB0aGUgY29sdW1uIHR5cGVzIG9yIHNldCBgc2hvd19jb2xfdHlwZXMgPSBGQUxTRWAgdG8gcXVpZXQgdGhpcyBtZXNzYWdlLlxuIn0= -->
+<pre><code>Rows: 2686 Columns: 4── Column specification ─────────────────────────────────────────────────────────────────────
 Delimiter: &quot;,&quot;
 chr (3): hometown_city, hometown_city_clean, hometown_state_clean
 dbl (1): total
@@ -3760,7 +3796,7 @@ hometowns_ms_complete &lt;- distinct_hometowns_ms %&gt;%
 hometowns_ms_complete %&gt;%
   filter(is.na(geoid))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjIsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMiDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFsyXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3VlN6VzdDTUF4T0N4MXFKVkFsOWhyMHNPMndCNWk0YllmOVNOeWlrR1kwSWlSVkVzUTRiYyt5Sjl3VHdKd1NUOUQ3S3FXMlAzK0s3UzkrZmxqY0ZvdUNFRElnd3pRaGd3eGNrcjI5em1mM0JCQUlFaklrZWJBZlFKcUNFNElTVGhvVHhkeEtvV3ZYeURZaVYwL0NMYVh2OGRMSGx6T1BrSEdYQ3dWT3A0eHhmb1R2ekU0Qy92a1RHaHQ5by8xLy9HTDRqQ3ZtWEd3U3dhSm1ubFh2bG0xRWo1NWJzNnMwNEE3bi9JSWZqSFBvMzR1a3NoUDJCRTRic3hIZTdEVGwwdThwVjRMcG1McitTem5QdkxqSWpiM3hUTkZXc2Iyd0RndXNoSkUxdGhVWkJoOHFYeXJHMTJmQWVDTnF5VFNWbWtNaFpMWGMwNDZKWGNRYXRCV1crc1pzSGRNMTRQM3BScWIxMG1pWUx3MkxrL1gwUzJ3UEtMYzY2RkhQZUxQVjY5bk5YUkE1YmdlSlNpWnhTOURQVHpXSHgzaFhoanNvOUVwcUhDRlRiQ2xVRENid09wM3VWV3VsOXZpYWdMcXFVd2dSYmhRaTNYRGs4QXRHeGJoWk1BTUFBQT09In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjIsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMiDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFsyXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE3VlN6VzdDTUF4T0N4MXFKUmdTZXcxNm1UVHRBU1p1MjJFL0VyY29wQm1OQ0VtVkJERk8yN1BzQ2ZjRU1LZU5KK2g5bFZMYm56L0Y5aGMvUHl4dmkyVkJDQm1RWVpxUVFRWXV5ZDVlRi9ON0FnZ0VDUm1TUE5nUElNM0FDY0VVVGhvVHhjSktvU3RYeXlZaVYwL0NyYVR2OGRMSGx6T1BrSEdiQ3dXNk00MXhmb0x2ekU0Qy92a1RHaHQ5by8xLy9HTDRqQ3ZtWEd3U3dhSmlucFh2bG0xRmo1NWJzeTgxNEE3bi9JSWZqSFBzMzR1a2FTdHNCODVxc3hYZTdEWGwwaDhvVjRMcG1McjVTem5QdkxqSWpiM3hUTkZHc1lPd0RndXNoWkVWdGhVWkJoOHFYeW5HTjJmQWVDc3F5VFNWbWtNaFpEWGMwNWFKWGNRYXRCR1crdHJzSE5NVjRQM3BScWJ4MG1pWUx3MkxrL1gwUzJ3UHVON3BvRWMxNS9WT2IrWjNRZU80SENRS21jUWxRVC92U2c1UDhhb01WMURvdGRRNFFhYllTcWdZVE9CeFd0bkx4a3J0OFRFQmRXVXJFQ0xjS0VUYTJjanhGMjBOY29FdkF3QUEifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[{"1":"Friendship","2":"MS","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"},{"1":"Nesbit","2":"MS","3":"1","4":"NA","5":"NA","6":"NA","7":"NA","8":"NA","9":"NA"}],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[2]},"pages":{}}}
@@ -3820,7 +3856,7 @@ hometowns_ms_complete &lt;- distinct_hometowns_ms %&gt;%
 hometowns_ms_complete %&gt;%
   filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlJTMjdESUJDR2NXSmEyWklqUytrMTdFWGJSUTlROVFCVksyV0hDS1l4Q2dZRVdHa3VueFpqYUdwV1lUUE1ONlA1NS9IK3Vuc3FkeVVBWUEzeVZRYlcwSDBCL1B4NGExNkFJODdKUUE2S3lYNjdwSzM3VEU0TjVoZHRsZmliMit4Q0FCS09qUWxGSWl3N2JISDdwZkZBay9SQ3kxTXJIRGRYL1dXOUdLeDkwelBjOW5LZ1ZwNEVJc3llRWVFVWl4QjYrQXNaaXkxZHhDb3JMZVpJY1h5bTJrU0JBNVdzaSsyRURLa2kySE5NanY5QU5kQ09ZWUdZSUU0b1ppbGlrYytNWFFRTnBLaEd0cGVqd2FKei9KSk1keStWWlZLNCtWYlRVV0N5dDB3bm9CN0Z0SSt1SWYwb2pzM2o4N1JjSDc5ZU1QMFhzMmIrRTJyQlVPdU9pZ01UY1FUSThaN3k0R3pjVmZ6ZVc2V1pzUEdLanByV2J5Z1NJbmtrZmpodytRWEF4S3gxakFJQUFBPT0ifQ== -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImdyb3VwZWRfZGYiLCJ0YmxfZGYiLCJ0YmwiLCJkYXRhLmZyYW1lIl0sIm5yb3ciOjAsIm5jb2wiOjksInN1bW1hcnkiOnsiQSB0aWJibGUiOlsiMCDDlyA5Il0sIkdyb3VwcyI6WyJob21ldG93bl9jaXR5X2NsZWFuIFswXSJdfX0sInJkZiI6Ikg0c0lBQUFBQUFBQUE0MlJTMjdESUJDR2NXSmEyWkxUU09rMTdFMmxxZ2VvZW9DcWxiSkRCTk1ZQlFNQ3JEU1hUNHR0cG1sWWhjMHczNHptbjhmNzYvYXAzSllJb1NYS0Z4bGE0dkJGK1BQanJYNUJnUVFuUXprcVJ2c2RramJoTXpwck5EK3dWZUt2YnJOWEFwaEo2bHdzQXJCc3FhZk5sNlU5VDlJTHE0K05DdHhkOUsvclFYQTlOVDNEVGFkNzd2VlJFU2I4aVRESnFZcWh4NytRODlUenExamx0YWVTR0VsUDNEb1EySE10V21nblptZ0RZQ2NwTy93RFZjOWJRUlVSaWdVaHlETE1reWtUdW9nYXhIQkxmS2NIUjFVYitEbVo3bDRiTDdRSzh5M0dvK0JrYjVsTndNT2d4bjIwTmVzR2RhaWZ4OTFPNGNzQjAzOHhTK1kvc1JTT3BlNjQyZ3NGRTJCSmQxeEdaeFdPTXEyOU1WWW9EMGNNMURYVGdvQXdMWUZNczZIekw3K0pyNytMQWdBQSJ9 -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":["hometown_city_clean"],"name":[1],"type":["chr"],"align":["left"]},{"label":["hometown_state_clean"],"name":[2],"type":["chr"],"align":["left"]},{"label":["total_players"],"name":[3],"type":["int"],"align":["right"]},{"label":["geoid"],"name":[4],"type":["chr"],"align":["left"]},{"label":["total_pop"],"name":[5],"type":["dbl"],"align":["right"]},{"label":["black_pop"],"name":[6],"type":["dbl"],"align":["right"]},{"label":["median_income"],"name":[7],"type":["dbl"],"align":["right"]},{"label":["pct_black"],"name":[8],"type":["dbl"],"align":["right"]},{"label":["players_per_thousand"],"name":[9],"type":["dbl"],"align":["right"]}],"data":[],"options":{"columns":{"min":{},"max":[10],"total":[9]},"rows":{"min":[10],"max":[10],"total":[0]},"pages":{}}}
