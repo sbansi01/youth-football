@@ -330,6 +330,36 @@ hometowns_al_complete %>%
 # Step 10: If needed, uncomment out to create a CSV
 #write_csv(hometowns_al_complete, file = "hometowns_al.csv")
 
+# RACIAL ANALYSIS
+
+# Figuring out Black population in Alabama
+black_pop_al_2021 <- get_acs(geography = "state",
+                           variables = c("B01003_001", "B02001_003"),
+                           year = 2021,
+                           state = "AL",
+                           output = "wide") %>%
+  clean_names() %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  select(geoid, name, total_pop, black_pop, pct_black)
+
+# Storing the Black population as a value
+pct_black_al <- black_pop_al_2021$pct_black
+
+# Add to hometowns dataframe
+hometowns_al_complete <- hometowns_al_complete %>%
+  mutate(black_pop_vs_state = if_else(
+    pct_black > pct_black_al, "above", "below"))
+
+# Players per hundred thousand
+race_analysis_al <- hometowns_al_complete %>%
+  group_by(black_pop_vs_state) %>%
+  summarize(
+    sum_total_pop = sum(total_pop),
+    sum_total_players = sum(total_players)
+  ) %>%
+  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1))
+
 ```
 
 ```{r}
@@ -3114,13 +3144,13 @@ distinct_states_complete <- data.frame(hometown_state_clean = distinct_states_ve
 
 # OTHER - use for messing around
 
-#distribution <- hometowns_complete %>%
-  #group_by(total_players) %>%
-  #summarise(total = n())
+distribution <- hometowns_complete %>%
+  group_by(total_players) %>%
+  summarise(total = n())
 
-#five_plus <- hometowns_complete %>%
-  #filter(total_players >= 5) %>%
-  #arrange(desc(players_per_thousand))
+five_plus <- hometowns_complete %>%
+  filter(total_players >= 5) %>%
+  arrange(desc(players_per_thousand))
 
 #write_csv(five_plus, file = "five_plus_players.csv")
 
