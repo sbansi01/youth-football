@@ -3219,8 +3219,10 @@ race_analysis_majority_black_deep_south <- hometowns_complete_with_race %>%
 
 # LEXINGTON, MS DEMOGRAPHICS
 
+# POVERTY STATS
+
 # National poverty rates by county
-# Finding: Holmes County has the 10th highest poverty rate in the country and has the highest poverty rate in MS
+# Finding: Holmes County has the 10th highest poverty rate in the country and the highest poverty rate in MS
 county_poverty_2021 <- get_acs(geography = "county",
                 variables = c(poverty_total = "B17020_001",
                             poverty_below = "B17020_002",
@@ -3235,7 +3237,7 @@ county_poverty_2021 <- get_acs(geography = "county",
   arrange(desc(poverty_rate))
 
 # National poverty rates by state
-# Finding: Mississippi has the highest poverty rate in the country.
+# Finding: Mississippi has the highest poverty rate in the country. Holmes County is the most impoverished county in the most impoverished state in the country.
 state_poverty_2021 <- get_acs(geography = "state",
                 variables = c(poverty_total = "B17020_001",
                             poverty_below = "B17020_002",
@@ -3247,6 +3249,42 @@ state_poverty_2021 <- get_acs(geography = "state",
   filter(name != "Puerto Rico") %>%
   mutate(poverty_rate = round(poverty_below_e/poverty_total_e*100, 1)) %>%
   arrange(desc(poverty_rate))
+
+# PUBLIC ASSISTANCE STATS
+
+# Holmes County public assistance
+# Finding: Nearly 3 in 10 individuals in Holmes County receive public assistance.
+holmes_public_assistance_2021 <- get_acs(geography = "county",
+                variables = c(public_assistance_total = "B22003_001",
+                            public_assistance_received = "B22003_002",
+                            public_assistance_not_received = "B22003_005"),
+              year = 2021,
+              state = "MS",
+              county = "Holmes County",
+              output = "wide") %>%
+  clean_names() %>%
+  select(geoid, name, public_assistance_total_e, public_assistance_received_e) %>%
+  mutate(public_assistance_rate = round(public_assistance_received_e/public_assistance_total_e*100, 1))
+
+# Mississippi public assistance
+ms_public_assistance_2021 <- get_acs(geography = "state",
+                variables = c(public_assistance_total = "B22003_001",
+                            public_assistance_received = "B22003_002",
+                            public_assistance_not_received = "B22003_005"),
+              year = 2021,
+              state = "MS",
+              output = "wide") %>%
+  clean_names() %>%
+  select(geoid, name, public_assistance_total_e, public_assistance_received_e) %>%
+  mutate(public_assistance_rate = round(public_assistance_received_e/public_assistance_total_e*100, 1))
+
+# Comparison
+# Finding: 29% of residents in Holmes County receive public assistance, twice the state average.
+public_assistance_2021 <- bind_rows(holmes_public_assistance_2021, ms_public_assistance_2021)
+
+# EDUCATION
+
+#https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&InstName=holmes+county+central&State=28&County=holmes&SchoolType=1&SchoolType=2&SchoolType=3&SchoolType=4&SpecificSchlTypes=all&IncGrade=-1&LoGrade=-1&HiGrade=-1&ID=280019501488
 
 
 ```
