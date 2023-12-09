@@ -332,7 +332,7 @@ hometowns_al_complete %>%
 
 # RACIAL ANALYSIS
 
-# Figuring out Black population in Alabama
+# Figuring out Black population in the state
 black_pop_al_2021 <- get_acs(geography = "state",
                            variables = c("B01003_001", "B02001_003"),
                            year = 2021,
@@ -351,7 +351,7 @@ hometowns_al_complete <- hometowns_al_complete %>%
   mutate(black_pop_vs_state = if_else(
     pct_black > pct_black_al, "above", "below or equal"))
 
-# Players per hundred thousand
+# Summary
 race_analysis_al <- hometowns_al_complete %>%
   group_by(black_pop_vs_state) %>%
   summarize(
@@ -419,6 +419,39 @@ hometowns_az_complete %>%
 # Step 10: If needed, uncomment out to create a CSV
 #write_csv(hometowns_az_complete, file = "hometowns_az.csv")
 
+# RACIAL ANALYSIS
+
+# Figuring out Black population in the state
+black_pop_az_2021 <- get_acs(geography = "state",
+                           variables = c("B01003_001", "B02001_003"),
+                           year = 2021,
+                           state = "AZ",
+                           output = "wide") %>%
+  clean_names() %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  select(geoid, name, total_pop, black_pop, pct_black)
+
+# Storing the Black population as a value
+pct_black_az <- black_pop_az_2021$pct_black
+
+# Add to hometowns dataframe
+hometowns_az_complete <- hometowns_az_complete %>%
+  mutate(black_pop_vs_state = if_else(
+    pct_black > pct_black_az, "above", "below or equal"))
+
+# Summary
+race_analysis_az <- hometowns_az_complete %>%
+  group_by(black_pop_vs_state) %>%
+  summarize(
+    total_towns = n(),
+    sum_total_pop = sum(total_pop),
+    sum_total_players = sum(total_players)
+  ) %>%
+  mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
+  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1))
+
+
 ```
 
 ```{r}
@@ -472,6 +505,39 @@ hometowns_ar_complete %>%
 
 # Step 10: If needed, uncomment out to create a CSV
 #write_csv(hometowns_ar_complete, file = "hometowns_ar.csv")
+
+# RACIAL ANALYSIS
+
+# Figuring out Black population in the state
+black_pop_ar_2021 <- get_acs(geography = "state",
+                           variables = c("B01003_001", "B02001_003"),
+                           year = 2021,
+                           state = "AR",
+                           output = "wide") %>%
+  clean_names() %>%
+  rename(total_pop = b01003_001e, black_pop = b02001_003e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  select(geoid, name, total_pop, black_pop, pct_black)
+
+# Storing the Black population as a value
+pct_black_ar <- black_pop_ar_2021$pct_black
+
+# Add to hometowns dataframe
+hometowns_ar_complete <- hometowns_ar_complete %>%
+  mutate(black_pop_vs_state = if_else(
+    pct_black > pct_black_ar, "above", "below or equal"))
+
+# Summary
+race_analysis_ar <- hometowns_ar_complete %>%
+  group_by(black_pop_vs_state) %>%
+  summarize(
+    total_towns = n(),
+    sum_total_pop = sum(total_pop),
+    sum_total_players = sum(total_players)
+  ) %>%
+  mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
+  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1))
+
 
 ```
 
