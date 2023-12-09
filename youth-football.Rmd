@@ -349,15 +349,17 @@ pct_black_al <- black_pop_al_2021$pct_black
 # Add to hometowns dataframe
 hometowns_al_complete <- hometowns_al_complete %>%
   mutate(black_pop_vs_state = if_else(
-    pct_black > pct_black_al, "above", "below"))
+    pct_black > pct_black_al, "above", "below or equal"))
 
 # Players per hundred thousand
 race_analysis_al <- hometowns_al_complete %>%
   group_by(black_pop_vs_state) %>%
   summarize(
+    total_towns = n(),
     sum_total_pop = sum(total_pop),
     sum_total_players = sum(total_players)
   ) %>%
+  mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
   mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1))
 
 ```
