@@ -3455,17 +3455,20 @@ hometowns_complete_with_race <- hometowns_complete_with_race %>%
   mutate(black_pop_vs_state = if_else(
     pct_black > pct_black_state, "above", "below or equal")) %>%
   mutate(majority_black = if_else(
-    pct_black > 50, "yes", "no"))
+    pct_black > 50, "yes", "no")) %>%
+  arrange(hometown_city_clean)
   
-# DEEP SOUTH SUMMARY
-race_analysis_deep_south <- bind_rows(race_analysis_al, race_analysis_ga, race_analysis_fl, race_analysis_la, race_analysis_ms, race_analysis_sc, race_analysis_tx) %>%
+# How do towns with Black pop above state average compare to towns with Black pop below state average?
+race_analysis_vs_state <- hometowns_complete_with_race %>%
   group_by(black_pop_vs_state) %>%
-  summarize(
-    towns = sum(total_towns),
-    total_pop = sum(sum_total_pop),
-    total_players = sum(sum_total_players)
-  ) %>%
-  mutate(pct_players = round((total_players / sum(total_players)) * 100, 1)) %>%
-  mutate(players_per_hundred_thousand = round((total_players*1000000)/total_pop,1))
+  summarise(
+    sum_total_towns = n(),
+    sum_total_pop = sum(total_pop),
+    sum_total_players = sum(total_players)) %>%
+  mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
+  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1))
+
+# How do majority Black towns compare to minority Black towns?
+
   
 ```
