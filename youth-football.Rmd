@@ -3424,22 +3424,39 @@ five_plus <- hometowns_complete %>%
 
 ```{r}
 
-# TRYING TO FIGURE OUT NEXT STEPS FOR RACIAL ANALYSIS
+# RACIAL ANALYSIS
 
-# STATE-BY-STATE BLACK POP - trying to figure out what states would be worth doing more analysis on race
+hometowns_complete_with_race <- read_csv("hometowns_complete.csv")
 
+# State-by-state Black pop
 black_pop_usa_2021 <- get_acs(geography = "state",
                            variables = c("B01003_001", "B02001_003"),
                            year = 2021,
                            output = "wide") %>%
   clean_names() %>%
-  rename(total_pop = b01003_001e, black_pop = b02001_003e) %>%
-  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  rename(total_pop_state = b01003_001e, black_pop_state = b02001_003e) %>%
+  mutate(pct_black_state = round(black_pop_state/total_pop_state*100, 1)) %>%
   mutate(deep_south = if_else(
-    name == "Louisiana" | name == "Mississippi" | name == "Alabama" | name == "Georgia" | name == "South Carolina" | name == "Texas" | name == "Florida", "yes", "no")) %>%
-  select(geoid, name, total_pop, black_pop, pct_black, deep_south) %>%
-  arrange(desc(pct_black))
+    name == "Louisiana" | name == "Mississippi" | name == "Alabama" | name == "Georgia" | name == "South Carolina" , "yes", "no")) %>%
+  mutate(state_name_caps = str_to_upper(name)) %>%
+  mutate(state_name_caps = case_when(
+    state_name_caps == "DISTRICT OF COLUMBIA" ~ "WASHINGTON, DC",
+    TRUE ~ state_name_caps)) %>%
+  left_join(state_crosswalk, by = "state_name_caps") %>%
+  select(state_abb, pct_black_state, deep_south) %>%
+  arrange(desc(pct_black_state))
 
+# Join Black pop to hometowns
+hometowns_complete_with_race <- hometowns_complete_with_race %>%
+  left_join(black_pop_usa_2021, by = c("hometown_state_clean" = "state_abb"))
+
+# Add in some columns for analysis
+hometowns_complete_with_race <- hometowns_complete_with_race %>%
+  mutate(black_pop_vs_state = if_else(
+    pct_black > pct_black_state, "above", "below or equal")) %>%
+  mutate(majority_black = if_else(
+    pct_black > 50, "yes", "no"))
+  
 # DEEP SOUTH SUMMARY
 race_analysis_deep_south <- bind_rows(race_analysis_al, race_analysis_ga, race_analysis_fl, race_analysis_la, race_analysis_ms, race_analysis_sc, race_analysis_tx) %>%
   group_by(black_pop_vs_state) %>%
