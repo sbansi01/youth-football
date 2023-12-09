@@ -3286,5 +3286,7 @@ public_assistance_2021 <- bind_rows(holmes_public_assistance_2021, ms_public_ass
 
 #https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&InstName=holmes+county+central&State=28&County=holmes&SchoolType=1&SchoolType=2&SchoolType=3&SchoolType=4&SpecificSchlTypes=all&IncGrade=-1&LoGrade=-1&HiGrade=-1&ID=280019501488
 
+#https://nces.ed.gov/surveys/pss/privateschoolsearch/school_detail.asp?Search=1&SchoolName=Central+Holmes+Christian&State=28&NumOfStudentsRange=more&IncGrade=-1&LoGrade=-1&HiGrade=-1&ID=00735964
+
 
 ```
