@@ -3181,7 +3181,7 @@ race_analysis_majority_black <- hometowns_complete_with_race %>%
     sum_total_towns = n(),
     sum_total_pop = sum(total_pop),
     sum_total_players = sum(total_players)) %>%
-  mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
+  mutate(pct_players = round((sum_total_players/sum(sum_total_players))*100, 1)) %>%
   mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1)) %>%
   arrange(desc(majority_black))
 
@@ -3195,7 +3195,7 @@ race_analysis_vs_state_deep_south <- hometowns_complete_with_race %>%
     sum_total_towns = n(),
     sum_total_pop = sum(total_pop),
     sum_total_players = sum(total_players)) %>%
-  mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
+  mutate(pct_players = round((sum_total_players/sum(sum_total_players))*100, 1)) %>%
   mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1))
 
 #write_csv(race_analysis_vs_state_deep_south, file = "race_analysis_vs_state_deep_south.csv")
@@ -3207,7 +3207,7 @@ race_analysis_majority_black_deep_south <- hometowns_complete_with_race %>%
     sum_total_towns = n(),
     sum_total_pop = sum(total_pop),
     sum_total_players = sum(total_players)) %>%
-  mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
+  mutate(pct_players = round((sum_total_players/sum(sum_total_players))*100, 1)) %>%
   mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1)) %>%
   arrange(desc(majority_black))
 
@@ -3282,11 +3282,51 @@ ms_public_assistance_2021 <- get_acs(geography = "state",
 # Finding: 29% of residents in Holmes County receive public assistance, twice the state average.
 public_assistance_2021 <- bind_rows(holmes_public_assistance_2021, ms_public_assistance_2021)
 
-# EDUCATION
+# EDUCATION - are these numbers correct?? Have someone look at this.
 
-#https://nces.ed.gov/ccd/schoolsearch/school_detail.asp?Search=1&InstName=holmes+county+central&State=28&County=holmes&SchoolType=1&SchoolType=2&SchoolType=3&SchoolType=4&SpecificSchlTypes=all&IncGrade=-1&LoGrade=-1&HiGrade=-1&ID=280019501488
+# Holmes County educational attainment
+# Finding: 31% of Holmes County residents over age 25 have a high school diploma and 9% have a Bachelor's degree.
+holmes_education_2021 <- get_acs(geography = "county",
+                variables = c(education_total = "B15003_001",
+                            education_hs = "B15003_017",
+                            education_bachelors = "B15003_022"),
+              year = 2021,
+              state = "MS",
+              county = "Holmes County",
+              output = "wide") %>%
+  clean_names() %>%
+  select(geoid, name, education_total_e, education_hs_e, education_bachelors_e) %>%
+  mutate(pct_hs_diploma = round(education_hs_e/education_total_e*100, 1)) %>%
+  mutate(pct_bachelors_degree = round(education_bachelors_e/education_total_e*100, 1))
 
-#https://nces.ed.gov/surveys/pss/privateschoolsearch/school_detail.asp?Search=1&SchoolName=Central+Holmes+Christian&State=28&NumOfStudentsRange=more&IncGrade=-1&LoGrade=-1&HiGrade=-1&ID=00735964
+# Mississippi educational attainment
+ms_education_2021 <- get_acs(geography = "state",
+                variables = c(education_total = "B15003_001",
+                            education_hs = "B15003_017",
+                            education_bachelors = "B15003_022"),
+              year = 2021,
+              state = "MS",
+              output = "wide") %>%
+  clean_names() %>%
+  select(geoid, name, education_total_e, education_hs_e, education_bachelors_e) %>%
+  mutate(pct_hs_diploma = round(education_hs_e/education_total_e*100, 1)) %>%
+  mutate(pct_bachelors_degree = round(education_bachelors_e/education_total_e*100, 1))
+
+# National educational attainment
+us_education_2021 <- get_acs(geography = "us",
+                variables = c(education_total = "B15003_001",
+                            education_hs = "B15003_017",
+                            education_bachelors = "B15003_022"),
+              year = 2021,
+              output = "wide") %>%
+  clean_names() %>%
+  select(geoid, name, education_total_e, education_hs_e, education_bachelors_e) %>%
+  mutate(pct_hs_diploma = round(education_hs_e/education_total_e*100, 1)) %>%
+  mutate(pct_bachelors_degree = round(education_bachelors_e/education_total_e*100, 1))
+
+# Comparison
+# Finding: 9% of Holmes County residents have a Bachelor's degree, compared to 14% in Mississippi and 21% nationally.
+education_2021 <- bind_rows(holmes_education_2021, ms_education_2021, us_education_2021)
 
 
 ```
