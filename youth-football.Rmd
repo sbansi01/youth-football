@@ -3283,6 +3283,7 @@ ms_public_assistance_2021 <- get_acs(geography = "state",
 public_assistance_2021 <- bind_rows(holmes_public_assistance_2021, ms_public_assistance_2021)
 
 # EDUCATION
+# **This needs work: maybe look at some college attainment and maybe also look at just sex differences (B15002)
 # Finding: Among Holmes County residents over age 25, 31% have attained a high school diploma as their highest degree, compared to 24% statewide. Nine percent have a Bachelor's degree.
 
 # Holmes County educational attainment
