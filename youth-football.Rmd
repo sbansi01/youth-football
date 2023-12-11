@@ -3282,10 +3282,10 @@ ms_public_assistance_2021 <- get_acs(geography = "state",
 # Finding: 29% of residents in Holmes County receive public assistance, twice the state average.
 public_assistance_2021 <- bind_rows(holmes_public_assistance_2021, ms_public_assistance_2021)
 
-# EDUCATION - are these numbers correct?? Have someone look at this.
+# EDUCATION
+# Finding: Among Holmes County residents over age 25, 31% have attained a high school diploma as their highest degree, compared to 24% statewide. Nine percent have a Bachelor's degree.
 
 # Holmes County educational attainment
-# Finding: 31% of Holmes County residents over age 25 have a high school diploma and 9% have a Bachelor's degree.
 holmes_education_2021 <- get_acs(geography = "county",
                 variables = c(education_total = "B15003_001",
                             education_hs = "B15003_017",
