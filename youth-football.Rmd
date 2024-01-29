@@ -18,6 +18,7 @@ library(tidycensus)
 Sys.setenv(CENSUS_API_KEY = "5cb2b9c628a1d1329c5bf4d36fe4435c6501efc8", overwrite = TRUE)
 
 # Load ACS crosswalk
+acs_2022 <- load_variables(2022, "acs5")
 acs_2021 <- load_variables(2021, "acs5")
 
 # Load 2020 Census crosswalk
