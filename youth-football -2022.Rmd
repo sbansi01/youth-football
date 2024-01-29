@@ -3092,11 +3092,14 @@ census_data_ona_wv_2022 <- get_acs(geography = "zcta",
     city == "ZCTA5 25545" ~ "Ona")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
-# We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
+# We now have to append these special cases to our state census data, redo the join, and run one more check for NA values. For Shell, WY, used 2021 ACS population because 2022 population = 0.
 census_data_small_states_2022 <- bind_rows(census_data_small_states_2022, census_data_ona_wv_2022)
  
 hometowns_small_states_complete <- distinct_hometowns_small_states %>%
   left_join(census_data_small_states_2022, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(total_pop = case_when(
+    hometown_city_clean == 'Shell' ~ 86,
+    TRUE ~ total_pop)) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
