@@ -780,7 +780,7 @@ census_data_subligna_ga_2022 <- get_acs(geography = "block group",
                            state = "GA",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Block Group 2, Census Tract 101, Chattooga County, Georgia") %>%
+  filter(name == "Block Group 2; Census Tract 101; Chattooga County; Georgia") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "GA") %>%
@@ -914,10 +914,30 @@ hometowns_il_complete %>%
   filter(is.na(geoid))
 
 # Step 8: Now we have to figure out how to address each of the NA values. This is a judgment call, and we should be careful about documenting how and why we made that decision. If there is an NA value because a hometown is misspelled, tell Sapna, and she will make that correction in Open Refine. If there is an NA value because the census does not recognize the hometown, we need to find some substitute for that hometown.
-# None for Illinois
+# For Cahokia, IL (62206)  the zip code seems to be a good substitute: https://censusreporter.org/profiles/86000US62206-62206/
+census_data_zips_il_2022 <- get_acs(geography = "zcta",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2022,
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "ZCTA5 62206") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "IL") %>%
+  mutate(city = case_when(
+    city == "ZCTA5 62206" ~ "Cahokia")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-# None for Illinois
+census_data_il_2022 <- bind_rows(census_data_il_2022, census_data_zips_il_2022)
+
+hometowns_il_complete <- distinct_hometowns_il %>%
+  left_join(census_data_il_2022, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
+  mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
+  arrange(desc(players_per_thousand))
+
+hometowns_il_complete %>%
+  filter(is.na(geoid)) #If this is not producing an empty dataframe, go back and continue to work on NA values
 
 # Step 10: If needed, uncomment out to create a CSV
 #write_csv(hometowns_il_complete, file = "hometowns_il.csv")
@@ -2449,12 +2469,12 @@ census_data_craytonville_sc_2022 <- get_acs(geography = "block group",
                            state = "SC",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Block Group 3, Census Tract 115.01, Anderson County, South Carolina") %>%
+  filter(name == "Block Group 3; Census Tract 115.01; Anderson County; South Carolina") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "SC") %>%
   mutate(city = case_when(
-    city == "Block Group 3, Census Tract 115.01, Anderson County, South Carolina" ~ "Craytonville")) %>%
+    city == "Block Group 3; Census Tract 115.01; Anderson County; South Carolina" ~ "Craytonville")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
@@ -2954,12 +2974,12 @@ census_data_wi_blocks_2022 <- get_acs(geography = "block group",
                            state = "WI",
                            output = "wide") %>%
   clean_names() %>%
-  filter(name == "Block Group 2, Census Tract 1204.02, St. Croix County, Wisconsin") %>%
+  filter(name == "Block Group 2; Census Tract 1204.02; St. Croix County; Wisconsin") %>%
   rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "WI") %>%
   mutate(city = case_when(
-    city == "Block Group 2, Census Tract 1204.02, St. Croix County, Wisconsin" ~ "Houlton")) %>%
+    city == "Block Group 2; Census Tract 1204.02; St. Croix County; Wisconsin" ~ "Houlton")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
@@ -3010,7 +3030,7 @@ census_data_small_states_subdivisions_2022 <- get_acs(geography = "county subdiv
                            year = 2022,
                            state = c("CT", "NH", "RI"),
                            output = "wide") %>%
-  filter(NAME == "Darien town, Fairfield County, Connecticut" | NAME == "East Greenwich town, Kent County, Rhode Island" | NAME == "Fairfield town, Fairfield County, Connecticut" | NAME == "Glastonbury town, Hartford County, Connecticut" | NAME == "Grantham town, Sullivan County, New Hampshire" | NAME == "Hollis town, Hillsborough County, New Hampshire" | NAME == "Kent town, Litchfield County, Connecticut" | NAME == "New Fairfield town, Fairfield County, Connecticut" | NAME == "Pomfret town, Windham County, Connecticut" | NAME == "Rocky Hill town, Hartford County, Connecticut" | NAME == "Suffield town, Hartford County, Connecticut" | NAME == "Trumbull town, Fairfield County, Connecticut" | NAME == "Wallingford town, New Haven County, Connecticut" | NAME == "West Warwick town, Kent County, Rhode Island" | NAME == "Westport town, Fairfield County, Connecticut" | NAME == "Wilton town, Fairfield County, Connecticut" | NAME == "Windsor town, Hartford County, Connecticut")
+  filter(NAME == "Darien town, Western Connecticut Planning Region, Connecticut" | NAME == "East Greenwich town, Kent County, Rhode Island" | NAME == "Fairfield town, Greater Bridgeport Planning Region, Connecticut" | NAME == "Glastonbury town, Capitol Planning Region, Connecticut" | NAME == "Grantham town, Sullivan County, New Hampshire" | NAME == "Hollis town, Hillsborough County, New Hampshire" | NAME == "Kent town, Northwest Hills Planning Region, Connecticut" | NAME == "New Fairfield town, Western Connecticut Planning Region, Connecticut" | NAME == "Pomfret town, Northeastern Connecticut Planning Region, Connecticut" | NAME == "Rocky Hill town, Capitol Planning Region, Connecticut" | NAME == "Suffield town, Capitol Planning Region, Connecticut" | NAME == "Trumbull town, Greater Bridgeport Planning Region, Connecticut" | NAME == "Wallingford town, South Central Connecticut Planning Region, Connecticut" | NAME == "West Warwick town, Kent County, Rhode Island" | NAME == "Westport town, Western Connecticut Planning Region, Connecticut" | NAME == "Wilton town, Western Connecticut Planning Region, Connecticut" | NAME == "Windsor town, Capitol Planning Region, Connecticut")
 
 # General cleaning of census data to prepare for join with hometowns/roster data.
 census_data_small_states_2022 <- census_data_small_states_2022 %>%
