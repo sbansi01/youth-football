@@ -785,7 +785,7 @@ census_data_subligna_ga_2022 <- get_acs(geography = "block group",
   mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
   mutate(state = "GA") %>%
   mutate(city = case_when(
-    city == "Block Group 2, Census Tract 101, Chattooga County, Georgia" ~ "Subligna")) %>%
+    city == "Block Group 2; Census Tract 101; Chattooga County; Georgia" ~ "Subligna")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
@@ -3032,7 +3032,7 @@ census_data_small_states_subdivisions_2022 <- get_acs(geography = "county subdiv
                            output = "wide") %>%
   filter(NAME == "Darien town, Western Connecticut Planning Region, Connecticut" | NAME == "East Greenwich town, Kent County, Rhode Island" | NAME == "Fairfield town, Greater Bridgeport Planning Region, Connecticut" | NAME == "Glastonbury town, Capitol Planning Region, Connecticut" | NAME == "Grantham town, Sullivan County, New Hampshire" | NAME == "Hollis town, Hillsborough County, New Hampshire" | NAME == "Kent town, Northwest Hills Planning Region, Connecticut" | NAME == "New Fairfield town, Western Connecticut Planning Region, Connecticut" | NAME == "Pomfret town, Northeastern Connecticut Planning Region, Connecticut" | NAME == "Rocky Hill town, Capitol Planning Region, Connecticut" | NAME == "Suffield town, Capitol Planning Region, Connecticut" | NAME == "Trumbull town, Greater Bridgeport Planning Region, Connecticut" | NAME == "Wallingford town, South Central Connecticut Planning Region, Connecticut" | NAME == "West Warwick town, Kent County, Rhode Island" | NAME == "Westport town, Western Connecticut Planning Region, Connecticut" | NAME == "Wilton town, Western Connecticut Planning Region, Connecticut" | NAME == "Windsor town, Capitol Planning Region, Connecticut")
 
-# General cleaning of census data to prepare for join with hometowns/roster data.
+# General cleaning of census data to prepare for join with hometowns/roster data. For Shell, WY, used 2021 ACS population because 2022 population = 0.
 census_data_small_states_2022 <- census_data_small_states_2022 %>%
   clean_names() %>%
   separate(name, into = c("city", "state"), sep = ", ", remove = FALSE) %>%
@@ -3040,6 +3040,9 @@ census_data_small_states_2022 <- census_data_small_states_2022 %>%
   mutate(city = str_squish(city)) %>%
   select(geoid, city, state, b01003_001e, b02001_003e, b19013_001e) %>%
   rename(total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(total_pop = case_when(
+    city == 'Shell' ~ 86,
+    TRUE ~ total_pop)) %>%
   mutate(pct_black = round(black_pop/total_pop*100, 1))
 
 census_data_small_states_subdivisions_2022 <- census_data_small_states_subdivisions_2022 %>%
@@ -3092,14 +3095,11 @@ census_data_ona_wv_2022 <- get_acs(geography = "zcta",
     city == "ZCTA5 25545" ~ "Ona")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
-# We now have to append these special cases to our state census data, redo the join, and run one more check for NA values. For Shell, WY, used 2021 ACS population because 2022 population = 0.
+# We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
 census_data_small_states_2022 <- bind_rows(census_data_small_states_2022, census_data_ona_wv_2022)
  
 hometowns_small_states_complete <- distinct_hometowns_small_states %>%
   left_join(census_data_small_states_2022, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
-  mutate(total_pop = case_when(
-    hometown_city_clean == 'Shell' ~ 86,
-    TRUE ~ total_pop)) %>%
   mutate(players_per_thousand = round((total_players*1000)/total_pop,1)) %>%
   arrange(desc(players_per_thousand))
 
@@ -3113,8 +3113,9 @@ hometowns_small_states_complete <- distinct_hometowns_small_states %>%
 # ALL HOMETOWNS
 hometowns_complete <- bind_rows(hometowns_al_complete, hometowns_ar_complete, hometowns_az_complete, hometowns_ca_complete, hometowns_co_complete, hometowns_fl_complete, hometowns_ga_complete, hometowns_hi_complete, hometowns_ia_complete, hometowns_il_complete, hometowns_in_complete, hometowns_ks_complete, hometowns_ky_complete, hometowns_la_complete, hometowns_ma_complete, hometowns_md_complete, hometowns_mi_complete, hometowns_mo_complete, hometowns_mn_complete, hometowns_ms_complete, hometowns_nc_complete, hometowns_ne_complete, hometowns_nj_complete, hometowns_ny_complete, hometowns_oh_complete, hometowns_ok_complete, hometowns_or_complete, hometowns_pa_complete, hometowns_sc_complete, hometowns_tn_complete, hometowns_tx_complete, hometowns_ut_complete, hometowns_va_complete, hometowns_wa_complete, hometowns_wi_complete, hometowns_small_states_complete) %>%
   mutate(hometown_combined = paste(hometown_city_clean, hometown_state_clean, sep = ", ")) %>%
-  arrange(desc(players_per_thousand)) %>%
-  select(geoid, hometown_city_clean, hometown_state_clean, hometown_combined, total_players, total_pop, black_pop, pct_black, median_income, players_per_thousand)
+  mutate(players_per_capita = round(total_pop/total_players,0)) %>%
+  arrange(players_per_capita) %>%
+  select(geoid, hometown_city_clean, hometown_state_clean, hometown_combined, total_players, total_pop, black_pop, pct_black, median_income, players_per_thousand, players_per_capita)
 
 #Checking our work
 
@@ -3129,7 +3130,7 @@ distinct_states_vector <- unique(hometowns_complete$hometown_state_clean)
 distinct_states_complete <- data.frame(hometown_state_clean = distinct_states_vector) %>%
   arrange(hometown_state_clean)
 
-#write_csv(hometowns_complete, file = "hometowns_complete.csv")
+#write_csv(hometowns_complete, file = "hometowns_complete_2022.csv")
 
 ```
 
@@ -3153,7 +3154,7 @@ five_plus <- hometowns_complete %>%
 
 # RACIAL ANALYSIS
 
-hometowns_complete_with_race <- read_csv("hometowns_complete.csv")
+hometowns_complete_with_race <- read_csv("hometowns_complete_2022.csv")
 
 # State-by-state Black pop
 black_pop_usa_2022 <- get_acs(geography = "state",
@@ -3193,9 +3194,10 @@ race_analysis_vs_state <- hometowns_complete_with_race %>%
     sum_total_pop = sum(total_pop),
     sum_total_players = sum(total_players)) %>%
   mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
-  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1))
+  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1)) %>%
+  mutate(players_per_capita = round(sum_total_pop/sum_total_players,0))
 
-#write_csv(race_analysis_vs_state, file = "race_analysis_vs_state.csv")
+#write_csv(race_analysis_vs_state, file = "race_analysis_vs_state_2022.csv")
 
 # How do majority Black towns compare to minority Black towns?
 race_analysis_majority_black <- hometowns_complete_with_race %>%
@@ -3206,9 +3208,10 @@ race_analysis_majority_black <- hometowns_complete_with_race %>%
     sum_total_players = sum(total_players)) %>%
   mutate(pct_players = round((sum_total_players/sum(sum_total_players))*100, 1)) %>%
   mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1)) %>%
+  mutate(players_per_capita = round(sum_total_pop/sum_total_players,0)) %>%
   arrange(desc(majority_black))
 
-#write_csv(race_analysis_majority_black, file = "race_analysis_majority_black.csv")
+#write_csv(race_analysis_majority_black, file = "race_analysis_majority_black_2022.csv")
 
 # What about in the Deep South?
 race_analysis_vs_state_deep_south <- hometowns_complete_with_race %>%
@@ -3219,9 +3222,10 @@ race_analysis_vs_state_deep_south <- hometowns_complete_with_race %>%
     sum_total_pop = sum(total_pop),
     sum_total_players = sum(total_players)) %>%
   mutate(pct_players = round((sum_total_players/sum(sum_total_players))*100, 1)) %>%
-  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1))
+  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1)) %>%
+  mutate(players_per_capita = round(sum_total_pop/sum_total_players,0))
 
-#write_csv(race_analysis_vs_state_deep_south, file = "race_analysis_vs_state_deep_south.csv")
+#write_csv(race_analysis_vs_state_deep_south, file = "race_analysis_vs_state_deep_south_2022.csv")
 
 race_analysis_majority_black_deep_south <- hometowns_complete_with_race %>%
   filter(deep_south == "yes") %>%
@@ -3232,9 +3236,10 @@ race_analysis_majority_black_deep_south <- hometowns_complete_with_race %>%
     sum_total_players = sum(total_players)) %>%
   mutate(pct_players = round((sum_total_players/sum(sum_total_players))*100, 1)) %>%
   mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1)) %>%
+  mutate(players_per_capita = round(sum_total_pop/sum_total_players,0)) %>%
   arrange(desc(majority_black))
 
-#write_csv(race_analysis_majority_black_deep_south, file = "race_analysis_majority_black_deep_south.csv")
+#write_csv(race_analysis_majority_black_deep_south, file = "race_analysis_majority_black_deep_south_2022.csv")
 
 ```
 
