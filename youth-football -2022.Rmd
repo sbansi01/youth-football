@@ -1356,7 +1356,7 @@ census_data_md_2022 <- census_data_md_2022 %>%
 census_data_md_2022 <- census_data_md_2022 %>%
   mutate(state = case_when(
     state == 'Maryland' ~ "MD")) %>%
-  filter(geoid != "2405525" & geoid != "2416620") #narrowing down to one option for Bel Air and Chevy Chase
+  filter(geoid != "2405525" & geoid != "2416620" & geoid != "2479875") #narrowing down to one option for Bel Air and Chevy Chase and getting rid of this version of Upper Marlboro
 
 # Step 6: Join the census data to the list of hometowns. Also create a column that tells us how many people are elite college football players for every 1,000 residents.
 hometowns_md_complete <- distinct_hometowns_md %>%
@@ -1387,8 +1387,23 @@ census_data_zips_md_2022 <- get_acs(geography = "zcta",
     city == "ZCTA5 21131" ~ "Phoenix")) %>%
   select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
 
+# We also need to do something about Upper Marlboro: we'll use the county subdivision https://censusreporter.org/profiles/06000US2403390248-district-3-marlboro-prince-georges-county-md/
+census_data_md_subdivisions_2022 <- get_acs(geography = "county subdivision",
+                           variables = c("B01003_001", "B02001_003", "B19013_001"),
+                           year = 2022,
+                           state = "MD",
+                           output = "wide") %>%
+  clean_names() %>%
+  filter(name == "District 3, Marlboro, Prince George's County, Maryland") %>%
+  rename(city = name, total_pop = b01003_001e, black_pop = b02001_003e, median_income = b19013_001e) %>%
+  mutate(pct_black = round(black_pop/total_pop*100, 1)) %>%
+  mutate(state = "MD") %>%
+  mutate(city = case_when(
+    city == "District 3, Marlboro, Prince George's County, Maryland" ~ "Upper Marlboro")) %>%
+  select(geoid, city, state, total_pop, black_pop, median_income, pct_black)
+
 # Step 9: We now have to append these special cases to our state census data, redo the join, and run one more check for NA values.
-census_data_md_2022 <- bind_rows(census_data_md_2022, census_data_zips_md_2022)
+census_data_md_2022 <- bind_rows(census_data_md_2022, census_data_zips_md_2022, census_data_md_subdivisions_2022)
  
 hometowns_md_complete <- distinct_hometowns_md %>%
   left_join(census_data_md_2022, by = c("hometown_city_clean" = "city", "hometown_state_clean" = "state")) %>%
