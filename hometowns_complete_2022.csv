@@ -1,6 +1,5 @@
 geoid,hometown_city_clean,hometown_state_clean,hometown_combined,total_players,total_pop,black_pop,pct_black,median_income,players_per_thousand,players_per_capita
 0868875,Sedalia,CO,"Sedalia, CO",2,38,0,0,105938,52.6,19
-2479875,Upper Marlboro,MD,"Upper Marlboro, MD",12,759,520,68.5,112250,15.8,63
 3141830,Roca,NE,"Roca, NE",2,159,0,0,83281,12.6,80
 5669700,Shell,WY,"Shell, WY",1,86,0,0,NA,11.6,86
 4869608,Spring Branch,TX,"Spring Branch, TX",2,191,0,0,152750,10.5,96
@@ -342,6 +341,7 @@ geoid,hometown_city_clean,hometown_state_clean,hometown_combined,total_players,t
 3946872,Maineville,OH,"Maineville, OH",1,2057,20,1,87894,0.5,2057
 3913358,Chagrin Falls,OH,"Chagrin Falls, OH",2,4116,133,3.2,99821,0.5,2058
 1336276,Hampton,GA,"Hampton, GA",4,8244,4810,58.3,67808,0.5,2061
+2403390248,Upper Marlboro,MD,"Upper Marlboro, MD",12,24732,20315,82.1,139805,0.5,2061
 2038175,Lakin,KS,"Lakin, KS",1,2066,117,5.7,58846,0.5,2066
 2631260,Galesburg,MI,"Galesburg, MI",1,2069,154,7.4,45385,0.5,2069
 3919344,Creston,OH,"Creston, OH",1,2072,0,0,64157,0.5,2072
