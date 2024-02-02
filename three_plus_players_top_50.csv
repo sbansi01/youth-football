@@ -1,0 +1,51 @@
+geoid,hometown_city_clean,hometown_state_clean,hometown_combined,total_players,total_pop,black_pop,pct_black,median_income,players_per_thousand,players_per_capita
+1369980,Sharpsburg,GA,"Sharpsburg, GA",3,380,7,1.8,69531,7.9,127
+2682450,Clarkston,MI,"Clarkston, MI",6,775,36,4.6,95313,7.7,129
+4205288,Belle Vernon,PA,"Belle Vernon, PA",3,803,40,5,39007,3.7,268
+1309068,Bogart,GA,"Bogart, GA",4,1276,39,3.1,83333,3.1,319
+4566760,Six Mile,SC,"Six Mile, SC",3,1086,0,0,103750,2.8,362
+2840600,Lexington,MS,"Lexington, MS",3,1154,873,75.6,39076,2.6,385
+2607020,Belleville,MI,"Belleville, MI",8,3979,731,18.4,55979,2,497
+3751820,Pilot Mountain,NC,"Pilot Mountain, NC",3,1667,76,4.6,42045,1.8,556
+4801744,Aledo,TX,"Aledo, TX",9,5053,49,1,123045,1.8,561
+1522250,Kahuku,HI,"Kahuku, HI",4,2274,59,2.6,71758,1.8,568
+1345768,Leesburg,GA,"Leesburg, GA",6,3465,1636,47.2,55417,1.7,578
+4803768,Argyle,TX,"Argyle, TX",8,4638,54,1.2,205246,1.7,580
+1320932,Cumming,GA,"Cumming, GA",12,7371,598,8.1,71855,1.6,614
+4838476,Katy,TX,"Katy, TX",34,22826,2776,12.2,114917,1.5,671
+4535755,Inman,SC,"Inman, SC",4,2987,467,15.6,50938,1.3,747
+1311784,Buford,GA,"Buford, GA",23,17222,2147,12.5,68165,1.3,749
+4832720,Haslet,TX,"Haslet, TX",3,2336,89,3.8,160481,1.3,779
+4223472,Elysburg,PA,"Elysburg, PA",3,2451,0,0,119216,1.2,817
+5174916,Stafford Courthouse,VA,"Stafford Courthouse, VA",6,4996,1769,35.4,94653,1.2,833
+4846056,Magnolia,TX,"Magnolia, TX",3,2620,280,10.7,59922,1.1,873
+1543250,Laie,HI,"Laie, HI",6,5411,20,0.4,108965,1.1,902
+3717000,Denver,NC,"Denver, NC",3,2739,17,0.6,65577,1.1,913
+4229040,Gibsonia,PA,"Gibsonia, PA",3,2876,0,0,130750,1,959
+2842440,Lucedale,MS,"Lucedale, MS",3,2914,997,34.2,35662,1,971
+0684438,Westlake Village,CA,"Westlake Village, CA",8,7948,44,0.6,188681,1,994
+1380788,Watkinsville,GA,"Watkinsville, GA",3,2998,97,3.2,78750,1,999
+1340056,Hoschton,GA,"Hoschton, GA",3,3099,176,5.7,87021,1,1033
+1374936,Suwanee,GA,"Suwanee, GA",20,21238,2689,12.7,100780,0.9,1062
+3447130,Monmouth Beach,NJ,"Monmouth Beach, NJ",3,3199,24,0.8,144792,0.9,1066
+1253800,Pahokee,FL,"Pahokee, FL",5,5548,2971,53.6,36289,0.9,1110
+2622160,Dexter,MI,"Dexter, MI",4,4505,16,0.4,89671,0.9,1126
+1334596,Grayson,GA,"Grayson, GA",4,4572,3538,77.4,121421,0.9,1143
+0648186,Mission Hills,CA,"Mission Hills, CA",3,3458,100,2.9,102024,0.9,1153
+2423025,District Heights,MD,"District Heights, MD",5,5905,5483,92.9,84929,0.8,1181
+1729125,Gibson City,IL,"Gibson City, IL",3,3615,52,1.4,51275,0.8,1205
+2842280,Louisville,MS,"Louisville, MS",5,6061,3613,59.6,36078,0.8,1212
+4507255,Blythewood,SC,"Blythewood, SC",4,4890,2037,41.7,100595,0.8,1222
+5108152,Bluefield,VA,"Bluefield, VA",4,5059,593,11.7,53162,0.8,1265
+4513015,Central,SC,"Central, SC",4,5272,533,10.1,45909,0.8,1318
+1373816,Stone Mountain,GA,"Stone Mountain, GA",5,6638,5671,85.4,44950,0.8,1328
+0950576,New Canaan,CT,"New Canaan, CT",5,6863,144,2.1,167614,0.7,1373
+4821424,Dripping Springs,TX,"Dripping Springs, TX",4,5495,63,1.1,104141,0.7,1374
+4775000,Trenton,TN,"Trenton, TN",3,4202,1323,31.5,32178,0.7,1401
+1347196,Loganville,GA,"Loganville, GA",10,14287,5192,36.3,77750,0.7,1429
+1578050,Waimanalo,HI,"Waimanalo, HI",4,5743,0,0,127143,0.7,1436
+1268525,Starke,FL,"Starke, FL",4,5756,1499,26,42976,0.7,1439
+0160648,Pinson,AL,"Pinson, AL",5,7209,2978,41.3,83673,0.7,1442
+2815340,Columbia,MS,"Columbia, MS",4,5831,2498,42.8,29470,0.7,1458
+4861892,Richmond,TX,"Richmond, TX",8,11931,3175,26.6,51832,0.7,1491
+2658980,Northville,MI,"Northville, MI",4,6088,6,0.1,134330,0.7,1522

@@ -204,7 +204,8 @@ football_rosters_usa_states <- football_rosters_usa_states %>%
 
 football_rosters_usa_states <- football_rosters_usa_states %>%
   mutate(players_per_hundred_thousand = round((total_players*100000)/total_pop,1)) %>%
-  arrange(desc(players_per_hundred_thousand))
+  arrange(desc(players_per_hundred_thousand)) %>%
+  left_join(state_crosswalk, by=c("hometown_state_clean" = "state_abb"))
 
 # CSV
 #write_csv(football_rosters_usa_states, file = "state_counts.csv")
@@ -3161,7 +3162,17 @@ five_plus <- hometowns_complete %>%
   filter(total_players >= 5) %>%
   arrange(desc(players_per_thousand))
 
-#write_csv(five_plus, file = "five_plus_players.csv")
+three_plus <- hometowns_complete %>%
+  filter(total_players >= 3) %>%
+  arrange(desc(players_per_thousand))
+
+three_plus_top_50 <- three_plus %>%
+  head(50) %>%
+  arrange(desc(players_per_thousand))
+
+#write_csv(three_plus, file = "three_plus_players.csv")
+
+#write_csv(three_plus_top_50, file = "three_plus_players_top_50.csv")
 
 ```
 
@@ -3209,7 +3220,7 @@ race_analysis_vs_state <- hometowns_complete_with_race %>%
     sum_total_pop = sum(total_pop),
     sum_total_players = sum(total_players)) %>%
   mutate(pct_players = round((sum_total_players / sum(sum_total_players)) * 100, 1)) %>%
-  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1)) %>%
+  mutate(players_per_hundred_thousand = round((sum_total_players*100000)/sum_total_pop,1)) %>%
   mutate(players_per_capita = round(sum_total_pop/sum_total_players,0))
 
 #write_csv(race_analysis_vs_state, file = "race_analysis_vs_state_2022.csv")
@@ -3222,7 +3233,7 @@ race_analysis_majority_black <- hometowns_complete_with_race %>%
     sum_total_pop = sum(total_pop),
     sum_total_players = sum(total_players)) %>%
   mutate(pct_players = round((sum_total_players/sum(sum_total_players))*100, 1)) %>%
-  mutate(players_per_hundred_thousand = round((sum_total_players*1000000)/sum_total_pop,1)) %>%
+  mutate(players_per_hundred_thousand = round((sum_total_players*100000)/sum_total_pop,1)) %>%
   mutate(players_per_capita = round(sum_total_pop/sum_total_players,0)) %>%
   arrange(desc(majority_black))
 
